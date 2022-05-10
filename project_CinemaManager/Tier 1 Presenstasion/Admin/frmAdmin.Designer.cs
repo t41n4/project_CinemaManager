@@ -126,6 +126,7 @@ namespace project_CinemaManager
             this.Controls.Add(this.btnSeller);
             this.Name = "frmAdmin";
             this.Text = "Manager";
+            this.Load += new System.EventHandler(this.frmAdmin_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -46,6 +46,84 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminNewDesign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminNewDesign.Designer.cs">
+      <DependentUpon>frmAdminNewDesign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\AccountUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\AccountUC.Designer.cs">
+      <DependentUpon>AccountUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\CustomerUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\CustomerUC.Designer.cs">
+      <DependentUpon>CustomerUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUC.Designer.cs">
+      <DependentUpon>DataUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\CinemaUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\CinemaUC.Designer.cs">
+      <DependentUpon>CinemaUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\FormatMovieUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\FormatMovieUC.Designer.cs">
+      <DependentUpon>FormatMovieUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\GenreUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\GenreUC.Designer.cs">
+      <DependentUpon>GenreUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\MovieUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\MovieUC.Designer.cs">
+      <DependentUpon>MovieUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\ScreenTypeUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\ScreenTypeUC.Designer.cs">
+      <DependentUpon>ScreenTypeUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\ShowTimesUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\ShowTimesUC.Designer.cs">
+      <DependentUpon>ShowTimesUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\TicketsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\TicketsUC.Designer.cs">
+      <DependentUpon>TicketsUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\RevenueUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\RevenueUC.Designer.cs">
+      <DependentUpon>RevenueUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\StaffUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\StaffUC.Designer.cs">
+      <DependentUpon>StaffUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tier 1 Presenstasion\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +177,45 @@
     <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmAdminNewDesign.resx">
+      <DependentUpon>frmAdminNewDesign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tier 1 Presenstasion\frmAdminUserControls\AccountUC.resx">
+      <DependentUpon>AccountUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tier 1 Presenstasion\frmAdminUserControls\CustomerUC.resx">
+      <DependentUpon>CustomerUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tier 1 Presenstasion\frmAdminUserControls\DataUC.resx">
+      <DependentUpon>DataUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\CinemaUC.resx">
+      <DependentUpon>CinemaUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\FormatMovieUC.resx">
+      <DependentUpon>FormatMovieUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\GenreUC.resx">
+      <DependentUpon>GenreUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\MovieUC.resx">
+      <DependentUpon>MovieUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\ScreenTypeUC.resx">
+      <DependentUpon>ScreenTypeUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\ShowTimesUC.resx">
+      <DependentUpon>ShowTimesUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\TicketsUC.resx">
+      <DependentUpon>TicketsUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tier 1 Presenstasion\frmAdminUserControls\RevenueUC.resx">
+      <DependentUpon>RevenueUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tier 1 Presenstasion\frmAdminUserControls\StaffUC.resx">
+      <DependentUpon>StaffUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tier 1 Presenstasion\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +249,26 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tier 1 Presenstasion\Customer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\Resources\Apps-Dialog-Shutdown-icon.png" />
+    <Content Include="Properties\Resources\employee-office-staff-3d735bc691173bb5-256x256.png" />
+    <Content Include="Properties\Resources\LoginIconAppl.png" />
+    <Content Include="Properties\Resources\login_user_profile_account_logout_people_man_human-512.png" />
+    <Content Include="Properties\Resources\New-Database-icon.png" />
+    <Content Include="Properties\Resources\openfolder_4896.png" />
+    <Content Include="Properties\Resources\people-2-512.png" />
+    <Content Include="Properties\Resources\pie-chart.png" />
+    <Content Include="Properties\Resources\search-icon.png" />
+    <Content Include="Properties\Resources\Untitled-2_0000_Layer-9.png" />
+    <Content Include="Properties\Resources\Untitled-2_0001_Layer-8.png" />
+    <Content Include="Properties\Resources\Untitled-2_0002_Layer-7.png" />
+    <Content Include="Properties\Resources\Untitled-2_0003_Layer-6.png" />
+    <Content Include="Properties\Resources\Untitled-2_0004_Layer-5.png" />
+    <Content Include="Properties\Resources\Untitled-2_0005_Layer-4.png" />
+    <Content Include="Properties\Resources\Untitled-2_0006_Layer-3.png" />
+    <Content Include="Properties\Resources\Untitled-2_0007_Layer-2.png" />
+    <Content Include="Properties\Resources\Untitled-2_0008_Layer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
