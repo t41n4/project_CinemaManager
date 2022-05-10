@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace project_CinemaManager
 {
-    public partial class Form1 : Form
+    public partial class frmSignUp : Form
     {
-        public Form1()
+        public frmSignUp()
         {
             InitializeComponent();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
