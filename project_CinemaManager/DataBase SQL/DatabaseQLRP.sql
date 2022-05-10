@@ -27,7 +27,8 @@ CREATE TABLE TaiKhoan
 	LoaiTK INT NOT NULL DEFAULT 2, -- 1:admin || 2:Customer
 	idNV VARCHAR(50) NOT NULL,
 
-	FOREIGN KEY (idNV) REFERENCES dbo.NhanVien(ID)
+	--FOREIGN KEY (idNV) REFERENCES dbo.NhanVien(ID)
+	PRIMARY KEY(idNV)
 )
 GO
 

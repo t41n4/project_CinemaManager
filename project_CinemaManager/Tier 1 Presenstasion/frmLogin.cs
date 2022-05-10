@@ -29,6 +29,7 @@ namespace project_CinemaManager
             if (result == 1)
             {
                 Account loginAccount = AccountDAO.GetAccountByUserName(userName);
+
                 if (loginAccount.Type == 1)
                 {
                   
@@ -83,6 +84,15 @@ namespace project_CinemaManager
             {
                 btnLogin.PerformClick();
             }
+        }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            frmSignUp frmSignUp = new frmSignUp();
+            this.Hide();
+            frmSignUp.ShowDialog();
+            this.Show();
+
         }
     }
 }

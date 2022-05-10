@@ -32,7 +32,7 @@ namespace project_CinemaManager
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSignUp = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
@@ -48,7 +48,7 @@ namespace project_CinemaManager
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnSignUp);
             this.panel1.Controls.Add(this.btnLogin);
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.txtUsername);
@@ -75,15 +75,16 @@ namespace project_CinemaManager
             this.label2.TabIndex = 5;
             this.label2.Text = "Username:";
             // 
-            // button1
+            // btnSignUp
             // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.Location = new System.Drawing.Point(14, 172);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(270, 41);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "SIGN UP";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSignUp.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnSignUp.Location = new System.Drawing.Point(14, 172);
+            this.btnSignUp.Name = "btnSignUp";
+            this.btnSignUp.Size = new System.Drawing.Size(270, 41);
+            this.btnSignUp.TabIndex = 3;
+            this.btnSignUp.Text = "SIGN UP";
+            this.btnSignUp.UseVisualStyleBackColor = false;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // btnLogin
             // 
@@ -174,7 +175,7 @@ namespace project_CinemaManager
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSignUp;
         private System.Windows.Forms.ToolStripMenuItem mnuSetting;
     }
 }
