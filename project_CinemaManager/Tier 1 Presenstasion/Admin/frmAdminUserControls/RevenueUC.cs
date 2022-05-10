@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace GUI.frmAdminUserControls
+namespace frmAdminUserControls
 {
     public partial class RevenueUC : UserControl
     {

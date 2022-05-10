@@ -58,76 +58,76 @@
     <Compile Include="Tier 1 Presenstasion\Customer\frmCustomer.Designer.cs">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\AccountUC.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\AccountUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\AccountUC.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\AccountUC.Designer.cs">
       <DependentUpon>AccountUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\CustomerUC.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\CustomerUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\CustomerUC.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\CustomerUC.Designer.cs">
       <DependentUpon>CustomerUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUC.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\DataUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUC.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\DataUC.Designer.cs">
       <DependentUpon>DataUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\CinemaUC.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\DataUserControl\CinemaUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\CinemaUC.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\DataUserControl\CinemaUC.Designer.cs">
       <DependentUpon>CinemaUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\FormatMovieUC.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\DataUserControl\FormatMovieUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\FormatMovieUC.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\DataUserControl\FormatMovieUC.Designer.cs">
       <DependentUpon>FormatMovieUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\GenreUC.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\DataUserControl\GenreUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\GenreUC.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\DataUserControl\GenreUC.Designer.cs">
       <DependentUpon>GenreUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\MovieUC.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\DataUserControl\MovieUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\MovieUC.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\DataUserControl\MovieUC.Designer.cs">
       <DependentUpon>MovieUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\ScreenTypeUC.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\DataUserControl\ScreenTypeUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\ScreenTypeUC.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\DataUserControl\ScreenTypeUC.Designer.cs">
       <DependentUpon>ScreenTypeUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\ShowTimesUC.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\DataUserControl\ShowTimesUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\ShowTimesUC.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\DataUserControl\ShowTimesUC.Designer.cs">
       <DependentUpon>ShowTimesUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\TicketsUC.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\DataUserControl\TicketsUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\TicketsUC.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\DataUserControl\TicketsUC.Designer.cs">
       <DependentUpon>TicketsUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\RevenueUC.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\RevenueUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\RevenueUC.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\RevenueUC.Designer.cs">
       <DependentUpon>RevenueUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\StaffUC.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\StaffUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frmAdminUserControls\StaffUC.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\StaffUC.Designer.cs">
       <DependentUpon>StaffUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Tier 1 Presenstasion\frmLogin.cs">
@@ -189,40 +189,40 @@
     <EmbeddedResource Include="Tier 1 Presenstasion\Customer\frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\frmAdminUserControls\AccountUC.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\AccountUC.resx">
       <DependentUpon>AccountUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\frmAdminUserControls\CustomerUC.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\CustomerUC.resx">
       <DependentUpon>CustomerUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\frmAdminUserControls\DataUC.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\DataUC.resx">
       <DependentUpon>DataUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\CinemaUC.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\DataUserControl\CinemaUC.resx">
       <DependentUpon>CinemaUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\FormatMovieUC.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\DataUserControl\FormatMovieUC.resx">
       <DependentUpon>FormatMovieUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\GenreUC.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\DataUserControl\GenreUC.resx">
       <DependentUpon>GenreUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\MovieUC.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\DataUserControl\MovieUC.resx">
       <DependentUpon>MovieUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\ScreenTypeUC.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\DataUserControl\ScreenTypeUC.resx">
       <DependentUpon>ScreenTypeUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\ShowTimesUC.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\DataUserControl\ShowTimesUC.resx">
       <DependentUpon>ShowTimesUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\frmAdminUserControls\DataUserControl\TicketsUC.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\DataUserControl\TicketsUC.resx">
       <DependentUpon>TicketsUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\frmAdminUserControls\RevenueUC.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\RevenueUC.resx">
       <DependentUpon>RevenueUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\frmAdminUserControls\StaffUC.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmAdminUserControls\StaffUC.resx">
       <DependentUpon>StaffUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tier 1 Presenstasion\frmLogin.resx">

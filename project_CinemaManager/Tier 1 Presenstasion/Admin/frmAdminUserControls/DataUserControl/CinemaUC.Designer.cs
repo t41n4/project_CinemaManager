@@ -1,4 +1,4 @@
-﻿namespace GUI.frmAdminUserControls.DataUserControl
+﻿namespace frmAdminUserControls.DataUserControl
 {
     partial class CinemaUC
     {

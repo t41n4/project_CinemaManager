@@ -1,4 +1,4 @@
-﻿namespace GUI.frmAdminUserControls
+﻿namespace frmAdminUserControls
 {
     partial class DataUC
     {

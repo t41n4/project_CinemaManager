@@ -4,7 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace GUI.frmAdminUserControls
+namespace frmAdminUserControls
 {
     public partial class StaffUC : UserControl
     {

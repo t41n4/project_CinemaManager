@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace GUI.frmAdminUserControls.DataUserControl
+namespace frmAdminUserControls.DataUserControl
 {
     public partial class ScreenTypeUC : UserControl
     {

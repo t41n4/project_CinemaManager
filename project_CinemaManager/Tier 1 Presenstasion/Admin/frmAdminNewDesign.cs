@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAO;
 using DTO;
-using GUI.frmAdminUserControls;
+using frmAdminUserControls;
 
 namespace project_CinemaManager
 {

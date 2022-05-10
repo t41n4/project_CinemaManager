@@ -1,9 +1,9 @@
-﻿using GUI.frmAdminUserControls.DataUserControl;
+﻿using frmAdminUserControls.DataUserControl;
 using System;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace GUI.frmAdminUserControls
+namespace frmAdminUserControls
 {
     public partial class DataUC : UserControl
     {
