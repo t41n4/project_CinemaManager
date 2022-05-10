@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace DAO
 {
-    public class CustomerDAO
+    public class CustomerDB
     {
         public static DataTable GetCustomerMember(string customerID, string name)
         {

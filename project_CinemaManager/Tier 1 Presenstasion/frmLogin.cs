@@ -24,14 +24,28 @@ namespace project_CinemaManager
             btnLogin.Enabled = false;
             string userName = txtUsername.Text;
             string passWord = txtPassword.Text;
+          
             int result = Login(userName, passWord);
             if (result == 1)
             {
                 Account loginAccount = AccountDAO.GetAccountByUserName(userName);
-                frmAdmin frm = new frmAdmin(loginAccount);
-                this.Hide();
-                frm.ShowDialog();
-                this.Show();
+                if (loginAccount.Type == 1)
+                {
+                  
+                    frmAdmin frm = new frmAdmin(loginAccount);
+                    this.Hide();
+                    frm.ShowDialog();
+                    this.Show();
+                }
+                else if (loginAccount.Type == 2)
+                {
+                    frmCustomer frm = new frmCustomer(loginAccount);
+                    this.Hide();
+                    frm.ShowDialog();
+                    this.Show();
+                }
+
+
             }
             else if (result == 0)
             {
@@ -49,6 +63,7 @@ namespace project_CinemaManager
         {
             return AccountDAO.Login(userName, passWord);
         }
+
 
         private void mnuSetting_Click(object sender, EventArgs e)
         {

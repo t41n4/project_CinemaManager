@@ -50,30 +50,6 @@ namespace project_CinemaManager.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string UserID {
-            get {
-                return ((string)(this["UserID"]));
-            }
-            set {
-                this["UserID"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string pwd {
-            get {
-                return ((string)(this["pwd"]));
-            }
-            set {
-                this["pwd"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string connectionSTR {
             get {
                 return ((string)(this["connectionSTR"]));
