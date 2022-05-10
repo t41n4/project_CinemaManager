@@ -13,7 +13,7 @@ namespace project_CinemaManager
         /// </summary>
         [STAThread]
         static void Main()
-        {
+        {ádsadsadasd
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmLogin());
