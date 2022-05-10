@@ -23,7 +23,7 @@ namespace GUI.frmAdminUserControls
 
         void LoadCustomerList()
         {
-            customerList.DataSource = CustomerDAO.GetListCustomer();
+            customerList.DataSource = CustomerDB.GetListCustomer();
         }
         private void btnShowCustomer_Click(object sender, EventArgs e)
         {
@@ -43,7 +43,7 @@ namespace GUI.frmAdminUserControls
 
         void InsertCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
         {
-            if (CustomerDAO.InsertCustomer(id, hoTen, ngaySinh, diaChi, sdt, cmnd))
+            if (CustomerDB.InsertCustomer(id, hoTen, ngaySinh, diaChi, sdt, cmnd))
             {
                 MessageBox.Show("Thêm khách hàng thành công");
             }
@@ -66,7 +66,7 @@ namespace GUI.frmAdminUserControls
 
         void UpdateCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd, int point)
         {
-            if (CustomerDAO.UpdateCustomer(id, hoTen, ngaySinh, diaChi, sdt, cmnd, point))
+            if (CustomerDB.UpdateCustomer(id, hoTen, ngaySinh, diaChi, sdt, cmnd, point))
             {
                 MessageBox.Show("Sửa khách hàng thành công");
             }
@@ -90,7 +90,7 @@ namespace GUI.frmAdminUserControls
 
         void DeleteCustomer(string id)
         {
-            if (CustomerDAO.DeleteCustomer(id))
+            if (CustomerDB.DeleteCustomer(id))
             {
                 MessageBox.Show("Xóa khách hàng thành công");
             }
@@ -109,7 +109,7 @@ namespace GUI.frmAdminUserControls
         private void btnSearchCus_Click(object sender, EventArgs e)
         {
             string cusName = txtSearchCus.Text;
-            customerList.DataSource = CustomerDAO.SearchCustomerByName(cusName);
+            customerList.DataSource = CustomerDB.SearchCustomerByName(cusName);
         }
 
 		private void txtSearchCus_KeyDown(object sender, KeyEventArgs e)
