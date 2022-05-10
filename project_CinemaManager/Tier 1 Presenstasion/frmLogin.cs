@@ -52,6 +52,8 @@ namespace project_CinemaManager
 
         private void mnuSetting_Click(object sender, EventArgs e)
         {
+            frmTestConnection frmTestConnection = new frmTestConnection();
+            frmTestConnection.ShowDialog();
 
         }
     }

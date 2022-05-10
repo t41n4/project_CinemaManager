@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using DAO;
 using DTO;
 
-namespace project_CinemaManager.Tier_1_Presenstasion
+namespace project_CinemaManager
 {
     public partial class frmTestConnection : Form
     {
