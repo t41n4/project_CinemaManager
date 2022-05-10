@@ -52,11 +52,29 @@
     <Compile Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_Manager.Designer.cs">
       <DependentUpon>UI_Manager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\frmCustomer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmSeller.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\frmCustomer.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmSeller.Designer.cs">
+      <DependentUpon>frmSeller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\Admin\frmTheatre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\Admin\frmTheatre.Designer.cs">
+      <DependentUpon>frmTheatre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomer.Designer.cs">
       <DependentUpon>frmCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\Customer\frmCustomertai1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\Customer\frmCustomertai1.Designer.cs">
+      <DependentUpon>frmCustomertai1.cs</DependentUpon>
     </Compile>
     <Compile Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_AccountManager.cs">
       <SubType>UserControl</SubType>
@@ -186,8 +204,17 @@
     <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_Manager.resx">
       <DependentUpon>UI_Manager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\frmCustomer.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmSeller.resx">
+      <DependentUpon>frmSeller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmTheatre.resx">
+      <DependentUpon>frmTheatre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\frmCustomertai1.resx">
+      <DependentUpon>frmCustomertai1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_AccountManager.resx">
       <DependentUpon>UI_AccountManager.cs</DependentUpon>
