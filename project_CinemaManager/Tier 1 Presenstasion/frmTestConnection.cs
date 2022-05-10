@@ -23,8 +23,7 @@ namespace project_CinemaManager
             {
                 txtServerName.Text = Properties.Settings.Default.DataSource;
                 txtDatabaseName.Text = Properties.Settings.Default.InitialCatalog;
-                txtUserName.Text = Properties.Settings.Default.UserID;
-                txtPassword.Text = Properties.Settings.Default.pwd;
+               
             }
 
         }
@@ -45,24 +44,14 @@ namespace project_CinemaManager
         {
             btnConnect.Enabled = false;
             btnExit.Enabled = false;
-            if (txtPassword.Text != "")
-            {
-                connectionSTR = "Data Source=" + txtServerName.Text
-                    + ";Initial Catalog=" + txtDatabaseName.Text
-                    + ";User ID=" + txtUserName.Text
-                    + ";pwd=" + txtPassword.Text;
-            }
-            else
-            {
+ 
                 connectionSTR = "Data Source=" + txtServerName.Text
                     + ";Initial Catalog=" + txtDatabaseName.Text
                     + ";Integrated Security=True";
-            }
+            
 
             Properties.Settings.Default.DataSource = txtServerName.Text;
             Properties.Settings.Default.InitialCatalog = txtDatabaseName.Text;
-            Properties.Settings.Default.UserID = txtUserName.Text;
-            Properties.Settings.Default.pwd = txtPassword.Text;
             Properties.Settings.Default.connectionSTR = connectionSTR;
             Properties.Settings.Default.Save();
 
