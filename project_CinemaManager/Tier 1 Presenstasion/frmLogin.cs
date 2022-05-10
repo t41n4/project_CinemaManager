@@ -71,5 +71,18 @@ namespace project_CinemaManager
             frmTestConnection.ShowDialog();
 
         }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Enter)
+            {
+                btnLogin.PerformClick();
+            }
+        }
     }
 }

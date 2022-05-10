@@ -36,10 +36,18 @@ namespace project_CinemaManager
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            frmAdminNewDesign frmAdminNewDesign = new frmAdminNewDesign();
+            frmAdminNewDesign.ShowDialog();
+            this.Show();
         }
 
         private void btnSeller_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmAdmin_Load(object sender, EventArgs e)
         {
 
         }

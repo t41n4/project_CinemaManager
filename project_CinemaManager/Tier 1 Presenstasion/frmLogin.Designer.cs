@@ -37,8 +37,8 @@ namespace project_CinemaManager
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.label1 = new System.Windows.Forms.Label();
             this.mnuSetting = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -104,6 +104,7 @@ namespace project_CinemaManager
             this.txtPassword.Size = new System.Drawing.Size(270, 38);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // txtUsername
             // 
@@ -122,9 +123,16 @@ namespace project_CinemaManager
             this.mnuSetting});
             this.menuStrip1.Location = new System.Drawing.Point(158, 294);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(322, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(172, 36);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // mnuSetting
+            // 
+            this.mnuSetting.Name = "mnuSetting";
+            this.mnuSetting.Size = new System.Drawing.Size(164, 32);
+            this.mnuSetting.Text = "Test Connection";
+            this.mnuSetting.Click += new System.EventHandler(this.mnuSetting_Click);
             // 
             // label1
             // 
@@ -136,13 +144,6 @@ namespace project_CinemaManager
             this.label1.TabIndex = 7;
             this.label1.Text = "Cinema Manager";
             // 
-            // mnuSetting
-            // 
-            this.mnuSetting.Name = "mnuSetting";
-            this.mnuSetting.Size = new System.Drawing.Size(164, 32);
-            this.mnuSetting.Text = "Test Connection";
-            this.mnuSetting.Click += new System.EventHandler(this.mnuSetting_Click);
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -153,6 +154,7 @@ namespace project_CinemaManager
             this.Controls.Add(this.menuStrip1);
             this.Name = "frmLogin";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
