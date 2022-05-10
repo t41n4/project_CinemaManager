@@ -37,8 +37,8 @@ namespace project_CinemaManager
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.mnuSetting = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
+            this.mnuSetting = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -115,22 +115,16 @@ namespace project_CinemaManager
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuSetting});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 352);
+            this.menuStrip1.Location = new System.Drawing.Point(158, 294);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(489, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(322, 36);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // mnuSetting
-            // 
-            this.mnuSetting.Name = "mnuSetting";
-            this.mnuSetting.Size = new System.Drawing.Size(164, 32);
-            this.mnuSetting.Text = "Test Connection";
             // 
             // label1
             // 
@@ -141,6 +135,13 @@ namespace project_CinemaManager
             this.label1.Size = new System.Drawing.Size(314, 45);
             this.label1.TabIndex = 7;
             this.label1.Text = "Cinema Manager";
+            // 
+            // mnuSetting
+            // 
+            this.mnuSetting.Name = "mnuSetting";
+            this.mnuSetting.Size = new System.Drawing.Size(164, 32);
+            this.mnuSetting.Text = "Test Connection";
+            this.mnuSetting.Click += new System.EventHandler(this.mnuSetting_Click);
             // 
             // frmLogin
             // 
@@ -170,9 +171,9 @@ namespace project_CinemaManager
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem mnuSetting;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem mnuSetting;
     }
 }
 

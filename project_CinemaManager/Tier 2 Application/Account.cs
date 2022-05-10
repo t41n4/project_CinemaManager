@@ -6,12 +6,12 @@ namespace DTO
 {
     public class Account
     {
-        public Account(string userName, string staffID, int type, string password = null)
+        public Account(string userName, string ID, int type, string password = null)
         {
             this.UserName = userName;
             this.Password = password;
             this.Type = type;
-            this.StaffID = staffID;
+            this.ID = ID;
         }
 
         public Account(DataRow row)
@@ -19,7 +19,7 @@ namespace DTO
             this.UserName = row["UserName"].ToString();
             this.Password = row["Pass"].ToString();
             this.Type = (int)row["LoaiTK"];
-            this.StaffID = row["idNV"].ToString();
+            this.ID = row["idNV"].ToString();
         }
 
 
@@ -27,7 +27,7 @@ namespace DTO
 
         public string Password { get; set; }
 
-        public string StaffID { get; set; }
+        public string ID { get; set; }
 
         public string UserName { get; set; }
 

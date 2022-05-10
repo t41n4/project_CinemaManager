@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAO;
+using DTO;
 
 namespace project_CinemaManager
 {
@@ -27,7 +28,7 @@ namespace project_CinemaManager
             if (result == 1)
             {
                 Account loginAccount = AccountDAO.GetAccountByUserName(userName);
-                frmDashBoard frm = new frmDashBoard(loginAccount);
+                frmAdmin frm = new frmAdmin(loginAccount);
                 this.Hide();
                 frm.ShowDialog();
                 this.Show();
@@ -41,6 +42,17 @@ namespace project_CinemaManager
                 MessageBox.Show("KẾT NỐI THẤT BẠI", "THÔNG BÁO");
             }
             btnLogin.Enabled = true;
+       
+        }
+
+        private int Login(string userName, string passWord)
+        {
+            return AccountDAO.Login(userName, passWord);
+        }
+
+        private void mnuSetting_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

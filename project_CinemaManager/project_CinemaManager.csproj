@@ -46,54 +46,63 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Tier 1\frmLogin.cs">
+    <Compile Include="Tier 1 Presenstasion\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tier 1\frmLogin.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1\Form2.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tier 1\Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdmin.Designer.cs">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1\frmSignUp.cs">
+    <Compile Include="Tier 1 Presenstasion\frmSignUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tier 1\frmSignUp.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\frmSignUp.Designer.cs">
       <DependentUpon>frmSignUp.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tier 2\Account.cs" />
-    <Compile Include="Tier 2\Cinema.cs" />
-    <Compile Include="Tier 2\Customer.cs" />
-    <Compile Include="Tier 2\FormatMovie.cs" />
-    <Compile Include="Tier 2\Genre.cs" />
-    <Compile Include="Tier 2\Movie.cs" />
-    <Compile Include="Tier 2\MovieByGenre.cs" />
-    <Compile Include="Tier 2\ScreenType.cs" />
-    <Compile Include="Tier 2\ShowTimes.cs" />
-    <Compile Include="Tier 2\Staff.cs" />
-    <Compile Include="Tier 2\Ticket.cs" />
-    <Compile Include="Tier 3\AccountDAO.cs" />
-    <Compile Include="Tier 3\CinemaDAO.cs" />
-    <Compile Include="Tier 3\CustomerDAO.cs" />
-    <Compile Include="Tier 3\DataProvider.cs" />
-    <Compile Include="Tier 3\FormatMovieDAO.cs" />
-    <Compile Include="Tier 3\GenreDAO.cs" />
-    <Compile Include="Tier 3\MovieByGenreDAO.cs" />
-    <Compile Include="Tier 3\MovieDAO.cs" />
-    <Compile Include="Tier 3\RevenueDAO.cs" />
-    <Compile Include="Tier 3\ScreenTypeDAO.cs" />
-    <Compile Include="Tier 3\ShowTimesDAO.cs" />
-    <Compile Include="Tier 3\StaffDAO.cs" />
-    <Compile Include="Tier 3\TicketDAO.cs" />
-    <EmbeddedResource Include="Tier 1\frmLogin.resx">
+    <Compile Include="Tier 1 Presenstasion\frmTestConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmTestConnection.Designer.cs">
+      <DependentUpon>frmTestConnection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tier 2 Application\Account.cs" />
+    <Compile Include="Tier 2 Application\Cinema.cs" />
+    <Compile Include="Tier 2 Application\Customer.cs" />
+    <Compile Include="Tier 2 Application\FormatMovie.cs" />
+    <Compile Include="Tier 2 Application\Genre.cs" />
+    <Compile Include="Tier 2 Application\Movie.cs" />
+    <Compile Include="Tier 2 Application\MovieByGenre.cs" />
+    <Compile Include="Tier 2 Application\ScreenType.cs" />
+    <Compile Include="Tier 2 Application\ShowTimes.cs" />
+    <Compile Include="Tier 2 Application\Staff.cs" />
+    <Compile Include="Tier 2 Application\Ticket.cs" />
+    <Compile Include="Tier 3 DB\AccountDB.cs" />
+    <Compile Include="Tier 3 DB\CinemaDB.cs" />
+    <Compile Include="Tier 3 DB\CustomerDB.cs" />
+    <Compile Include="Tier 3 DB\DataProvider.cs" />
+    <Compile Include="Tier 3 DB\FormatMovieDB.cs" />
+    <Compile Include="Tier 3 DB\GenreDB.cs" />
+    <Compile Include="Tier 3 DB\MovieByGenreDB.cs" />
+    <Compile Include="Tier 3 DB\MovieDB.cs" />
+    <Compile Include="Tier 3 DB\RevenueDB.cs" />
+    <Compile Include="Tier 3 DB\ScreenTypeDB.cs" />
+    <Compile Include="Tier 3 DB\ShowTimesDB.cs" />
+    <Compile Include="Tier 3 DB\StaffDB.cs" />
+    <Compile Include="Tier 3 DB\TicketDB.cs" />
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmAdmin.resx">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tier 1 Presenstasion\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1\frmSignUp.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\frmSignUp.resx">
       <DependentUpon>frmSignUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -105,6 +114,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Tier 1 Presenstasion\frmTestConnection.resx">
+      <DependentUpon>frmTestConnection.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -118,6 +130,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Tier 1 Presenstasion\Customer\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
