@@ -1,7 +1,7 @@
 ﻿
 namespace project_CinemaManager
 {
-    partial class frmCustomer
+    partial class frmCustomertai1
     {
         /// <summary>
         /// Required designer variable.
@@ -296,7 +296,7 @@ namespace project_CinemaManager
             this.dtgvCustomer.Size = new System.Drawing.Size(301, 454);
             this.dtgvCustomer.TabIndex = 22;
             // 
-            // frmCustomer
+            // frmCustomertai1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -309,8 +309,9 @@ namespace project_CinemaManager
             this.Controls.Add(this.txtSearchCus);
             this.Controls.Add(this.btnDeleteCustomer);
             this.Controls.Add(this.grpCustomer);
-            this.Name = "frmCustomer";
-            this.Text = "frmCustomer";
+            this.Name = "frmCustomertai1";
+            this.Text = "frmCustomer1";
+            this.Load += new System.EventHandler(this.frmCustomertai_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudPoint)).EndInit();
             this.grpCustomer.ResumeLayout(false);
             this.grpCustomer.PerformLayout();

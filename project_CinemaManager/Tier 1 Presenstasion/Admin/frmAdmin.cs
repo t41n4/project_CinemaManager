@@ -44,7 +44,10 @@ namespace project_CinemaManager
 
         private void btnSeller_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            frmSeller frm = new frmSeller();
+            frm.ShowDialog();
+            this.Show();
         }
 
         private void frmAdmin_Load(object sender, EventArgs e)

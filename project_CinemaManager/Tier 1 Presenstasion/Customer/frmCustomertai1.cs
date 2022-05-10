@@ -12,15 +12,20 @@ using DTO;
 
 namespace project_CinemaManager
 {
-    public partial class frmCustomer : Form
+    public partial class frmCustomertai1 : Form
     {
         private Account loginAccount;
         BindingSource customerList = new BindingSource();
-        public frmCustomer(Account loginAccount)
+        public frmCustomertai1(Account loginAccount)
         {
             InitializeComponent();
             this.LoginAccount = loginAccount;
         }
+
+        public void frmCustomertai()
+        {
+        }
+
         public Account LoginAccount
         {
             get { return loginAccount; }
@@ -28,7 +33,7 @@ namespace project_CinemaManager
         }
         void ChangeAccount(int type)
         {
-           
+
         }
 
         void LoadCustomer()
@@ -136,6 +141,11 @@ namespace project_CinemaManager
                 btnSearchCus.PerformClick();
                 e.SuppressKeyPress = true;//Tắt tiếng *ting của windows
             }
+        }
+
+        private void frmCustomertai_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
