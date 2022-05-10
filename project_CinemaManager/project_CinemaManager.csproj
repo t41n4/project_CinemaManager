@@ -261,5 +261,9 @@
       <SubType>Form</SubType>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tier 1 Presenstasion\Customer\Data_Filler\" />
+    <Folder Include="Tier 1 Presenstasion\Customer\UI_Customer\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
