@@ -311,29 +311,7 @@ namespace project_CinemaManager
             }
         }
 
-        private void chkCustomer_Click(object sender, EventArgs e)
-        {
-            if (chkCustomer.Checked == true)
-            {
-                frmCustomer frm = new frmCustomer();
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
-                    customer = frm.customer;
-                    lblCustomerName.Text = customer.Name;
-                    lblPoint.Text = customer.Point + "";
-                    ShowOrHideLablePoint();
-                }
-                else
-                {
-                    chkCustomer.Checked = false;
-                }
-            }
-            else
-            {
-                ShowOrHideLablePoint();
-                customer = null;
-            }
-        }
+        
 
         private void btnFreeTicket_Click(object sender, EventArgs e)
         {

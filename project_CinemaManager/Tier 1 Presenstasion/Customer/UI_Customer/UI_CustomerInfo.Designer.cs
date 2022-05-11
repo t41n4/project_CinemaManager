@@ -1,7 +1,7 @@
 ﻿
 namespace project_CinemaManager
 {
-    partial class frmCustomertai1
+    partial class UICustomerInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -29,68 +29,23 @@ namespace project_CinemaManager
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSearchCus = new System.Windows.Forms.Button();
-            this.btnShowCustomer = new System.Windows.Forms.Button();
-            this.nudPoint = new System.Windows.Forms.NumericUpDown();
             this.lblCusID = new System.Windows.Forms.Label();
             this.txtCusID = new System.Windows.Forms.TextBox();
             this.txtCusAddress = new System.Windows.Forms.TextBox();
             this.lblCusINumber = new System.Windows.Forms.Label();
             this.txtCusName = new System.Windows.Forms.TextBox();
-            this.btnUpdateCustomer = new System.Windows.Forms.Button();
-            this.btnAddCustomer = new System.Windows.Forms.Button();
             this.lblCusBirth = new System.Windows.Forms.Label();
             this.txtCusPhone = new System.Windows.Forms.TextBox();
             this.lblCusPhone = new System.Windows.Forms.Label();
-            this.lblCusPoint = new System.Windows.Forms.Label();
             this.txtCusBirth = new System.Windows.Forms.TextBox();
             this.lblCusAddress = new System.Windows.Forms.Label();
             this.txtCusINumber = new System.Windows.Forms.TextBox();
             this.lblCusName = new System.Windows.Forms.Label();
-            this.txtSearchCus = new System.Windows.Forms.TextBox();
-            this.btnDeleteCustomer = new System.Windows.Forms.Button();
             this.grpCustomer = new System.Windows.Forms.GroupBox();
-            this.dtgvCustomer = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPoint)).BeginInit();
+            this.btnDatVe = new System.Windows.Forms.Button();
+            this.btnConfigInfo = new System.Windows.Forms.Button();
             this.grpCustomer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvCustomer)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnSearchCus
-            // 
-            this.btnSearchCus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearchCus.Location = new System.Drawing.Point(172, 562);
-            this.btnSearchCus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSearchCus.Name = "btnSearchCus";
-            this.btnSearchCus.Size = new System.Drawing.Size(27, 26);
-            this.btnSearchCus.TabIndex = 29;
-            this.btnSearchCus.UseVisualStyleBackColor = true;
-            // 
-            // btnShowCustomer
-            // 
-            this.btnShowCustomer.Location = new System.Drawing.Point(33, 522);
-            this.btnShowCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnShowCustomer.Name = "btnShowCustomer";
-            this.btnShowCustomer.Size = new System.Drawing.Size(91, 32);
-            this.btnShowCustomer.TabIndex = 23;
-            this.btnShowCustomer.Text = "Xem";
-            this.btnShowCustomer.UseVisualStyleBackColor = true;
-            this.btnShowCustomer.Click += new System.EventHandler(this.btnShowCustomer_Click);
-            // 
-            // nudPoint
-            // 
-            this.nudPoint.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudPoint.Location = new System.Drawing.Point(177, 253);
-            this.nudPoint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.nudPoint.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.nudPoint.Name = "nudPoint";
-            this.nudPoint.Size = new System.Drawing.Size(75, 30);
-            this.nudPoint.TabIndex = 5;
-            this.nudPoint.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblCusID
             // 
@@ -108,6 +63,7 @@ namespace project_CinemaManager
             this.txtCusID.Location = new System.Drawing.Point(133, 37);
             this.txtCusID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCusID.Name = "txtCusID";
+            this.txtCusID.ReadOnly = true;
             this.txtCusID.Size = new System.Drawing.Size(191, 30);
             this.txtCusID.TabIndex = 2;
             // 
@@ -117,6 +73,7 @@ namespace project_CinemaManager
             this.txtCusAddress.Location = new System.Drawing.Point(133, 142);
             this.txtCusAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCusAddress.Name = "txtCusAddress";
+            this.txtCusAddress.ReadOnly = true;
             this.txtCusAddress.Size = new System.Drawing.Size(191, 30);
             this.txtCusAddress.TabIndex = 2;
             // 
@@ -136,28 +93,9 @@ namespace project_CinemaManager
             this.txtCusName.Location = new System.Drawing.Point(133, 71);
             this.txtCusName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCusName.Name = "txtCusName";
+            this.txtCusName.ReadOnly = true;
             this.txtCusName.Size = new System.Drawing.Size(191, 30);
             this.txtCusName.TabIndex = 2;
-            // 
-            // btnUpdateCustomer
-            // 
-            this.btnUpdateCustomer.Location = new System.Drawing.Point(521, 522);
-            this.btnUpdateCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnUpdateCustomer.Name = "btnUpdateCustomer";
-            this.btnUpdateCustomer.Size = new System.Drawing.Size(91, 32);
-            this.btnUpdateCustomer.TabIndex = 26;
-            this.btnUpdateCustomer.Text = "Sửa";
-            this.btnUpdateCustomer.UseVisualStyleBackColor = true;
-            // 
-            // btnAddCustomer
-            // 
-            this.btnAddCustomer.Location = new System.Drawing.Point(395, 522);
-            this.btnAddCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAddCustomer.Name = "btnAddCustomer";
-            this.btnAddCustomer.Size = new System.Drawing.Size(91, 32);
-            this.btnAddCustomer.TabIndex = 27;
-            this.btnAddCustomer.Text = "Thêm";
-            this.btnAddCustomer.UseVisualStyleBackColor = true;
             // 
             // lblCusBirth
             // 
@@ -175,6 +113,7 @@ namespace project_CinemaManager
             this.txtCusPhone.Location = new System.Drawing.Point(133, 177);
             this.txtCusPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCusPhone.Name = "txtCusPhone";
+            this.txtCusPhone.ReadOnly = true;
             this.txtCusPhone.Size = new System.Drawing.Size(191, 30);
             this.txtCusPhone.TabIndex = 2;
             // 
@@ -188,22 +127,13 @@ namespace project_CinemaManager
             this.lblCusPhone.TabIndex = 4;
             this.lblCusPhone.Text = "Số ĐT:";
             // 
-            // lblCusPoint
-            // 
-            this.lblCusPoint.AutoSize = true;
-            this.lblCusPoint.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCusPoint.Location = new System.Drawing.Point(24, 254);
-            this.lblCusPoint.Name = "lblCusPoint";
-            this.lblCusPoint.Size = new System.Drawing.Size(128, 23);
-            this.lblCusPoint.TabIndex = 4;
-            this.lblCusPoint.Text = "Điểm tích lũy:";
-            // 
             // txtCusBirth
             // 
             this.txtCusBirth.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCusBirth.Location = new System.Drawing.Point(133, 108);
             this.txtCusBirth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCusBirth.Name = "txtCusBirth";
+            this.txtCusBirth.ReadOnly = true;
             this.txtCusBirth.Size = new System.Drawing.Size(191, 30);
             this.txtCusBirth.TabIndex = 2;
             // 
@@ -223,6 +153,7 @@ namespace project_CinemaManager
             this.txtCusINumber.Location = new System.Drawing.Point(133, 214);
             this.txtCusINumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCusINumber.Name = "txtCusINumber";
+            this.txtCusINumber.ReadOnly = true;
             this.txtCusINumber.Size = new System.Drawing.Size(191, 30);
             this.txtCusINumber.TabIndex = 2;
             // 
@@ -236,28 +167,9 @@ namespace project_CinemaManager
             this.lblCusName.TabIndex = 4;
             this.lblCusName.Text = "Họ tên:";
             // 
-            // txtSearchCus
-            // 
-            this.txtSearchCus.Location = new System.Drawing.Point(33, 566);
-            this.txtSearchCus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtSearchCus.Name = "txtSearchCus";
-            this.txtSearchCus.Size = new System.Drawing.Size(132, 22);
-            this.txtSearchCus.TabIndex = 28;
-            // 
-            // btnDeleteCustomer
-            // 
-            this.btnDeleteCustomer.Location = new System.Drawing.Point(642, 522);
-            this.btnDeleteCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDeleteCustomer.Name = "btnDeleteCustomer";
-            this.btnDeleteCustomer.Size = new System.Drawing.Size(91, 32);
-            this.btnDeleteCustomer.TabIndex = 25;
-            this.btnDeleteCustomer.Text = "Xóa";
-            this.btnDeleteCustomer.UseVisualStyleBackColor = true;
-            // 
             // grpCustomer
             // 
             this.grpCustomer.BackColor = System.Drawing.Color.Transparent;
-            this.grpCustomer.Controls.Add(this.nudPoint);
             this.grpCustomer.Controls.Add(this.lblCusID);
             this.grpCustomer.Controls.Add(this.txtCusID);
             this.grpCustomer.Controls.Add(this.txtCusAddress);
@@ -266,7 +178,6 @@ namespace project_CinemaManager
             this.grpCustomer.Controls.Add(this.lblCusBirth);
             this.grpCustomer.Controls.Add(this.txtCusPhone);
             this.grpCustomer.Controls.Add(this.lblCusPhone);
-            this.grpCustomer.Controls.Add(this.lblCusPoint);
             this.grpCustomer.Controls.Add(this.txtCusBirth);
             this.grpCustomer.Controls.Add(this.lblCusAddress);
             this.grpCustomer.Controls.Add(this.txtCusINumber);
@@ -276,74 +187,62 @@ namespace project_CinemaManager
             this.grpCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpCustomer.Name = "grpCustomer";
             this.grpCustomer.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpCustomer.Size = new System.Drawing.Size(375, 466);
+            this.grpCustomer.Size = new System.Drawing.Size(437, 272);
             this.grpCustomer.TabIndex = 24;
             this.grpCustomer.TabStop = false;
-            this.grpCustomer.Text = "Thông tin khách hàng";
             // 
-            // dtgvCustomer
+            // btnDatVe
             // 
-            this.dtgvCustomer.AllowUserToAddRows = false;
-            this.dtgvCustomer.AllowUserToDeleteRows = false;
-            this.dtgvCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvCustomer.Location = new System.Drawing.Point(432, 28);
-            this.dtgvCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtgvCustomer.Name = "dtgvCustomer";
-            this.dtgvCustomer.ReadOnly = true;
-            this.dtgvCustomer.RowHeadersWidth = 51;
-            this.dtgvCustomer.RowTemplate.Height = 24;
-            this.dtgvCustomer.Size = new System.Drawing.Size(301, 454);
-            this.dtgvCustomer.TabIndex = 22;
+            this.btnDatVe.Location = new System.Drawing.Point(61, 293);
+            this.btnDatVe.Name = "btnDatVe";
+            this.btnDatVe.Size = new System.Drawing.Size(142, 59);
+            this.btnDatVe.TabIndex = 25;
+            this.btnDatVe.Text = "Đặt Vé";
+            this.btnDatVe.UseVisualStyleBackColor = true;
+            this.btnDatVe.Click += new System.EventHandler(this.btnDatVe_Click);
             // 
-            // frmCustomertai1
+            // btnConfigInfo
+            // 
+            this.btnConfigInfo.Location = new System.Drawing.Point(285, 293);
+            this.btnConfigInfo.Name = "btnConfigInfo";
+            this.btnConfigInfo.Size = new System.Drawing.Size(142, 59);
+            this.btnConfigInfo.TabIndex = 25;
+            this.btnConfigInfo.Text = "Chỉnh Sửa Thông Tin";
+            this.btnConfigInfo.UseVisualStyleBackColor = true;
+            this.btnConfigInfo.Click += new System.EventHandler(this.btnConfigInfo_Click);
+            // 
+            // UICustomerInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(823, 599);
-            this.Controls.Add(this.btnSearchCus);
-            this.Controls.Add(this.btnShowCustomer);
-            this.Controls.Add(this.dtgvCustomer);
-            this.Controls.Add(this.btnUpdateCustomer);
-            this.Controls.Add(this.btnAddCustomer);
-            this.Controls.Add(this.txtSearchCus);
-            this.Controls.Add(this.btnDeleteCustomer);
+            this.ClientSize = new System.Drawing.Size(620, 386);
+            this.Controls.Add(this.btnConfigInfo);
+            this.Controls.Add(this.btnDatVe);
             this.Controls.Add(this.grpCustomer);
-            this.Name = "frmCustomertai1";
+            this.Name = "UICustomerInfo";
             this.Text = "frmCustomer1";
-            this.Load += new System.EventHandler(this.frmCustomertai_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.nudPoint)).EndInit();
+            this.Load += new System.EventHandler(this.UICustomerInfo_Load);
             this.grpCustomer.ResumeLayout(false);
             this.grpCustomer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvCustomer)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnSearchCus;
-        private System.Windows.Forms.Button btnShowCustomer;
-        private System.Windows.Forms.NumericUpDown nudPoint;
         private System.Windows.Forms.Label lblCusID;
         private System.Windows.Forms.TextBox txtCusID;
         private System.Windows.Forms.TextBox txtCusAddress;
         private System.Windows.Forms.Label lblCusINumber;
         private System.Windows.Forms.TextBox txtCusName;
-        private System.Windows.Forms.Button btnUpdateCustomer;
-        private System.Windows.Forms.Button btnAddCustomer;
         private System.Windows.Forms.Label lblCusBirth;
         private System.Windows.Forms.TextBox txtCusPhone;
         private System.Windows.Forms.Label lblCusPhone;
-        private System.Windows.Forms.Label lblCusPoint;
         private System.Windows.Forms.TextBox txtCusBirth;
         private System.Windows.Forms.Label lblCusAddress;
         private System.Windows.Forms.TextBox txtCusINumber;
         private System.Windows.Forms.Label lblCusName;
-        private System.Windows.Forms.TextBox txtSearchCus;
-        private System.Windows.Forms.Button btnDeleteCustomer;
         private System.Windows.Forms.GroupBox grpCustomer;
-        private System.Windows.Forms.DataGridView dtgvCustomer;
+        private System.Windows.Forms.Button btnDatVe;
+        private System.Windows.Forms.Button btnConfigInfo;
     }
 }

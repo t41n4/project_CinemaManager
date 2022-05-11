@@ -226,7 +226,6 @@ BEGIN
 END
 GO
 
-DROP PROC USP_InsertAccount;
 CREATE PROC USP_InsertAccount @username NVARCHAR(100), @Pass VARCHAR(100), @loaiTK INT, @idnv VARCHAR(100)
 AS
 BEGIN
@@ -329,12 +328,12 @@ END
 GO
 
 CREATE PROC USP_SearchCustomer
-@hoTen NVARCHAR(100)
+@ID NVARCHAR(100)
 AS
 BEGIN
 	SELECT id AS [Mã khách hàng], HoTen AS [Họ tên], NgaySinh AS [Ngày sinh], DiaChi AS [Địa chỉ], SDT AS [SĐT], CMND AS [CMND], DiemTichLuy AS [Điểm tích lũy]
 	FROM dbo.KhachHang
-	WHERE dbo.fuConvertToUnsign1(HoTen) LIKE N'%' + dbo.fuConvertToUnsign1(@hoTen) + N'%'
+	WHERE @ID = id
 END
 GO
 

@@ -64,9 +64,9 @@ namespace frmAdminUserControls
             LoadCustomerList();
         }
 
-        void UpdateCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd, int point)
+        void UpdateCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
         {
-            if (CustomerDB.UpdateCustomer(id, hoTen, ngaySinh, diaChi, sdt, cmnd, point))
+            if (CustomerDB.UpdateCustomer(id, hoTen, ngaySinh, diaChi, sdt, cmnd))
             {
                 MessageBox.Show("Sửa khách hàng thành công");
             }
@@ -84,7 +84,7 @@ namespace frmAdminUserControls
             string cusPhone = txtCusPhone.Text;
             int cusINumber = Int32.Parse(txtCusINumber.Text);
             int cusPoint = (int)nudPoint.Value;
-            UpdateCustomer(cusID, cusName, cusBirth, cusAddress, cusPhone, cusINumber, cusPoint);
+            UpdateCustomer(cusID, cusName, cusBirth, cusAddress, cusPhone, cusINumber);
             LoadCustomerList();
         }
 
@@ -109,7 +109,7 @@ namespace frmAdminUserControls
         private void btnSearchCus_Click(object sender, EventArgs e)
         {
             string cusName = txtSearchCus.Text;
-            customerList.DataSource = CustomerDB.SearchCustomerByName(cusName);
+            customerList.DataSource = CustomerDB.SearchCustomerByID(cusName);
         }
 
 		private void txtSearchCus_KeyDown(object sender, KeyEventArgs e)

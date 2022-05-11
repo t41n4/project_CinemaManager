@@ -23,9 +23,11 @@ namespace DAO
             return result > 0;
         }
 
-        public static bool UpdateCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd, int point)
+        public static bool UpdateCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
         {
-            string command = string.Format("UPDATE dbo.KhachHang SET HoTen = N'{0}', NgaySinh = '{1}', DiaChi = N'{2}', SDT = '{3}', CMND = {4}, DiemTichLuy = {5} WHERE id = '{6}'", hoTen, ngaySinh, diaChi, sdt, cmnd, point, id);
+            string command = string.Format("UPDATE dbo.KhachHang SET HoTen = N'{0}', NgaySinh = '{1}', DiaChi = N'{2}', SDT = '{3}', CMND = {4} WHERE id = '{5}'", hoTen, ngaySinh, diaChi, sdt, cmnd, id);
+
+
             int result = DataProvider.ExecuteNonQuery(command);
             return result > 0;
         }
@@ -43,9 +45,9 @@ namespace DAO
             return result > 0;
         }
 
-        public static DataTable SearchCustomerByName(string name)
+        public static DataTable SearchCustomerByID(string ID)
         {
-            return DataProvider.ExecuteQuery("EXEC USP_SearchCustomer @hoTen", new object[] { name });
+            return DataProvider.ExecuteQuery("EXEC USP_SearchCustomer @ID", new object[] { ID });
         }
     }
 }

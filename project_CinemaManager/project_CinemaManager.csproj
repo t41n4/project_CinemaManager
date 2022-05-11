@@ -64,17 +64,11 @@
     <Compile Include="Tier 1 Presenstasion\Admin\frmTheatre.Designer.cs">
       <DependentUpon>frmTheatre.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCustomer.cs">
+    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI_CustomerInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCustomer.Designer.cs">
-      <DependentUpon>frmCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\frmCustomertai1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\frmCustomertai1.Designer.cs">
-      <DependentUpon>frmCustomertai1.cs</DependentUpon>
+    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI_CustomerInfo.Designer.cs">
+      <DependentUpon>UI_CustomerInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_AccountManager.cs">
       <SubType>UserControl</SubType>
@@ -210,11 +204,8 @@
     <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmTheatre.resx">
       <DependentUpon>frmTheatre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCustomer.resx">
-      <DependentUpon>frmCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\frmCustomertai1.resx">
-      <DependentUpon>frmCustomertai1.cs</DependentUpon>
+    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI_Customer\UI_CustomerInfo.resx">
+      <DependentUpon>UI_CustomerInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_AccountManager.resx">
       <DependentUpon>UI_AccountManager.cs</DependentUpon>
@@ -290,7 +281,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tier 1 Presenstasion\Customer\Data_Filler\" />
-    <Folder Include="Tier 1 Presenstasion\Customer\UI_Customer\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

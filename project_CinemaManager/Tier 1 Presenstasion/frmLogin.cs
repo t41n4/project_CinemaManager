@@ -40,9 +40,9 @@ namespace project_CinemaManager
                 }
                 else if (loginAccount.Type == 2)
                 {
-                    //frmCustomer frm = new frmCustomer(loginAccount);
+                    UICustomerInfo frm = new UICustomerInfo(loginAccount);
                     this.Hide();
-                    //frm.ShowDialog();
+                    frm.ShowDialog();
                     this.Show();
                 }
 
