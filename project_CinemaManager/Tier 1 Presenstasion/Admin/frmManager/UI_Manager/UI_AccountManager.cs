@@ -75,9 +75,9 @@ namespace frmAdminUserControls
             txtStaffName_Account.Text = staff.Name;
         }
 
-        void InsertAccount(string username, int accountType, string idStaff)
+        void InsertAccount(string username, string Pass, int accountType, string idStaff)
         {
-            if (AccountDAO.InsertAccount(username, accountType, idStaff))
+            if (AccountDAO.InsertAccount(username, Pass, accountType, idStaff))
             {
                 MessageBox.Show("Thêm tài khoản thành công, mật khẩu mặc định : 1");
             }
@@ -91,7 +91,7 @@ namespace frmAdminUserControls
             string username = txtUsername.Text;
             int accountType = (int)nudAccountType.Value;
             string staffID = cboStaffID_Account.SelectedValue.ToString();
-            InsertAccount(username, accountType, staffID);
+            //InsertAccount(username, accountType, staffID); đang cập nhật tính năng đăng kí tài khoản
             LoadAccountList();
         }
 

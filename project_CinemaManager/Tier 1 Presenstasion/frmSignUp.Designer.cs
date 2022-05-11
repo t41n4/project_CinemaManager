@@ -30,9 +30,15 @@ namespace project_CinemaManager
         private void InitializeComponent()
         {
             this.pnThanhVien = new System.Windows.Forms.Panel();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txtCMND = new System.Windows.Forms.TextBox();
             this.txtBirth = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.txtSDT = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtFullName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,12 +48,6 @@ namespace project_CinemaManager
             this.btnCofirm = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtCMND = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtUserName = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
             this.pnThanhVien.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,6 +74,33 @@ namespace project_CinemaManager
             this.pnThanhVien.Size = new System.Drawing.Size(492, 218);
             this.pnThanhVien.TabIndex = 14;
             // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(160, 178);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(302, 22);
+            this.txtPassword.TabIndex = 2;
+            this.txtPassword.Text = "123";
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.Location = new System.Drawing.Point(160, 149);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(302, 22);
+            this.txtUserName.TabIndex = 2;
+            this.txtUserName.Text = "Tai";
+            // 
+            // txtCMND
+            // 
+            this.txtCMND.Location = new System.Drawing.Point(160, 93);
+            this.txtCMND.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtCMND.Name = "txtCMND";
+            this.txtCMND.Size = new System.Drawing.Size(302, 22);
+            this.txtCMND.TabIndex = 2;
+            this.txtCMND.Text = "24512345";
+            // 
             // txtBirth
             // 
             this.txtBirth.Location = new System.Drawing.Point(160, 37);
@@ -81,6 +108,7 @@ namespace project_CinemaManager
             this.txtBirth.Name = "txtBirth";
             this.txtBirth.Size = new System.Drawing.Size(302, 22);
             this.txtBirth.TabIndex = 2;
+            this.txtBirth.Text = "4/11/2002";
             // 
             // txtAddress
             // 
@@ -89,6 +117,17 @@ namespace project_CinemaManager
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(302, 22);
             this.txtAddress.TabIndex = 2;
+            this.txtAddress.Text = "DakSak";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(11, 183);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(69, 17);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Password";
             // 
             // txtSDT
             // 
@@ -97,6 +136,27 @@ namespace project_CinemaManager
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(302, 22);
             this.txtSDT.TabIndex = 2;
+            this.txtSDT.Text = "091237123";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(11, 152);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(73, 17);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Username";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(11, 98);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(48, 17);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "CMND";
             // 
             // label6
             // 
@@ -115,6 +175,7 @@ namespace project_CinemaManager
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(302, 22);
             this.txtFullName.TabIndex = 1;
+            this.txtFullName.Text = "Nguyen Anh Tai";
             // 
             // label5
             // 
@@ -182,60 +243,6 @@ namespace project_CinemaManager
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 20);
             this.label1.TabIndex = 17;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(11, 98);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 17);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "CMND";
-            // 
-            // txtCMND
-            // 
-            this.txtCMND.Location = new System.Drawing.Point(160, 93);
-            this.txtCMND.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtCMND.Name = "txtCMND";
-            this.txtCMND.Size = new System.Drawing.Size(302, 22);
-            this.txtCMND.TabIndex = 2;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 152);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 17);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Username";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(11, 183);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 17);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Password";
-            // 
-            // txtUserName
-            // 
-            this.txtUserName.Location = new System.Drawing.Point(160, 149);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(302, 22);
-            this.txtUserName.TabIndex = 2;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(160, 178);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(302, 22);
-            this.txtPassword.TabIndex = 2;
             // 
             // frmSignUp
             // 

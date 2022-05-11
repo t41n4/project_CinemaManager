@@ -226,12 +226,12 @@ BEGIN
 END
 GO
 
-CREATE PROC USP_InsertAccount
-@username NVARCHAR(100), @loaiTK INT, @idnv VARCHAR(50)
+DROP PROC USP_InsertAccount;
+CREATE PROC USP_InsertAccount @username NVARCHAR(100), @Pass VARCHAR(100), @loaiTK INT, @idnv VARCHAR(100)
 AS
 BEGIN
 	INSERT dbo.TaiKhoan ( UserName, Pass, LoaiTK, idNV )
-	VALUES ( @username, '5512317111114510840231031535810616566202691', @loaiTK, @idnv )
+	VALUES ( @username, @Pass, @loaiTK, @idnv )
 END
 GO
 
@@ -254,6 +254,24 @@ BEGIN
 	WHERE UserName = @username
 END
 GO
+
+--CREATE PROC USP_UpdatePasswordAccount
+--@username NVARCHAR(100),
+-- @inputpass NVARCHAR(100),
+-- @newPass NVARCHAR(100),
+-- @oldPass NVARCHAR(100)
+--AS
+
+--BEGIN
+--	SELECT @oldPass = Pass
+--	FROM TaiKhoan
+--	WHERE UserName = @username
+--	IF @oldPass = @inputpass
+--		UPDATE dbo.TaiKhoan 
+--		SET Pass = '5512317111114510840231031535810616566202691' 
+--		WHERE UserName = @username	 	
+--END
+--GO
 
 CREATE PROC USP_SearchAccount
 @hoTen NVARCHAR(100)

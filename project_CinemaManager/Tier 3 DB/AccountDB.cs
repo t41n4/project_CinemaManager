@@ -11,7 +11,7 @@ namespace DAO
     {
         private AccountDAO() { }
 
-        private static string PasswordEncryption(string password)
+        public static string PasswordEncryption(string password)
         {
             //tính năng bảo mật cho việc đăng nhập
             byte[] temp = ASCIIEncoding.ASCII.GetBytes(password);//chuyển qua mảng kiểu byte từ một chuỗi
@@ -82,9 +82,10 @@ namespace DAO
 			return DataProvider.ExecuteQuery("USP_GetAccountList");
 		}
 
-		public static bool InsertAccount(string username, int accountType, string staffID)
+		public static bool InsertAccount(string username,string Pass, int accountType, string staffID)
 		{
-			int result = DataProvider.ExecuteNonQuery("EXEC USP_InsertAccount @username , @loaiTK , @idnv ", new object[] { username, accountType, staffID });
+			int result = DataProvider.ExecuteNonQuery("EXEC USP_InsertAccount @username , @Pass , @loaiTK , @idnv ", 
+                                                                 new object[] { username, Pass , accountType, staffID });
 			return result > 0;
 		}
 
