@@ -414,8 +414,7 @@ GO
 
 
 --LỊCH CHIẾU
-CREATE PROC USP_GetListShowTimesByFormatMovie
-@ID varchar(50), @Date Datetime
+CREATE PROC USP_GetListShowTimesByFormatMovie @ID varchar(50), @Date Datetime
 AS
 BEGIN
 	select l.id, pc.TenPhong, p.TenPhim, l.ThoiGianChieu, d.id as idDinhDang, l.GiaVe, l.TrangThai
@@ -426,14 +425,26 @@ BEGIN
 END
 GO
 
-CREATE PROC USP_GetShowtime
+--DROP PROC USP_GetShowtimeByIDMovie
+CREATE PROC USP_GetShowtimeByIDMovie @ID varchar(50)
 AS
 BEGIN
-	SELECT LC.id AS [Mã lịch chiếu], LC.idPhong AS [Mã phòng], P.TenPhim AS [Tên phim], MH.TenMH AS [Màn hình], LC.ThoiGianChieu AS [Thời gian chiếu], LC.GiaVe AS [Giá vé]
-	FROM dbo.LichChieu AS LC, dbo.DinhDangPhim AS DD, Phim AS P, dbo.LoaiManHinh AS MH
-	WHERE LC.idDinhDang = DD.id AND DD.idPhim = P.id AND DD.idLoaiManHinh = MH.id
+	SELECT TenPhim AS [Tên phim], ThoiGianChieu AS [Thời gian chiếu], GiaVe AS [Giá vé], LichChieu.idPhong AS [Phòng Chiếu]
+	FROM Phim ,DinhDangPhim ,LichChieu
+	WHERE Phim.id = @ID AND 
+			DinhDangPhim.idPhim = @ID AND 
+			LichChieu.idDinhDang = DinhDangPhim.id
 END
 GO
+
+--CREATE PROC USP_GetShowtime
+--AS
+--BEGIN
+--	SELECT LC.id AS [Mã lịch chiếu], LC.idPhong AS [Mã phòng], P.TenPhim AS [Tên phim], MH.TenMH AS [Màn hình], LC.ThoiGianChieu AS [Thời gian chiếu], LC.GiaVe AS [Giá vé]
+--	FROM dbo.LichChieu AS LC, dbo.DinhDangPhim AS DD, Phim AS P, dbo.LoaiManHinh AS MH
+--	WHERE LC.idDinhDang = DD.id AND DD.idPhim = P.id AND DD.idLoaiManHinh = MH.id
+--END
+--GO
 
 CREATE PROC USP_InsertShowtime
 @id VARCHAR(50), @idPhong VARCHAR(50), @idDinhDang VARCHAR(50), @thoiGianChieu DATETIME, @giaVe FLOAT

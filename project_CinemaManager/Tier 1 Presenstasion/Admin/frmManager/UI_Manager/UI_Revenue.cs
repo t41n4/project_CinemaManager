@@ -1,4 +1,4 @@
-﻿using DAO;
+﻿using DB;
 using System;
 using System.Globalization;
 using System.Linq;
@@ -21,7 +21,7 @@ namespace frmAdminUserControls
         }
         void LoadMovieIntoCombobox(ComboBox comboBox)
         {
-            comboBox.DataSource = MovieDAO.GetListMovie();
+            comboBox.DataSource = MovieDB.GetListMovie();
             comboBox.DisplayMember = "Name";
             comboBox.ValueMember = "ID";
         }

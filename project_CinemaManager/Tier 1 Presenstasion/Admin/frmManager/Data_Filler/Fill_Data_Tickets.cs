@@ -1,5 +1,5 @@
-﻿using DAO;
-using DTO;
+﻿using DB;
+using Application;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +18,7 @@ namespace frmAdminUserControls.DataUserControl
         {
             lsvAllListShowTimes.Items.Clear();
 
-            List<ShowTimes> allListShowTime = ShowTimesDAO.GetAllListShowTimes();
+            List<ShowTimes> allListShowTime = ShowTimeDB.GetAllListShowTimes();
             foreach (ShowTimes showTimes in allListShowTime)
             {
                 ListViewItem lvi = new ListViewItem(showTimes.CinemaName);
@@ -67,7 +67,7 @@ namespace frmAdminUserControls.DataUserControl
             }
             if (result == Row * Column)
             {
-                int ret = ShowTimesDAO.UpdateStatusShowTimes(showTimes.ID, 1);
+                int ret = ShowTimeDB.UpdateStatusShowTimes(showTimes.ID, 1);
                 if (ret > 0)
                     MessageBox.Show("TẠO VÉ TỰ ĐỘNG THÀNH CÔNG!", "THÔNG BÁO");
             }
@@ -132,7 +132,7 @@ namespace frmAdminUserControls.DataUserControl
             int result = TicketDAO.DeleteTicketsByShowTimes(showTimes.ID);
             if (result == Row * Column)
             {
-                int ret = ShowTimesDAO.UpdateStatusShowTimes(showTimes.ID, 0);
+                int ret = ShowTimeDB.UpdateStatusShowTimes(showTimes.ID, 0);
                 if (ret > 0)
                     MessageBox.Show("XÓA TẤT CẢ CÁC VÉ CỦA LỊCH CHIẾU ID=" + showTimes.ID + " THÀNH CÔNG!", "THÔNG BÁO");
             }
@@ -154,7 +154,7 @@ namespace frmAdminUserControls.DataUserControl
         {
             lsvAllListShowTimes.Items.Clear();
 
-            List<ShowTimes> allListShowTime = ShowTimesDAO.GetListShowTimesNotCreateTickets();
+            List<ShowTimes> allListShowTime = ShowTimeDB.GetListShowTimesNotCreateTickets();
             foreach (ShowTimes showTimes in allListShowTime)
             {
                 ListViewItem lvi = new ListViewItem(showTimes.CinemaName);

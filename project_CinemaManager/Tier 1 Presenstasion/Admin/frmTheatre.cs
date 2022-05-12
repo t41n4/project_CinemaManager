@@ -10,8 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAO;
-using DTO;
+using DB;
+using Application;
 
 namespace project_CinemaManager
 {
@@ -54,7 +54,7 @@ namespace project_CinemaManager
                 + Times.Time.ToShortTimeString() + " - "
                 + Times.Time.AddMinutes(Movie.Time).ToShortTimeString();
             if (Movie.Poster != null)
-                picFilm.Image = MovieDAO.byteArrayToImage(Movie.Poster);
+                picFilm.Image = MovieDB.byteArrayToImage(Movie.Poster);
 
             rdoAdult.Checked = true;
             chkCustomer.Enabled = false;

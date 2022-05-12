@@ -1,5 +1,5 @@
-﻿using DAO;
-using DTO;
+﻿using DB;
+using Application;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -26,7 +26,7 @@ namespace frmAdminUserControls.DataUserControl
         }
         void LoadMovieIDIntoCombobox(ComboBox comboBox)
         {
-            comboBox.DataSource = MovieDAO.GetListMovie();
+            comboBox.DataSource = MovieDB.GetListMovie();
             comboBox.DisplayMember = "ID";
             comboBox.ValueMember = "ID";
         }
@@ -59,7 +59,7 @@ namespace frmAdminUserControls.DataUserControl
         private void txtFormatID_TextChanged(object sender, EventArgs e)
         {
             string movieID = (string)dtgvFormat.SelectedCells[0].OwningRow.Cells["Mã phim"].Value;
-            Movie movieSelecting = MovieDAO.GetMovieByID(movieID);
+            Movie movieSelecting = MovieDB.GetMovieByID(movieID);
             //This is the Movie that we're currently selecting in dtgv
 
             if (movieSelecting == null)

@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAO;
-using DTO;
+using DB;
+using Application;
 
 namespace project_CinemaManager
 {
@@ -28,7 +28,7 @@ namespace project_CinemaManager
             int result = Login(userName, passWord);
             if (result == 1)
             {
-                Account loginAccount = AccountDAO.GetAccountByUserName(userName);
+                Account loginAccount = AccountDB.GetAccountByUserName(userName);
 
                 if (loginAccount.Type == 1)
                 {
@@ -62,7 +62,7 @@ namespace project_CinemaManager
 
         private int Login(string userName, string passWord)
         {
-            return AccountDAO.Login(userName, passWord);
+            return AccountDB.Login(userName, passWord);
         }
 
 

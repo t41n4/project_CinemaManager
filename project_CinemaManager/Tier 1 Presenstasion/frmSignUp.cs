@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAO;
-using DTO;
+using DB;
+using Application;
 namespace project_CinemaManager
 {
     public partial class frmSignUp : Form
@@ -85,9 +85,9 @@ namespace project_CinemaManager
         void SignupAccount(string username,string Pass)
         {
             string showPass = Pass;
-            Pass =AccountDAO.PasswordEncryption(Pass);
+            Pass =AccountDB.PasswordEncryption(Pass);
 
-            if (AccountDAO.InsertAccount(username, Pass, 2 , ID))
+            if (AccountDB.InsertAccount(username, Pass, 2 , ID))
             {
                 MessageBox.Show("Thêm tài khoản:"  + username+  "thành công, mật khẩu:" + showPass);
             }

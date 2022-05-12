@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAO;
-using DTO;
+using DB;
+using Application;
 
 namespace project_CinemaManager
 {
@@ -45,18 +45,13 @@ namespace project_CinemaManager
         {
             LoadCustomer();
         }
-        private void SearchCus()
-        {
-            string cusName = "";
-            customerList.DataSource = CustomerDB.SearchCustomerByID(cusName);
-        }
-        
-          
-
 
         private void btnDatVe_Click(object sender, EventArgs e)
         {
-
+            UI_CustomerChonPhim uI_CustomerChonPhim = new UI_CustomerChonPhim();
+            this.Hide();
+            uI_CustomerChonPhim.ShowDialog();
+            this.Show();
         }
 
         private void UICustomerInfo_Load(object sender, EventArgs e)

@@ -2,7 +2,7 @@
 using System.Data;
 using System.Linq;
 
-namespace DTO
+namespace Application
 {
     public class Movie
     {

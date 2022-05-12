@@ -1,4 +1,4 @@
-﻿using DTO;
+﻿using Application;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -6,9 +6,9 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 
-namespace DAO
+namespace DB
 {
-    public class MovieDAO
+    public class MovieDB
     {
         //ảnh -> byte[]
         public static byte[] imageToByteArray(System.Drawing.Image imageIn)

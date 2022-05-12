@@ -64,6 +64,18 @@
     <Compile Include="Tier 1 Presenstasion\Admin\frmTheatre.Designer.cs">
       <DependentUpon>frmTheatre.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI_ChonGioChieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI_ChonGioChieu.Designer.cs">
+      <DependentUpon>UI_ChonGioChieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI_CustomerChonPhim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI_CustomerChonPhim.Designer.cs">
+      <DependentUpon>UI_CustomerChonPhim.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI_CustomerInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +215,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmTheatre.resx">
       <DependentUpon>frmTheatre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI_Customer\UI_ChonGioChieu.resx">
+      <DependentUpon>UI_ChonGioChieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI_Customer\UI_CustomerChonPhim.resx">
+      <DependentUpon>UI_CustomerChonPhim.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI_Customer\UI_CustomerInfo.resx">
       <DependentUpon>UI_CustomerInfo.cs</DependentUpon>

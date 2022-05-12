@@ -1,12 +1,12 @@
-﻿using DTO;
+﻿using Application;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
-namespace DAO
+namespace DB
 {
-    public class ShowTimesDAO
+    public class ShowTimeDB
     {
         public static DataTable GetListShowTimeByFormatMovie(string formatMovieID, DateTime date)
         {
@@ -41,7 +41,12 @@ namespace DAO
             return DataProvider.ExecuteNonQuery(query, new object[] { showTimesID, status });
         }
 
-		public static DataTable GetListShowtime()
+        public static DataTable GetShowtimeByIDMovie(string showTimesID)
+        {          
+                return DataProvider.ExecuteQuery("EXEC USP_GetShowtimeByIDMovie @ID", new object[] { showTimesID });
+        }
+
+        public static DataTable GetListShowtime()
 		{
 			return DataProvider.ExecuteQuery("EXEC USP_GetShowtime");
 		}

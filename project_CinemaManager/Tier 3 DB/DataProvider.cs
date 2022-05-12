@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace DAO
+namespace DB
 {
     public class DataProvider
     {

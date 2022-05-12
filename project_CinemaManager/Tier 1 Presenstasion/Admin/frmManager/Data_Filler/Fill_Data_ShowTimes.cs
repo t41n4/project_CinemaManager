@@ -1,5 +1,5 @@
-﻿using DAO;
-using DTO;
+﻿using DB;
+using Application;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -24,7 +24,7 @@ namespace frmAdminUserControls.DataUserControl
         }
         void LoadShowtimeList()
         {
-            showtimeList.DataSource = ShowTimesDAO.GetListShowtime();
+            showtimeList.DataSource = ShowTimeDB.GetListShowtime();
         }
         private void btnShowShowtime_Click(object sender, EventArgs e)
         {
@@ -105,7 +105,7 @@ namespace frmAdminUserControls.DataUserControl
         //Insert
         void InsertShowtime(string id, string cinemaID, string formatMovieID, DateTime time, float ticketPrice)
         {
-            if (ShowTimesDAO.InsertShowtime(id, cinemaID, formatMovieID, time, ticketPrice))
+            if (ShowTimeDB.InsertShowtime(id, cinemaID, formatMovieID, time, ticketPrice))
             {
                 MessageBox.Show("Thêm lịch chiếu thành công");
             }
@@ -129,7 +129,7 @@ namespace frmAdminUserControls.DataUserControl
         //Update
         void UpdateShowtime(string id, string cinemaID, string formatMovieID, DateTime time, float ticketPrice)
         {
-            if (ShowTimesDAO.UpdateShowtime(id, cinemaID, formatMovieID, time, ticketPrice))
+            if (ShowTimeDB.UpdateShowtime(id, cinemaID, formatMovieID, time, ticketPrice))
             {
                 MessageBox.Show("Sửa lịch chiếu thành công");
             }
@@ -153,7 +153,7 @@ namespace frmAdminUserControls.DataUserControl
         //Delete
         void DeleteShowtime(string id)
         {
-            if (ShowTimesDAO.DeleteShowtime(id))
+            if (ShowTimeDB.DeleteShowtime(id))
             {
                 MessageBox.Show("Xóa lịch chiếu thành công");
             }
@@ -173,7 +173,7 @@ namespace frmAdminUserControls.DataUserControl
         private void btnSearchShowtime_Click(object sender, EventArgs e)
         {
             string movieName = txtSearchShowtime.Text;
-            showtimeList.DataSource = ShowTimesDAO.SearchShowtimeByMovieName(movieName);
+            showtimeList.DataSource = ShowTimeDB.SearchShowtimeByMovieName(movieName);
         }
 
 		private void txtSearchShowtime_KeyDown(object sender, KeyEventArgs e)

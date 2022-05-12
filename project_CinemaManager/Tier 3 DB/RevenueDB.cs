@@ -2,7 +2,7 @@
 using System.Data;
 using System.Linq;
 
-namespace DAO
+namespace DB
 {
     public class RevenueDAO
     {

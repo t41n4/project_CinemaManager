@@ -1,15 +1,15 @@
-﻿using DTO;
+﻿using Application;
 using System;
 using System.Data;
 using System.Linq;
 using System.Security.Cryptography;//thư viện để mã hóa mật khẩu
 using System.Text;
 
-namespace DAO
+namespace DB
 {
-    public class AccountDAO
+    public class AccountDB
     {
-        private AccountDAO() { }
+        private AccountDB() { }
 
         public static string PasswordEncryption(string password)
         {

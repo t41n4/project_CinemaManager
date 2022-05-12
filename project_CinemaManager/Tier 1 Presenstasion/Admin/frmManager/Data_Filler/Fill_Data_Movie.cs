@@ -1,5 +1,5 @@
-﻿using DAO;
-using DTO;
+﻿using DB;
+using Application;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -26,7 +26,7 @@ namespace frmAdminUserControls.DataUserControl
         }
         void LoadMovieList()
         {
-            movieList.DataSource = MovieDAO.GetMovie();
+            movieList.DataSource = MovieDB.GetMovie();
         }
         private void btnShowMovie_Click(object sender, EventArgs e)
         {
@@ -75,18 +75,18 @@ namespace frmAdminUserControls.DataUserControl
                 }
             }
 
-            Movie movie = MovieDAO.GetMovieByID(txtMovieID.Text);
+            Movie movie = MovieDB.GetMovieByID(txtMovieID.Text);
 
             if (movie == null)
                 return;
 
             if (movie.Poster != null)
-                picFilm.Image = MovieDAO.byteArrayToImage(movie.Poster);
+                picFilm.Image = MovieDB.byteArrayToImage(movie.Poster);
         }
 
         void InsertMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, int year, byte[] image)
         {
-            if (MovieDAO.InsertMovie(id, name, desc, length, startDate, endDate, productor, director, year, image))
+            if (MovieDB.InsertMovie(id, name, desc, length, startDate, endDate, productor, director, year, image))
             {
                 MessageBox.Show("Thêm phim thành công");
             }
@@ -143,14 +143,14 @@ namespace frmAdminUserControls.DataUserControl
                 MessageBox.Show("Mời bạn thêm hình ảnh cho phim trước");
                 return;
             }
-            InsertMovie(movieID, movieName, movieDesc, movieLength, startDate, endDate, productor, director, year, MovieDAO.imageToByteArray(picFilm.Image));
+            InsertMovie(movieID, movieName, movieDesc, movieLength, startDate, endDate, productor, director, year, MovieDB.imageToByteArray(picFilm.Image));
             InsertMovie_Genre(movieID, clbMovieGenre);
             LoadMovieList();
         }
 
         void UpdateMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, int year, byte[] image)
         {
-            if (MovieDAO.UpdateMovie(id, name, desc, length, startDate, endDate, productor, director, year, image))
+            if (MovieDB.UpdateMovie(id, name, desc, length, startDate, endDate, productor, director, year, image))
             {
                 MessageBox.Show("Sửa phim thành công");
             }
@@ -184,14 +184,14 @@ namespace frmAdminUserControls.DataUserControl
                 MessageBox.Show("Mời bạn thêm hình ảnh cho phim trước");
                 return;
             }
-            UpdateMovie(movieID, movieName, movieDesc, movieLength, startDate, endDate, productor, director, year, MovieDAO.imageToByteArray(picFilm.Image));
+            UpdateMovie(movieID, movieName, movieDesc, movieLength, startDate, endDate, productor, director, year, MovieDB.imageToByteArray(picFilm.Image));
             UpdateMovie_Genre(movieID, clbMovieGenre);
             LoadMovieList();
         }
 
         void DeleteMovie(string id)
         {
-            if (MovieDAO.DeleteMovie(id))
+            if (MovieDB.DeleteMovie(id))
             {
                 MessageBox.Show("Xóa phim thành công");
             }

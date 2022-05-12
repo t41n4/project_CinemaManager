@@ -1,10 +1,10 @@
-﻿using DTO;
+﻿using Application;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
-namespace DAO
+namespace DB
 {
     public class StaffDAO
     {
@@ -52,7 +52,7 @@ namespace DAO
 
         public static bool DeleteStaff(string id)
         {
-            AccountDAO.DeleteAccountByIdStaff(id);
+            AccountDB.DeleteAccountByIdStaff(id);
             int result = DataProvider.ExecuteNonQuery("DELETE dbo.NhanVien WHERE id = '" + id + "'");
             return result > 0;
         }

@@ -1,5 +1,5 @@
-﻿using DAO;
-using DTO;
+﻿using DB;
+using Application;
 using project_CinemaManager;
 using System;
 using System.Collections.Generic;
@@ -32,7 +32,7 @@ namespace project_CinemaManager
 
             private void LoadMovie(DateTime date)
             {
-                cboFilmName.DataSource = MovieDAO.GetListMovieByDate(date);
+                cboFilmName.DataSource = MovieDB.GetListMovieByDate(date);
                 cboFilmName.DisplayMember = "Name";
             }
 
@@ -60,7 +60,7 @@ namespace project_CinemaManager
 
             private void LoadListShowTimeByFilm(string formatMovieID)
             {
-                DataTable data = ShowTimesDAO.GetListShowTimeByFormatMovie(formatMovieID, dtpThoiGian.Value);
+                DataTable data = ShowTimeDB.GetListShowTimeByFormatMovie(formatMovieID, dtpThoiGian.Value);
                 //if (data == null) return;
                 foreach (DataRow row in data.Rows)
                 {

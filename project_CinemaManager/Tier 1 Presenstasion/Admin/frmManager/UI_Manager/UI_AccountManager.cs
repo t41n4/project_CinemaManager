@@ -1,5 +1,5 @@
-﻿using DAO;
-using DTO;
+﻿using DB;
+using Application;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -24,7 +24,7 @@ namespace frmAdminUserControls
         }
         void LoadAccountList()
         {
-            accountList.DataSource = AccountDAO.GetAccountList();
+            accountList.DataSource = AccountDB.GetAccountList();
         }
         private void btnShowAccount_Click(object sender, EventArgs e)
         {
@@ -77,7 +77,7 @@ namespace frmAdminUserControls
 
         void InsertAccount(string username, string Pass, int accountType, string idStaff)
         {
-            if (AccountDAO.InsertAccount(username, Pass, accountType, idStaff))
+            if (AccountDB.InsertAccount(username, Pass, accountType, idStaff))
             {
                 MessageBox.Show("Thêm tài khoản thành công, mật khẩu mặc định : 1");
             }
@@ -97,7 +97,7 @@ namespace frmAdminUserControls
 
         void UpdateAccount(string username, int accountType)
         {
-            if (AccountDAO.UpdateAccount(username, accountType))
+            if (AccountDB.UpdateAccount(username, accountType))
             {
                 MessageBox.Show("Sửa tài khoản thành công");
             }
@@ -116,7 +116,7 @@ namespace frmAdminUserControls
 
         void DeleteAccount(string username)
         {
-            if (AccountDAO.DeleteAccount(username))
+            if (AccountDB.DeleteAccount(username))
             {
                 MessageBox.Show("Xóa tài khoản thành công");
             }
@@ -134,7 +134,7 @@ namespace frmAdminUserControls
 
         void ResetPassword(string username)
         {
-            if (AccountDAO.ResetPassword(username))
+            if (AccountDB.ResetPassword(username))
             {
                 MessageBox.Show("Reset mật khẩu thành công, mật khẩu mặc định : 1");
             }
@@ -153,7 +153,7 @@ namespace frmAdminUserControls
         private void btnSearchAccount_Click(object sender, EventArgs e)
         {
             string staffName = txtSearchAccount.Text;
-            accountList.DataSource = AccountDAO.SearchAccountByStaffName(staffName);
+            accountList.DataSource = AccountDB.SearchAccountByStaffName(staffName);
         }
 
 		private void txtSearchAccount_KeyDown(object sender, KeyEventArgs e)

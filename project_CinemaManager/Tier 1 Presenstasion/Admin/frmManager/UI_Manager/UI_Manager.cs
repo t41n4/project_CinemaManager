@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAO;
-using DTO;
+using DB;
+using Application;
 using frmAdminUserControls;
 
 namespace project_CinemaManager

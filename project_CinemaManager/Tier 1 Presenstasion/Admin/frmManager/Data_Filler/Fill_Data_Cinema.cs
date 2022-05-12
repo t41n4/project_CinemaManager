@@ -1,5 +1,5 @@
-﻿using DAO;
-using DTO;
+﻿using DB;
+using Application;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -45,7 +45,7 @@ namespace frmAdminUserControls.DataUserControl
         //Use this to bind data between dtgv and cbo because cbo can't be applied DataBindings normally
         {
             string screenName = (string)dtgvCinema.SelectedCells[0].OwningRow.Cells["Tên màn hình"].Value;
-            DTO.ScreenType screenType = ScreenTypeDAO.GetScreenTypeByName(screenName);
+            Application.ScreenType screenType = ScreenTypeDAO.GetScreenTypeByName(screenName);
             //This is the ScreenType that we're currently selecting in dtgv
 
             cboCinemaScreenType.SelectedItem = screenType;
