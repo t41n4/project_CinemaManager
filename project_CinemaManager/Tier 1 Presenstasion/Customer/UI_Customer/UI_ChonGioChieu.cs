@@ -15,6 +15,7 @@ namespace project_CinemaManager
     {
         private Movie GetMovie;
         BindingSource showtimeList = new BindingSource();
+
         public UI_ChonGioChieu(Movie SelectedFilmFromUser)
         {
             InitializeComponent();
@@ -35,6 +36,7 @@ namespace project_CinemaManager
 
         private void AddShowtimeBinding()
         {
+
             txtMovieName_Showtime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Tên phim", true, DataSourceUpdateMode.Never);           
             txtShowtimeDateTime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Thời gian chiếu", true, DataSourceUpdateMode.Never);
             txtTicketPrice_Showtime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Giá vé", true, DataSourceUpdateMode.Never);
