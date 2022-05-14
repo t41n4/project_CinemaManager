@@ -13,6 +13,21 @@ namespace DB
             string query = "USP_GetListShowTimesByFormatMovie @ID , @Date";
             return DataProvider.ExecuteQuery(query, new object[] { formatMovieID, date });
         }
+
+        public static ShowTimes GetShowtimeByIDShowTimeAndIDMovie(string ShowtimeID,string MovieID)
+        {
+            string query = "USP_GetShowtimeByIDShowTimeAndIDMovie @IDShowTime , @IDMovie";
+            var data =  DataProvider.ExecuteQuery(query, new object[] { ShowtimeID ,MovieID});
+            ShowTimes showTimes =  null;
+            foreach (DataRow item in data.Rows)
+            {
+                showTimes = new ShowTimes(item);
+                return showTimes;
+            }
+            return showTimes;
+        }
+
+
         public static List<ShowTimes> GetAllListShowTimes()
         {
             List<ShowTimes> listShowTimes = new List<ShowTimes>();

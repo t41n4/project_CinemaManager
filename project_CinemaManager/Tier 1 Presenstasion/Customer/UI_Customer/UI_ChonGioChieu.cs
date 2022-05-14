@@ -46,7 +46,18 @@ namespace project_CinemaManager
 
         private void btnChonGioChieu_Click(object sender, EventArgs e)
         {
+            string IdShowTimes;
+            int selectedrowindex = dtgvShowtime.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dtgvShowtime.Rows[selectedrowindex];
+            IdShowTimes = Convert.ToString(selectedRow.Cells["Mã lịch chiếu"].Value);
 
+            ShowTimes showTimes = ShowTimeDB.GetShowtimeByIDShowTimeAndIDMovie(IdShowTimes, GetMovie.ID);
+
+
+            UI_ChonChoNgoi uI_ChonChoNgoi = new UI_ChonChoNgoi(showTimes, GetMovie);
+            this.Hide();
+            uI_ChonChoNgoi.ShowDialog();
+            this.Show();
         }
     }
 }

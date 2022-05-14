@@ -93,6 +93,7 @@ namespace project_CinemaManager
             Idfilm = Convert.ToString(selectedRow.Cells["Mã phim"].Value);
             
             Movie SelectedFilm = MovieDB.GetMovieByID(Idfilm);
+
             UI_ChonGioChieu chonGioChieu = new UI_ChonGioChieu(SelectedFilm);
             this.Hide();
             chonGioChieu.ShowDialog();
