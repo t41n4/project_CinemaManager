@@ -48,6 +48,7 @@ namespace project_CinemaManager
             this.btnCofirm = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnThanhVien.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,12 +72,12 @@ namespace project_CinemaManager
             this.pnThanhVien.Location = new System.Drawing.Point(11, 12);
             this.pnThanhVien.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pnThanhVien.Name = "pnThanhVien";
-            this.pnThanhVien.Size = new System.Drawing.Size(492, 218);
+            this.pnThanhVien.Size = new System.Drawing.Size(415, 218);
             this.pnThanhVien.TabIndex = 14;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(160, 178);
+            this.txtPassword.Location = new System.Drawing.Point(100, 178);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(302, 22);
@@ -85,7 +86,7 @@ namespace project_CinemaManager
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(160, 149);
+            this.txtUserName.Location = new System.Drawing.Point(100, 149);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(302, 22);
@@ -94,7 +95,7 @@ namespace project_CinemaManager
             // 
             // txtCMND
             // 
-            this.txtCMND.Location = new System.Drawing.Point(160, 93);
+            this.txtCMND.Location = new System.Drawing.Point(100, 93);
             this.txtCMND.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(302, 22);
@@ -103,7 +104,7 @@ namespace project_CinemaManager
             // 
             // txtBirth
             // 
-            this.txtBirth.Location = new System.Drawing.Point(160, 37);
+            this.txtBirth.Location = new System.Drawing.Point(100, 37);
             this.txtBirth.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtBirth.Name = "txtBirth";
             this.txtBirth.Size = new System.Drawing.Size(302, 22);
@@ -112,7 +113,7 @@ namespace project_CinemaManager
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(160, 65);
+            this.txtAddress.Location = new System.Drawing.Point(100, 65);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(302, 22);
@@ -131,7 +132,7 @@ namespace project_CinemaManager
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(160, 121);
+            this.txtSDT.Location = new System.Drawing.Point(100, 121);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(302, 22);
@@ -170,7 +171,7 @@ namespace project_CinemaManager
             // 
             // txtFullName
             // 
-            this.txtFullName.Location = new System.Drawing.Point(160, 9);
+            this.txtFullName.Location = new System.Drawing.Point(100, 9);
             this.txtFullName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(302, 22);
@@ -219,13 +220,14 @@ namespace project_CinemaManager
             // btnCofirm
             // 
             this.btnCofirm.AutoSize = true;
-            this.btnCofirm.Location = new System.Drawing.Point(201, 237);
+            this.btnCofirm.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCofirm.Location = new System.Drawing.Point(103, 241);
             this.btnCofirm.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnCofirm.Name = "btnCofirm";
             this.btnCofirm.Size = new System.Drawing.Size(120, 35);
             this.btnCofirm.TabIndex = 15;
             this.btnCofirm.Text = "Xác Nhận";
-            this.btnCofirm.UseVisualStyleBackColor = true;
+            this.btnCofirm.UseVisualStyleBackColor = false;
             this.btnCofirm.Click += new System.EventHandler(this.btnCofirm_Click);
             // 
             // label2
@@ -244,12 +246,27 @@ namespace project_CinemaManager
             this.label1.Size = new System.Drawing.Size(80, 20);
             this.label1.TabIndex = 17;
             // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button1.Location = new System.Drawing.Point(233, 241);
+            this.button1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 35);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Cancel";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnCofirm_Click);
+            // 
             // frmSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(586, 316);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(234)))), ((int)(((byte)(216)))));
+            this.ClientSize = new System.Drawing.Size(449, 289);
             this.Controls.Add(this.pnThanhVien);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCofirm);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -283,5 +300,6 @@ namespace project_CinemaManager
         public System.Windows.Forms.TextBox txtCMND;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button1;
     }
 }

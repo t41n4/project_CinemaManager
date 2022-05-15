@@ -165,10 +165,10 @@ namespace project_CinemaManager
             // 
             // btnChonPhim
             // 
-            this.btnChonPhim.Location = new System.Drawing.Point(12, 170);
+            this.btnChonPhim.Location = new System.Drawing.Point(57, 240);
             this.btnChonPhim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnChonPhim.Name = "btnChonPhim";
-            this.btnChonPhim.Size = new System.Drawing.Size(324, 144);
+            this.btnChonPhim.Size = new System.Drawing.Size(243, 74);
             this.btnChonPhim.TabIndex = 66;
             this.btnChonPhim.Text = "Chọn Phim";
             this.btnChonPhim.UseVisualStyleBackColor = true;
@@ -197,14 +197,15 @@ namespace project_CinemaManager
             this.dtgvMovie.Name = "dtgvMovie";
             this.dtgvMovie.ReadOnly = true;
             this.dtgvMovie.RowHeadersWidth = 51;
-            this.dtgvMovie.Size = new System.Drawing.Size(442, 345);
+            this.dtgvMovie.Size = new System.Drawing.Size(442, 343);
             this.dtgvMovie.TabIndex = 52;
             // 
             // UI_CustomerChonPhim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1009, 345);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(234)))), ((int)(((byte)(216)))));
+            this.ClientSize = new System.Drawing.Size(1009, 343);
             this.Controls.Add(this.btnChonPhim);
             this.Controls.Add(this.picFilm);
             this.Controls.Add(this.txtMovieProductor);

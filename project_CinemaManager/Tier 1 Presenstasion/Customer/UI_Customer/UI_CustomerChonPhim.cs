@@ -13,7 +13,7 @@ namespace project_CinemaManager
 {
     public partial class UI_CustomerChonPhim : Form
     {
-       
+        static public UI_ChonGioChieu chonGioChieu;
         public UI_CustomerChonPhim()
         {
             InitializeComponent();
@@ -94,7 +94,7 @@ namespace project_CinemaManager
             
             Movie SelectedFilm = MovieDB.GetMovieByID(Idfilm);
 
-            UI_ChonGioChieu chonGioChieu = new UI_ChonGioChieu(SelectedFilm);
+            chonGioChieu = new UI_ChonGioChieu(SelectedFilm);
             this.Hide();
             chonGioChieu.ShowDialog();
             this.Show();

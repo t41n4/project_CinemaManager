@@ -38,9 +38,7 @@ namespace project_CinemaManager
         float displayPrice = 0;//Hiện thị giá vé
         float ticketPrice = 0;//Lưu giá vé gốc
         float total = 0;//Tổng giá tiền
-        float discount = 0;//Tiền được giảm
         float payment = 0;//Tiền phải trả
-        int plusPoint = 0;//Số điểm tích lũy khi mua vé
 
         Customer customer;//lưu lại khách hàng thành viên
 
@@ -65,7 +63,6 @@ namespace project_CinemaManager
 
             LoadDataCinema(Times.CinemaName);
 
-            ShowOrHideLablePoint();
 
             listSeat = TicketDAO.GetListTicketsByShowTimes(Times.ID);
 
@@ -135,7 +132,7 @@ namespace project_CinemaManager
                 ticket.Price = ticketPrice;
                 displayPrice = ticket.Price;
                 total += ticketPrice;
-                payment = total - discount;
+                payment = total ;
                 ticket.Type = 1;
 
                 listSeatSelected.Add(btnSeat);
@@ -147,7 +144,7 @@ namespace project_CinemaManager
                 Ticket ticket = btnSeat.Tag as Ticket;
 
                 total -= ticket.Price;
-                payment = total - discount;
+                payment = total;
                 ticket.Price = 0;
                 displayPrice = ticket.Price;
                 ticket.Type = 0;
@@ -163,18 +160,6 @@ namespace project_CinemaManager
           
         }
 
-        //dùng để ẩn hiện lable điểm tích lũy của khách hàng thành viên
-        private void ShowOrHideLablePoint()
-        {
-            //if (chkCustomer.Checked == true)
-            //{
-            //    pnCustomer.Visible = true;
-            //}
-            //else
-            //{
-            //    pnCustomer.Visible = false;
-            //}
-        }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -192,20 +177,9 @@ namespace project_CinemaManager
         private void RestoreDefault()
         {
             listSeatSelected.Clear();
-
-            //rdoAdult.Checked = true;
-            //grpLoaiVe.Enabled = false;
-            //chkCustomer.Checked = false;
-            //chkCustomer.Enabled = false;
-
-            ShowOrHideLablePoint();
-
             total = 0;
             displayPrice = 0;
-            discount = 0;
             payment = 0;
-            plusPoint = 0;
-
             LoadBill();
         }
 
@@ -243,11 +217,5 @@ namespace project_CinemaManager
             RestoreDefault();
             this.OnLoad(new EventArgs());
         }
-
-        private void btnPayment_Click_1(object sender, EventArgs e)
-        {
-
-        }
     }
-
 }

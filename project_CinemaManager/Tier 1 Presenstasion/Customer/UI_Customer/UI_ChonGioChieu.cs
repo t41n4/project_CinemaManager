@@ -20,28 +20,38 @@ namespace project_CinemaManager
         {
             InitializeComponent();
             this.Movie = SelectedFilmFromUser;
-            LoadShowtime();
+           
         }
         public Movie Movie
         {
             get { return GetMovie; }
             set { GetMovie = value; }
         }
-        void LoadShowtime()
+        public void LoadShowtime()
         {      
             dtgvShowtime.DataSource = showtimeList;
             showtimeList.DataSource = ShowTimeDB.GetShowtimeByIDMovie(GetMovie.ID);
-            AddShowtimeBinding();
+            if (showtimeList.Count  > 0 )
+            {
+                AddShowtimeBinding();
+            }
+            else
+            {
+                MessageBox.Show("Phim này không có lịch chiếu!!");
+                UI_CustomerChonPhim.chonGioChieu.Close();
+
+            }
+           
         }
 
         private void AddShowtimeBinding()
         {
-
+            
             txtMovieName_Showtime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Tên phim", true, DataSourceUpdateMode.Never);           
             txtShowtimeDateTime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Thời gian chiếu", true, DataSourceUpdateMode.Never);
             txtTicketPrice_Showtime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Giá vé", true, DataSourceUpdateMode.Never);
             txtShowRoom_Showtime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Phòng chiếu", true, DataSourceUpdateMode.Never);
-
+       
         }
 
         private void btnChonGioChieu_Click(object sender, EventArgs e)
@@ -58,6 +68,11 @@ namespace project_CinemaManager
             this.Hide();
             uI_ChonChoNgoi.ShowDialog();
             this.Show();
+        }
+
+        private void UI_ChonGioChieu_Load(object sender, EventArgs e)
+        {
+            LoadShowtime();
         }
     }
 }

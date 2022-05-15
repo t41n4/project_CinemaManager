@@ -61,7 +61,7 @@ namespace project_CinemaManager
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.Gray;
+            this.label1.BackColor = System.Drawing.Color.DarkGray;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
@@ -86,7 +86,7 @@ namespace project_CinemaManager
             // 
             // btnConnect
             // 
-            this.btnConnect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnConnect.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnConnect.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnect.ForeColor = System.Drawing.SystemColors.Control;
             this.btnConnect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -134,6 +134,7 @@ namespace project_CinemaManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(234)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(670, 252);
             this.Controls.Add(this.txtServerName);
             this.Controls.Add(this.panel1);

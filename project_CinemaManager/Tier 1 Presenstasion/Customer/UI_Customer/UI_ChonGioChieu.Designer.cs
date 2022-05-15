@@ -35,13 +35,13 @@ namespace project_CinemaManager
             this.txtTicketPrice_Showtime = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtShowtimeDateTime = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnChonGioChieu = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtShowRoom_Showtime = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtgvShowtime = new System.Windows.Forms.DataGridView();
-            this.txtShowRoom_Showtime = new System.Windows.Forms.TextBox();
-            this.txtShowtimeDateTime = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -112,6 +112,16 @@ namespace project_CinemaManager
             this.label5.TabIndex = 12;
             this.label5.Text = "Ngày,Giờ:";
             // 
+            // txtShowtimeDateTime
+            // 
+            this.txtShowtimeDateTime.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtShowtimeDateTime.Location = new System.Drawing.Point(128, 45);
+            this.txtShowtimeDateTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtShowtimeDateTime.Name = "txtShowtimeDateTime";
+            this.txtShowtimeDateTime.ReadOnly = true;
+            this.txtShowtimeDateTime.Size = new System.Drawing.Size(216, 31);
+            this.txtShowtimeDateTime.TabIndex = 17;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btnChonGioChieu);
@@ -126,17 +136,18 @@ namespace project_CinemaManager
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(419, 390);
+            this.panel2.Size = new System.Drawing.Size(419, 313);
             this.panel2.TabIndex = 0;
             // 
             // btnChonGioChieu
             // 
-            this.btnChonGioChieu.Location = new System.Drawing.Point(22, 231);
+            this.btnChonGioChieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(234)))), ((int)(((byte)(216)))));
+            this.btnChonGioChieu.Location = new System.Drawing.Point(140, 231);
             this.btnChonGioChieu.Name = "btnChonGioChieu";
-            this.btnChonGioChieu.Size = new System.Drawing.Size(374, 147);
+            this.btnChonGioChieu.Size = new System.Drawing.Size(216, 70);
             this.btnChonGioChieu.TabIndex = 29;
             this.btnChonGioChieu.Text = "Chọn Giờ Chiếu";
-            this.btnChonGioChieu.UseVisualStyleBackColor = true;
+            this.btnChonGioChieu.UseVisualStyleBackColor = false;
             this.btnChonGioChieu.Click += new System.EventHandler(this.btnChonGioChieu_Click);
             // 
             // label2
@@ -149,32 +160,6 @@ namespace project_CinemaManager
             this.label2.TabIndex = 21;
             this.label2.Text = "Phòng chiếu:";
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dtgvShowtime);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1025, 390);
-            this.panel1.TabIndex = 13;
-            // 
-            // dtgvShowtime
-            // 
-            this.dtgvShowtime.AllowUserToAddRows = false;
-            this.dtgvShowtime.AllowUserToDeleteRows = false;
-            this.dtgvShowtime.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvShowtime.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvShowtime.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dtgvShowtime.Location = new System.Drawing.Point(424, 0);
-            this.dtgvShowtime.Margin = new System.Windows.Forms.Padding(4);
-            this.dtgvShowtime.Name = "dtgvShowtime";
-            this.dtgvShowtime.ReadOnly = true;
-            this.dtgvShowtime.RowHeadersWidth = 51;
-            this.dtgvShowtime.Size = new System.Drawing.Size(601, 390);
-            this.dtgvShowtime.TabIndex = 1;
-            // 
             // txtShowRoom_Showtime
             // 
             this.txtShowRoom_Showtime.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -185,24 +170,42 @@ namespace project_CinemaManager
             this.txtShowRoom_Showtime.Size = new System.Drawing.Size(216, 31);
             this.txtShowRoom_Showtime.TabIndex = 17;
             // 
-            // txtShowtimeDateTime
+            // panel1
             // 
-            this.txtShowtimeDateTime.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtShowtimeDateTime.Location = new System.Drawing.Point(121, 45);
-            this.txtShowtimeDateTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtShowtimeDateTime.Name = "txtShowtimeDateTime";
-            this.txtShowtimeDateTime.ReadOnly = true;
-            this.txtShowtimeDateTime.Size = new System.Drawing.Size(216, 31);
-            this.txtShowtimeDateTime.TabIndex = 17;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(234)))), ((int)(((byte)(216)))));
+            this.panel1.Controls.Add(this.dtgvShowtime);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1028, 313);
+            this.panel1.TabIndex = 13;
+            // 
+            // dtgvShowtime
+            // 
+            this.dtgvShowtime.AllowUserToAddRows = false;
+            this.dtgvShowtime.AllowUserToDeleteRows = false;
+            this.dtgvShowtime.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvShowtime.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvShowtime.Dock = System.Windows.Forms.DockStyle.Right;
+            this.dtgvShowtime.Location = new System.Drawing.Point(477, 0);
+            this.dtgvShowtime.Margin = new System.Windows.Forms.Padding(4);
+            this.dtgvShowtime.Name = "dtgvShowtime";
+            this.dtgvShowtime.ReadOnly = true;
+            this.dtgvShowtime.RowHeadersWidth = 51;
+            this.dtgvShowtime.Size = new System.Drawing.Size(551, 313);
+            this.dtgvShowtime.TabIndex = 1;
             // 
             // UI_ChonGioChieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 390);
+            this.ClientSize = new System.Drawing.Size(1028, 313);
             this.Controls.Add(this.panel1);
             this.Name = "UI_ChonGioChieu";
             this.Text = "UI_ChonGioChieu";
+            this.Load += new System.EventHandler(this.UI_ChonGioChieu_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel2.ResumeLayout(false);

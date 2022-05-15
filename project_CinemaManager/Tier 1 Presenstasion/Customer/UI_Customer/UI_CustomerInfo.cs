@@ -84,6 +84,14 @@ namespace project_CinemaManager
                 txtCusINumber.ReadOnly = false;
                 txtCusName.ReadOnly = false;
                 txtCusPhone.ReadOnly = false;
+
+                txtCusAddress.BackColor = System.Drawing.Color.White;
+                txtCusBirth.BackColor = System.Drawing.Color.White;
+                txtCusINumber.BackColor = System.Drawing.Color.White;
+                txtCusName.BackColor = System.Drawing.Color.White;
+                txtCusPhone.BackColor = System.Drawing.Color.White;
+
+
             }
             else 
             {                                   
@@ -103,17 +111,19 @@ namespace project_CinemaManager
                     txtCusINumber.ReadOnly = true;
                     txtCusName.ReadOnly = true;
                     txtCusPhone.ReadOnly = true;
+
+                    txtCusAddress.BackColor = System.Drawing.Color.Gray;
+                    txtCusBirth.BackColor = System.Drawing.Color.Gray;
+                    txtCusINumber.BackColor = System.Drawing.Color.Gray;
+                    txtCusName.BackColor = System.Drawing.Color.Gray;
+                    txtCusPhone.BackColor = System.Drawing.Color.Gray;
+
                 } 
 
               
             }
-
-
-
-
-
-
         }
 
+   
     }
 }

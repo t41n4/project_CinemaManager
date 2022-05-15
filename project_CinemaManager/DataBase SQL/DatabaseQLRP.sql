@@ -358,11 +358,20 @@ END
 GO
 
 --PHIM
+
+--Drop PROC USP_GetMovie
 CREATE PROC USP_GetMovie
 AS
 BEGIN
-	SELECT id AS [Mã phim], TenPhim AS [Tên phim], MoTa AS [Mô tả], ThoiLuong AS [Thời lượng], NgayKhoiChieu AS [Ngày khởi chiếu], NgayKetThuc AS [Ngày kết thúc], SanXuat AS [Sản xuất], DaoDien AS [Đạo diễn], NamSX AS [Năm SX], ApPhich AS [Áp Phích]
-	FROM dbo.Phim
+	SELECT Phim.id AS [Mã phim], TenPhim AS [Tên phim], MoTa AS [Mô tả], 
+	 ThoiLuong AS [Thời lượng], NgayKhoiChieu AS [Ngày khởi chiếu], 
+	 NgayKetThuc AS [Ngày kết thúc], SanXuat AS [Sản xuất], 
+	 DaoDien AS [Đạo diễn], NamSX AS [Năm SX], ApPhich AS [Áp Phích]
+	FROM Phim
+	WHERE Phim.id IN (SELECT DISTINCT (Phim.id)
+						FROM Phim,DinhDangPhim,LichChieu 
+						WHERE Phim.id = DinhDangPhim.idPhim 
+						AND LichChieu.idDinhDang = DinhDangPhim.id)	
 END
 GO
 
@@ -446,7 +455,8 @@ BEGIN
 	WHERE Phim.id = @IDMovie AND 
 			DinhDangPhim.idPhim = @IDMovie AND 
 			LichChieu.idDinhDang = DinhDangPhim.id AND
-			@IDShowTime = LichChieu.id  
+			@IDShowTime = LichChieu.id AND 
+			 LichChieu.TrangThai = 1
 END
 GO
 
@@ -509,6 +519,8 @@ BEGIN
 	order by l.ThoiGianChieu
 END
 GO
+
+
 
 CREATE PROC USP_UpdateStatusShowTimes
 @idLichChieu NVARCHAR(50), @status int

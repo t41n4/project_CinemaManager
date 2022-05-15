@@ -54,7 +54,7 @@ namespace project_CinemaManager
             this.panel1.Controls.Add(this.txtUsername);
             this.panel1.Location = new System.Drawing.Point(86, 67);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(306, 224);
+            this.panel1.Size = new System.Drawing.Size(306, 254);
             this.panel1.TabIndex = 4;
             // 
             // label3
@@ -78,7 +78,7 @@ namespace project_CinemaManager
             // btnSignUp
             // 
             this.btnSignUp.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnSignUp.Location = new System.Drawing.Point(14, 172);
+            this.btnSignUp.Location = new System.Drawing.Point(14, 192);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(270, 41);
             this.btnSignUp.TabIndex = 3;
@@ -89,7 +89,7 @@ namespace project_CinemaManager
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnLogin.Location = new System.Drawing.Point(14, 125);
+            this.btnLogin.Location = new System.Drawing.Point(14, 145);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(270, 41);
             this.btnLogin.TabIndex = 3;
@@ -117,14 +117,14 @@ namespace project_CinemaManager
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuSetting});
-            this.menuStrip1.Location = new System.Drawing.Point(158, 294);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 352);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(172, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(489, 36);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -138,10 +138,10 @@ namespace project_CinemaManager
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(78, 9);
+            this.label1.Font = new System.Drawing.Font("Consolas", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(67, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(314, 45);
+            this.label1.Size = new System.Drawing.Size(358, 51);
             this.label1.TabIndex = 7;
             this.label1.Text = "Cinema Manager";
             // 
@@ -149,6 +149,7 @@ namespace project_CinemaManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(234)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(489, 388);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
