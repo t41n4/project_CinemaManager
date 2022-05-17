@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,6 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_CinemaManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_CinemaManager.Designer.cs">
+      <DependentUpon>UI_CinemaManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_Manager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +221,9 @@
     <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_CinemaManager.resx">
+      <DependentUpon>UI_CinemaManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_Manager.resx">
       <DependentUpon>UI_Manager.cs</DependentUpon>
     </EmbeddedResource>
@@ -288,6 +299,7 @@
     <EmbeddedResource Include="Tier 1 Presenstasion\frmTestConnection.resx">
       <DependentUpon>frmTestConnection.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -305,9 +317,25 @@
     <Content Include="DataBase SQL\DatabaseQLRP.sql">
       <SubType>Form</SubType>
     </Content>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tier 1 Presenstasion\Customer\Data_Filler\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
