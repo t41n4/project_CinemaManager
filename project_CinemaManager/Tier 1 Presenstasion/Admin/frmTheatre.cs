@@ -27,13 +27,11 @@ namespace project_CinemaManager
 
         float displayPrice = 0;//Hiện thị giá vé
         float ticketPrice = 0;//Lưu giá vé gốc
-        float total = 0;//Tổng giá tiền
-        float discount = 0;//Tiền được giảm
+        float total = 0;//Tổng giá tiền     
         float payment = 0;//Tiền phải trả
-        int plusPoint = 0;//Số điểm tích lũy khi mua vé
+
 
         Customer customer;//lưu lại khách hàng thành viên
-
         ShowTimes Times;
         Movie Movie;
 
@@ -87,7 +85,6 @@ namespace project_CinemaManager
 
             lblTicketPrice.Text = displayPrice.ToString("c", culture);
             lblTotal.Text = total.ToString("c", culture);
-            lblDiscount.Text = discount.ToString("c", culture);
             lblPayment.Text = payment.ToString("c", culture);
 
             //Đổi đơn vị tiền tệ
@@ -114,6 +111,11 @@ namespace project_CinemaManager
 
         private void BtnSeat_Click(object sender, EventArgs e)
         {
+            if (listSeatSelected.Count > 8)
+            {
+                MessageBox.Show("BẠN CHỈ ĐỔI ĐƯỢC TỐT ĐA [8] VÉ", "THÔNG BÁO");
+                return;
+            }
             Button btnSeat = sender as Button;
             if (btnSeat.BackColor == Color.White)
             {
@@ -126,12 +128,8 @@ namespace project_CinemaManager
                 ticket.Price = ticketPrice;
                 displayPrice = ticket.Price;
                 total += ticketPrice;
-                payment = total - discount;
+                payment = total;
                 ticket.Type = 1;
-
-                listSeatSelected.Add(btnSeat);
-                plusPoint++;
-                lblPlusPoint.Text = plusPoint + "";
             }
             else if (btnSeat.BackColor == Color.Yellow)
             {
@@ -139,14 +137,12 @@ namespace project_CinemaManager
                 Ticket ticket = btnSeat.Tag as Ticket;
 
                 total -= ticket.Price;
-                payment = total - discount;
+                payment = total;
                 ticket.Price = 0;
                 displayPrice = ticket.Price;
                 ticket.Type = 0;
 
-                listSeatSelected.Remove(btnSeat);
-                plusPoint--;
-                lblPlusPoint.Text = plusPoint + "";
+                listSeatSelected.Remove(btnSeat);       
                 grpLoaiVe.Enabled = false;
             }
             else if (btnSeat.BackColor == Color.Red)
@@ -161,6 +157,14 @@ namespace project_CinemaManager
             else
             {
                 chkCustomer.Enabled = false;
+            }
+        }
+   
+        void CheckLeftRight()
+        {
+            foreach (var item in listSeatSelected)
+            {
+                if(item.Text.First)
             }
         }
 
@@ -203,9 +207,9 @@ namespace project_CinemaManager
 
             total = 0;
             displayPrice = 0;
-            discount = 0;
+
             payment = 0;
-            plusPoint = 0;
+
 
             LoadBill();
         }
@@ -236,7 +240,6 @@ namespace project_CinemaManager
 
                         ret += TicketDAO.BuyTicket(ticket.ID, ticket.Type, customer.ID, ticket.Price);
                     }
-                    customer.Point += plusPoint;
                     CustomerDB.UpdatePointCustomer(customer.ID, customer.Point);
                 }
                 else
@@ -257,109 +260,11 @@ namespace project_CinemaManager
             this.OnLoad(new EventArgs());
         }
 
-        private void rdoStudent_Click(object sender, EventArgs e)
-        {
-            if (rdoStudent.Checked == true)
-            {
-                if (listSeatSelected.Count == 0) return;
-                Ticket ticket = listSeatSelected[listSeatSelected.Count - 1].Tag as Ticket;
-                ticket.Type = 2;
+       
 
-                float oldPrice = ticket.Price;
-                ticket.Price = 0.8f * ticketPrice;
-                displayPrice = ticket.Price;
-                total = total + ticket.Price - oldPrice;
-                payment = total - discount;
-
-                LoadBill();
-            }
-        }
-
-        private void rdoAdult_Click(object sender, EventArgs e)
-        {
-            if (rdoAdult.Checked == true)
-            {
-                if (listSeatSelected.Count == 0) return;
-                Ticket ticket = listSeatSelected[listSeatSelected.Count - 1].Tag as Ticket;
-                ticket.Type = 1;
-
-                float oldPrice = ticket.Price;
-                ticket.Price = ticketPrice;
-                displayPrice = ticket.Price;
-                total = total + ticket.Price - oldPrice;
-                payment = total - discount;
-
-                LoadBill();
-            }
-        }
-
-        private void rdoChild_Click(object sender, EventArgs e)
-        {
-            if (rdoChild.Checked == true)
-            {
-                if (listSeatSelected.Count == 0) return;
-                Ticket ticket = listSeatSelected[listSeatSelected.Count - 1].Tag as Ticket;
-                ticket.Type = 3;
-
-                float oldPrice = ticket.Price;
-                ticket.Price = 0.7f * ticketPrice;
-                displayPrice = ticket.Price;
-                total = total + ticket.Price - oldPrice;
-                payment = total - discount;
-
-                LoadBill();
-            }
-        }
 
         
 
-        private void btnFreeTicket_Click(object sender, EventArgs e)
-        {
-            int freeTickets = (int)numericFreeTickets.Value;
-            if (freeTickets <= 0) return;
 
-            if (freeTickets > listSeat.Count)
-            {
-                MessageBox.Show("BẠN CHỈ ĐỔI ĐƯỢC TỐT ĐA [" + listSeatSelected.Count + "] VÉ", "THÔNG BÁO");
-                return;
-            }
-            int pointFreeTicket = freeTickets * 20;
-            if (customer.Point < pointFreeTicket)
-            {
-                MessageBox.Show("BẠN KHÔNG ĐỦ ĐIỂM TÍCH LŨY ĐỂ ĐỔI [" + freeTickets + "] VÉ", "THÔNG BÁO");
-                return;
-            }
-            else
-            {
-                DialogResult result = MessageBox.Show("BẠN CÓ MUỐN DÙNG ĐIỂM TÍCH LŨY ĐỂ ĐỔI [" + freeTickets + "] VÉ MIỄN PHÍ KHÔNG?",
-                                        "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    customer.Point -= pointFreeTicket;
-                    plusPoint -= freeTickets;
-
-                    if (CustomerDB.UpdatePointCustomer(customer.ID, customer.Point))
-                    {
-                        MessageBox.Show("BẠN ĐÃ DỔI ĐƯỢC [" + freeTickets + "] VÉ MIỄN PHÍ THÀNH CÔNG", "THÔNG BÁO");
-                    }
-                    lblPoint.Text = "" + customer.Point;
-                    lblPlusPoint.Text = "" + plusPoint;
-
-                    for (int i = 0; i < listSeatSelected.Count && freeTickets > 0; i++)
-                    {
-                        Ticket ticket = listSeatSelected[i].Tag as Ticket;
-                        if (ticket.Price != 0)
-                        {
-                            discount += ticket.Price;
-                            ticket.Price = 0;
-                            freeTickets--;
-                        }
-                    }
-
-                    payment = total - discount;
-                    LoadBill();
-                }
-            }
-        }
     }
 }

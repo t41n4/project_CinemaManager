@@ -60,6 +60,19 @@ namespace DB
             return result > 0;
         }
 
+        internal static Account GetAccountByID(string ID)
+        {
+            Account account = null;
+            DataTable data = DataProvider.ExecuteQuery("EXEC USP_GetAccountByID @ID", new object[] { ID });
+            foreach (DataRow item in data.Rows)
+            {
+                account = new Account(item);
+                return account;
+            }
+            return account;
+
+        }
+
         public static Account GetAccountByUserName(string userName)
         {
             DataTable data = DataProvider.ExecuteQuery("Select * from TaiKhoan where userName = '" + userName + "'");
@@ -102,9 +115,9 @@ namespace DB
 			return result > 0;
 		}
 
-		public static DataTable SearchAccountByStaffName(string name)
+		public static DataTable SearchAccount(string name)
 		{
-			return DataProvider.ExecuteQuery("EXEC USP_SearchAccount @hoten ", new object[] { name });
+			return DataProvider.ExecuteQuery("EXEC USP_SearchAccount @name ", new object[] { name });
 		}
 
 		public static bool ResetPassword(string username)
@@ -112,5 +125,7 @@ namespace DB
 			int result = DataProvider.ExecuteNonQuery("USP_ResetPasswordtAccount @username", new object[] { username});
 			return result > 0;
 		}
+
+ 
     }
 }

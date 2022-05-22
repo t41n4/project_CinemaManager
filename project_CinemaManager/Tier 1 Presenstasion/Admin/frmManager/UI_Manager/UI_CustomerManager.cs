@@ -38,7 +38,6 @@ namespace frmAdminUserControls
             txtCusAddress.DataBindings.Add("Text", dtgvCustomer.DataSource, "Địa chỉ", true, DataSourceUpdateMode.Never);
             txtCusPhone.DataBindings.Add("Text", dtgvCustomer.DataSource, "SĐT", true, DataSourceUpdateMode.Never);
             txtCusINumber.DataBindings.Add("Text", dtgvCustomer.DataSource, "CMND", true, DataSourceUpdateMode.Never);
-            nudPoint.DataBindings.Add("Value", dtgvCustomer.DataSource, "Điểm tích lũy", true, DataSourceUpdateMode.Never);
         }
 
         void InsertCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
@@ -83,7 +82,6 @@ namespace frmAdminUserControls
             string cusAddress = txtCusAddress.Text;
             string cusPhone = txtCusPhone.Text;
             int cusINumber = Int32.Parse(txtCusINumber.Text);
-            int cusPoint = (int)nudPoint.Value;
             UpdateCustomer(cusID, cusName, cusBirth, cusAddress, cusPhone, cusINumber);
             LoadCustomerList();
         }

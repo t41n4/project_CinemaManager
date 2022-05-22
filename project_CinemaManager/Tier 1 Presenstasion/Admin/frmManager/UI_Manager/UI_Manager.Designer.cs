@@ -34,7 +34,6 @@ namespace project_CinemaManager
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnAccountUC = new System.Windows.Forms.Button();
             this.btnCustomerUC = new System.Windows.Forms.Button();
-            this.btnStaffUC = new System.Windows.Forms.Button();
             this.btnDataUC = new System.Windows.Forms.Button();
             this.btnRevenueUC = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
@@ -43,11 +42,13 @@ namespace project_CinemaManager
             // 
             // pnAdmin
             // 
+            this.pnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(243)))), ((int)(((byte)(210)))));
+            this.pnAdmin.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnAdmin.Location = new System.Drawing.Point(0, 117);
+            this.pnAdmin.Location = new System.Drawing.Point(0, 105);
             this.pnAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnAdmin.Name = "pnAdmin";
-            this.pnAdmin.Size = new System.Drawing.Size(1372, 664);
+            this.pnAdmin.Size = new System.Drawing.Size(1520, 680);
             this.pnAdmin.TabIndex = 2;
             // 
             // panel2
@@ -58,121 +59,97 @@ namespace project_CinemaManager
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1372, 781);
+            this.panel2.Size = new System.Drawing.Size(1520, 785);
             this.panel2.TabIndex = 3;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Silver;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(243)))), ((int)(((byte)(210)))));
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.btnAccountUC);
             this.panel3.Controls.Add(this.btnCustomerUC);
-            this.panel3.Controls.Add(this.btnStaffUC);
             this.panel3.Controls.Add(this.btnDataUC);
             this.panel3.Controls.Add(this.btnRevenueUC);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1372, 117);
+            this.panel3.Size = new System.Drawing.Size(1520, 105);
             this.panel3.TabIndex = 1;
             // 
             // btnAccountUC
             // 
-            this.btnAccountUC.BackColor = System.Drawing.Color.Goldenrod;
+            this.btnAccountUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(103)))), ((int)(((byte)(206)))));
             this.btnAccountUC.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
             this.btnAccountUC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.btnAccountUC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnAccountUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccountUC.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btnAccountUC.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccountUC.ForeColor = System.Drawing.SystemColors.Control;
             this.btnAccountUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnAccountUC.Location = new System.Drawing.Point(751, 18);
+            this.btnAccountUC.Location = new System.Drawing.Point(483, 11);
             this.btnAccountUC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAccountUC.Name = "btnAccountUC";
             this.btnAccountUC.Size = new System.Drawing.Size(155, 79);
             this.btnAccountUC.TabIndex = 0;
             this.btnAccountUC.Text = "Tài Khoản";
-            this.btnAccountUC.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnAccountUC.UseVisualStyleBackColor = false;
             this.btnAccountUC.Click += new System.EventHandler(this.btnAccountUC_Click);
             // 
             // btnCustomerUC
             // 
-            this.btnCustomerUC.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnCustomerUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(103)))), ((int)(((byte)(206)))));
             this.btnCustomerUC.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
             this.btnCustomerUC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.btnCustomerUC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnCustomerUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomerUC.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btnCustomerUC.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomerUC.ForeColor = System.Drawing.SystemColors.Control;
             this.btnCustomerUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnCustomerUC.Location = new System.Drawing.Point(579, 18);
+            this.btnCustomerUC.Location = new System.Drawing.Point(805, 11);
             this.btnCustomerUC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCustomerUC.Name = "btnCustomerUC";
             this.btnCustomerUC.Size = new System.Drawing.Size(155, 79);
             this.btnCustomerUC.TabIndex = 0;
             this.btnCustomerUC.Text = "Khách Hàng";
-            this.btnCustomerUC.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnCustomerUC.UseVisualStyleBackColor = false;
             this.btnCustomerUC.Click += new System.EventHandler(this.btnCustomerUC_Click);
             // 
-            // btnStaffUC
-            // 
-            this.btnStaffUC.BackColor = System.Drawing.Color.Red;
-            this.btnStaffUC.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
-            this.btnStaffUC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.btnStaffUC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnStaffUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStaffUC.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.btnStaffUC.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnStaffUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnStaffUC.Location = new System.Drawing.Point(405, 18);
-            this.btnStaffUC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnStaffUC.Name = "btnStaffUC";
-            this.btnStaffUC.Size = new System.Drawing.Size(155, 79);
-            this.btnStaffUC.TabIndex = 0;
-            this.btnStaffUC.Text = "Nhân Viên";
-            this.btnStaffUC.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnStaffUC.UseVisualStyleBackColor = false;
-            this.btnStaffUC.Click += new System.EventHandler(this.btnStaffUC_Click);
-            // 
             // btnDataUC
             // 
-            this.btnDataUC.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnDataUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(103)))), ((int)(((byte)(206)))));
             this.btnDataUC.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
             this.btnDataUC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.btnDataUC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnDataUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDataUC.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btnDataUC.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDataUC.ForeColor = System.Drawing.SystemColors.Control;
             this.btnDataUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnDataUC.Location = new System.Drawing.Point(227, 18);
+            this.btnDataUC.Location = new System.Drawing.Point(644, 11);
             this.btnDataUC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDataUC.Name = "btnDataUC";
             this.btnDataUC.Size = new System.Drawing.Size(155, 79);
             this.btnDataUC.TabIndex = 0;
             this.btnDataUC.Text = "Dữ Liệu";
-            this.btnDataUC.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnDataUC.UseVisualStyleBackColor = false;
             this.btnDataUC.Click += new System.EventHandler(this.btnDataUC_Click);
             // 
             // btnRevenueUC
             // 
-            this.btnRevenueUC.BackColor = System.Drawing.Color.DarkViolet;
+            this.btnRevenueUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(103)))), ((int)(((byte)(206)))));
             this.btnRevenueUC.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
             this.btnRevenueUC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.btnRevenueUC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnRevenueUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRevenueUC.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btnRevenueUC.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRevenueUC.ForeColor = System.Drawing.SystemColors.Control;
             this.btnRevenueUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnRevenueUC.Location = new System.Drawing.Point(53, 18);
+            this.btnRevenueUC.Location = new System.Drawing.Point(322, 11);
             this.btnRevenueUC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRevenueUC.Name = "btnRevenueUC";
             this.btnRevenueUC.Size = new System.Drawing.Size(155, 79);
             this.btnRevenueUC.TabIndex = 0;
             this.btnRevenueUC.Text = "Doanh Thu";
-            this.btnRevenueUC.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnRevenueUC.UseVisualStyleBackColor = false;
             this.btnRevenueUC.Click += new System.EventHandler(this.btnRevenueUC_Click);
             // 
@@ -180,7 +157,7 @@ namespace project_CinemaManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1372, 781);
+            this.ClientSize = new System.Drawing.Size(1520, 785);
             this.Controls.Add(this.panel2);
             this.Name = "frmAdminNewDesign";
             this.Text = "frmAdminNewDesign";
@@ -198,7 +175,6 @@ namespace project_CinemaManager
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnAccountUC;
         private System.Windows.Forms.Button btnCustomerUC;
-        private System.Windows.Forms.Button btnStaffUC;
         private System.Windows.Forms.Button btnDataUC;
         private System.Windows.Forms.Button btnRevenueUC;
     }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel47 = new System.Windows.Forms.Panel();
-            this.btnShowMovie = new System.Windows.Forms.Button();
             this.btnUpdateMovie = new System.Windows.Forms.Button();
             this.btnDeleteMovie = new System.Windows.Forms.Button();
             this.btnAddMovie = new System.Windows.Forms.Button();
@@ -67,7 +66,6 @@
             // 
             // panel47
             // 
-            this.panel47.Controls.Add(this.btnShowMovie);
             this.panel47.Controls.Add(this.btnUpdateMovie);
             this.panel47.Controls.Add(this.btnDeleteMovie);
             this.panel47.Controls.Add(this.btnAddMovie);
@@ -77,17 +75,6 @@
             this.panel47.Name = "panel47";
             this.panel47.Size = new System.Drawing.Size(1548, 64);
             this.panel47.TabIndex = 10;
-            // 
-            // btnShowMovie
-            // 
-            this.btnShowMovie.Location = new System.Drawing.Point(328, 4);
-            this.btnShowMovie.Margin = new System.Windows.Forms.Padding(4);
-            this.btnShowMovie.Name = "btnShowMovie";
-            this.btnShowMovie.Size = new System.Drawing.Size(100, 57);
-            this.btnShowMovie.TabIndex = 3;
-            this.btnShowMovie.Text = "Xem";
-            this.btnShowMovie.UseVisualStyleBackColor = true;
-            this.btnShowMovie.Click += new System.EventHandler(this.btnShowMovie_Click);
             // 
             // btnUpdateMovie
             // 
@@ -145,6 +132,7 @@
             this.dtgvMovie.Margin = new System.Windows.Forms.Padding(4);
             this.dtgvMovie.Name = "dtgvMovie";
             this.dtgvMovie.ReadOnly = true;
+            this.dtgvMovie.RowHeadersWidth = 51;
             this.dtgvMovie.Size = new System.Drawing.Size(1548, 296);
             this.dtgvMovie.TabIndex = 1;
             // 
@@ -409,7 +397,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel47;
-        private System.Windows.Forms.Button btnShowMovie;
         private System.Windows.Forms.Button btnUpdateMovie;
         private System.Windows.Forms.Button btnDeleteMovie;
         private System.Windows.Forms.Button btnAddMovie;

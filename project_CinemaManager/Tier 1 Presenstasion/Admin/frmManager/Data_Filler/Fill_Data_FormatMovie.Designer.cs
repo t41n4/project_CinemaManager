@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnShowFormat = new System.Windows.Forms.Button();
             this.btnUpdateFormat = new System.Windows.Forms.Button();
             this.btnDeleteFormat = new System.Windows.Forms.Button();
             this.btnInsertFormat = new System.Windows.Forms.Button();
@@ -54,7 +53,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnShowFormat);
             this.panel1.Controls.Add(this.btnUpdateFormat);
             this.panel1.Controls.Add(this.btnDeleteFormat);
             this.panel1.Controls.Add(this.btnInsertFormat);
@@ -63,17 +61,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1548, 64);
             this.panel1.TabIndex = 0;
-            // 
-            // btnShowFormat
-            // 
-            this.btnShowFormat.Location = new System.Drawing.Point(328, 4);
-            this.btnShowFormat.Margin = new System.Windows.Forms.Padding(4);
-            this.btnShowFormat.Name = "btnShowFormat";
-            this.btnShowFormat.Size = new System.Drawing.Size(100, 57);
-            this.btnShowFormat.TabIndex = 11;
-            this.btnShowFormat.Text = "Xem";
-            this.btnShowFormat.UseVisualStyleBackColor = true;
-            this.btnShowFormat.Click += new System.EventHandler(this.btnShowFormat_Click);
             // 
             // btnUpdateFormat
             // 
@@ -128,6 +115,7 @@
             this.dtgvFormat.Location = new System.Drawing.Point(0, 0);
             this.dtgvFormat.Name = "dtgvFormat";
             this.dtgvFormat.ReadOnly = true;
+            this.dtgvFormat.RowHeadersWidth = 51;
             this.dtgvFormat.Size = new System.Drawing.Size(1098, 574);
             this.dtgvFormat.TabIndex = 9;
             // 
@@ -263,7 +251,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnShowFormat;
         private System.Windows.Forms.Button btnUpdateFormat;
         private System.Windows.Forms.Button btnDeleteFormat;
         private System.Windows.Forms.Button btnInsertFormat;

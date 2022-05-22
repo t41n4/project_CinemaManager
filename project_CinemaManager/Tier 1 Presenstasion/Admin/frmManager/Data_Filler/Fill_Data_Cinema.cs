@@ -23,7 +23,7 @@ namespace frmAdminUserControls.DataUserControl
         }
         void LoadCinemaList()
         {
-          //  cinemaList.DataSource = CinemaDAO.GetListCinema();
+            cinemaList.DataSource = CinemaDAO.GetListCinema();
         }
         void AddCinemaBinding()
         {

@@ -21,7 +21,7 @@ namespace project_CinemaManager
 
         void LoadMovie()
         {
-            dtgvMovie.DataSource = MovieDB.GetMovie();
+            dtgvMovie.DataSource = MovieDB.GetMovieHaveShowTimes();
             
             // Ẩn các thuộc tính không cần thiết
             HideUneseccaryColumn();

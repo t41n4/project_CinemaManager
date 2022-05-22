@@ -154,12 +154,6 @@
     <Compile Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_Revenue.Designer.cs">
       <DependentUpon>UI_Revenue.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_Staff.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_Staff.Designer.cs">
-      <DependentUpon>UI_Staff.cs</DependentUpon>
-    </Compile>
     <Compile Include="Tier 1 Presenstasion\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,7 +189,6 @@
     <Compile Include="Tier 2 Application\MovieByGenre.cs" />
     <Compile Include="Tier 2 Application\ScreenType.cs" />
     <Compile Include="Tier 2 Application\ShowTimes.cs" />
-    <Compile Include="Tier 2 Application\Staff.cs" />
     <Compile Include="Tier 2 Application\Ticket.cs" />
     <Compile Include="Tier 3 DB\AccountDB.cs" />
     <Compile Include="Tier 3 DB\CinemaDB.cs" />
@@ -208,7 +201,6 @@
     <Compile Include="Tier 3 DB\RevenueDB.cs" />
     <Compile Include="Tier 3 DB\ScreenTypeDB.cs" />
     <Compile Include="Tier 3 DB\ShowTimesDB.cs" />
-    <Compile Include="Tier 3 DB\StaffDB.cs" />
     <Compile Include="Tier 3 DB\TicketDB.cs" />
     <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
@@ -266,9 +258,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_Revenue.resx">
       <DependentUpon>UI_Revenue.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_Staff.resx">
-      <DependentUpon>UI_Staff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tier 1 Presenstasion\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

@@ -43,14 +43,6 @@ namespace project_CinemaManager
             pnAdmin.Controls.Add(dataUc);
         }
 
-        private void btnStaffUC_Click(object sender, EventArgs e)
-        {
-            this.Text = "Nhân Viên";
-            pnAdmin.Controls.Clear();
-            StaffUC staffUc = new StaffUC();
-            staffUc.Dock = DockStyle.Fill;
-            pnAdmin.Controls.Add(staffUc);
-        }
 
         private void btnCustomerUC_Click(object sender, EventArgs e)
         {

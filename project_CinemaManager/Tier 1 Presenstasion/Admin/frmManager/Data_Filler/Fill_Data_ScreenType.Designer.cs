@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnShowScreenType = new System.Windows.Forms.Button();
             this.btnUpdateScreenType = new System.Windows.Forms.Button();
             this.btnDeleteScreenType = new System.Windows.Forms.Button();
             this.btnInsertScreenType = new System.Windows.Forms.Button();
@@ -54,7 +53,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnShowScreenType);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(243)))), ((int)(((byte)(210)))));
             this.panel1.Controls.Add(this.btnUpdateScreenType);
             this.panel1.Controls.Add(this.btnDeleteScreenType);
             this.panel1.Controls.Add(this.btnInsertScreenType);
@@ -63,17 +62,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1233, 73);
             this.panel1.TabIndex = 2;
-            // 
-            // btnShowScreenType
-            // 
-            this.btnShowScreenType.Location = new System.Drawing.Point(332, 4);
-            this.btnShowScreenType.Margin = new System.Windows.Forms.Padding(4);
-            this.btnShowScreenType.Name = "btnShowScreenType";
-            this.btnShowScreenType.Size = new System.Drawing.Size(100, 57);
-            this.btnShowScreenType.TabIndex = 7;
-            this.btnShowScreenType.Text = "Xem";
-            this.btnShowScreenType.UseVisualStyleBackColor = true;
-            this.btnShowScreenType.Click += new System.EventHandler(this.btnShowScreenType_Click);
             // 
             // btnUpdateScreenType
             // 
@@ -120,6 +108,7 @@
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(243)))), ((int)(((byte)(210)))));
             this.panel4.Controls.Add(this.panel20);
             this.panel4.Controls.Add(this.panel21);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -206,6 +195,7 @@
             this.dtgvScreenType.Margin = new System.Windows.Forms.Padding(4);
             this.dtgvScreenType.Name = "dtgvScreenType";
             this.dtgvScreenType.ReadOnly = true;
+            this.dtgvScreenType.RowHeadersWidth = 51;
             this.dtgvScreenType.Size = new System.Drawing.Size(779, 565);
             this.dtgvScreenType.TabIndex = 1;
             // 
@@ -232,7 +222,6 @@
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnShowScreenType;
         private System.Windows.Forms.Button btnUpdateScreenType;
         private System.Windows.Forms.Button btnDeleteScreenType;
         private System.Windows.Forms.Button btnInsertScreenType;

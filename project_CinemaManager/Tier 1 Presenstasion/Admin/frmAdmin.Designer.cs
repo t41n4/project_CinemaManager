@@ -35,7 +35,6 @@ namespace project_CinemaManager
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.lblAccountInfo = new System.Windows.Forms.Label();
             this.btnAdmin = new System.Windows.Forms.Button();
-            this.btnSeller = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +63,7 @@ namespace project_CinemaManager
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(72, 294);
+            this.button1.Location = new System.Drawing.Point(63, 176);
             this.button1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(217, 91);
@@ -93,7 +92,7 @@ namespace project_CinemaManager
             // 
             // btnAdmin
             // 
-            this.btnAdmin.Location = new System.Drawing.Point(72, 96);
+            this.btnAdmin.Location = new System.Drawing.Point(63, 77);
             this.btnAdmin.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(217, 91);
@@ -102,28 +101,16 @@ namespace project_CinemaManager
             this.btnAdmin.UseVisualStyleBackColor = true;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
-            // btnSeller
-            // 
-            this.btnSeller.Location = new System.Drawing.Point(72, 195);
-            this.btnSeller.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnSeller.Name = "btnSeller";
-            this.btnSeller.Size = new System.Drawing.Size(217, 91);
-            this.btnSeller.TabIndex = 8;
-            this.btnSeller.Text = "Bán Vé";
-            this.btnSeller.UseVisualStyleBackColor = true;
-            this.btnSeller.Click += new System.EventHandler(this.btnSeller_Click);
-            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 416);
+            this.ClientSize = new System.Drawing.Size(357, 311);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.lblAccountInfo);
             this.Controls.Add(this.btnAdmin);
-            this.Controls.Add(this.btnSeller);
             this.Name = "frmAdmin";
             this.Text = "Manager";
             this.Load += new System.EventHandler(this.frmAdmin_Load);
@@ -141,6 +128,5 @@ namespace project_CinemaManager
         private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.Label lblAccountInfo;
         private System.Windows.Forms.Button btnAdmin;
-        private System.Windows.Forms.Button btnSeller;
     }
 }

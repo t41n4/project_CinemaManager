@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel40 = new System.Windows.Forms.Panel();
-            this.btnShowGenre = new System.Windows.Forms.Button();
             this.btnUpdateGenre = new System.Windows.Forms.Button();
             this.btnDeleteGenre = new System.Windows.Forms.Button();
             this.btnInsertGenre = new System.Windows.Forms.Button();
@@ -56,7 +55,6 @@
             // 
             // panel40
             // 
-            this.panel40.Controls.Add(this.btnShowGenre);
             this.panel40.Controls.Add(this.btnUpdateGenre);
             this.panel40.Controls.Add(this.btnDeleteGenre);
             this.panel40.Controls.Add(this.btnInsertGenre);
@@ -66,17 +64,6 @@
             this.panel40.Name = "panel40";
             this.panel40.Size = new System.Drawing.Size(1548, 64);
             this.panel40.TabIndex = 10;
-            // 
-            // btnShowGenre
-            // 
-            this.btnShowGenre.Location = new System.Drawing.Point(328, 4);
-            this.btnShowGenre.Margin = new System.Windows.Forms.Padding(4);
-            this.btnShowGenre.Name = "btnShowGenre";
-            this.btnShowGenre.Size = new System.Drawing.Size(100, 57);
-            this.btnShowGenre.TabIndex = 3;
-            this.btnShowGenre.Text = "Xem";
-            this.btnShowGenre.UseVisualStyleBackColor = true;
-            this.btnShowGenre.Click += new System.EventHandler(this.btnShowGenre_Click);
             // 
             // btnUpdateGenre
             // 
@@ -132,6 +119,7 @@
             this.dtgvGenre.Margin = new System.Windows.Forms.Padding(4);
             this.dtgvGenre.Name = "dtgvGenre";
             this.dtgvGenre.ReadOnly = true;
+            this.dtgvGenre.RowHeadersWidth = 51;
             this.dtgvGenre.Size = new System.Drawing.Size(1014, 574);
             this.dtgvGenre.TabIndex = 1;
             // 
@@ -259,7 +247,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel40;
-        private System.Windows.Forms.Button btnShowGenre;
         private System.Windows.Forms.Button btnUpdateGenre;
         private System.Windows.Forms.Button btnDeleteGenre;
         private System.Windows.Forms.Button btnInsertGenre;

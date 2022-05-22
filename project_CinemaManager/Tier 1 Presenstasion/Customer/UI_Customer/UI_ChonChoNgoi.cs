@@ -40,8 +40,6 @@ namespace project_CinemaManager
         float total = 0;//Tổng giá tiền
         float payment = 0;//Tiền phải trả
 
-        Customer customer;//lưu lại khách hàng thành viên
-
         ShowTimes Times;
         Movie Movie;
 

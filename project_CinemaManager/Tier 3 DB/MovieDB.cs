@@ -49,10 +49,15 @@ namespace DB
             return listMovie;
         }
 
+        public static DataTable GetMovieHaveShowTimes()
+        {
+            return DataProvider.ExecuteQuery("EXEC USP_GetMovieHaveShowTime");
+        }
         public static DataTable GetMovie()
         {
             return DataProvider.ExecuteQuery("EXEC USP_GetMovie");
         }
+
 
         public static bool InsertMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, int year, byte[] image)
         {

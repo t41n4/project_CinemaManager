@@ -21,11 +21,25 @@ namespace frmAdminUserControls
             dtgvAccount.DataSource = accountList;
             LoadAccountList();
             AddAccountBinding();
+            HideUnessecsary();
         }
+
+        private void HideUnessecsary()
+        {        
+                for (int i = 0; i < dtgvAccount.Columns.Count; i++)
+                {
+                    if (dtgvAccount.Columns[i].HeaderText == "Pass")
+                    {
+                        dtgvAccount.Columns[i].Visible = false;
+                    }
+                }           
+        }
+
         void LoadAccountList()
         {
             accountList.DataSource = AccountDB.GetAccountList();
         }
+  
         private void btnShowAccount_Click(object sender, EventArgs e)
         {
             LoadAccountList();
@@ -34,50 +48,20 @@ namespace frmAdminUserControls
         void AddAccountBinding()
         {
             txtUsername.DataBindings.Add("Text", dtgvAccount.DataSource, "Username", true, DataSourceUpdateMode.Never);
-            nudAccountType.DataBindings.Add("Value", dtgvAccount.DataSource, "Loại tài khoản", true, DataSourceUpdateMode.Never);
-            LoadStaffIntoComboBox(cboStaffID_Account);
+            txtType_Account.DataBindings.Add("Text", dtgvAccount.DataSource, "Loại tài khoản", true, DataSourceUpdateMode.Never);
+            txtID_Account.DataBindings.Add("Text", dtgvAccount.DataSource, "ID", true, DataSourceUpdateMode.Never);
+            txtName_Customer.DataBindings.Add("Text", dtgvAccount.DataSource, "Họ Tên", true, DataSourceUpdateMode.Never);
         }
-        void LoadStaffIntoComboBox(ComboBox cbo)
-        {
-            cbo.DataSource = StaffDAO.GetStaff();
-            cbo.DisplayMember = "ID";
-            cbo.ValueMember = "ID";
-        }
+
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
-            string staffID = (string)dtgvAccount.SelectedCells[0].OwningRow.Cells["Mã nhân viên"].Value;
-            Staff staff = StaffDAO.GetStaffByID(staffID);//The staff that we're currently selecting
-
-            if (staff == null)
-                //The case that nothing on dtgv - no result after searched
-                return;
-
-            cboStaffID_Account.SelectedItem = staff;
-
-            int index = -1;
-            int i = 0;
-            foreach (Staff item in cboStaffID_Account.Items)
-            {
-                if (item.ID == staff.ID)
-                {
-                    index = i;
-                    break;
-                }
-                i++;
-            }
-            cboStaffID_Account.SelectedIndex = index;
-        }
-        private void cboStaffID_Account_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Staff staff = cboStaffID_Account.SelectedItem as Staff;
-            if (staff == null)
-                return;
-            txtStaffName_Account.Text = staff.Name;
+            string AccountID = (string)dtgvAccount.SelectedCells[0].OwningRow.Cells["ID"].Value;
+            Account account = AccountDB.GetAccountByID(AccountID);//The Account that we're currently selecting
         }
 
-        void InsertAccount(string username, string Pass, int accountType, string idStaff)
+        void InsertAccount(string username, string Pass, int accountType, string idAccount)
         {
-            if (AccountDB.InsertAccount(username, Pass, accountType, idStaff))
+            if (AccountDB.InsertAccount(username, Pass, accountType, idAccount))
             {
                 MessageBox.Show("Thêm tài khoản thành công, mật khẩu mặc định : 1");
             }
@@ -89,9 +73,9 @@ namespace frmAdminUserControls
         private void btnInsertAccount_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text;
-            int accountType = (int)nudAccountType.Value;
-            string staffID = cboStaffID_Account.SelectedValue.ToString();
-            //InsertAccount(username, accountType, staffID); đang cập nhật tính năng đăng kí tài khoản
+            int accountType = int.Parse(txtType_Account.Text);
+            string AccountID = txtID_Account.Text;
+            InsertAccount(username,"1", accountType, AccountID);
             LoadAccountList();
         }
 
@@ -109,7 +93,7 @@ namespace frmAdminUserControls
         private void btnUpdateAccount_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text;
-            int accountType = (int)nudAccountType.Value;
+            int accountType = int.Parse(txtType_Account.Text);
             UpdateAccount(username, accountType);
             LoadAccountList();
         }
@@ -152,8 +136,8 @@ namespace frmAdminUserControls
 
         private void btnSearchAccount_Click(object sender, EventArgs e)
         {
-            string staffName = txtSearchAccount.Text;
-            accountList.DataSource = AccountDB.SearchAccountByStaffName(staffName);
+            string AccountName = txtSearchAccount.Text;
+            accountList.DataSource = AccountDB.SearchAccount(AccountName);
         }
 
 		private void txtSearchAccount_KeyDown(object sender, KeyEventArgs e)

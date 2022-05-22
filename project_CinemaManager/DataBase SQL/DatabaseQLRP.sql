@@ -217,14 +217,25 @@ END
 GO
 
 --TÀI KHOẢN (frmAdmin)
+--DROP PROC USP_GetAccountList
 CREATE PROC USP_GetAccountList
 AS
 BEGIN
-	SELECT TK.UserName AS [Username], TK.LoaiTK AS [Loại tài khoản], NV.id AS [Mã nhân viên], NV.HoTen AS [Tên nhân viên]
-	FROM dbo.TaiKhoan TK, dbo.NhanVien NV
-	WHERE NV.id = TK.idNV
+	SELECT UserName AS [Username],Pass AS [Pass], LoaiTK AS [Loại tài khoản], idNV AS [ID],HoTen AS [Họ Tên]
+	FROM TaiKhoan LEFT JOIN KhachHang ON TaiKhoan.idNV = KhachHang.id
 END
 GO
+
+--DROP PROC USP_GetAccountByID
+CREATE PROC USP_GetAccountByID @ID VARCHAR(50)
+AS
+BEGIN
+	SELECT TK.UserName AS [Username],TK.Pass AS Pass, TK.LoaiTK AS [LoaiTK], idNV AS [idNV]
+	FROM dbo.TaiKhoan TK
+	WHERE @ID = TK.idNV
+END
+GO
+
 
 CREATE PROC USP_InsertAccount @username NVARCHAR(100), @Pass VARCHAR(100), @loaiTK INT, @idnv VARCHAR(100)
 AS
@@ -271,14 +282,14 @@ GO
 --		WHERE UserName = @username	 	
 --END
 --GO
-
+--DROP PROC USP_SearchAccount
 CREATE PROC USP_SearchAccount
-@hoTen NVARCHAR(100)
+@name NVARCHAR(100)
 AS
 BEGIN
-	SELECT TK.UserName AS [Username], TK.LoaiTK AS [Loại tài khoản], NV.id AS [Mã nhân viên], NV.HoTen AS [Tên nhân viên]
-	FROM dbo.TaiKhoan TK, dbo.NhanVien NV
-	WHERE NV.id = TK.idNV AND dbo.fuConvertToUnsign1(NV.HoTen) LIKE N'%' + dbo.fuConvertToUnsign1(@hoTen) + N'%'
+	SELECT TK.UserName AS [Username], TK.LoaiTK AS [Loại tài khoản], KH.id AS [ID], KH.HoTen AS [Họ và Tên]
+	FROM dbo.TaiKhoan TK, dbo.KhachHang KH
+	WHERE KH.id = TK.idNV AND dbo.fuConvertToUnsign1(KH.HoTen) LIKE N'%' + dbo.fuConvertToUnsign1(@name) + N'%'
 END
 GO
 
@@ -367,11 +378,22 @@ BEGIN
 	 ThoiLuong AS [Thời lượng], NgayKhoiChieu AS [Ngày khởi chiếu], 
 	 NgayKetThuc AS [Ngày kết thúc], SanXuat AS [Sản xuất], 
 	 DaoDien AS [Đạo diễn], NamSX AS [Năm SX], ApPhich AS [Áp Phích]
+	FROM Phim	
+END
+GO
+
+--Drop PROC USP_GetMovieHaveShowTime
+CREATE PROC USP_GetMovieHaveShowTime
+AS
+BEGIN
+	SELECT Phim.id AS [Mã phim], TenPhim AS [Tên phim], MoTa AS [Mô tả], 
+	 ThoiLuong AS [Thời lượng], NgayKhoiChieu AS [Ngày khởi chiếu], 
+	 NgayKetThuc AS [Ngày kết thúc], SanXuat AS [Sản xuất], 
+	 DaoDien AS [Đạo diễn], NamSX AS [Năm SX], ApPhich AS [Áp Phích]
 	FROM Phim
-	WHERE Phim.id IN (SELECT DISTINCT (Phim.id)
-						FROM Phim,DinhDangPhim,LichChieu 
-						WHERE Phim.id = DinhDangPhim.idPhim 
-						AND LichChieu.idDinhDang = DinhDangPhim.id)	
+	WHERE Phim.id IN (SELECT  (Phim.id)
+						FROM (Phim JOIN DinhDangPhim ON Phim.id = DinhDangPhim.idPhim) JOIN LichChieu ON DinhDangPhim.id = LichChieu.idDinhDang 
+						WHERE LichChieu.TrangThai = 1)
 END
 GO
 
@@ -442,9 +464,21 @@ BEGIN
 	FROM Phim ,DinhDangPhim ,LichChieu
 	WHERE Phim.id = @ID AND 
 			DinhDangPhim.idPhim = @ID AND 
-			LichChieu.idDinhDang = DinhDangPhim.id
+			LichChieu.idDinhDang = DinhDangPhim.id AND
+			LichChieu.TrangThai = 1
 END
 GO
+
+--DROP PROC USP_GetShowtime
+CREATE PROC USP_GetShowtime
+AS
+BEGIN
+	SELECT LC.id AS [Mã lịch chiếu], LC.idPhong AS [Mã phòng], P.TenPhim AS [Tên phim], MH.TenMH AS [Màn hình], LC.ThoiGianChieu AS [Thời gian chiếu], LC.GiaVe AS [Giá vé]
+	FROM dbo.LichChieu AS LC, dbo.DinhDangPhim AS DD, Phim AS P, dbo.LoaiManHinh AS MH
+	WHERE LC.idDinhDang = DD.id AND DD.idPhim = P.id AND DD.idLoaiManHinh = MH.id
+END
+GO
+
 
 --DROP PROC USP_GetShowtimeByIDShowTimeAndIDMovie
 CREATE PROC USP_GetShowtimeByIDShowTimeAndIDMovie @IDShowTime varchar(50), @IDMovie varchar(50)
@@ -455,8 +489,7 @@ BEGIN
 	WHERE Phim.id = @IDMovie AND 
 			DinhDangPhim.idPhim = @IDMovie AND 
 			LichChieu.idDinhDang = DinhDangPhim.id AND
-			@IDShowTime = LichChieu.id AND 
-			 LichChieu.TrangThai = 1
+			@IDShowTime = LichChieu.id
 END
 GO
 
