@@ -228,7 +228,7 @@ namespace project_CinemaManager
             this.btnCofirm.TabIndex = 15;
             this.btnCofirm.Text = "Xác Nhận";
             this.btnCofirm.UseVisualStyleBackColor = false;
-            this.btnCofirm.Click += new System.EventHandler(this.btnCofirm_Click);
+            this.btnCofirm.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label2
             // 
@@ -257,7 +257,6 @@ namespace project_CinemaManager
             this.button1.TabIndex = 15;
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btnCofirm_Click);
             // 
             // frmSignUp
             // 

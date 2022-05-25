@@ -9,16 +9,6 @@ GO
 
 --drop database QLRP
 
-CREATE TABLE NhanVien
-(
-	id VARCHAR(50) PRIMARY KEY,
-	HoTen NVARCHAR(100) NOT NULL,
-	NgaySinh DATE NOT NULL,
-	DiaChi NVARCHAR(100),
-	SDT VARCHAR(100),
-	CMND INT NOT NULL Unique
-)
-GO
 
 CREATE TABLE TaiKhoan
 (
@@ -653,11 +643,9 @@ INSERT [dbo].[TheLoai] ([id], [TenTheLoai], [MoTa]) VALUES (N'TL06', N'Gia đìn
 INSERT [dbo].[TheLoai] ([id], [TenTheLoai], [MoTa]) VALUES (N'TL07', N'Tình Cảm', NULL)
 INSERT [dbo].[TheLoai] ([id], [TenTheLoai], [MoTa]) VALUES (N'TL08', N'Tâm Lý', NULL)
 
-INSERT [dbo].[NhanVien] ([id], [HoTen], [NgaySinh], [DiaChi], [SDT], [CMND]) VALUES (N'NV00', N'admin', CAST(N'2021-04-22' AS Date), N'admin', NULL, 123456789)
-INSERT [dbo].[NhanVien] ([id], [HoTen], [NgaySinh], [DiaChi], [SDT], [CMND]) VALUES (N'NV01', N'Bán Vé', CAST(N'2021-04-30' AS Date), NULL, NULL, 14725836)
 
 INSERT [dbo].[TaiKhoan] ([UserName], [Pass], [LoaiTK], [idNV]) VALUES (N'admin', N'59113821474147731767615617822114745333', 1, N'NV00')-- mk hiện thị là admin
-INSERT [dbo].[TaiKhoan] ([UserName], [Pass], [LoaiTK], [idNV]) VALUES (N'NV01', N'5512317111114510840231031535810616566202691', 2, N'NV01')-- mk hiện thị là 12345
+INSERT [dbo].[TaiKhoan] ([UserName], [Pass], [LoaiTK], [idNV]) VALUES (N'KH01', N'5512317111114510840231031535810616566202691', 2, N'NV01')-- mk hiện thị là 12345
 
 INSERT [dbo].[KhachHang] ([id], [HoTen], [NgaySinh], [DiaChi], [SDT], [CMND], [DiemTichLuy]) VALUES (N'KH01', N'Nguyễn Văn A', CAST(N'2001-05-03' AS Date), N'Bla Bla', N'0123456789', 218161554, 0)
 INSERT [dbo].[KhachHang] ([id], [HoTen], [NgaySinh], [DiaChi], [SDT], [CMND], [DiemTichLuy]) VALUES (N'KH02', N'Nguyễn Văn B', CAST(N'2001-05-03' AS Date), N'Bla Bla', N'0123456789', 218161564, 0)

@@ -18,15 +18,10 @@ namespace project_CinemaManager
         {
             InitializeComponent();
         }
-        private void btnCofirm_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            ID = RandomString(4);
-
-            if (!CheckInfoCustomer())
-                return;
-
-            SignupAccount(txtUserName.Text,txtPassword.Text);
-            InsertCustomer(ID,txtFullName.Text, DateTime.Parse(txtBirth.Text),txtAddress.Text,txtSDT.Text,int.Parse(txtCMND.Text));
+            DialogResult = DialogResult.Cancel;
+            this.Close();
         }
         private bool CheckInfoCustomer()
         {

@@ -15,5 +15,11 @@
       <DesignTimeValue Profile="(Default)" />
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="UserID" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="pwd" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

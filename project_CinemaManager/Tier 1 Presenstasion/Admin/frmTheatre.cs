@@ -162,10 +162,10 @@ namespace project_CinemaManager
    
         void CheckLeftRight()
         {
-            foreach (var item in listSeatSelected)
-            {
-                if(item.Text.First)
-            }
+            //foreach (var item in listSeatSelected)
+            //{
+            //    if(item.Text.First)
+            //}
         }
 
         //dùng để ẩn hiện lable điểm tích lũy của khách hàng thành viên
