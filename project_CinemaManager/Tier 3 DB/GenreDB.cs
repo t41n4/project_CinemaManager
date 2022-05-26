@@ -1,8 +1,6 @@
 ﻿using Application;
-using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 
 namespace DB
 {
@@ -40,9 +38,9 @@ namespace DB
 
         public static bool DeleteGenre(string id)
         {
-			DataProvider.ExecuteNonQuery("DELETE dbo.PhanLoaiPhim WHERE idTheLoai = '" + id + "'");
+            DataProvider.ExecuteNonQuery("DELETE dbo.PhanLoaiPhim WHERE idTheLoai = '" + id + "'");
 
-			int result = DataProvider.ExecuteNonQuery("DELETE dbo.TheLoai WHERE id = '" + id + "'");
+            int result = DataProvider.ExecuteNonQuery("DELETE dbo.TheLoai WHERE id = '" + id + "'");
             return result > 0;
         }
     }

@@ -1,12 +1,10 @@
 ﻿using Application;
-using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 
 namespace DB
 {
-    public class MovieByGenreDAO
+    public class MovieByGenreDB
     {
         public static List<Genre> GetListGenreByMovieID(string id)
         {

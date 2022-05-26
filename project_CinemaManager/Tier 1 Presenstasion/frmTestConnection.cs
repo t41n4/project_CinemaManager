@@ -1,20 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DB;
+using System;
 using System.Windows.Forms;
-using DB;
-using Application;
 
 namespace project_CinemaManager
 {
     public partial class frmTestConnection : Form
     {
-
         public frmTestConnection()
         {
             InitializeComponent();
@@ -23,9 +14,7 @@ namespace project_CinemaManager
             {
                 txtServerName.Text = Properties.Settings.Default.DataSource;
                 txtDatabaseName.Text = Properties.Settings.Default.InitialCatalog;
-               
             }
-
         }
 
         public static string DataSource;

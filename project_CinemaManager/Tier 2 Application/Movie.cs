@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Data;
-using System.Linq;
 
 namespace Application
 {
     public class Movie
     {
-
         public Movie(string iD, string name, string desc, float time
             , DateTime starDate, DateTime endDate, string country
             , string director, int yearProduction, byte[] poster)

@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using frmAdminUserControls;
+using System;
 using System.Windows.Forms;
-using DB;
-using Application;
-using frmAdminUserControls;
 
 namespace project_CinemaManager
 {
@@ -22,7 +13,6 @@ namespace project_CinemaManager
 
         private void frmAdminNewDesign_Load(object sender, EventArgs e)
         {
-
         }
 
         private void btnRevenueUC_Click(object sender, EventArgs e)
@@ -42,7 +32,6 @@ namespace project_CinemaManager
             dataUc.Dock = DockStyle.Fill;
             pnAdmin.Controls.Add(dataUc);
         }
-
 
         private void btnCustomerUC_Click(object sender, EventArgs e)
         {

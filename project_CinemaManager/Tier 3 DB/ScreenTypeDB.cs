@@ -1,8 +1,6 @@
 ﻿using Application;
-using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 
 namespace DB
 {
@@ -45,10 +43,10 @@ namespace DB
 
         public static bool DeleteScreenType(string id)
         {
-			DataProvider.ExecuteNonQuery("DELETE dbo.PhongChieu WHERE idManHinh = '" + id + "'");
-			DataProvider.ExecuteNonQuery("DELETE dbo.DinhDangPhim WHERE idLoaiManHinh = '" + id + "'");
+            DataProvider.ExecuteNonQuery("DELETE dbo.PhongChieu WHERE idManHinh = '" + id + "'");
+            DataProvider.ExecuteNonQuery("DELETE dbo.DinhDangPhim WHERE idLoaiManHinh = '" + id + "'");
 
-			int result = DataProvider.ExecuteNonQuery("DELETE dbo.LoaiManHinh WHERE id = '" + id + "'");
+            int result = DataProvider.ExecuteNonQuery("DELETE dbo.LoaiManHinh WHERE id = '" + id + "'");
             return result > 0;
         }
 

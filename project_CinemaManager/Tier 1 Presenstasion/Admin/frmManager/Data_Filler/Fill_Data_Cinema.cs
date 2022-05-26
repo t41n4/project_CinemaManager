@@ -1,31 +1,33 @@
-﻿using DB;
-using Application;
+﻿using Application;
+using DB;
 using System;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace frmAdminUserControls.DataUserControl
 {
     public partial class CinemaUC : UserControl
     {
-        BindingSource cinemaList = new BindingSource();
+        private BindingSource cinemaList = new BindingSource();
+
         public CinemaUC()
         {
             InitializeComponent();
             LoadCinema();
         }
 
-        void LoadCinema()
+        private void LoadCinema()
         {
             dtgvCinema.DataSource = cinemaList;
             LoadCinemaList();
             AddCinemaBinding();
         }
-        void LoadCinemaList()
+
+        private void LoadCinemaList()
         {
             cinemaList.DataSource = CinemaDAO.GetListCinema();
         }
-        void AddCinemaBinding()
+
+        private void AddCinemaBinding()
         {
             txtCinemaID.DataBindings.Add("Text", dtgvCinema.DataSource, "Mã phòng", true, DataSourceUpdateMode.Never);
             txtCinemaName.DataBindings.Add("Text", dtgvCinema.DataSource, "Tên phòng", true, DataSourceUpdateMode.Never);
@@ -35,12 +37,14 @@ namespace frmAdminUserControls.DataUserControl
             txtSeatsPerRow.DataBindings.Add("Text", dtgvCinema.DataSource, "Ghế mỗi hàng", true, DataSourceUpdateMode.Never);
             LoadScreenTypeIntoComboBox(cboCinemaScreenType);
         }
-        void LoadScreenTypeIntoComboBox(ComboBox cbo)
+
+        private void LoadScreenTypeIntoComboBox(ComboBox cbo)
         {
             cbo.DataSource = ScreenTypeDAO.GetListScreenType();
             cbo.DisplayMember = "Name";
             cbo.ValueMember = "ID";
         }
+
         private void txtCinemaID_TextChanged(object sender, EventArgs e)
         //Use this to bind data between dtgv and cbo because cbo can't be applied DataBindings normally
         {
@@ -64,7 +68,7 @@ namespace frmAdminUserControls.DataUserControl
             cboCinemaScreenType.SelectedIndex = index;
         }
 
-        void InsertCinema(string id, string name, string idMH, int seats, int status, int numberOfRows, int seatsPerRow)
+        private void InsertCinema(string id, string name, string idMH, int seats, int status, int numberOfRows, int seatsPerRow)
         {
             if (CinemaDAO.InsertCinema(id, name, idMH, seats, status, numberOfRows, seatsPerRow))
             {
@@ -75,6 +79,7 @@ namespace frmAdminUserControls.DataUserControl
                 MessageBox.Show("Thêm phòng chiếu thất bại");
             }
         }
+
         private void btnInsertCinema_Click(object sender, EventArgs e)
         {
             string cinemaID = txtCinemaID.Text;
@@ -88,7 +93,7 @@ namespace frmAdminUserControls.DataUserControl
             LoadCinemaList();
         }
 
-        void UpdateCinema(string id, string name, string idMH, int seats, int status, int numberOfRows, int seatsPerRow)
+        private void UpdateCinema(string id, string name, string idMH, int seats, int status, int numberOfRows, int seatsPerRow)
         {
             if (CinemaDAO.UpdateCinema(id, name, idMH, seats, status, numberOfRows, seatsPerRow))
             {
@@ -99,6 +104,7 @@ namespace frmAdminUserControls.DataUserControl
                 MessageBox.Show("Sửa phòng chiếu thất bại");
             }
         }
+
         private void btnUpdateCinema_Click(object sender, EventArgs e)
         {
             string cinemaID = txtCinemaID.Text;
@@ -112,7 +118,7 @@ namespace frmAdminUserControls.DataUserControl
             LoadCinemaList();
         }
 
-        void DeleteCinema(string id)
+        private void DeleteCinema(string id)
         {
             if (CinemaDAO.DeleteCinema(id))
             {
@@ -123,6 +129,7 @@ namespace frmAdminUserControls.DataUserControl
                 MessageBox.Show("Xóa phòng chiếu thất bại");
             }
         }
+
         private void btnDeleteCinema_Click(object sender, EventArgs e)
         {
             string cinemaID = txtCinemaID.Text;

@@ -8,12 +8,13 @@ namespace DB
 {
     public class DataProvider
     {
-
-        private DataProvider() { }
+        private DataProvider()
+        { }
 
         //private static string connectionSTR = "Data Source=THAITHANG-PC;Initial Catalog=QLRP;Integrated Security=True";
         //private static string connectionSTR = "Data Source=DESKTOP-G3TR9OQ;Initial Catalog=QLRP;Integrated Security=True";
         private static string connectionSTR = project_CinemaManager.Properties.Settings.Default.connectionSTR;
+
         //= "Data Source=THAITHANG-PC;Initial Catalog=QuanLyRapPhim;User ID=sa;pwd=thaithang1";
 
         public static bool TestConnectionSQL(string conn)
@@ -36,7 +37,6 @@ namespace DB
             return result;
         }
 
-
         public static DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
@@ -44,32 +44,32 @@ namespace DB
             {
                 using (SqlConnection connection = new SqlConnection(connectionSTR))
                 {
-                connection.Open();
+                    connection.Open();
 
-                SqlCommand command = new SqlCommand(query, connection);
+                    SqlCommand command = new SqlCommand(query, connection);
 
-                if (parameter != null)
-                {
-                    string[] listPara = query.Split(' ');
-                    int i = 0;
-                    foreach (string item in listPara)
+                    if (parameter != null)
                     {
-                        if (item.Contains('@'))
+                        string[] listPara = query.Split(' ');
+                        int i = 0;
+                        foreach (string item in listPara)
                         {
-                            command.Parameters.AddWithValue(item, parameter[i]);
-                            i++;
+                            if (item.Contains('@'))
+                            {
+                                command.Parameters.AddWithValue(item, parameter[i]);
+                                i++;
+                            }
                         }
                     }
-                }
 
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
 
-                adapter.Fill(data);
+                    adapter.Fill(data);
 
-                connection.Close();
+                    connection.Close();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return null;
@@ -109,7 +109,14 @@ namespace DB
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                if (ex.Message.Contains("Cannot insert duplicate key in object 'dbo.KhachHang'"))
+                {
+                    MessageBox.Show("Số CMND đã tồn tại!");
+                }
+                else
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             return data;
         }

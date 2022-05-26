@@ -1,8 +1,7 @@
-﻿using DB;
-using Application;
+﻿using Application;
+using DB;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace frmAdminUserControls.DataUserControl
@@ -14,7 +13,8 @@ namespace frmAdminUserControls.DataUserControl
             InitializeComponent();
             LoadAllListShowTimes();
         }
-        void LoadAllListShowTimes()
+
+        private void LoadAllListShowTimes()
         {
             lsvAllListShowTimes.Items.Clear();
 
@@ -38,18 +38,19 @@ namespace frmAdminUserControls.DataUserControl
             }
         }
 
-        void LoadTicketsByShowTimes(string showTimesID)
+        private void LoadTicketsByShowTimes(string showTimesID)
         {
             List<Ticket> listTicket = TicketDAO.GetListTicketsByShowTimes(showTimesID);
             dtgvTicket.DataSource = listTicket;
         }
-        void LoadTicketsBoughtByShowTimes(string showTimesID)
+
+        private void LoadTicketsBoughtByShowTimes(string showTimesID)
         {
             List<Ticket> listTicket = TicketDAO.GetListTicketsBoughtByShowTimes(showTimesID);
             dtgvTicket.DataSource = listTicket;
         }
 
-        void AutoCreateTicketsByShowTimes(ShowTimes showTimes)
+        private void AutoCreateTicketsByShowTimes(ShowTimes showTimes)
         {
             int result = 0;
             Cinema cinema = CinemaDAO.GetCinemaByName(showTimes.CinemaName);

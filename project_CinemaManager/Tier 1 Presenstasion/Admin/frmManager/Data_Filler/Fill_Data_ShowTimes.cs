@@ -1,49 +1,53 @@
-﻿using DB;
-using Application;
+﻿using Application;
+using DB;
 using System;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace frmAdminUserControls.DataUserControl
 {
     public partial class ShowTimesUC : UserControl
     {
-        BindingSource showtimeList = new BindingSource();
+        private BindingSource showtimeList = new BindingSource();
+
         public ShowTimesUC()
         {
             InitializeComponent();
             LoadShowtime();
         }
 
-        void LoadShowtime()
+        private void LoadShowtime()
         {
             dtgvShowtime.DataSource = showtimeList;
             LoadShowtimeList();
             LoadFormatMovieIntoComboBox();
             AddShowtimeBinding();
         }
-        void LoadShowtimeList()
+
+        private void LoadShowtimeList()
         {
             showtimeList.DataSource = ShowTimeDB.GetListShowtime();
         }
+
         private void btnShowShowtime_Click(object sender, EventArgs e)
         {
             LoadShowtimeList();
         }
 
         //Binding
-        void AddShowtimeBinding()
+        private void AddShowtimeBinding()
         {
             txtShowtimeID.DataBindings.Add("Text", dtgvShowtime.DataSource, "Mã lịch chiếu", true, DataSourceUpdateMode.Never);
             dtmShowtimeDate.DataBindings.Add("Value", dtgvShowtime.DataSource, "Thời gian chiếu", true, DataSourceUpdateMode.Never);
             dtmShowtimeTime.DataBindings.Add("Value", dtgvShowtime.DataSource, "Thời gian chiếu", true, DataSourceUpdateMode.Never);
             txtTicketPrice_Showtime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Giá vé", true, DataSourceUpdateMode.Never);
         }
-        void LoadFormatMovieIntoComboBox()
+
+        private void LoadFormatMovieIntoComboBox()
         {
             cboFormatID_Showtime.DataSource = FormatMovieDAO.GetFormatMovie();
             cboFormatID_Showtime.DisplayMember = "ID";
         }
+
         private void cboFormatID_Showtime_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboFormatID_Showtime.SelectedIndex != -1)
@@ -58,9 +62,11 @@ namespace frmAdminUserControls.DataUserControl
                 cboCinemaID_Showtime.DisplayMember = "Name";
             }
         }
+
         private void txtShowtimeID_TextChanged(object sender, EventArgs e)
         {
             #region Change selected index of ComboBox FormatMovie
+
             string movieName = (string)dtgvShowtime.SelectedCells[0].OwningRow.Cells["Tên phim"].Value;
             string screenTypeName = (string)dtgvShowtime.SelectedCells[0].OwningRow.Cells["Màn hình"].Value;
             FormatMovie formatMovieSelecting = FormatMovieDAO.GetFormatMovieByName(movieName, screenTypeName);
@@ -77,8 +83,11 @@ namespace frmAdminUserControls.DataUserControl
                 }
             }
             cboFormatID_Showtime.SelectedIndex = indexFormatMovie;
-            #endregion
+
+            #endregion Change selected index of ComboBox FormatMovie
+
             #region Change selected index of ComboBox Cinema
+
             string cinemaID = (string)dtgvShowtime.SelectedCells[0].OwningRow.Cells["Mã phòng"].Value;
             Cinema cinemaSelecting = CinemaDAO.GetCinemaByID(cinemaID);
             //This is the Cinema that we're currently selecting in dtgv
@@ -98,12 +107,14 @@ namespace frmAdminUserControls.DataUserControl
                 iCinema++;
             }
             cboCinemaID_Showtime.SelectedIndex = indexCinema;
-			#endregion
-			toolTipCinema.SetToolTip(cboCinemaID_Showtime, "Danh sách phòng chiếu hỗ trợ loại màn hình trên");
+
+            #endregion Change selected index of ComboBox Cinema
+
+            toolTipCinema.SetToolTip(cboCinemaID_Showtime, "Danh sách phòng chiếu hỗ trợ loại màn hình trên");
         }
 
         //Insert
-        void InsertShowtime(string id, string cinemaID, string formatMovieID, DateTime time, float ticketPrice)
+        private void InsertShowtime(string id, string cinemaID, string formatMovieID, DateTime time, float ticketPrice)
         {
             if (ShowTimeDB.InsertShowtime(id, cinemaID, formatMovieID, time, ticketPrice))
             {
@@ -114,6 +125,7 @@ namespace frmAdminUserControls.DataUserControl
                 MessageBox.Show("Thêm lịch chiếu thất bại");
             }
         }
+
         private void btnInsertShowtime_Click(object sender, EventArgs e)
         {
             string showtimeID = txtShowtimeID.Text;
@@ -127,7 +139,7 @@ namespace frmAdminUserControls.DataUserControl
         }
 
         //Update
-        void UpdateShowtime(string id, string cinemaID, string formatMovieID, DateTime time, float ticketPrice)
+        private void UpdateShowtime(string id, string cinemaID, string formatMovieID, DateTime time, float ticketPrice)
         {
             if (ShowTimeDB.UpdateShowtime(id, cinemaID, formatMovieID, time, ticketPrice))
             {
@@ -138,6 +150,7 @@ namespace frmAdminUserControls.DataUserControl
                 MessageBox.Show("Sửa lịch chiếu thất bại");
             }
         }
+
         private void btnUpdateShowtime_Click(object sender, EventArgs e)
         {
             string showtimeID = txtShowtimeID.Text;
@@ -151,7 +164,7 @@ namespace frmAdminUserControls.DataUserControl
         }
 
         //Delete
-        void DeleteShowtime(string id)
+        private void DeleteShowtime(string id)
         {
             if (ShowTimeDB.DeleteShowtime(id))
             {
@@ -162,6 +175,7 @@ namespace frmAdminUserControls.DataUserControl
                 MessageBox.Show("Xóa lịch chiếu thất bại");
             }
         }
+
         private void btnDeleteShowtime_Click(object sender, EventArgs e)
         {
             string showtimeID = txtShowtimeID.Text;
@@ -176,13 +190,13 @@ namespace frmAdminUserControls.DataUserControl
             showtimeList.DataSource = ShowTimeDB.SearchShowtimeByMovieName(movieName);
         }
 
-		private void txtSearchShowtime_KeyDown(object sender, KeyEventArgs e)
-		{
-			if (e.KeyCode == Keys.Enter)
-			{
-				btnSearchShowtime.PerformClick();
-				e.SuppressKeyPress = true;//Tắt tiếng *ting của windows
-			}
-		}
-	}
+        private void txtSearchShowtime_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSearchShowtime.PerformClick();
+                e.SuppressKeyPress = true;//Tắt tiếng *ting của windows
+            }
+        }
+    }
 }

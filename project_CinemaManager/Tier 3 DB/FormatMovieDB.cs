@@ -1,8 +1,6 @@
 ﻿using Application;
-using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 
 namespace DB
 {
@@ -33,28 +31,28 @@ namespace DB
             return DataProvider.ExecuteQuery(query);
         }
 
-		public static FormatMovie GetFormatMovieByName(string movieName, string screenTypeName)
-		{
-			string command =	"SELECT DD.id, P.TenPhim, MH.TenMH " +
-								"FROM dbo.DinhDangPhim DD, dbo.Phim P, dbo.LoaiManHinh MH " +
-								"WHERE DD.idPhim = P.id AND DD.idLoaiManHinh = MH.id AND P.TenPhim = N'" + movieName + "' AND MH.TENMH = N'" + screenTypeName + "'";
-			DataTable data = DataProvider.ExecuteQuery(command);
-			return new FormatMovie(data.Rows[0]);
-		}
+        public static FormatMovie GetFormatMovieByName(string movieName, string screenTypeName)
+        {
+            string command = "SELECT DD.id, P.TenPhim, MH.TenMH " +
+                                "FROM dbo.DinhDangPhim DD, dbo.Phim P, dbo.LoaiManHinh MH " +
+                                "WHERE DD.idPhim = P.id AND DD.idLoaiManHinh = MH.id AND P.TenPhim = N'" + movieName + "' AND MH.TENMH = N'" + screenTypeName + "'";
+            DataTable data = DataProvider.ExecuteQuery(command);
+            return new FormatMovie(data.Rows[0]);
+        }
 
-		public static List<FormatMovie> GetFormatMovie()
-		{
-			List<FormatMovie> formatMovieList = new List<FormatMovie>();
-			DataTable data = DataProvider.ExecuteQuery("SELECT DD.id, P.TenPhim, MH.TenMH " +
-														"FROM dbo.DinhDangPhim DD, dbo.Phim P, dbo.LoaiManHinh MH " +
-														"WHERE DD.idPhim = P.id AND DD.idLoaiManHinh = MH.id");
-			foreach (DataRow item in data.Rows)
-			{
-				FormatMovie formatMovie = new FormatMovie(item);
-				formatMovieList.Add(formatMovie);
-			}
-			return formatMovieList;
-		}
+        public static List<FormatMovie> GetFormatMovie()
+        {
+            List<FormatMovie> formatMovieList = new List<FormatMovie>();
+            DataTable data = DataProvider.ExecuteQuery("SELECT DD.id, P.TenPhim, MH.TenMH " +
+                                                        "FROM dbo.DinhDangPhim DD, dbo.Phim P, dbo.LoaiManHinh MH " +
+                                                        "WHERE DD.idPhim = P.id AND DD.idLoaiManHinh = MH.id");
+            foreach (DataRow item in data.Rows)
+            {
+                FormatMovie formatMovie = new FormatMovie(item);
+                formatMovieList.Add(formatMovie);
+            }
+            return formatMovieList;
+        }
 
         public static DataTable GetListFormatMovie()
         {
@@ -76,9 +74,9 @@ namespace DB
 
         public static bool DeleteFormatMovie(string id)
         {
-			DataProvider.ExecuteNonQuery("DELETE dbo.LichChieu WHERE idDinhDang = '" + id + "'");
+            DataProvider.ExecuteNonQuery("DELETE dbo.LichChieu WHERE idDinhDang = '" + id + "'");
 
-			int result = DataProvider.ExecuteNonQuery("DELETE dbo.DinhDangPhim WHERE id = '" + id + "'");
+            int result = DataProvider.ExecuteNonQuery("DELETE dbo.DinhDangPhim WHERE id = '" + id + "'");
             return result > 0;
         }
     }

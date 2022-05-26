@@ -1,7 +1,6 @@
 ﻿using Application;
 using System;
 using System.Data;
-using System.Linq;
 using System.Security.Cryptography;//thư viện để mã hóa mật khẩu
 using System.Text;
 
@@ -9,7 +8,8 @@ namespace DB
 {
     public class AccountDB
     {
-        private AccountDB() { }
+        private AccountDB()
+        { }
 
         public static string PasswordEncryption(string password)
         {
@@ -46,12 +46,10 @@ namespace DB
                 return 1;
             else
                 return 0;
-
         }
 
         public static bool UpdatePasswordForAccount(string userName, string passWord, string newPassWord)
         {
-
             string oldPass = PasswordEncryption(passWord);
             string newPass = PasswordEncryption(newPassWord);
 
@@ -70,7 +68,6 @@ namespace DB
                 return account;
             }
             return account;
-
         }
 
         public static Account GetAccountByUserName(string userName)
@@ -87,45 +84,43 @@ namespace DB
 
         public static void DeleteAccountByIdStaff(string idStaff)
         {
-            DataProvider.ExecuteQuery("DELETE dbo.TaiKhoan WHERE idNV = '" + idStaff + "'");
+            DataProvider.ExecuteQuery("DELETE dbo.TaiKhoan WHERE id = '" + idStaff + "'");
         }
 
-		public static DataTable GetAccountList()
-		{
-			return DataProvider.ExecuteQuery("USP_GetAccountList");
-		}
+        public static DataTable GetAccountList()
+        {
+            return DataProvider.ExecuteQuery("USP_GetAccountList");
+        }
 
-		public static bool InsertAccount(string username,string Pass, int accountType, string staffID)
-		{
-			int result = DataProvider.ExecuteNonQuery("EXEC USP_InsertAccount @username , @Pass , @loaiTK , @idnv ", 
-                                                                 new object[] { username, Pass , accountType, staffID });
-			return result > 0;
-		}
+        public static bool InsertAccount(string username, string Pass, int accountType, string staffID)
+        {
+            int result = DataProvider.ExecuteNonQuery("EXEC USP_InsertAccount @username , @Pass , @loaiTK , @id ",
+                                                                 new object[] { username, Pass, accountType, staffID });
+            return result > 0;
+        }
 
-		public static bool UpdateAccount(string username, int accountType)
-		{
-			string command = string.Format("USP_UpdateAccount  @username , @loaiTK", new object[] { username, accountType});
-			int result = DataProvider.ExecuteNonQuery(command);
-			return result > 0;
-		}
+        public static bool UpdateAccount(string username, int accountType)
+        {
+            string command = string.Format("USP_UpdateAccount  @username , @loaiTK", new object[] { username, accountType });
+            int result = DataProvider.ExecuteNonQuery(command);
+            return result > 0;
+        }
 
-		public static bool DeleteAccount(string username)
-		{
-			int result = DataProvider.ExecuteNonQuery("DELETE dbo.TaiKhoan WHERE UserName = N'" + username + "'");
-			return result > 0;
-		}
+        public static bool DeleteAccount(string username)
+        {
+            int result = DataProvider.ExecuteNonQuery("DELETE dbo.TaiKhoan WHERE UserName = N'" + username + "'");
+            return result > 0;
+        }
 
-		public static DataTable SearchAccount(string name)
-		{
-			return DataProvider.ExecuteQuery("EXEC USP_SearchAccount @name ", new object[] { name });
-		}
+        public static DataTable SearchAccount(string name)
+        {
+            return DataProvider.ExecuteQuery("EXEC USP_SearchAccount @name ", new object[] { name });
+        }
 
-		public static bool ResetPassword(string username)
-		{
-			int result = DataProvider.ExecuteNonQuery("USP_ResetPasswordtAccount @username", new object[] { username});
-			return result > 0;
-		}
-
- 
+        public static bool ResetPassword(string username)
+        {
+            int result = DataProvider.ExecuteNonQuery("USP_ResetPasswordtAccount @username", new object[] { username });
+            return result > 0;
+        }
     }
 }

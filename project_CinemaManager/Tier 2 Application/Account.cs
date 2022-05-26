@@ -1,6 +1,4 @@
-﻿using System;
-using System.Data;
-using System.Linq;
+﻿using System.Data;
 
 namespace Application
 {
@@ -19,9 +17,8 @@ namespace Application
             this.UserName = row["UserName"].ToString();
             this.Password = row["Pass"].ToString();
             this.Type = (int)row["LoaiTK"];
-            this.ID = row["idNV"].ToString();
+            this.ID = row["id"].ToString();
         }
-
 
         public int Type { get; set; }
 
@@ -30,6 +27,5 @@ namespace Application
         public string ID { get; set; }
 
         public string UserName { get; set; }
-
     }
 }

@@ -1,14 +1,13 @@
-﻿using DB;
-using Application;
+﻿using Application;
+using DB;
 using System;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace frmAdminUserControls
 {
     public partial class AccountUC : UserControl
     {
-        BindingSource accountList = new BindingSource();
+        private BindingSource accountList = new BindingSource();
 
         public AccountUC()
         {
@@ -16,7 +15,7 @@ namespace frmAdminUserControls
             LoadAccount();
         }
 
-        void LoadAccount()
+        private void LoadAccount()
         {
             dtgvAccount.DataSource = accountList;
             LoadAccountList();
@@ -25,27 +24,27 @@ namespace frmAdminUserControls
         }
 
         private void HideUnessecsary()
-        {        
-                for (int i = 0; i < dtgvAccount.Columns.Count; i++)
+        {
+            for (int i = 0; i < dtgvAccount.Columns.Count; i++)
+            {
+                if (dtgvAccount.Columns[i].HeaderText == "Pass")
                 {
-                    if (dtgvAccount.Columns[i].HeaderText == "Pass")
-                    {
-                        dtgvAccount.Columns[i].Visible = false;
-                    }
-                }           
+                    dtgvAccount.Columns[i].Visible = false;
+                }
+            }
         }
 
-        void LoadAccountList()
+        private void LoadAccountList()
         {
             accountList.DataSource = AccountDB.GetAccountList();
         }
-  
+
         private void btnShowAccount_Click(object sender, EventArgs e)
         {
             LoadAccountList();
         }
 
-        void AddAccountBinding()
+        private void AddAccountBinding()
         {
             txtUsername.DataBindings.Add("Text", dtgvAccount.DataSource, "Username", true, DataSourceUpdateMode.Never);
             txtType_Account.DataBindings.Add("Text", dtgvAccount.DataSource, "Loại tài khoản", true, DataSourceUpdateMode.Never);
@@ -59,7 +58,7 @@ namespace frmAdminUserControls
             Account account = AccountDB.GetAccountByID(AccountID);//The Account that we're currently selecting
         }
 
-        void InsertAccount(string username, string Pass, int accountType, string idAccount)
+        private void InsertAccount(string username, string Pass, int accountType, string idAccount)
         {
             if (AccountDB.InsertAccount(username, Pass, accountType, idAccount))
             {
@@ -70,16 +69,17 @@ namespace frmAdminUserControls
                 MessageBox.Show("Thêm tài khoản thất bại");
             }
         }
+
         private void btnInsertAccount_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text;
             int accountType = int.Parse(txtType_Account.Text);
             string AccountID = txtID_Account.Text;
-            InsertAccount(username,"1", accountType, AccountID);
+            InsertAccount(username, "1", accountType, AccountID);
             LoadAccountList();
         }
 
-        void UpdateAccount(string username, int accountType)
+        private void UpdateAccount(string username, int accountType)
         {
             if (AccountDB.UpdateAccount(username, accountType))
             {
@@ -90,6 +90,7 @@ namespace frmAdminUserControls
                 MessageBox.Show("Sửa tài khoản thất bại");
             }
         }
+
         private void btnUpdateAccount_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text;
@@ -98,7 +99,7 @@ namespace frmAdminUserControls
             LoadAccountList();
         }
 
-        void DeleteAccount(string username)
+        private void DeleteAccount(string username)
         {
             if (AccountDB.DeleteAccount(username))
             {
@@ -109,6 +110,7 @@ namespace frmAdminUserControls
                 MessageBox.Show("Xóa tài khoản thất bại");
             }
         }
+
         private void btnDeleteAccount_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text;
@@ -116,7 +118,7 @@ namespace frmAdminUserControls
             LoadAccountList();
         }
 
-        void ResetPassword(string username)
+        private void ResetPassword(string username)
         {
             if (AccountDB.ResetPassword(username))
             {
@@ -127,6 +129,7 @@ namespace frmAdminUserControls
                 MessageBox.Show("Reset mật khẩu thất bại");
             }
         }
+
         private void btnResetPass_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text;
@@ -140,13 +143,13 @@ namespace frmAdminUserControls
             accountList.DataSource = AccountDB.SearchAccount(AccountName);
         }
 
-		private void txtSearchAccount_KeyDown(object sender, KeyEventArgs e)
-		{
-			if (e.KeyCode == Keys.Enter)
-			{
-				btnSearchAccount.PerformClick();
-				e.SuppressKeyPress = true;//Tắt tiếng *ting của windows
-			}
-		}
-	}
+        private void txtSearchAccount_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSearchAccount.PerformClick();
+                e.SuppressKeyPress = true;//Tắt tiếng *ting của windows
+            }
+        }
+    }
 }

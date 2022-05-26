@@ -1,8 +1,6 @@
 ﻿using Application;
-using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 
 namespace DB
 {
@@ -15,26 +13,26 @@ namespace DB
             return new Cinema(data.Rows[0]);
         }
 
-		public static Cinema GetCinemaByID(string id)
-		{
-			string query = "select * from dbo.PhongChieu where id = '" + id + "'";
-			DataTable data = DataProvider.ExecuteQuery(query);
-			if (data.Rows.Count>0)
-				return new Cinema(data.Rows[0]);
-			return null;
-		}
+        public static Cinema GetCinemaByID(string id)
+        {
+            string query = "select * from dbo.PhongChieu where id = '" + id + "'";
+            DataTable data = DataProvider.ExecuteQuery(query);
+            if (data.Rows.Count > 0)
+                return new Cinema(data.Rows[0]);
+            return null;
+        }
 
-		public static List<Cinema> GetCinemaByScreenTypeID(string screenTypeID)
-		{
-			List<Cinema> cinemaList = new List<Cinema>();
+        public static List<Cinema> GetCinemaByScreenTypeID(string screenTypeID)
+        {
+            List<Cinema> cinemaList = new List<Cinema>();
             DataTable data = DataProvider.ExecuteQuery("SELECT * FROM dbo.PhongChieu where idManHinh ='" + screenTypeID + "'");
-			foreach (DataRow item in data.Rows)
-			{
-				Cinema cinema = new Cinema(item);
-				cinemaList.Add(cinema);
-			}
-			return cinemaList;
-		}
+            foreach (DataRow item in data.Rows)
+            {
+                Cinema cinema = new Cinema(item);
+                cinemaList.Add(cinema);
+            }
+            return cinemaList;
+        }
 
         public static DataTable GetListCinema()
         {
@@ -56,7 +54,7 @@ namespace DB
 
         public static bool DeleteCinema(string id)
         {
-			DataProvider.ExecuteNonQuery("DELETE dbo.LichChieu WHERE idPhong = '" + id + "'");
+            DataProvider.ExecuteNonQuery("DELETE dbo.LichChieu WHERE idPhong = '" + id + "'");
 
             int result = DataProvider.ExecuteNonQuery("DELETE dbo.PhongChieu WHERE id = '" + id + "'");
             return result > 0;

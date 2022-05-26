@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.SidePanel = new System.Windows.Forms.Panel();
             this.btnTicketsUC = new System.Windows.Forms.Button();
             this.btnShowTimesUC = new System.Windows.Forms.Button();
             this.btnFormatMovieUC = new System.Windows.Forms.Button();
@@ -38,168 +37,177 @@
             this.btnCinemaUC = new System.Windows.Forms.Button();
             this.btnScreenTypeUC = new System.Windows.Forms.Button();
             this.pnData = new System.Windows.Forms.Panel();
+            this.SidePanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.panel1.Controls.Add(this.SidePanel);
+            this.panel1.BackColor = System.Drawing.Color.Peru;
             this.panel1.Controls.Add(this.btnTicketsUC);
-            this.panel1.Controls.Add(this.btnShowTimesUC);
-            this.panel1.Controls.Add(this.btnFormatMovieUC);
-            this.panel1.Controls.Add(this.btnMovieUC);
             this.panel1.Controls.Add(this.btnGenreUC);
+            this.panel1.Controls.Add(this.btnShowTimesUC);
+            this.panel1.Controls.Add(this.btnMovieUC);
+            this.panel1.Controls.Add(this.btnFormatMovieUC);
             this.panel1.Controls.Add(this.btnCinemaUC);
+            this.panel1.Controls.Add(this.SidePanel);
             this.panel1.Controls.Add(this.btnScreenTypeUC);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(279, 658);
+            this.panel1.Size = new System.Drawing.Size(281, 658);
             this.panel1.TabIndex = 0;
-            // 
-            // SidePanel
-            // 
-            this.SidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.SidePanel.Location = new System.Drawing.Point(0, 74);
-            this.SidePanel.Margin = new System.Windows.Forms.Padding(4);
-            this.SidePanel.Name = "SidePanel";
-            this.SidePanel.Size = new System.Drawing.Size(13, 66);
-            this.SidePanel.TabIndex = 5;
             // 
             // btnTicketsUC
             // 
+            this.btnTicketsUC.AccessibleName = "";
+            this.btnTicketsUC.BackColor = System.Drawing.Color.SandyBrown;
             this.btnTicketsUC.FlatAppearance.BorderSize = 0;
             this.btnTicketsUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTicketsUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTicketsUC.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTicketsUC.ForeColor = System.Drawing.Color.White;
-           // this.btnTicketsUC.Image = global::GUI.Properties.Resources.Untitled_2_0008_Layer;
-            this.btnTicketsUC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTicketsUC.Location = new System.Drawing.Point(15, 470);
+            this.btnTicketsUC.Location = new System.Drawing.Point(25, 462);
             this.btnTicketsUC.Margin = new System.Windows.Forms.Padding(4);
             this.btnTicketsUC.Name = "btnTicketsUC";
-            this.btnTicketsUC.Size = new System.Drawing.Size(263, 66);
+            this.btnTicketsUC.Size = new System.Drawing.Size(226, 66);
             this.btnTicketsUC.TabIndex = 6;
             this.btnTicketsUC.Text = "       Vé";
+            this.btnTicketsUC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTicketsUC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTicketsUC.UseVisualStyleBackColor = true;
+            this.btnTicketsUC.UseVisualStyleBackColor = false;
             this.btnTicketsUC.Click += new System.EventHandler(this.btnTicketsUC_Click);
             // 
             // btnShowTimesUC
             // 
+            this.btnShowTimesUC.AccessibleName = "";
+            this.btnShowTimesUC.BackColor = System.Drawing.Color.SandyBrown;
             this.btnShowTimesUC.FlatAppearance.BorderSize = 0;
             this.btnShowTimesUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowTimesUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowTimesUC.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowTimesUC.ForeColor = System.Drawing.Color.White;
-       //     this.btnShowTimesUC.Image = global::GUI.Properties.Resources.Untitled_2_0002_Layer_7;
-            this.btnShowTimesUC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShowTimesUC.Location = new System.Drawing.Point(15, 404);
+            this.btnShowTimesUC.Location = new System.Drawing.Point(25, 388);
             this.btnShowTimesUC.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowTimesUC.Name = "btnShowTimesUC";
-            this.btnShowTimesUC.Size = new System.Drawing.Size(263, 66);
+            this.btnShowTimesUC.Size = new System.Drawing.Size(226, 66);
             this.btnShowTimesUC.TabIndex = 7;
             this.btnShowTimesUC.Text = "      Lịch Chiếu";
+            this.btnShowTimesUC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnShowTimesUC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnShowTimesUC.UseVisualStyleBackColor = true;
+            this.btnShowTimesUC.UseVisualStyleBackColor = false;
             this.btnShowTimesUC.Click += new System.EventHandler(this.btnShowTimesUC_Click);
             // 
             // btnFormatMovieUC
             // 
+            this.btnFormatMovieUC.AccessibleName = "";
+            this.btnFormatMovieUC.BackColor = System.Drawing.Color.SandyBrown;
             this.btnFormatMovieUC.FlatAppearance.BorderSize = 0;
             this.btnFormatMovieUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFormatMovieUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFormatMovieUC.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFormatMovieUC.ForeColor = System.Drawing.Color.White;
-       //     this.btnFormatMovieUC.Image = global::GUI.Properties.Resources.Untitled_2_0004_Layer_5;
-            this.btnFormatMovieUC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormatMovieUC.Location = new System.Drawing.Point(15, 337);
+            this.btnFormatMovieUC.Location = new System.Drawing.Point(25, 314);
             this.btnFormatMovieUC.Margin = new System.Windows.Forms.Padding(4);
             this.btnFormatMovieUC.Name = "btnFormatMovieUC";
-            this.btnFormatMovieUC.Size = new System.Drawing.Size(263, 66);
+            this.btnFormatMovieUC.Size = new System.Drawing.Size(226, 66);
             this.btnFormatMovieUC.TabIndex = 8;
             this.btnFormatMovieUC.Text = "      Định Dạng";
+            this.btnFormatMovieUC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFormatMovieUC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFormatMovieUC.UseVisualStyleBackColor = true;
+            this.btnFormatMovieUC.UseVisualStyleBackColor = false;
             this.btnFormatMovieUC.Click += new System.EventHandler(this.btnFormatMovieUC_Click);
             // 
             // btnMovieUC
             // 
+            this.btnMovieUC.AccessibleName = "";
+            this.btnMovieUC.BackColor = System.Drawing.Color.SandyBrown;
             this.btnMovieUC.FlatAppearance.BorderSize = 0;
             this.btnMovieUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMovieUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMovieUC.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMovieUC.ForeColor = System.Drawing.Color.White;
-        //    this.btnMovieUC.Image = global::GUI.Properties.Resources.Untitled_2_0005_Layer_4;
-            this.btnMovieUC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMovieUC.Location = new System.Drawing.Point(15, 271);
+            this.btnMovieUC.Location = new System.Drawing.Point(25, 240);
             this.btnMovieUC.Margin = new System.Windows.Forms.Padding(4);
             this.btnMovieUC.Name = "btnMovieUC";
-            this.btnMovieUC.Size = new System.Drawing.Size(263, 66);
+            this.btnMovieUC.Size = new System.Drawing.Size(226, 66);
             this.btnMovieUC.TabIndex = 9;
             this.btnMovieUC.Text = "       Phim";
+            this.btnMovieUC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMovieUC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMovieUC.UseVisualStyleBackColor = true;
+            this.btnMovieUC.UseVisualStyleBackColor = false;
             this.btnMovieUC.Click += new System.EventHandler(this.btnMovieUC_Click);
             // 
             // btnGenreUC
             // 
+            this.btnGenreUC.AccessibleName = "";
+            this.btnGenreUC.BackColor = System.Drawing.Color.SandyBrown;
             this.btnGenreUC.FlatAppearance.BorderSize = 0;
             this.btnGenreUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenreUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenreUC.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenreUC.ForeColor = System.Drawing.Color.White;
-        //    this.btnGenreUC.Image = global::GUI.Properties.Resources.Untitled_2_0003_Layer_6;
-            this.btnGenreUC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGenreUC.Location = new System.Drawing.Point(15, 205);
+            this.btnGenreUC.Location = new System.Drawing.Point(25, 166);
             this.btnGenreUC.Margin = new System.Windows.Forms.Padding(4);
             this.btnGenreUC.Name = "btnGenreUC";
-            this.btnGenreUC.Size = new System.Drawing.Size(263, 66);
+            this.btnGenreUC.Size = new System.Drawing.Size(226, 66);
             this.btnGenreUC.TabIndex = 10;
             this.btnGenreUC.Text = "      Thể Loại";
+            this.btnGenreUC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGenreUC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGenreUC.UseVisualStyleBackColor = true;
+            this.btnGenreUC.UseVisualStyleBackColor = false;
             this.btnGenreUC.Click += new System.EventHandler(this.btnGenreUC_Click);
             // 
             // btnCinemaUC
             // 
+            this.btnCinemaUC.AccessibleName = "";
+            this.btnCinemaUC.BackColor = System.Drawing.Color.SandyBrown;
             this.btnCinemaUC.FlatAppearance.BorderSize = 0;
             this.btnCinemaUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCinemaUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCinemaUC.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCinemaUC.ForeColor = System.Drawing.Color.White;
-          //  this.btnCinemaUC.Image = global::GUI.Properties.Resources.Untitled_2_0007_Layer_2;
-            this.btnCinemaUC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCinemaUC.Location = new System.Drawing.Point(15, 138);
+            this.btnCinemaUC.Location = new System.Drawing.Point(25, 92);
             this.btnCinemaUC.Margin = new System.Windows.Forms.Padding(4);
             this.btnCinemaUC.Name = "btnCinemaUC";
-            this.btnCinemaUC.Size = new System.Drawing.Size(263, 66);
+            this.btnCinemaUC.Size = new System.Drawing.Size(226, 66);
             this.btnCinemaUC.TabIndex = 11;
             this.btnCinemaUC.Text = "       Phòng Chiếu";
+            this.btnCinemaUC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCinemaUC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCinemaUC.UseVisualStyleBackColor = true;
+            this.btnCinemaUC.UseVisualStyleBackColor = false;
             this.btnCinemaUC.Click += new System.EventHandler(this.btnCinemaUC_Click);
             // 
             // btnScreenTypeUC
             // 
+            this.btnScreenTypeUC.AccessibleName = "";
+            this.btnScreenTypeUC.BackColor = System.Drawing.Color.SandyBrown;
             this.btnScreenTypeUC.FlatAppearance.BorderSize = 0;
             this.btnScreenTypeUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnScreenTypeUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnScreenTypeUC.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnScreenTypeUC.ForeColor = System.Drawing.Color.White;
-            //this.btnScreenTypeUC.Image = Untitled_2_0001_Layer_8;
-            this.btnScreenTypeUC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnScreenTypeUC.Location = new System.Drawing.Point(15, 72);
+            this.btnScreenTypeUC.Location = new System.Drawing.Point(25, 18);
             this.btnScreenTypeUC.Margin = new System.Windows.Forms.Padding(4);
             this.btnScreenTypeUC.Name = "btnScreenTypeUC";
-            this.btnScreenTypeUC.Size = new System.Drawing.Size(263, 66);
+            this.btnScreenTypeUC.Size = new System.Drawing.Size(226, 66);
             this.btnScreenTypeUC.TabIndex = 12;
             this.btnScreenTypeUC.Text = "     Loại màn hình";
+            this.btnScreenTypeUC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnScreenTypeUC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnScreenTypeUC.UseVisualStyleBackColor = true;
+            this.btnScreenTypeUC.UseVisualStyleBackColor = false;
             this.btnScreenTypeUC.Click += new System.EventHandler(this.btnScreenTypeUC_Click);
             // 
             // pnData
             // 
             this.pnData.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnData.Location = new System.Drawing.Point(279, 18);
+            this.pnData.Location = new System.Drawing.Point(281, 18);
             this.pnData.Name = "pnData";
-            this.pnData.Size = new System.Drawing.Size(1551, 640);
+            this.pnData.Size = new System.Drawing.Size(1549, 640);
             this.pnData.TabIndex = 1;
+            // 
+            // SidePanel
+            // 
+            this.SidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.SidePanel.Location = new System.Drawing.Point(4, 18);
+            this.SidePanel.Margin = new System.Windows.Forms.Padding(4);
+            this.SidePanel.Name = "SidePanel";
+            this.SidePanel.Size = new System.Drawing.Size(13, 66);
+            this.SidePanel.TabIndex = 5;
             // 
             // DataUC
             // 
@@ -217,7 +225,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel SidePanel;
         private System.Windows.Forms.Button btnTicketsUC;
         private System.Windows.Forms.Button btnShowTimesUC;
         private System.Windows.Forms.Button btnFormatMovieUC;
@@ -226,5 +233,6 @@
         private System.Windows.Forms.Button btnCinemaUC;
         private System.Windows.Forms.Button btnScreenTypeUC;
         private System.Windows.Forms.Panel pnData;
+        private System.Windows.Forms.Panel SidePanel;
     }
 }

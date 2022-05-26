@@ -1,37 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Application;
 using DB;
-using Application;
+using System;
+using System.Windows.Forms;
+
 namespace project_CinemaManager
 {
     public partial class UI_ChonGioChieu : Form
     {
         private Movie GetMovie;
-        BindingSource showtimeList = new BindingSource();
+        private BindingSource showtimeList = new BindingSource();
 
         public UI_ChonGioChieu(Movie SelectedFilmFromUser)
         {
             InitializeComponent();
             this.Movie = SelectedFilmFromUser;
-           
         }
+
         public Movie Movie
         {
             get { return GetMovie; }
             set { GetMovie = value; }
         }
+
         public void LoadShowtime()
-        {      
+        {
             dtgvShowtime.DataSource = showtimeList;
             showtimeList.DataSource = ShowTimeDB.GetShowtimeByIDMovie(GetMovie.ID);
-            if (showtimeList.Count  > 0 )
+            if (showtimeList.Count > 0)
             {
                 AddShowtimeBinding();
             }
@@ -39,19 +34,15 @@ namespace project_CinemaManager
             {
                 MessageBox.Show("Phim này không có lịch chiếu!!");
                 UI_CustomerChonPhim.chonGioChieu.Close();
-
             }
-           
         }
 
         private void AddShowtimeBinding()
         {
-            
-            txtMovieName_Showtime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Tên phim", true, DataSourceUpdateMode.Never);           
+            txtMovieName_Showtime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Tên phim", true, DataSourceUpdateMode.Never);
             txtShowtimeDateTime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Thời gian chiếu", true, DataSourceUpdateMode.Never);
             txtTicketPrice_Showtime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Giá vé", true, DataSourceUpdateMode.Never);
             txtShowRoom_Showtime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Phòng chiếu", true, DataSourceUpdateMode.Never);
-       
         }
 
         private void btnChonGioChieu_Click(object sender, EventArgs e)
@@ -62,7 +53,6 @@ namespace project_CinemaManager
             IdShowTimes = Convert.ToString(selectedRow.Cells["Mã lịch chiếu"].Value);
 
             ShowTimes showTimes = ShowTimeDB.GetShowtimeByIDShowTimeAndIDMovie(IdShowTimes, GetMovie.ID);
-
 
             UI_ChonChoNgoi uI_ChonChoNgoi = new UI_ChonChoNgoi(showTimes, GetMovie);
             this.Hide();

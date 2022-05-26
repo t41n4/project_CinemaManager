@@ -1,8 +1,6 @@
 ﻿using Application;
-using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 
 namespace DB
 {
@@ -39,21 +37,24 @@ namespace DB
             string query = "Select count (id) from Ve where idLichChieu ='" + showTimesID + "'";
             return (int)DataProvider.ExecuteScalar(query);
         }
+
         public static int CountTheNumberOfTicketsSoldByShowTime(string showTimesID)
         {
             string query = "Select count (id) from Ve where idLichChieu ='" + showTimesID + "' and TrangThai = 1 ";
             return (int)DataProvider.ExecuteScalar(query);
         }
+
         public static int BuyTicket(string ticketID, int type, float price)
         {
             string query = "Update dbo.Ve set TrangThai = 1, LoaiVe = "
                 + type + ", TienBanVe =" + price + " where id = '" + ticketID + "'";
             return DataProvider.ExecuteNonQuery(query);
         }
+
         public static int BuyTicket(string ticketID, int type, string customerID, float price)
         {
-            string query = "Update dbo.Ve set TrangThai = 1, LoaiVe = "+ type 
-                + ", idKhachHang =N'" + customerID + "', TienBanVe =" + price +" where id = '" + ticketID + "'";
+            string query = "Update dbo.Ve set TrangThai = 1, LoaiVe = " + type
+                + ", idKhachHang =N'" + customerID + "', TienBanVe =" + price + " where id = '" + ticketID + "'";
             return DataProvider.ExecuteNonQuery(query);
         }
 

@@ -1,7 +1,6 @@
 ﻿using DB;
 using System;
 using System.Globalization;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace frmAdminUserControls
@@ -13,30 +12,35 @@ namespace frmAdminUserControls
             InitializeComponent();
             LoadRevenue();
         }
-        void LoadRevenue()
+
+        private void LoadRevenue()
         {
             LoadMovieIntoCombobox(cboSelectMovie);
             LoadDateTimePickerRevenue();//Set "Từ ngày" & "Đến ngày ngày" về đầu tháng & cuối tháng
             LoadRevenue(cboSelectMovie.SelectedValue.ToString(), dtmFromDate.Value, dtmToDate.Value);
         }
-        void LoadMovieIntoCombobox(ComboBox comboBox)
+
+        private void LoadMovieIntoCombobox(ComboBox comboBox)
         {
             comboBox.DataSource = MovieDB.GetListMovie();
             comboBox.DisplayMember = "Name";
             comboBox.ValueMember = "ID";
         }
-        void LoadDateTimePickerRevenue()
+
+        private void LoadDateTimePickerRevenue()
         {
             dtmFromDate.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             dtmToDate.Value = dtmFromDate.Value.AddMonths(1).AddDays(-1);
         }
-        void LoadRevenue(string idMovie, DateTime fromDate, DateTime toDate)
+
+        private void LoadRevenue(string idMovie, DateTime fromDate, DateTime toDate)
         {
             CultureInfo culture = new CultureInfo("vi-VN");
             dtgvRevenue.DataSource = RevenueDAO.GetRevenue(idMovie, fromDate, toDate);
             txtDoanhThu.Text = GetSumRevenue().ToString("c", culture);
         }
-        decimal GetSumRevenue()
+
+        private decimal GetSumRevenue()
         {
             decimal sum = 0;
             foreach (DataGridViewRow row in dtgvRevenue.Rows)
@@ -57,12 +61,10 @@ namespace frmAdminUserControls
 
         private void txtDoanhThu_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void RevenueUC_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

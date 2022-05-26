@@ -1,39 +1,43 @@
 ﻿using DB;
 using System;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace frmAdminUserControls.DataUserControl
 {
     public partial class ScreenTypeUC : UserControl
     {
-        BindingSource screenTypeList = new BindingSource();
+        private BindingSource screenTypeList = new BindingSource();
+
         public ScreenTypeUC()
         {
             InitializeComponent();
             LoadScreenType();
         }
-        void LoadScreenType()
+
+        private void LoadScreenType()
         {
             dtgvScreenType.DataSource = screenTypeList;
             LoadScreenTypeList();
             AddScreenTypeBinding();
         }
-        void LoadScreenTypeList()
+
+        private void LoadScreenTypeList()
         {
             screenTypeList.DataSource = ScreenTypeDAO.GetScreenType();
         }
-        void AddScreenTypeBinding()
+
+        private void AddScreenTypeBinding()
         {
             txtScreenTypeID.DataBindings.Add("Text", dtgvScreenType.DataSource, "Mã loại màn hình", true, DataSourceUpdateMode.Never);
             txtScreenTypeName.DataBindings.Add("Text", dtgvScreenType.DataSource, "Tên màn hình", true, DataSourceUpdateMode.Never);
         }
+
         private void btnShowScreenType_Click(object sender, EventArgs e)
         {
             LoadScreenTypeList();
         }
 
-        void InsertScreenType(string id, string name)
+        private void InsertScreenType(string id, string name)
         {
             if (ScreenTypeDAO.InsertScreenType(id, name))
             {
@@ -44,6 +48,7 @@ namespace frmAdminUserControls.DataUserControl
                 MessageBox.Show("Thêm loại màn hình thất bại");
             }
         }
+
         private void btnInsertScreenType_Click(object sender, EventArgs e)
         {
             string screenTypeID = txtScreenTypeID.Text;
@@ -52,7 +57,7 @@ namespace frmAdminUserControls.DataUserControl
             LoadScreenTypeList();
         }
 
-        void UpdateScreenType(string id, string name)
+        private void UpdateScreenType(string id, string name)
         {
             if (ScreenTypeDAO.UpdateScreenType(id, name))
             {
@@ -63,6 +68,7 @@ namespace frmAdminUserControls.DataUserControl
                 MessageBox.Show("Sửa loại màn hình thất bại");
             }
         }
+
         private void btnUpdateScreenType_Click(object sender, EventArgs e)
         {
             string screenTypeID = txtScreenTypeID.Text;
@@ -71,7 +77,7 @@ namespace frmAdminUserControls.DataUserControl
             LoadScreenTypeList();
         }
 
-        void DeleteScreenType(string id)
+        private void DeleteScreenType(string id)
         {
             if (ScreenTypeDAO.DeleteScreenType(id))
             {
@@ -82,6 +88,7 @@ namespace frmAdminUserControls.DataUserControl
                 MessageBox.Show("Xóa loại màn hình thất bại");
             }
         }
+
         private void btnDeleteScreenType_Click(object sender, EventArgs e)
         {
             string screenTypeID = txtScreenTypeID.Text;

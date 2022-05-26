@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 
 namespace DB
 {
@@ -14,11 +13,11 @@ namespace DB
             return DataProvider.ExecuteQuery(query, new object[] { formatMovieID, date });
         }
 
-        public static ShowTimes GetShowtimeByIDShowTimeAndIDMovie(string ShowtimeID,string MovieID)
+        public static ShowTimes GetShowtimeByIDShowTimeAndIDMovie(string ShowtimeID, string MovieID)
         {
             string query = "USP_GetShowtimeByIDShowTimeAndIDMovie @IDShowTime , @IDMovie";
-            var data =  DataProvider.ExecuteQuery(query, new object[] { ShowtimeID ,MovieID});
-            ShowTimes showTimes =  null;
+            var data = DataProvider.ExecuteQuery(query, new object[] { ShowtimeID, MovieID });
+            ShowTimes showTimes = null;
             foreach (DataRow item in data.Rows)
             {
                 showTimes = new ShowTimes(item);
@@ -26,7 +25,6 @@ namespace DB
             }
             return showTimes;
         }
-
 
         public static List<ShowTimes> GetAllListShowTimes()
         {
@@ -39,6 +37,7 @@ namespace DB
             }
             return listShowTimes;
         }
+
         public static List<ShowTimes> GetListShowTimesNotCreateTickets()
         {
             List<ShowTimes> listShowTimes = new List<ShowTimes>();
@@ -50,6 +49,7 @@ namespace DB
             }
             return listShowTimes;
         }
+
         public static int UpdateStatusShowTimes(string showTimesID, int status)
         {
             string query = "USP_UpdateStatusShowTimes @idLichChieu , @status";
@@ -57,40 +57,40 @@ namespace DB
         }
 
         public static DataTable GetShowtimeByIDMovie(string showTimesID)
-        {          
-                return DataProvider.ExecuteQuery("EXEC USP_GetShowtimeByIDMovie @ID", new object[] { showTimesID });
+        {
+            return DataProvider.ExecuteQuery("EXEC USP_GetShowtimeByIDMovie @ID", new object[] { showTimesID });
         }
 
         public static DataTable GetListShowtime()
-		{
-			return DataProvider.ExecuteQuery("EXEC USP_GetShowtime");
-		}
+        {
+            return DataProvider.ExecuteQuery("EXEC USP_GetShowtime");
+        }
 
-		public static bool InsertShowtime(string id, string cinemaID, string formatMovieID, DateTime time, float ticketPrice)
-		{
-			int result = DataProvider.ExecuteNonQuery("EXEC USP_InsertShowtime @id , @idPhong , @idDinhDang , @thoiGianChieu , @giaVe ", new object[] { id, cinemaID, formatMovieID, time, ticketPrice });
-			return result > 0;
-		}
+        public static bool InsertShowtime(string id, string cinemaID, string formatMovieID, DateTime time, float ticketPrice)
+        {
+            int result = DataProvider.ExecuteNonQuery("EXEC USP_InsertShowtime @id , @idPhong , @idDinhDang , @thoiGianChieu , @giaVe ", new object[] { id, cinemaID, formatMovieID, time, ticketPrice });
+            return result > 0;
+        }
 
-		public static bool UpdateShowtime(string id, string cinemaID, string formatMovieID, DateTime time, float ticketPrice)
-		{
-			string command = string.Format("USP_UpdateShowtime @id , @idPhong , @idDinhDang , @thoiGianChieu , @giaVe ");
-			int result = DataProvider.ExecuteNonQuery(command, new object[] { id, cinemaID, formatMovieID, time, ticketPrice });
-			return result > 0;
-		}
+        public static bool UpdateShowtime(string id, string cinemaID, string formatMovieID, DateTime time, float ticketPrice)
+        {
+            string command = string.Format("USP_UpdateShowtime @id , @idPhong , @idDinhDang , @thoiGianChieu , @giaVe ");
+            int result = DataProvider.ExecuteNonQuery(command, new object[] { id, cinemaID, formatMovieID, time, ticketPrice });
+            return result > 0;
+        }
 
-		public static bool DeleteShowtime(string id)
-		{
+        public static bool DeleteShowtime(string id)
+        {
             TicketDAO.DeleteTicketsByShowTimes(id);
 
-			int result = DataProvider.ExecuteNonQuery("DELETE dbo.LichChieu WHERE id = '" + id + "'");
-			return result > 0;
-		}
+            int result = DataProvider.ExecuteNonQuery("DELETE dbo.LichChieu WHERE id = '" + id + "'");
+            return result > 0;
+        }
 
-		public static DataTable SearchShowtimeByMovieName(string movieName)
-		{
-			DataTable data = DataProvider.ExecuteQuery("EXEC USP_SearchShowtimeByMovieName @tenPhim ", new object[] { movieName });
-			return data;
-		}
-	}
+        public static DataTable SearchShowtimeByMovieName(string movieName)
+        {
+            DataTable data = DataProvider.ExecuteQuery("EXEC USP_SearchShowtimeByMovieName @tenPhim ", new object[] { movieName });
+            return data;
+        }
+    }
 }

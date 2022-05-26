@@ -1,22 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Application;
 using DB;
-using Application;
+using System;
+using System.Windows.Forms;
 
 namespace project_CinemaManager
 {
     public partial class UICustomerInfo : Form
     {
         private Account loginAccount;
-        BindingSource customerList = new BindingSource();
- 
+        private BindingSource customerList = new BindingSource();
+
         public UICustomerInfo(Account loginAccount)
         {
             InitializeComponent();
@@ -26,13 +19,15 @@ namespace project_CinemaManager
         public Account LoginAccount
         {
             get { return loginAccount; }
-            set { loginAccount = value; //ChangeAccount(loginAccount.Type);
+            set
+            {
+                loginAccount = value; //ChangeAccount(loginAccount.Type);
             }
         }
 
-        void LoadCustomer()
+        private void LoadCustomer()
         {
-            customerList.DataSource = CustomerDB.SearchCustomerByID(loginAccount.ID);        
+            customerList.DataSource = CustomerDB.SearchCustomerByID(loginAccount.ID);
             txtCusID.DataBindings.Add("Text", customerList.DataSource, "Mã Khách Hàng");
             txtCusBirth.DataBindings.Add("Text", customerList.DataSource, "Ngày sinh");
             txtCusINumber.DataBindings.Add("Text", customerList.DataSource, "CMND");
@@ -55,12 +50,12 @@ namespace project_CinemaManager
         }
 
         private void UICustomerInfo_Load(object sender, EventArgs e)
-        {     
-            grpCustomer.Text = "Hello,"+loginAccount.UserName;
+        {
+            grpCustomer.Text = "Hello," + loginAccount.UserName;
             LoadCustomer();
         }
 
-        bool UpdateCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
+        private bool UpdateCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
         {
             if (CustomerDB.UpdateCustomer(id, hoTen, ngaySinh, diaChi, sdt, cmnd))
             {
@@ -73,14 +68,15 @@ namespace project_CinemaManager
                 return false;
             }
         }
+
         private void btnConfigInfo_Click(object sender, EventArgs e)
         {
             if (btnConfigInfo.Text == "Chỉnh Sửa Thông Tin")
             {
-                MessageBox.Show("Bạn đang chỉnh sửa thông tin của tài khoản: "+loginAccount.UserName);
+                MessageBox.Show("Bạn đang chỉnh sửa thông tin của tài khoản: " + loginAccount.UserName);
                 btnConfigInfo.Text = "Xác nhận";
                 txtCusAddress.ReadOnly = false;
-                txtCusBirth.ReadOnly = false;            
+                txtCusBirth.ReadOnly = false;
                 txtCusINumber.ReadOnly = false;
                 txtCusName.ReadOnly = false;
                 txtCusPhone.ReadOnly = false;
@@ -90,11 +86,9 @@ namespace project_CinemaManager
                 txtCusINumber.BackColor = System.Drawing.Color.White;
                 txtCusName.BackColor = System.Drawing.Color.White;
                 txtCusPhone.BackColor = System.Drawing.Color.White;
-
-
             }
-            else 
-            {                                   
+            else
+            {
                 // Get Data
                 string cusID = txtCusID.Text;
                 string cusName = txtCusName.Text;
@@ -117,13 +111,8 @@ namespace project_CinemaManager
                     txtCusINumber.BackColor = System.Drawing.Color.Gray;
                     txtCusName.BackColor = System.Drawing.Color.Gray;
                     txtCusPhone.BackColor = System.Drawing.Color.Gray;
-
-                } 
-
-              
+                }
             }
         }
-
-   
     }
 }

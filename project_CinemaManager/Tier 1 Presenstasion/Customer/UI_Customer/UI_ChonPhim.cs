@@ -1,33 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Application;
 using DB;
-using Application;
+using System;
+using System.Windows.Forms;
+
 namespace project_CinemaManager
 {
     public partial class UI_CustomerChonPhim : Form
     {
-        static public UI_ChonGioChieu chonGioChieu;
+        public static UI_ChonGioChieu chonGioChieu;
+
         public UI_CustomerChonPhim()
         {
             InitializeComponent();
         }
 
-        void LoadMovie()
+        private void LoadMovie()
         {
             dtgvMovie.DataSource = MovieDB.GetMovieHaveShowTimes();
-            
+
             // Ẩn các thuộc tính không cần thiết
             HideUneseccaryColumn();
-            AddMovieBinding();
+            AddMovieBinding();          
         }
-        void HideUneseccaryColumn()
+
+        private void HideUneseccaryColumn()
         {
             for (int i = 0; i < dtgvMovie.Columns.Count; i++)
             {
@@ -69,17 +65,29 @@ namespace project_CinemaManager
                 }
             }
         }
-  
-        void AddMovieBinding()
+
+        private void AddMovieBinding()
         {
+            
+           // txt_TheLoai.DataBindings.Add("Text", )
             txtMovieName.DataBindings.Add("Text", dtgvMovie.DataSource, "Tên phim", true, DataSourceUpdateMode.Never);
-            txtMovieDesc.DataBindings.Add("Text", dtgvMovie.DataSource, "Mô tả", true, DataSourceUpdateMode.Never);
             txtMovieLength.DataBindings.Add("Text", dtgvMovie.DataSource, "Thời lượng", true, DataSourceUpdateMode.Never);
             txtMovieProductor.DataBindings.Add("Text", dtgvMovie.DataSource, "Sản xuất", true, DataSourceUpdateMode.Never);
             txtMovieDirector.DataBindings.Add("Text", dtgvMovie.DataSource, "Đạo diễn", true, DataSourceUpdateMode.Never);
-            txtMovieYear.DataBindings.Add("Text", dtgvMovie.DataSource, "Năm SX", true, DataSourceUpdateMode.Never);         
-            picFilm.DataBindings.Add("Image", dtgvMovie.DataSource, "Áp phích", true, DataSourceUpdateMode.Never);            
-        }         
+            txtMovieYear.DataBindings.Add("Text", dtgvMovie.DataSource, "Năm SX", true, DataSourceUpdateMode.Never);
+            picFilm.DataBindings.Add("Image", dtgvMovie.DataSource, "Áp phích", true, DataSourceUpdateMode.Never);
+
+            string Idfilm;
+            int selectedrowindex = dtgvMovie.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dtgvMovie.Rows[selectedrowindex];
+            Idfilm = Convert.ToString(selectedRow.Cells["Mã phim"].Value);
+            txt_TheLoai.Text = "";
+            foreach (var item in MovieByGenreDB.GetListGenreByMovieID(Idfilm))
+            {
+                txt_TheLoai.Text += item.Name + ", ";
+            }
+        }
+
         private void UI_CustomerDatVe_Load(object sender, EventArgs e)
         {
             LoadMovie();
@@ -87,11 +95,11 @@ namespace project_CinemaManager
 
         private void btnChonPhim_Click(object sender, EventArgs e)
         {
-            string Idfilm;       
+            string Idfilm;
             int selectedrowindex = dtgvMovie.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = dtgvMovie.Rows[selectedrowindex];
             Idfilm = Convert.ToString(selectedRow.Cells["Mã phim"].Value);
-            
+
             Movie SelectedFilm = MovieDB.GetMovieByID(Idfilm);
 
             chonGioChieu = new UI_ChonGioChieu(SelectedFilm);
@@ -99,5 +107,20 @@ namespace project_CinemaManager
             chonGioChieu.ShowDialog();
             this.Show();
         }
+
+        private void dtgvMovie_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string Idfilm;
+            int selectedrowindex = dtgvMovie.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dtgvMovie.Rows[selectedrowindex];
+            Idfilm = Convert.ToString(selectedRow.Cells["Mã phim"].Value);
+            txt_TheLoai.Text = "";
+            foreach (var item in MovieByGenreDB.GetListGenreByMovieID(Idfilm))
+            {
+                txt_TheLoai.Text += item.Name + ", ";
+            }
+        }
+
+
     }
 }

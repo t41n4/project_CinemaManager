@@ -1,6 +1,4 @@
-﻿using System;
-using System.Data;
-using System.Linq;
+﻿using System.Data;
 
 namespace Application
 {
@@ -23,4 +21,3 @@ namespace Application
         public string Name { get; set; }
     }
 }
-

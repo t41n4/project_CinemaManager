@@ -1,12 +1,11 @@
-﻿using System;
-using System.Data;
-using System.Linq;
+﻿using System.Data;
 
 namespace Application
 {
     public class Ticket
     {
-        public Ticket() { }
+        public Ticket()
+        { }
 
         public Ticket(string iD, int type, string showTimesID, string seatName
             , string customerID, string promotionID, float price,

@@ -1,13 +1,12 @@
 ﻿using DB;
 using System;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace frmAdminUserControls.DataUserControl
 {
     public partial class GenreUC : UserControl
     {
-        BindingSource genreList = new BindingSource();
+        private BindingSource genreList = new BindingSource();
 
         public GenreUC()
         {
@@ -15,28 +14,31 @@ namespace frmAdminUserControls.DataUserControl
             LoadGenre();
         }
 
-        void LoadGenre()
+        private void LoadGenre()
         {
             dtgvGenre.DataSource = genreList;
             LoadGenreList();
             AddGenreBinding();
         }
-        void LoadGenreList()
+
+        private void LoadGenreList()
         {
             genreList.DataSource = GenreDAO.GetGenre();
         }
-        void AddGenreBinding()
+
+        private void AddGenreBinding()
         {
             txtGenreID.DataBindings.Add("Text", dtgvGenre.DataSource, "Mã thể loại", true, DataSourceUpdateMode.Never);
             txtGenreName.DataBindings.Add("Text", dtgvGenre.DataSource, "Tên thể loại", true, DataSourceUpdateMode.Never);
             txtGenreDesc.DataBindings.Add("Text", dtgvGenre.DataSource, "Mô tả", true, DataSourceUpdateMode.Never);
         }
+
         private void btnShowGenre_Click(object sender, EventArgs e)
         {
             LoadGenreList();
         }
 
-        void InsertGenre(string id, string name, string desc)
+        private void InsertGenre(string id, string name, string desc)
         {
             if (GenreDAO.InsertGenre(id, name, desc))
             {
@@ -47,6 +49,7 @@ namespace frmAdminUserControls.DataUserControl
                 MessageBox.Show("Thêm thể loại thất bại");
             }
         }
+
         private void btnInsertGenre_Click(object sender, EventArgs e)
         {
             string GenreID = txtGenreID.Text;
@@ -56,7 +59,7 @@ namespace frmAdminUserControls.DataUserControl
             LoadGenreList();
         }
 
-        void UpdateGenre(string id, string name, string desc)
+        private void UpdateGenre(string id, string name, string desc)
         {
             if (GenreDAO.UpdateGenre(id, name, desc))
             {
@@ -67,6 +70,7 @@ namespace frmAdminUserControls.DataUserControl
                 MessageBox.Show("Sửa thể loại thất bại");
             }
         }
+
         private void btnUpdateGenre_Click(object sender, EventArgs e)
         {
             string GenreID = txtGenreID.Text;
@@ -76,7 +80,7 @@ namespace frmAdminUserControls.DataUserControl
             LoadGenreList();
         }
 
-        void DeleteGenre(string id)
+        private void DeleteGenre(string id)
         {
             if (GenreDAO.DeleteGenre(id))
             {
@@ -87,6 +91,7 @@ namespace frmAdminUserControls.DataUserControl
                 MessageBox.Show("Xóa thể loại thất bại");
             }
         }
+
         private void btnDeleteGenre_Click(object sender, EventArgs e)
         {
             string GenreID = txtGenreID.Text;

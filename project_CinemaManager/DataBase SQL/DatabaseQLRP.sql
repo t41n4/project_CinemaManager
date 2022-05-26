@@ -1,26 +1,12 @@
-﻿CREATE DATABASE QLRP1
+﻿CREATE DATABASE QLRP
 GO
 
-USE QLRP1
+USE QLRP
 GO
 
 SET DATEFORMAT DMY
 GO
 
---drop database QLRP
-
-
-CREATE TABLE TaiKhoan
-(
-	UserName NVARCHAR(100) NOT NULL,
-	Pass VARCHAR(1000) NOT NULL,
-	LoaiTK INT NOT NULL DEFAULT 2, -- 1:admin || 2:Customer
-	idNV VARCHAR(50) NOT NULL,
-
-	--FOREIGN KEY (idNV) REFERENCES dbo.NhanVien(ID)
-	PRIMARY KEY(idNV)
-)
-GO
 
 CREATE TABLE LoaiManHinh
 (
@@ -101,7 +87,6 @@ CREATE TABLE LichChieu
 	FOREIGN KEY (idPhong) REFERENCES dbo.PhongChieu(id),
 	FOREIGN KEY (idDinhDang) REFERENCES dbo.DinhDangPhim(id),
 
-	--CONSTRAINT PK_LichChieu PRIMARY KEY(ngayChieu,gioChieu,idPhong) --Vì cùng 1 thời điểm có thể có nhiều phòng cùng hoạt động nên khóa chính phải là cả 3 cái
 )
 GO
 
@@ -114,6 +99,18 @@ CREATE TABLE KhachHang
 	SDT VARCHAR(100),
 	CMND INT NOT NULL Unique,
 	DiemTichLuy int
+)
+GO
+
+
+CREATE TABLE TaiKhoan
+(
+	UserName NVARCHAR(100) NOT NULL,
+	Pass VARCHAR(1000) NOT NULL,
+	LoaiTK INT NOT NULL DEFAULT 2, -- 1:admin || 2:Customer
+	id VARCHAR(50) NOT NULL,
+	FOREIGN KEY (id) REFERENCES dbo.KhachHang(id),
+	PRIMARY KEY(id)
 )
 GO
 
@@ -211,8 +208,8 @@ GO
 CREATE PROC USP_GetAccountList
 AS
 BEGIN
-	SELECT UserName AS [Username],Pass AS [Pass], LoaiTK AS [Loại tài khoản], idNV AS [ID],HoTen AS [Họ Tên]
-	FROM TaiKhoan LEFT JOIN KhachHang ON TaiKhoan.idNV = KhachHang.id
+	SELECT UserName AS [Username],Pass AS [Pass], LoaiTK AS [Loại tài khoản], KhachHang.id AS [ID],HoTen AS [Họ Tên]
+	FROM TaiKhoan LEFT JOIN KhachHang ON TaiKhoan.id = KhachHang.id
 END
 GO
 
@@ -220,18 +217,18 @@ GO
 CREATE PROC USP_GetAccountByID @ID VARCHAR(50)
 AS
 BEGIN
-	SELECT TK.UserName AS [Username],TK.Pass AS Pass, TK.LoaiTK AS [LoaiTK], idNV AS [idNV]
+	SELECT TK.UserName AS [Username],TK.Pass AS Pass, TK.LoaiTK AS [LoaiTK], id AS [id]
 	FROM dbo.TaiKhoan TK
-	WHERE @ID = TK.idNV
+	WHERE @ID = TK.id
 END
 GO
 
 
-CREATE PROC USP_InsertAccount @username NVARCHAR(100), @Pass VARCHAR(100), @loaiTK INT, @idnv VARCHAR(100)
+CREATE PROC USP_InsertAccount @username NVARCHAR(100), @Pass VARCHAR(100), @loaiTK INT, @id VARCHAR(100)
 AS
 BEGIN
-	INSERT dbo.TaiKhoan ( UserName, Pass, LoaiTK, idNV )
-	VALUES ( @username, @Pass, @loaiTK, @idnv )
+	INSERT dbo.TaiKhoan ( UserName, Pass, LoaiTK, id )
+	VALUES ( @username, @Pass, @loaiTK, @id )
 END
 GO
 
@@ -279,7 +276,7 @@ AS
 BEGIN
 	SELECT TK.UserName AS [Username], TK.LoaiTK AS [Loại tài khoản], KH.id AS [ID], KH.HoTen AS [Họ và Tên]
 	FROM dbo.TaiKhoan TK, dbo.KhachHang KH
-	WHERE KH.id = TK.idNV AND dbo.fuConvertToUnsign1(KH.HoTen) LIKE N'%' + dbo.fuConvertToUnsign1(@name) + N'%'
+	WHERE KH.id = TK.id AND dbo.fuConvertToUnsign1(KH.HoTen) LIKE N'%' + dbo.fuConvertToUnsign1(@name) + N'%'
 END
 GO
 
@@ -634,206 +631,486 @@ END
 GO
 
 --Insert Dữ Liệu
-INSERT [dbo].[TheLoai] ([id], [TenTheLoai], [MoTa]) VALUES (N'TL01', N'Hành Động', NULL)
-INSERT [dbo].[TheLoai] ([id], [TenTheLoai], [MoTa]) VALUES (N'TL02', N'Hoạt Hình', NULL)
-INSERT [dbo].[TheLoai] ([id], [TenTheLoai], [MoTa]) VALUES (N'TL03', N'Hài', NULL)
-INSERT [dbo].[TheLoai] ([id], [TenTheLoai], [MoTa]) VALUES (N'TL04', N'Viễn Tưởng', NULL)
-INSERT [dbo].[TheLoai] ([id], [TenTheLoai], [MoTa]) VALUES (N'TL05', N'Phiêu lưu', NULL)
-INSERT [dbo].[TheLoai] ([id], [TenTheLoai], [MoTa]) VALUES (N'TL06', N'Gia đình', NULL)
-INSERT [dbo].[TheLoai] ([id], [TenTheLoai], [MoTa]) VALUES (N'TL07', N'Tình Cảm', NULL)
-INSERT [dbo].[TheLoai] ([id], [TenTheLoai], [MoTa]) VALUES (N'TL08', N'Tâm Lý', NULL)
+INSERT INTO [TheLoai] ([id], [TenTheLoai], [MoTa]) VALUES ('TL01', N'Hành Động', NULL);  
+INSERT INTO [TheLoai] ([id], [TenTheLoai], [MoTa]) VALUES ('TL02', N'Hoạt Hình', NULL);  
+INSERT INTO [TheLoai] ([id], [TenTheLoai], [MoTa]) VALUES ('TL03', N'Hài', NULL);  
+INSERT INTO [TheLoai] ([id], [TenTheLoai], [MoTa]) VALUES ('TL04', N'Viễn Tưởng', NULL);  
+INSERT INTO [TheLoai] ([id], [TenTheLoai], [MoTa]) VALUES ('TL05', N'Phiêu lưu', NULL);  
+INSERT INTO [TheLoai] ([id], [TenTheLoai], [MoTa]) VALUES ('TL06', N'Gia đình', NULL);  
+INSERT INTO [TheLoai] ([id], [TenTheLoai], [MoTa]) VALUES ('TL07', N'Tình Cảm', NULL);  
+INSERT INTO [TheLoai] ([id], [TenTheLoai], [MoTa]) VALUES ('TL08', N'Tâm Lý', NULL);  
 
+INSERT INTO [KhachHang] ([id], [HoTen], [NgaySinh], [DiaChi], [SDT], [CMND], [DiemTichLuy]) VALUES ('HAL4', N'Nguyen Anh Tai', '2002-04-11', N'DakSak', '091237123', 24512345, 0);  
+INSERT INTO [KhachHang] ([id], [HoTen], [NgaySinh], [DiaChi], [SDT], [CMND], [DiemTichLuy]) VALUES ('KH01', N'Nguyễn Văn A', '2001-05-03', N'Bla Bla', '0123456789', 218161554, 0);  
+INSERT INTO [KhachHang] ([id], [HoTen], [NgaySinh], [DiaChi], [SDT], [CMND], [DiemTichLuy]) VALUES ('KH02', N'Nguyễn Văn B', '2001-05-03', N'Bla Bla', '0123456789', 218161564, 0);  
+INSERT INTO [KhachHang] ([id], [HoTen], [NgaySinh], [DiaChi], [SDT], [CMND], [DiemTichLuy]) VALUES ('KH03', N'Nguyễn Văn B', '2001-05-03', N'Bla Bla', '0123456789', 218161654, 0);  
 
-INSERT [dbo].[TaiKhoan] ([UserName], [Pass], [LoaiTK], [idNV]) VALUES (N'admin', N'59113821474147731767615617822114745333', 1, N'NV00')-- mk hiện thị là admin
-INSERT [dbo].[TaiKhoan] ([UserName], [Pass], [LoaiTK], [idNV]) VALUES (N'KH01', N'5512317111114510840231031535810616566202691', 2, N'NV01')-- mk hiện thị là 12345
+INSERT INTO [TaiKhoan] ([UserName], [Pass], [LoaiTK], [id]) VALUES (N'Tai', '2115753541275705119798271895814423', 2, 'HAL4');  
+INSERT INTO [TaiKhoan] ([UserName], [Pass], [LoaiTK], [id]) VALUES (N'admin', '59113821474147731767615617822114745333', 1, 'KH01');  
+INSERT INTO [TaiKhoan] ([UserName], [Pass], [LoaiTK], [id]) VALUES (N'KH01', '5512317111114510840231031535810616566202691', 2, 'KH02');  
 
-INSERT [dbo].[KhachHang] ([id], [HoTen], [NgaySinh], [DiaChi], [SDT], [CMND], [DiemTichLuy]) VALUES (N'KH01', N'Nguyễn Văn A', CAST(N'2001-05-03' AS Date), N'Bla Bla', N'0123456789', 218161554, 0)
-INSERT [dbo].[KhachHang] ([id], [HoTen], [NgaySinh], [DiaChi], [SDT], [CMND], [DiemTichLuy]) VALUES (N'KH02', N'Nguyễn Văn B', CAST(N'2001-05-03' AS Date), N'Bla Bla', N'0123456789', 218161564, 0)
-INSERT [dbo].[KhachHang] ([id], [HoTen], [NgaySinh], [DiaChi], [SDT], [CMND], [DiemTichLuy]) VALUES (N'KH03', N'Nguyễn Văn B', CAST(N'2001-05-03' AS Date), N'Bla Bla', N'0123456789', 218161654, 0)
+INSERT INTO [LoaiManHinh] ([id], [TenMH]) VALUES ('MH01', N'2D');  
+INSERT INTO [LoaiManHinh] ([id], [TenMH]) VALUES ('MH02', N'3D');  
+INSERT INTO [LoaiManHinh] ([id], [TenMH]) VALUES ('MH03', N'IMAX');  
+INSERT INTO [LoaiManHinh] ([id], [TenMH]) VALUES ('MH04', N'4D');  
 
-INSERT [dbo].[LoaiManHinh] ([id], [TenMH]) VALUES (N'MH01', N'2D')
-INSERT [dbo].[LoaiManHinh] ([id], [TenMH]) VALUES (N'MH02', N'3D')
-INSERT [dbo].[LoaiManHinh] ([id], [TenMH]) VALUES (N'MH03', N'IMAX')
-INSERT [dbo].[LoaiManHinh] ([id], [TenMH]) VALUES (N'MH04', N'4D')
+INSERT INTO [PhongChieu] ([id], [TenPhong], [idManHinh], [SoChoNgoi], [TinhTrang], [SoHangGhe], [SoGheMotHang]) VALUES ('PC01', N'CINEMA 01', 'MH01', 140, 1, 10, 14);  
+INSERT INTO [PhongChieu] ([id], [TenPhong], [idManHinh], [SoChoNgoi], [TinhTrang], [SoHangGhe], [SoGheMotHang]) VALUES ('PC02', N'CINEMA 02', 'MH01', 140, 1, 10, 14);  
+INSERT INTO [PhongChieu] ([id], [TenPhong], [idManHinh], [SoChoNgoi], [TinhTrang], [SoHangGhe], [SoGheMotHang]) VALUES ('PC03', N'CINEMA 03', 'MH01', 140, 1, 10, 14);  
+INSERT INTO [PhongChieu] ([id], [TenPhong], [idManHinh], [SoChoNgoi], [TinhTrang], [SoHangGhe], [SoGheMotHang]) VALUES ('PC04', N'CINEMA 04', 'MH01', 140, 1, 10, 14);  
 
-INSERT [dbo].[PhongChieu] ([id], [TenPhong], [idManHinh], [SoChoNgoi], [TinhTrang], [SoHangGhe], [SoGheMotHang]) VALUES (N'PC01', N'CINEMA 01', N'MH01', 140, 1, 10, 14)
-INSERT [dbo].[PhongChieu] ([id], [TenPhong], [idManHinh], [SoChoNgoi], [TinhTrang], [SoHangGhe], [SoGheMotHang]) VALUES (N'PC02', N'CINEMA 02', N'MH01', 140, 1, 10, 14)
-INSERT [dbo].[PhongChieu] ([id], [TenPhong], [idManHinh], [SoChoNgoi], [TinhTrang], [SoHangGhe], [SoGheMotHang]) VALUES (N'PC03', N'CINEMA 03', N'MH03', 140, 1, 10, 14)
-INSERT [dbo].[PhongChieu] ([id], [TenPhong], [idManHinh], [SoChoNgoi], [TinhTrang], [SoHangGhe], [SoGheMotHang]) VALUES (N'PC04', N'CINEMA 04', N'MH01', 140, 1, 10, 14)
+SET DATEFORMAT YMD;
+INSERT INTO [Phim] ([id], [TenPhim], [MoTa], [ThoiLuong], [NgayKhoiChieu], [NgayKetThuc], [SanXuat], [DaoDien], [NamSX], [ApPhich]) VALUES ('P01', N'Avengers: Cuộc Chiến Vô Cực', N'Avengers: Infinity War', 150, '2022-05-26', '2022-09-01', N'Mỹ', N'Anthony Russo,  Joe Russo', 2021, NULL);  
+INSERT INTO [Phim] ([id], [TenPhim], [MoTa], [ThoiLuong], [NgayKhoiChieu], [NgayKetThuc], [SanXuat], [DaoDien], [NamSX], [ApPhich]) VALUES ('P02', N'Lật Mặt: 3 Chàng Khuyết', N'Lat Mat 3 Chang Khuyet', 100, '2022-05-26', '2022-09-01', N'Việt Nam', N'Lý Hải', 2021, NULL);  
+INSERT INTO [Phim] ([id], [TenPhim], [MoTa], [ThoiLuong], [NgayKhoiChieu], [NgayKetThuc], [SanXuat], [DaoDien], [NamSX], [ApPhich]) VALUES ('P03', N'100 Ngày Bên Em', N'', 100, '2022-05-26', '2022-09-01', N'Việt Nam', N'Vũ Ngọc Phượng', 2021, NULL);  
+INSERT INTO [Phim] ([id], [TenPhim], [MoTa], [ThoiLuong], [NgayKhoiChieu], [NgayKetThuc], [SanXuat], [DaoDien], [NamSX], [ApPhich]) VALUES ('P04', N'Ngỗng Vịt Phiêu Lưu Ký', N'Duck Duck Goose', 91, '2022-05-26', '2022-09-01', N'Mỹ', N'Christopher Jenkins', 2021, NULL);  
 
-INSERT [dbo].[Phim] ([id], [TenPhim], [MoTa], [ThoiLuong], [NgayKhoiChieu], [NgayKetThuc], [SanXuat], [DaoDien], [NamSX]) VALUES (N'P01', N'Avengers: Cuộc Chiến Vô Cực', N'Avengers: Infinity War', 150, CAST(N'2021-05-01' AS Date), CAST(N'2021-06-01' AS Date), N'Mỹ', N'Anthony Russo,  Joe Russo', 2021)
-INSERT [dbo].[Phim] ([id], [TenPhim], [MoTa], [ThoiLuong], [NgayKhoiChieu], [NgayKetThuc], [SanXuat], [DaoDien], [NamSX]) VALUES (N'P02', N'Lật Mặt: 3 Chàng Khuyết', N'Lat Mat 3 Chang Khuyet', 100, CAST(N'2021-05-01' AS Date), CAST(N'2021-06-01' AS Date), N'Việt Nam', N'Lý Hải', 2021)
-INSERT [dbo].[Phim] ([id], [TenPhim], [MoTa], [ThoiLuong], [NgayKhoiChieu], [NgayKetThuc], [SanXuat], [DaoDien], [NamSX]) VALUES (N'P03', N'100 Ngày Bên Em', NULL, 100, CAST(N'2021-05-01' AS Date), CAST(N'2021-06-01' AS Date), N'Việt Nam', N'Vũ Ngọc Phượng', 2021)
-INSERT [dbo].[Phim] ([id], [TenPhim], [MoTa], [ThoiLuong], [NgayKhoiChieu], [NgayKetThuc], [SanXuat], [DaoDien], [NamSX]) VALUES (N'P04', N'Ngỗng Vịt Phiêu Lưu Ký', N'Duck Duck Goose', 91, CAST(N'2021-05-01' AS Date), CAST(N'2021-06-01' AS Date), N'Mỹ', N'Christopher Jenkins', 2021)
+INSERT INTO [PhanLoaiPhim] ([idPhim], [idTheLoai]) VALUES ('P01', 'TL01');  
+INSERT INTO [PhanLoaiPhim] ([idPhim], [idTheLoai]) VALUES ('P01', 'TL04');  
+INSERT INTO [PhanLoaiPhim] ([idPhim], [idTheLoai]) VALUES ('P01', 'TL05');  
+INSERT INTO [PhanLoaiPhim] ([idPhim], [idTheLoai]) VALUES ('P02', 'TL01');  
+INSERT INTO [PhanLoaiPhim] ([idPhim], [idTheLoai]) VALUES ('P02', 'TL07');  
+INSERT INTO [PhanLoaiPhim] ([idPhim], [idTheLoai]) VALUES ('P02', 'TL08');  
+INSERT INTO [PhanLoaiPhim] ([idPhim], [idTheLoai]) VALUES ('P03', 'TL03');  
+INSERT INTO [PhanLoaiPhim] ([idPhim], [idTheLoai]) VALUES ('P03', 'TL07');  
+INSERT INTO [PhanLoaiPhim] ([idPhim], [idTheLoai]) VALUES ('P03', 'TL08');  
+INSERT INTO [PhanLoaiPhim] ([idPhim], [idTheLoai]) VALUES ('P04', 'TL02');  
+INSERT INTO [PhanLoaiPhim] ([idPhim], [idTheLoai]) VALUES ('P04', 'TL03');  
+INSERT INTO [PhanLoaiPhim] ([idPhim], [idTheLoai]) VALUES ('P04', 'TL05');  
 
-INSERT [dbo].[PhanLoaiPhim] ([idPhim], [idTheLoai]) VALUES (N'P01', N'TL01')
-INSERT [dbo].[PhanLoaiPhim] ([idPhim], [idTheLoai]) VALUES (N'P01', N'TL04')
-INSERT [dbo].[PhanLoaiPhim] ([idPhim], [idTheLoai]) VALUES (N'P01', N'TL05')
-INSERT [dbo].[PhanLoaiPhim] ([idPhim], [idTheLoai]) VALUES (N'P02', N'TL01')
-INSERT [dbo].[PhanLoaiPhim] ([idPhim], [idTheLoai]) VALUES (N'P02', N'TL07')
-INSERT [dbo].[PhanLoaiPhim] ([idPhim], [idTheLoai]) VALUES (N'P02', N'TL08')
-INSERT [dbo].[PhanLoaiPhim] ([idPhim], [idTheLoai]) VALUES (N'P03', N'TL03')
-INSERT [dbo].[PhanLoaiPhim] ([idPhim], [idTheLoai]) VALUES (N'P03', N'TL07')
-INSERT [dbo].[PhanLoaiPhim] ([idPhim], [idTheLoai]) VALUES (N'P03', N'TL08')
-INSERT [dbo].[PhanLoaiPhim] ([idPhim], [idTheLoai]) VALUES (N'P04', N'TL02')
-INSERT [dbo].[PhanLoaiPhim] ([idPhim], [idTheLoai]) VALUES (N'P04', N'TL03')
-INSERT [dbo].[PhanLoaiPhim] ([idPhim], [idTheLoai]) VALUES (N'P04', N'TL05')
+INSERT INTO [DinhDangPhim] ([id], [idPhim], [idLoaiManHinh]) VALUES ('DD01', 'P01', 'MH01');  
+INSERT INTO [DinhDangPhim] ([id], [idPhim], [idLoaiManHinh]) VALUES ('DD02', 'P02', 'MH01');  
+INSERT INTO [DinhDangPhim] ([id], [idPhim], [idLoaiManHinh]) VALUES ('DD03', 'P03', 'MH01');  
+INSERT INTO [DinhDangPhim] ([id], [idPhim], [idLoaiManHinh]) VALUES ('DD04', 'P04', 'MH01');  
 
-INSERT [dbo].[DinhDangPhim] ([id], [idPhim], [idLoaiManHinh]) VALUES (N'DD01', N'P01', N'MH01')
-INSERT [dbo].[DinhDangPhim] ([id], [idPhim], [idLoaiManHinh]) VALUES (N'DD02', N'P01', N'MH03')
-INSERT [dbo].[DinhDangPhim] ([id], [idPhim], [idLoaiManHinh]) VALUES (N'DD03', N'P02', N'MH01')
-INSERT [dbo].[DinhDangPhim] ([id], [idPhim], [idLoaiManHinh]) VALUES (N'DD04', N'P03', N'MH02')
+INSERT INTO [LichChieu] ([id], [ThoiGianChieu], [idPhong], [idDinhDang], [GiaVe], [TrangThai]) VALUES ('LC01', '2022-05-26 08:50:00.000', 'PC01', 'DD01', 85000.0000, 1);  
+INSERT INTO [LichChieu] ([id], [ThoiGianChieu], [idPhong], [idDinhDang], [GiaVe], [TrangThai]) VALUES ('LC02', '2022-05-26 08:05:00.000', 'PC02', 'DD02', 85000.0000, 1);  
+INSERT INTO [LichChieu] ([id], [ThoiGianChieu], [idPhong], [idDinhDang], [GiaVe], [TrangThai]) VALUES ('LC03', '2022-05-26 08:10:00.000', 'PC03', 'DD03', 85000.0000, 1);  
+INSERT INTO [LichChieu] ([id], [ThoiGianChieu], [idPhong], [idDinhDang], [GiaVe], [TrangThai]) VALUES ('LC04', '2022-05-26 09:20:00.000', 'PC04', 'DD04', 85000.0000, 0);  
 
-INSERT [dbo].[LichChieu] ([id], [ThoiGianChieu], [idPhong], [idDinhDang], [GiaVe], [TrangThai]) VALUES (N'LC01', CAST(N'2021-05-02T08:50:00.000' AS DateTime), N'PC01', N'DD01', 85000.0000, 1)
-INSERT [dbo].[LichChieu] ([id], [ThoiGianChieu], [idPhong], [idDinhDang], [GiaVe], [TrangThai]) VALUES (N'LC02', CAST(N'2021-05-02T08:05:00.000' AS DateTime), N'PC02', N'DD01', 85000.0000, 0)
-INSERT [dbo].[LichChieu] ([id], [ThoiGianChieu], [idPhong], [idDinhDang], [GiaVe], [TrangThai]) VALUES (N'LC03', CAST(N'2021-05-02T08:10:00.000' AS DateTime), N'PC03', N'DD02', 85000.0000, 0)
-INSERT [dbo].[LichChieu] ([id], [ThoiGianChieu], [idPhong], [idDinhDang], [GiaVe], [TrangThai]) VALUES (N'LC04', CAST(N'2021-05-02T09:20:00.000' AS DateTime), N'PC04', N'DD03', 85000.0000, 0)
 
 SET IDENTITY_INSERT [dbo].[Ve] ON
 GO
-
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (1, 0, N'LC01', N'A1', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (2, 0, N'LC01', N'A2', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (3, 0, N'LC01', N'A3', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (4, 0, N'LC01', N'A4', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (5, 0, N'LC01', N'A5', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (6, 0, N'LC01', N'A6', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (7, 0, N'LC01', N'A7', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (8, 0, N'LC01', N'A8', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (9, 0, N'LC01', N'A9', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (10, 0, N'LC01', N'A10', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (11, 0, N'LC01', N'A11', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (12, 0, N'LC01', N'A12', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (13, 0, N'LC01', N'A13', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (14, 0, N'LC01', N'A14', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (15, 0, N'LC01', N'B1', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (16, 0, N'LC01', N'B2', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (17, 0, N'LC01', N'B3', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (18, 0, N'LC01', N'B4', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (19, 0, N'LC01', N'B5', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (20, 0, N'LC01', N'B6', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (21, 0, N'LC01', N'B7', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (22, 0, N'LC01', N'B8', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (23, 0, N'LC01', N'B9', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (24, 0, N'LC01', N'B10', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (25, 0, N'LC01', N'B11', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (26, 0, N'LC01', N'B12', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (27, 0, N'LC01', N'B13', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (28, 0, N'LC01', N'B14', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (29, 0, N'LC01', N'C1', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (30, 0, N'LC01', N'C2', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (31, 0, N'LC01', N'C3', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (32, 0, N'LC01', N'C4', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (33, 0, N'LC01', N'C5', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (34, 0, N'LC01', N'C6', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (35, 0, N'LC01', N'C7', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (36, 0, N'LC01', N'C8', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (37, 0, N'LC01', N'C9', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (38, 0, N'LC01', N'C10', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (39, 0, N'LC01', N'C11', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (40, 0, N'LC01', N'C12', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (41, 0, N'LC01', N'C13', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (42, 0, N'LC01', N'C14', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (43, 0, N'LC01', N'D1', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (44, 0, N'LC01', N'D2', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (45, 0, N'LC01', N'D3', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (46, 0, N'LC01', N'D4', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (47, 0, N'LC01', N'D5', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (48, 0, N'LC01', N'D6', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (49, 0, N'LC01', N'D7', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (50, 0, N'LC01', N'D8', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (51, 0, N'LC01', N'D9', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (52, 0, N'LC01', N'D10', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (53, 0, N'LC01', N'D11', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (54, 0, N'LC01', N'D12', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (55, 0, N'LC01', N'D13', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (56, 0, N'LC01', N'D14', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (57, 0, N'LC01', N'E1', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (58, 0, N'LC01', N'E2', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (59, 0, N'LC01', N'E3', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (60, 1, N'LC01', N'E4', NULL, 1, 85000.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (61, 1, N'LC01', N'E5', NULL, 1, 85000.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (62, 2, N'LC01', N'E6', NULL, 1, 68000.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (63, 2, N'LC01', N'E7', NULL, 1, 68000.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (64, 0, N'LC01', N'E8', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (65, 0, N'LC01', N'E9', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (66, 0, N'LC01', N'E10', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (67, 0, N'LC01', N'E11', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (68, 0, N'LC01', N'E12', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (69, 0, N'LC01', N'E13', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (70, 0, N'LC01', N'E14', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (71, 0, N'LC01', N'F1', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (72, 0, N'LC01', N'F2', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (73, 0, N'LC01', N'F3', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (74, 0, N'LC01', N'F4', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (75, 0, N'LC01', N'F5', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (76, 3, N'LC01', N'F6', NULL, 1, 59500.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (77, 2, N'LC01', N'F7', NULL, 1, 68000.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (78, 3, N'LC01', N'F8', NULL, 1, 59500.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (79, 1, N'LC01', N'F9', NULL, 1, 85000.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (80, 0, N'LC01', N'F10', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (81, 0, N'LC01', N'F11', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (82, 0, N'LC01', N'F12', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (83, 0, N'LC01', N'F13', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (84, 0, N'LC01', N'F14', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (85, 0, N'LC01', N'G1', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (86, 0, N'LC01', N'G2', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (87, 0, N'LC01', N'G3', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (88, 0, N'LC01', N'G4', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (89, 0, N'LC01', N'G5', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (90, 2, N'LC01', N'G6', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (91, 1, N'LC01', N'G7', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (92, 0, N'LC01', N'G8', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (93, 0, N'LC01', N'G9', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (94, 0, N'LC01', N'G10', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (95, 0, N'LC01', N'G11', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (96, 0, N'LC01', N'G12', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (97, 0, N'LC01', N'G13', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (98, 0, N'LC01', N'G14', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (99, 0, N'LC01', N'J1', NULL, 0, 0.0000)
-GO
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (100, 0, N'LC01', N'J2', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (101, 0, N'LC01', N'J3', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (102, 0, N'LC01', N'J4', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (103, 0, N'LC01', N'J5', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (104, 0, N'LC01', N'J6', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (105, 0, N'LC01', N'J7', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (106, 0, N'LC01', N'J8', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (107, 0, N'LC01', N'J9', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (108, 0, N'LC01', N'J10', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (109, 0, N'LC01', N'J11', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (110, 0, N'LC01', N'J12', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (111, 0, N'LC01', N'J13', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (112, 0, N'LC01', N'J14', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (113, 0, N'LC01', N'I1', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (114, 0, N'LC01', N'I2', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (115, 0, N'LC01', N'I3', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (116, 0, N'LC01', N'I4', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (117, 0, N'LC01', N'I5', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (118, 0, N'LC01', N'I6', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (119, 0, N'LC01', N'I7', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (120, 0, N'LC01', N'I8', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (121, 0, N'LC01', N'I9', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (122, 0, N'LC01', N'I10', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (123, 0, N'LC01', N'I11', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (124, 0, N'LC01', N'I12', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (125, 0, N'LC01', N'I13', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (126, 0, N'LC01', N'I14', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (127, 0, N'LC01', N'K1', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (128, 0, N'LC01', N'K2', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (129, 0, N'LC01', N'K3', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (130, 0, N'LC01', N'K4', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (131, 0, N'LC01', N'K5', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (132, 0, N'LC01', N'K6', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (133, 0, N'LC01', N'K7', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (134, 0, N'LC01', N'K8', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (135, 0, N'LC01', N'K9', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (136, 0, N'LC01', N'K10', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (137, 0, N'LC01', N'K11', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (138, 0, N'LC01', N'K12', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (139, 0, N'LC01', N'K13', NULL, 0, 0.0000)
-INSERT [dbo].[Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (140, 0, N'LC01', N'K14', NULL, 0, 0.0000)
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (141, 0, 'LC02', 'A1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (142, 0, 'LC02', 'A2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (143, 0, 'LC02', 'A3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (144, 0, 'LC02', 'A4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (145, 0, 'LC02', 'A5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (146, 0, 'LC02', 'A6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (147, 0, 'LC02', 'A7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (148, 0, 'LC02', 'A8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (149, 0, 'LC02', 'A9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (150, 0, 'LC02', 'A10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (151, 0, 'LC02', 'A11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (152, 0, 'LC02', 'A12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (153, 0, 'LC02', 'A13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (154, 0, 'LC02', 'A14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (155, 0, 'LC02', 'B1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (156, 0, 'LC02', 'B2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (157, 0, 'LC02', 'B3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (158, 0, 'LC02', 'B4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (159, 0, 'LC02', 'B5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (160, 0, 'LC02', 'B6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (161, 0, 'LC02', 'B7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (162, 0, 'LC02', 'B8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (163, 0, 'LC02', 'B9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (164, 0, 'LC02', 'B10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (165, 0, 'LC02', 'B11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (166, 0, 'LC02', 'B12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (167, 0, 'LC02', 'B13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (168, 0, 'LC02', 'B14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (169, 0, 'LC02', 'C1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (170, 0, 'LC02', 'C2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (171, 0, 'LC02', 'C3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (172, 0, 'LC02', 'C4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (173, 0, 'LC02', 'C5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (174, 0, 'LC02', 'C6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (175, 0, 'LC02', 'C7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (176, 0, 'LC02', 'C8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (177, 0, 'LC02', 'C9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (178, 0, 'LC02', 'C10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (179, 0, 'LC02', 'C11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (180, 0, 'LC02', 'C12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (181, 0, 'LC02', 'C13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (182, 0, 'LC02', 'C14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (183, 0, 'LC02', 'D1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (184, 0, 'LC02', 'D2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (185, 0, 'LC02', 'D3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (186, 0, 'LC02', 'D4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (187, 0, 'LC02', 'D5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (188, 0, 'LC02', 'D6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (189, 0, 'LC02', 'D7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (190, 0, 'LC02', 'D8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (191, 0, 'LC02', 'D9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (192, 0, 'LC02', 'D10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (193, 0, 'LC02', 'D11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (194, 0, 'LC02', 'D12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (195, 0, 'LC02', 'D13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (196, 0, 'LC02', 'D14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (197, 0, 'LC02', 'E1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (198, 0, 'LC02', 'E2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (199, 0, 'LC02', 'E3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (200, 0, 'LC02', 'E4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (201, 0, 'LC02', 'E5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (202, 0, 'LC02', 'E6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (203, 0, 'LC02', 'E7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (204, 0, 'LC02', 'E8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (205, 0, 'LC02', 'E9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (206, 0, 'LC02', 'E10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (207, 0, 'LC02', 'E11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (208, 0, 'LC02', 'E12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (209, 0, 'LC02', 'E13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (210, 0, 'LC02', 'E14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (211, 0, 'LC02', 'F1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (212, 0, 'LC02', 'F2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (213, 0, 'LC02', 'F3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (214, 0, 'LC02', 'F4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (215, 0, 'LC02', 'F5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (216, 0, 'LC02', 'F6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (217, 0, 'LC02', 'F7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (218, 0, 'LC02', 'F8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (219, 0, 'LC02', 'F9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (220, 0, 'LC02', 'F10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (221, 0, 'LC02', 'F11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (222, 0, 'LC02', 'F12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (223, 0, 'LC02', 'F13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (224, 0, 'LC02', 'F14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (225, 0, 'LC02', 'G1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (226, 0, 'LC02', 'G2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (227, 0, 'LC02', 'G3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (228, 0, 'LC02', 'G4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (229, 0, 'LC02', 'G5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (230, 0, 'LC02', 'G6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (231, 0, 'LC02', 'G7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (232, 0, 'LC02', 'G8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (233, 0, 'LC02', 'G9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (234, 0, 'LC02', 'G10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (235, 0, 'LC02', 'G11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (236, 0, 'LC02', 'G12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (237, 0, 'LC02', 'G13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (238, 0, 'LC02', 'G14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (239, 0, 'LC02', 'H1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (240, 0, 'LC02', 'H2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (241, 0, 'LC02', 'H3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (242, 0, 'LC02', 'H4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (243, 0, 'LC02', 'H5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (244, 0, 'LC02', 'H6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (245, 0, 'LC02', 'H7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (246, 0, 'LC02', 'H8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (247, 0, 'LC02', 'H9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (248, 0, 'LC02', 'H10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (249, 0, 'LC02', 'H11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (250, 0, 'LC02', 'H12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (251, 0, 'LC02', 'H13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (252, 0, 'LC02', 'H14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (253, 0, 'LC02', 'I1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (254, 0, 'LC02', 'I2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (255, 0, 'LC02', 'I3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (256, 0, 'LC02', 'I4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (257, 0, 'LC02', 'I5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (258, 0, 'LC02', 'I6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (259, 0, 'LC02', 'I7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (260, 0, 'LC02', 'I8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (261, 0, 'LC02', 'I9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (262, 0, 'LC02', 'I10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (263, 0, 'LC02', 'I11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (264, 0, 'LC02', 'I12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (265, 0, 'LC02', 'I13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (266, 0, 'LC02', 'I14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (267, 0, 'LC02', 'J1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (268, 0, 'LC02', 'J2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (269, 0, 'LC02', 'J3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (270, 0, 'LC02', 'J4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (271, 0, 'LC02', 'J5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (272, 0, 'LC02', 'J6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (273, 0, 'LC02', 'J7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (274, 0, 'LC02', 'J8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (275, 0, 'LC02', 'J9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (276, 0, 'LC02', 'J10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (277, 0, 'LC02', 'J11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (278, 0, 'LC02', 'J12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (279, 0, 'LC02', 'J13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (280, 0, 'LC02', 'J14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (281, 0, 'LC03', 'A1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (282, 0, 'LC03', 'A2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (283, 0, 'LC03', 'A3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (284, 0, 'LC03', 'A4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (285, 0, 'LC03', 'A5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (286, 0, 'LC03', 'A6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (287, 0, 'LC03', 'A7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (288, 0, 'LC03', 'A8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (289, 0, 'LC03', 'A9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (290, 0, 'LC03', 'A10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (291, 0, 'LC03', 'A11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (292, 0, 'LC03', 'A12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (293, 0, 'LC03', 'A13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (294, 0, 'LC03', 'A14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (295, 0, 'LC03', 'B1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (296, 0, 'LC03', 'B2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (297, 0, 'LC03', 'B3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (298, 0, 'LC03', 'B4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (299, 0, 'LC03', 'B5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (300, 0, 'LC03', 'B6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (301, 0, 'LC03', 'B7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (302, 0, 'LC03', 'B8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (303, 0, 'LC03', 'B9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (304, 0, 'LC03', 'B10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (305, 0, 'LC03', 'B11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (306, 0, 'LC03', 'B12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (307, 0, 'LC03', 'B13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (308, 0, 'LC03', 'B14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (309, 0, 'LC03', 'C1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (310, 0, 'LC03', 'C2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (311, 0, 'LC03', 'C3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (312, 0, 'LC03', 'C4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (313, 0, 'LC03', 'C5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (314, 0, 'LC03', 'C6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (315, 0, 'LC03', 'C7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (316, 0, 'LC03', 'C8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (317, 0, 'LC03', 'C9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (318, 0, 'LC03', 'C10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (319, 0, 'LC03', 'C11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (320, 0, 'LC03', 'C12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (321, 0, 'LC03', 'C13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (322, 0, 'LC03', 'C14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (323, 0, 'LC03', 'D1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (324, 0, 'LC03', 'D2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (325, 0, 'LC03', 'D3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (326, 0, 'LC03', 'D4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (327, 0, 'LC03', 'D5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (328, 0, 'LC03', 'D6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (329, 0, 'LC03', 'D7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (330, 0, 'LC03', 'D8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (331, 0, 'LC03', 'D9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (332, 0, 'LC03', 'D10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (333, 0, 'LC03', 'D11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (334, 0, 'LC03', 'D12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (335, 0, 'LC03', 'D13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (336, 0, 'LC03', 'D14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (337, 0, 'LC03', 'E1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (338, 0, 'LC03', 'E2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (339, 0, 'LC03', 'E3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (340, 0, 'LC03', 'E4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (341, 0, 'LC03', 'E5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (342, 0, 'LC03', 'E6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (343, 0, 'LC03', 'E7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (344, 0, 'LC03', 'E8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (345, 0, 'LC03', 'E9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (346, 0, 'LC03', 'E10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (347, 0, 'LC03', 'E11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (348, 0, 'LC03', 'E12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (349, 0, 'LC03', 'E13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (350, 0, 'LC03', 'E14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (351, 0, 'LC03', 'F1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (352, 0, 'LC03', 'F2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (353, 0, 'LC03', 'F3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (354, 0, 'LC03', 'F4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (355, 0, 'LC03', 'F5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (356, 0, 'LC03', 'F6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (357, 0, 'LC03', 'F7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (358, 0, 'LC03', 'F8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (359, 0, 'LC03', 'F9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (360, 0, 'LC03', 'F10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (361, 0, 'LC03', 'F11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (362, 0, 'LC03', 'F12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (363, 0, 'LC03', 'F13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (364, 0, 'LC03', 'F14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (365, 0, 'LC03', 'G1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (366, 0, 'LC03', 'G2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (367, 0, 'LC03', 'G3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (368, 0, 'LC03', 'G4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (369, 0, 'LC03', 'G5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (370, 0, 'LC03', 'G6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (371, 0, 'LC03', 'G7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (372, 0, 'LC03', 'G8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (373, 0, 'LC03', 'G9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (374, 0, 'LC03', 'G10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (375, 0, 'LC03', 'G11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (376, 0, 'LC03', 'G12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (377, 0, 'LC03', 'G13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (378, 0, 'LC03', 'G14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (379, 0, 'LC03', 'H1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (380, 0, 'LC03', 'H2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (381, 0, 'LC03', 'H3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (382, 0, 'LC03', 'H4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (383, 0, 'LC03', 'H5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (384, 0, 'LC03', 'H6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (385, 0, 'LC03', 'H7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (386, 0, 'LC03', 'H8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (387, 0, 'LC03', 'H9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (388, 0, 'LC03', 'H10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (389, 0, 'LC03', 'H11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (390, 0, 'LC03', 'H12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (391, 0, 'LC03', 'H13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (392, 0, 'LC03', 'H14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (393, 0, 'LC03', 'I1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (394, 0, 'LC03', 'I2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (395, 0, 'LC03', 'I3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (396, 0, 'LC03', 'I4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (397, 0, 'LC03', 'I5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (398, 0, 'LC03', 'I6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (399, 0, 'LC03', 'I7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (400, 0, 'LC03', 'I8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (401, 0, 'LC03', 'I9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (402, 0, 'LC03', 'I10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (403, 0, 'LC03', 'I11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (404, 0, 'LC03', 'I12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (405, 0, 'LC03', 'I13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (406, 0, 'LC03', 'I14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (407, 0, 'LC03', 'J1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (408, 0, 'LC03', 'J2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (409, 0, 'LC03', 'J3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (410, 0, 'LC03', 'J4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (411, 0, 'LC03', 'J5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (412, 0, 'LC03', 'J6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (413, 0, 'LC03', 'J7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (414, 0, 'LC03', 'J8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (415, 0, 'LC03', 'J9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (416, 0, 'LC03', 'J10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (417, 0, 'LC03', 'J11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (418, 0, 'LC03', 'J12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (419, 0, 'LC03', 'J13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (420, 0, 'LC03', 'J14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (421, 0, 'LC01', 'A1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (422, 0, 'LC01', 'A2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (423, 0, 'LC01', 'A3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (424, 0, 'LC01', 'A4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (425, 0, 'LC01', 'A5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (426, 0, 'LC01', 'A6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (427, 0, 'LC01', 'A7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (428, 0, 'LC01', 'A8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (429, 0, 'LC01', 'A9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (430, 0, 'LC01', 'A10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (431, 0, 'LC01', 'A11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (432, 0, 'LC01', 'A12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (433, 0, 'LC01', 'A13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (434, 0, 'LC01', 'A14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (435, 0, 'LC01', 'B1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (436, 0, 'LC01', 'B2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (437, 0, 'LC01', 'B3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (438, 0, 'LC01', 'B4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (439, 0, 'LC01', 'B5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (440, 0, 'LC01', 'B6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (441, 0, 'LC01', 'B7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (442, 0, 'LC01', 'B8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (443, 0, 'LC01', 'B9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (444, 0, 'LC01', 'B10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (445, 0, 'LC01', 'B11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (446, 0, 'LC01', 'B12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (447, 0, 'LC01', 'B13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (448, 0, 'LC01', 'B14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (449, 0, 'LC01', 'C1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (450, 0, 'LC01', 'C2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (451, 0, 'LC01', 'C3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (452, 0, 'LC01', 'C4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (453, 0, 'LC01', 'C5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (454, 0, 'LC01', 'C6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (455, 0, 'LC01', 'C7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (456, 0, 'LC01', 'C8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (457, 0, 'LC01', 'C9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (458, 0, 'LC01', 'C10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (459, 0, 'LC01', 'C11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (460, 0, 'LC01', 'C12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (461, 0, 'LC01', 'C13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (462, 0, 'LC01', 'C14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (463, 0, 'LC01', 'D1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (464, 0, 'LC01', 'D2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (465, 0, 'LC01', 'D3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (466, 0, 'LC01', 'D4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (467, 0, 'LC01', 'D5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (468, 0, 'LC01', 'D6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (469, 0, 'LC01', 'D7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (470, 0, 'LC01', 'D8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (471, 0, 'LC01', 'D9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (472, 0, 'LC01', 'D10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (473, 0, 'LC01', 'D11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (474, 0, 'LC01', 'D12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (475, 0, 'LC01', 'D13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (476, 0, 'LC01', 'D14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (477, 0, 'LC01', 'E1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (478, 0, 'LC01', 'E2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (479, 0, 'LC01', 'E3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (480, 0, 'LC01', 'E4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (481, 0, 'LC01', 'E5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (482, 0, 'LC01', 'E6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (483, 0, 'LC01', 'E7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (484, 0, 'LC01', 'E8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (485, 0, 'LC01', 'E9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (486, 0, 'LC01', 'E10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (487, 0, 'LC01', 'E11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (488, 0, 'LC01', 'E12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (489, 0, 'LC01', 'E13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (490, 0, 'LC01', 'E14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (491, 0, 'LC01', 'F1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (492, 0, 'LC01', 'F2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (493, 0, 'LC01', 'F3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (494, 0, 'LC01', 'F4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (495, 0, 'LC01', 'F5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (496, 0, 'LC01', 'F6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (497, 0, 'LC01', 'F7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (498, 0, 'LC01', 'F8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (499, 0, 'LC01', 'F9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (500, 0, 'LC01', 'F10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (501, 0, 'LC01', 'F11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (502, 0, 'LC01', 'F12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (503, 0, 'LC01', 'F13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (504, 0, 'LC01', 'F14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (505, 0, 'LC01', 'G1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (506, 0, 'LC01', 'G2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (507, 0, 'LC01', 'G3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (508, 0, 'LC01', 'G4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (509, 0, 'LC01', 'G5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (510, 0, 'LC01', 'G6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (511, 0, 'LC01', 'G7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (512, 0, 'LC01', 'G8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (513, 0, 'LC01', 'G9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (514, 0, 'LC01', 'G10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (515, 0, 'LC01', 'G11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (516, 0, 'LC01', 'G12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (517, 0, 'LC01', 'G13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (518, 0, 'LC01', 'G14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (519, 0, 'LC01', 'H1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (520, 0, 'LC01', 'H2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (521, 0, 'LC01', 'H3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (522, 0, 'LC01', 'H4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (523, 0, 'LC01', 'H5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (524, 0, 'LC01', 'H6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (525, 0, 'LC01', 'H7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (526, 0, 'LC01', 'H8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (527, 0, 'LC01', 'H9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (528, 0, 'LC01', 'H10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (529, 0, 'LC01', 'H11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (530, 0, 'LC01', 'H12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (531, 0, 'LC01', 'H13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (532, 0, 'LC01', 'H14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (533, 0, 'LC01', 'I1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (534, 0, 'LC01', 'I2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (535, 0, 'LC01', 'I3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (536, 0, 'LC01', 'I4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (537, 0, 'LC01', 'I5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (538, 0, 'LC01', 'I6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (539, 0, 'LC01', 'I7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (540, 0, 'LC01', 'I8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (541, 0, 'LC01', 'I9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (542, 0, 'LC01', 'I10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (543, 0, 'LC01', 'I11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (544, 0, 'LC01', 'I12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (545, 0, 'LC01', 'I13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (546, 0, 'LC01', 'I14', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (547, 0, 'LC01', 'J1', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (548, 0, 'LC01', 'J2', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (549, 0, 'LC01', 'J3', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (550, 0, 'LC01', 'J4', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (551, 0, 'LC01', 'J5', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (552, 0, 'LC01', 'J6', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (553, 0, 'LC01', 'J7', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (554, 0, 'LC01', 'J8', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (555, 0, 'LC01', 'J9', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (556, 0, 'LC01', 'J10', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (557, 0, 'LC01', 'J11', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (558, 0, 'LC01', 'J12', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (559, 0, 'LC01', 'J13', NULL, 0, .0000);  
+INSERT INTO [Ve] ([id], [LoaiVe], [idLichChieu], [MaGheNgoi], [idKhachHang], [TrangThai], [TienBanVe]) VALUES (560, 0, 'LC01', 'J14', NULL, 0, .0000);  
 
 SET IDENTITY_INSERT [dbo].[Ve] OFF
 GO
-

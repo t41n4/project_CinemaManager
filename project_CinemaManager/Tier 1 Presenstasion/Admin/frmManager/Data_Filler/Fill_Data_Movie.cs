@@ -1,16 +1,15 @@
-﻿using DB;
-using Application;
+﻿using Application;
+using DB;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace frmAdminUserControls.DataUserControl
 {
     public partial class MovieUC : UserControl
     {
-        BindingSource movieList = new BindingSource();
+        private BindingSource movieList = new BindingSource();
 
         public MovieUC()
         {
@@ -18,23 +17,26 @@ namespace frmAdminUserControls.DataUserControl
             LoadMovie();
         }
 
-        void LoadMovie()
+        private void LoadMovie()
         {
             dtgvMovie.DataSource = movieList;
             LoadMovieList();
             AddMovieBinding();
         }
-        void LoadMovieList()
+
+        private void LoadMovieList()
         {
             movieList.DataSource = MovieDB.GetMovie();
         }
+
         private void btnShowMovie_Click(object sender, EventArgs e)
         {
             LoadMovieList();
         }
-        void AddMovieBinding()
+
+        private void AddMovieBinding()
         {
-            txtMovieID.DataBindings.Add("Text", dtgvMovie.DataSource, "Mã phim", true,  DataSourceUpdateMode.Never);
+            txtMovieID.DataBindings.Add("Text", dtgvMovie.DataSource, "Mã phim", true, DataSourceUpdateMode.Never);
             txtMovieName.DataBindings.Add("Text", dtgvMovie.DataSource, "Tên phim", true, DataSourceUpdateMode.Never);
             txtMovieDesc.DataBindings.Add("Text", dtgvMovie.DataSource, "Mô tả", true, DataSourceUpdateMode.Never);
             txtMovieLength.DataBindings.Add("Text", dtgvMovie.DataSource, "Thời lượng", true, DataSourceUpdateMode.Never);
@@ -45,12 +47,14 @@ namespace frmAdminUserControls.DataUserControl
             txtMovieYear.DataBindings.Add("Text", dtgvMovie.DataSource, "Năm SX", true, DataSourceUpdateMode.Never);
             LoadGenreIntoCheckedList(clbMovieGenre);
         }
-        void LoadGenreIntoCheckedList(CheckedListBox checkedList)
+
+        private void LoadGenreIntoCheckedList(CheckedListBox checkedList)
         {
             List<Genre> genreList = GenreDAO.GetListGenre();
             checkedList.DataSource = genreList;
             checkedList.DisplayMember = "Name";
         }
+
         private void txtMovieID_TextChanged(object sender, EventArgs e)
         //Use to binding the CheckedListBox Genre of Movie and picture of Movie
         {
@@ -61,7 +65,7 @@ namespace frmAdminUserControls.DataUserControl
                 //Uncheck all CheckBox first
             }
 
-            List<Genre> listGenreOfMovie = MovieByGenreDAO.GetListGenreByMovieID(txtMovieID.Text);
+            List<Genre> listGenreOfMovie = MovieByGenreDB.GetListGenreByMovieID(txtMovieID.Text);
             for (int i = 0; i < clbMovieGenre.Items.Count; i++)
             {
                 Genre genre = (Genre)clbMovieGenre.Items[i];
@@ -84,7 +88,7 @@ namespace frmAdminUserControls.DataUserControl
                 picFilm.Image = MovieDB.byteArrayToImage(movie.Poster);
         }
 
-        void InsertMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, int year, byte[] image)
+        private void InsertMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, int year, byte[] image)
         {
             if (MovieDB.InsertMovie(id, name, desc, length, startDate, endDate, productor, director, year, image))
             {
@@ -95,7 +99,8 @@ namespace frmAdminUserControls.DataUserControl
                 MessageBox.Show("Thêm phim thất bại");
             }
         }
-        void InsertMovie_Genre(string movieID, CheckedListBox checkedListBox)
+
+        private void InsertMovie_Genre(string movieID, CheckedListBox checkedListBox)
         //Insert into table 'PhanLoaiPhim'
         {
             List<Genre> checkedGenreList = new List<Genre>();
@@ -103,7 +108,7 @@ namespace frmAdminUserControls.DataUserControl
             {
                 checkedGenreList.Add(checkedItem);
             }
-            MovieByGenreDAO.InsertMovie_Genre(movieID, checkedGenreList);
+            MovieByGenreDB.InsertMovie_Genre(movieID, checkedGenreList);
         }
 
         private void btnUpLoadPictureFilm_Click(object sender, EventArgs e)
@@ -148,7 +153,7 @@ namespace frmAdminUserControls.DataUserControl
             LoadMovieList();
         }
 
-        void UpdateMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, int year, byte[] image)
+        private void UpdateMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, int year, byte[] image)
         {
             if (MovieDB.UpdateMovie(id, name, desc, length, startDate, endDate, productor, director, year, image))
             {
@@ -159,15 +164,17 @@ namespace frmAdminUserControls.DataUserControl
                 MessageBox.Show("Sửa phim thất bại");
             }
         }
-        void UpdateMovie_Genre(string movieID, CheckedListBox checkedListBox)
+
+        private void UpdateMovie_Genre(string movieID, CheckedListBox checkedListBox)
         {
             List<Genre> checkedGenreList = new List<Genre>();
             foreach (Genre checkedItem in checkedListBox.CheckedItems)
             {
                 checkedGenreList.Add(checkedItem);
             }
-            MovieByGenreDAO.UpdateMovie_Genre(movieID, checkedGenreList);
+            MovieByGenreDB.UpdateMovie_Genre(movieID, checkedGenreList);
         }
+
         private void btnUpdateMovie_Click(object sender, EventArgs e)
         {
             string movieID = txtMovieID.Text;
@@ -189,7 +196,7 @@ namespace frmAdminUserControls.DataUserControl
             LoadMovieList();
         }
 
-        void DeleteMovie(string id)
+        private void DeleteMovie(string id)
         {
             if (MovieDB.DeleteMovie(id))
             {
@@ -200,6 +207,7 @@ namespace frmAdminUserControls.DataUserControl
                 MessageBox.Show("Xóa phim thất bại");
             }
         }
+
         private void btnDeleteMovie_Click(object sender, EventArgs e)
         {
             string movieID = txtMovieID.Text;

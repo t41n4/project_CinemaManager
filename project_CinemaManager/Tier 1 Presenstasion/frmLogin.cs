@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Application;
 using DB;
-using Application;
+using System;
+using System.Windows.Forms;
 
 namespace project_CinemaManager
 {
@@ -24,7 +17,7 @@ namespace project_CinemaManager
             btnLogin.Enabled = false;
             string userName = txtUsername.Text;
             string passWord = txtPassword.Text;
-          
+
             int result = Login(userName, passWord);
             if (result == 1)
             {
@@ -32,7 +25,6 @@ namespace project_CinemaManager
 
                 if (loginAccount.Type == 1)
                 {
-                  
                     frmAdmin frm = new frmAdmin(loginAccount);
                     this.Hide();
                     frm.ShowDialog();
@@ -45,8 +37,6 @@ namespace project_CinemaManager
                     frm.ShowDialog();
                     this.Show();
                 }
-
-
             }
             else if (result == 0)
             {
@@ -57,7 +47,6 @@ namespace project_CinemaManager
                 MessageBox.Show("KẾT NỐI THẤT BẠI", "THÔNG BÁO");
             }
             btnLogin.Enabled = true;
-       
         }
 
         private int Login(string userName, string passWord)
@@ -65,22 +54,19 @@ namespace project_CinemaManager
             return AccountDB.Login(userName, passWord);
         }
 
-
         private void mnuSetting_Click(object sender, EventArgs e)
         {
             frmTestConnection frmTestConnection = new frmTestConnection();
             frmTestConnection.ShowDialog();
-
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-
         }
 
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode==Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 btnLogin.PerformClick();
             }
@@ -92,7 +78,6 @@ namespace project_CinemaManager
             this.Hide();
             frmSignUp.ShowDialog();
             this.Show();
-
         }
     }
 }

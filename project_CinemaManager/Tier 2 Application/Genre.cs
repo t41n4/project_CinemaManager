@@ -1,12 +1,9 @@
-﻿using System;
-using System.Data;
-using System.Linq;
+﻿using System.Data;
 
 namespace Application
 {
     public class Genre
     {
-
         public Genre(string iD, string name, string desc = null)
         {
             this.ID = iD;

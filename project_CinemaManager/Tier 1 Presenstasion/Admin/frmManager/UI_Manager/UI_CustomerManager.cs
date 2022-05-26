@@ -1,36 +1,37 @@
 ﻿using DB;
 using System;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace frmAdminUserControls
 {
     public partial class CustomerUC : UserControl
     {
-        BindingSource customerList = new BindingSource();
+        private BindingSource customerList = new BindingSource();
+
         public CustomerUC()
         {
             InitializeComponent();
             LoadCustomer();
         }
 
-        void LoadCustomer()
+        private void LoadCustomer()
         {
             dtgvCustomer.DataSource = customerList;
             LoadCustomerList();
             AddCustomerBinding();
         }
 
-        void LoadCustomerList()
+        private void LoadCustomerList()
         {
             customerList.DataSource = CustomerDB.GetListCustomer();
         }
+
         private void btnShowCustomer_Click(object sender, EventArgs e)
         {
             LoadCustomerList();
         }
 
-        void AddCustomerBinding()
+        private void AddCustomerBinding()
         {
             txtCusID.DataBindings.Add("Text", dtgvCustomer.DataSource, "Mã khách hàng", true, DataSourceUpdateMode.Never);
             txtCusName.DataBindings.Add("Text", dtgvCustomer.DataSource, "Họ tên", true, DataSourceUpdateMode.Never);
@@ -40,7 +41,7 @@ namespace frmAdminUserControls
             txtCusINumber.DataBindings.Add("Text", dtgvCustomer.DataSource, "CMND", true, DataSourceUpdateMode.Never);
         }
 
-        void InsertCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
+        private void InsertCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
         {
             if (CustomerDB.InsertCustomer(id, hoTen, ngaySinh, diaChi, sdt, cmnd))
             {
@@ -51,6 +52,7 @@ namespace frmAdminUserControls
                 MessageBox.Show("Thêm khách hàng thất bại");
             }
         }
+
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
             string cusID = txtCusID.Text;
@@ -63,7 +65,7 @@ namespace frmAdminUserControls
             LoadCustomerList();
         }
 
-        void UpdateCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
+        private void UpdateCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
         {
             if (CustomerDB.UpdateCustomer(id, hoTen, ngaySinh, diaChi, sdt, cmnd))
             {
@@ -74,6 +76,7 @@ namespace frmAdminUserControls
                 MessageBox.Show("Sửa khách hàng thất bại");
             }
         }
+
         private void btnUpdateCustomer_Click(object sender, EventArgs e)
         {
             string cusID = txtCusID.Text;
@@ -86,7 +89,7 @@ namespace frmAdminUserControls
             LoadCustomerList();
         }
 
-        void DeleteCustomer(string id)
+        private void DeleteCustomer(string id)
         {
             if (CustomerDB.DeleteCustomer(id))
             {
@@ -97,6 +100,7 @@ namespace frmAdminUserControls
                 MessageBox.Show("Xóa khách hàng thất bại");
             }
         }
+
         private void btnDeleteCustomer_Click(object sender, EventArgs e)
         {
             string cusID = txtCusID.Text;
@@ -110,13 +114,13 @@ namespace frmAdminUserControls
             customerList.DataSource = CustomerDB.SearchCustomerByID(cusName);
         }
 
-		private void txtSearchCus_KeyDown(object sender, KeyEventArgs e)
-		{
-			if (e.KeyCode == Keys.Enter)
-			{
-				btnSearchCus.PerformClick();
-				e.SuppressKeyPress = true;//Tắt tiếng *ting của windows
-			}
-		}
-	}
+        private void txtSearchCus_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSearchCus.PerformClick();
+                e.SuppressKeyPress = true;//Tắt tiếng *ting của windows
+            }
+        }
+    }
 }

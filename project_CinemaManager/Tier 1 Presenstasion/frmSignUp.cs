@@ -1,28 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using DB;
+using System;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DB;
-using Application;
+
 namespace project_CinemaManager
 {
     public partial class frmSignUp : Form
     {
-        string ID;
+        private string ID;
+
         public frmSignUp()
         {
             InitializeComponent();
         }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
         private bool CheckInfoCustomer()
         {
             DateTime dateTime;
@@ -75,36 +73,52 @@ namespace project_CinemaManager
             return new string(Enumerable.Repeat(chars, length)
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
+
         // source stackoverflow
 
-        void SignupAccount(string username,string Pass)
+        private void SignupAccount(string username, string Pass)
         {
             string showPass = Pass;
-            Pass =AccountDB.PasswordEncryption(Pass);
+            Pass = AccountDB.PasswordEncryption(Pass);
 
-            if (AccountDB.InsertAccount(username, Pass, 2 , ID))
+            if (AccountDB.InsertAccount(username, Pass, 2, ID))
             {
-                MessageBox.Show("Thêm tài khoản:"  + username+  "thành công, mật khẩu:" + showPass);
+                MessageBox.Show("Thêm tài khoản:" + username + "thành công, mật khẩu:" + showPass);
             }
             else
             {
                 MessageBox.Show("Thêm tài khoản thất bại");
             }
         }
-        void InsertCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
+
+        private bool InsertCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
         {
-           
             if (CustomerDB.InsertCustomer(id, hoTen, ngaySinh, diaChi, sdt, cmnd))
             {
                 MessageBox.Show("Thêm khách hàng thành công");
+                return true;
             }
             else
             {
                 MessageBox.Show("Thêm khách hàng thất bại");
+                return false;
             }
         }
 
+        private void btnCofirm_Click(object sender, EventArgs e)
+        {
+            ID = RandomString(4);
 
+            if (!CheckInfoCustomer())
+                return;
 
+            if (InsertCustomer(ID, txtFullName.Text, DateTime.Parse(txtBirth.Text), txtAddress.Text, txtSDT.Text, int.Parse(txtCMND.Text)))
+            {
+                SignupAccount(txtUserName.Text, txtPassword.Text);
+            }
+
+            DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 }

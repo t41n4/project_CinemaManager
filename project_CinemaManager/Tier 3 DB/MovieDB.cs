@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 
 namespace DB
 {
@@ -17,6 +16,7 @@ namespace DB
             imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
             return ms.ToArray();
         }
+
         //byte[] -> ảnh
         public static Image byteArrayToImage(byte[] byteArrayIn)
         {
@@ -53,15 +53,15 @@ namespace DB
         {
             return DataProvider.ExecuteQuery("EXEC USP_GetMovieHaveShowTime");
         }
+
         public static DataTable GetMovie()
         {
             return DataProvider.ExecuteQuery("EXEC USP_GetMovie");
         }
 
-
         public static bool InsertMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, int year, byte[] image)
         {
-            int result = DataProvider.ExecuteNonQuery("EXEC USP_InsertMovie @id , @tenPhim , @moTa , @thoiLuong , @ngayKhoiChieu , @ngayKetThuc , @sanXuat , @daoDien , @namSX , @apPhich ", new object[] { id, name, desc, length, startDate, endDate, productor, director, year, image});
+            int result = DataProvider.ExecuteNonQuery("EXEC USP_InsertMovie @id , @tenPhim , @moTa , @thoiLuong , @ngayKhoiChieu , @ngayKetThuc , @sanXuat , @daoDien , @namSX , @apPhich ", new object[] { id, name, desc, length, startDate, endDate, productor, director, year, image });
             return result > 0;
         }
 
@@ -73,10 +73,10 @@ namespace DB
 
         public static bool DeleteMovie(string id)
         {
-			DataProvider.ExecuteNonQuery("DELETE dbo.PhanLoaiPhim WHERE idPhim = '" + id + "'");
-			DataProvider.ExecuteNonQuery("DELETE dbo.DinhDangPhim WHERE idPhim = '" + id + "'");
+            DataProvider.ExecuteNonQuery("DELETE dbo.PhanLoaiPhim WHERE idPhim = '" + id + "'");
+            DataProvider.ExecuteNonQuery("DELETE dbo.DinhDangPhim WHERE idPhim = '" + id + "'");
 
-			MovieByGenreDAO.DeleteMovie_GenreByMovieID(id);
+            MovieByGenreDB.DeleteMovie_GenreByMovieID(id);
             int result = DataProvider.ExecuteNonQuery("DELETE dbo.Phim WHERE id = '" + id + "'");
             return result > 0;
         }

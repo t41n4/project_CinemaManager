@@ -1,14 +1,13 @@
-﻿using DB;
-using Application;
+﻿using Application;
+using DB;
 using System;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace frmAdminUserControls.DataUserControl
 {
     public partial class FormatMovieUC : UserControl
     {
-        BindingSource formatList = new BindingSource();
+        private BindingSource formatList = new BindingSource();
 
         public FormatMovieUC()
         {
@@ -16,7 +15,7 @@ namespace frmAdminUserControls.DataUserControl
             LoadFormatMovie();
         }
 
-        void LoadFormatMovie()
+        private void LoadFormatMovie()
         {
             dtgvFormat.DataSource = formatList;
             LoadFormatMovieList();
@@ -24,38 +23,44 @@ namespace frmAdminUserControls.DataUserControl
             LoadScreenIDIntoCombobox(cboFormat_ScreenID);
             AddFormatBinding();
         }
-        void LoadMovieIDIntoCombobox(ComboBox comboBox)
+
+        private void LoadMovieIDIntoCombobox(ComboBox comboBox)
         {
             comboBox.DataSource = MovieDB.GetListMovie();
             comboBox.DisplayMember = "ID";
             comboBox.ValueMember = "ID";
         }
+
         private void cboFormat_MovieID_SelectedValueChanged(object sender, EventArgs e)
         //Display the MovieName when MovieID changed
         {
             Movie movieSelected = cboFormat_MovieID.SelectedItem as Movie;
             txtFormat_MovieName.Text = movieSelected.Name;
         }
-        void LoadScreenIDIntoCombobox(ComboBox comboBox)
+
+        private void LoadScreenIDIntoCombobox(ComboBox comboBox)
         {
             comboBox.DataSource = ScreenTypeDAO.GetListScreenType();
             comboBox.DisplayMember = "ID";
             comboBox.ValueMember = "ID";
         }
+
         private void cboFormat_ScreenID_SelectedValueChanged(object sender, EventArgs e)
         {
             ScreenType screenTypeSelected = cboFormat_ScreenID.SelectedItem as ScreenType;
             txtFormat_ScreenName.Text = screenTypeSelected.Name;
         }
-        void LoadFormatMovieList()
+
+        private void LoadFormatMovieList()
         {
             formatList.DataSource = FormatMovieDAO.GetListFormatMovie();
         }
 
-        void AddFormatBinding()
+        private void AddFormatBinding()
         {
             txtFormatID.DataBindings.Add("Text", dtgvFormat.DataSource, "Mã định dạng", true, DataSourceUpdateMode.Never);
         }
+
         private void txtFormatID_TextChanged(object sender, EventArgs e)
         {
             string movieID = (string)dtgvFormat.SelectedCells[0].OwningRow.Cells["Mã phim"].Value;
@@ -79,7 +84,6 @@ namespace frmAdminUserControls.DataUserControl
                 iMovie++;
             }
             cboFormat_MovieID.SelectedIndex = indexMovie;
-
 
             string screenName = (string)dtgvFormat.SelectedCells[0].OwningRow.Cells["Tên MH"].Value;
             ScreenType screenTypeSelecting = ScreenTypeDAO.GetScreenTypeByName(screenName);
@@ -109,7 +113,7 @@ namespace frmAdminUserControls.DataUserControl
             LoadFormatMovieList();
         }
 
-        void InsertFormat(string id, string idMovie, string idScreen)
+        private void InsertFormat(string id, string idMovie, string idScreen)
         {
             if (FormatMovieDAO.InsertFormatMovie(id, idMovie, idScreen))
             {
@@ -120,6 +124,7 @@ namespace frmAdminUserControls.DataUserControl
                 MessageBox.Show("Thêm định dạng thất bại");
             }
         }
+
         private void btnInsertFormat_Click(object sender, EventArgs e)
         {
             string formatID = txtFormatID.Text;
@@ -129,7 +134,7 @@ namespace frmAdminUserControls.DataUserControl
             LoadFormatMovieList();
         }
 
-        void UpdateFormat(string id, string idMovie, string idScreen)
+        private void UpdateFormat(string id, string idMovie, string idScreen)
         {
             if (FormatMovieDAO.UpdateFormatMovie(id, idMovie, idScreen))
             {
@@ -140,6 +145,7 @@ namespace frmAdminUserControls.DataUserControl
                 MessageBox.Show("Sửa định dạng thất bại");
             }
         }
+
         private void btnUpdateFormat_Click(object sender, EventArgs e)
         {
             string formatID = txtFormatID.Text;
@@ -149,7 +155,7 @@ namespace frmAdminUserControls.DataUserControl
             LoadFormatMovieList();
         }
 
-        void DeleteFormat(string id)
+        private void DeleteFormat(string id)
         {
             if (FormatMovieDAO.DeleteFormatMovie(id))
             {
@@ -160,6 +166,7 @@ namespace frmAdminUserControls.DataUserControl
                 MessageBox.Show("Xóa định dạng thất bại");
             }
         }
+
         private void btnDeleteFormat_Click(object sender, EventArgs e)
         {
             string formatID = txtFormatID.Text;
