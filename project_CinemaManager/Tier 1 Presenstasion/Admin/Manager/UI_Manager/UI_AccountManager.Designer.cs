@@ -56,7 +56,7 @@
             // 
             this.groupBox1.Controls.Add(this.txtSearchAccount);
             this.groupBox1.Controls.Add(this.btnSearchAccount);
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(867, 69);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
@@ -68,27 +68,29 @@
             // 
             // txtSearchAccount
             // 
-            this.txtSearchAccount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchAccount.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchAccount.Location = new System.Drawing.Point(29, 25);
             this.txtSearchAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearchAccount.Name = "txtSearchAccount";
-            this.txtSearchAccount.Size = new System.Drawing.Size(132, 30);
+            this.txtSearchAccount.Size = new System.Drawing.Size(132, 31);
             this.txtSearchAccount.TabIndex = 18;
             this.txtSearchAccount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchAccount_KeyDown);
             // 
             // btnSearchAccount
             // 
             this.btnSearchAccount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearchAccount.Location = new System.Drawing.Point(168, 25);
+            this.btnSearchAccount.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchAccount.Location = new System.Drawing.Point(167, 27);
             this.btnSearchAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearchAccount.Name = "btnSearchAccount";
-            this.btnSearchAccount.Size = new System.Drawing.Size(27, 26);
+            this.btnSearchAccount.Size = new System.Drawing.Size(36, 26);
             this.btnSearchAccount.TabIndex = 19;
             this.btnSearchAccount.UseVisualStyleBackColor = true;
             this.btnSearchAccount.Click += new System.EventHandler(this.btnSearchAccount_Click);
             // 
             // btnResetPass
             // 
+            this.btnResetPass.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResetPass.Location = new System.Drawing.Point(867, 33);
             this.btnResetPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnResetPass.Name = "btnResetPass";
@@ -100,6 +102,7 @@
             // 
             // btnDeleteAccount
             // 
+            this.btnDeleteAccount.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteAccount.Location = new System.Drawing.Point(770, 105);
             this.btnDeleteAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDeleteAccount.Name = "btnDeleteAccount";
@@ -111,6 +114,7 @@
             // 
             // btnUpdateAccount
             // 
+            this.btnUpdateAccount.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateAccount.Location = new System.Drawing.Point(770, 69);
             this.btnUpdateAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateAccount.Name = "btnUpdateAccount";
@@ -122,6 +126,7 @@
             // 
             // btnInsertAccount
             // 
+            this.btnInsertAccount.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsertAccount.Location = new System.Drawing.Point(770, 33);
             this.btnInsertAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnInsertAccount.Name = "btnInsertAccount";
@@ -142,7 +147,7 @@
             this.grpAccount.Controls.Add(this.lblStaffName_Account);
             this.grpAccount.Controls.Add(this.lblAccountType);
             this.grpAccount.Controls.Add(this.lblStaffID_Account);
-            this.grpAccount.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpAccount.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpAccount.Location = new System.Drawing.Point(177, 18);
             this.grpAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpAccount.Name = "grpAccount";
@@ -155,80 +160,80 @@
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.Location = new System.Drawing.Point(24, 39);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(102, 23);
+            this.lblUsername.Size = new System.Drawing.Size(80, 17);
             this.lblUsername.TabIndex = 4;
             this.lblUsername.Text = "Username:";
             // 
             // txtType_Account
             // 
-            this.txtType_Account.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtType_Account.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtType_Account.Location = new System.Drawing.Point(414, 36);
             this.txtType_Account.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtType_Account.Name = "txtType_Account";
-            this.txtType_Account.Size = new System.Drawing.Size(147, 30);
+            this.txtType_Account.Size = new System.Drawing.Size(147, 31);
             this.txtType_Account.TabIndex = 2;
             this.txtType_Account.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // txtUsername
             // 
-            this.txtUsername.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(137, 36);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(147, 30);
+            this.txtUsername.Size = new System.Drawing.Size(147, 31);
             this.txtUsername.TabIndex = 2;
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // txtID_Account
             // 
-            this.txtID_Account.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID_Account.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID_Account.Location = new System.Drawing.Point(137, 83);
             this.txtID_Account.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtID_Account.Name = "txtID_Account";
-            this.txtID_Account.Size = new System.Drawing.Size(147, 30);
+            this.txtID_Account.Size = new System.Drawing.Size(147, 31);
             this.txtID_Account.TabIndex = 2;
             this.txtID_Account.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // txtName_Customer
             // 
-            this.txtName_Customer.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName_Customer.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName_Customer.Location = new System.Drawing.Point(416, 82);
             this.txtName_Customer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtName_Customer.Name = "txtName_Customer";
             this.txtName_Customer.ReadOnly = true;
-            this.txtName_Customer.Size = new System.Drawing.Size(141, 30);
+            this.txtName_Customer.Size = new System.Drawing.Size(141, 31);
             this.txtName_Customer.TabIndex = 2;
             // 
             // lblStaffName_Account
             // 
             this.lblStaffName_Account.AutoSize = true;
-            this.lblStaffName_Account.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStaffName_Account.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStaffName_Account.Location = new System.Drawing.Point(321, 85);
             this.lblStaffName_Account.Name = "lblStaffName_Account";
-            this.lblStaffName_Account.Size = new System.Drawing.Size(72, 23);
+            this.lblStaffName_Account.Size = new System.Drawing.Size(56, 17);
             this.lblStaffName_Account.TabIndex = 4;
             this.lblStaffName_Account.Text = "Họ Tên";
             // 
             // lblAccountType
             // 
             this.lblAccountType.AutoSize = true;
-            this.lblAccountType.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAccountType.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAccountType.Location = new System.Drawing.Point(321, 39);
             this.lblAccountType.Name = "lblAccountType";
-            this.lblAccountType.Size = new System.Drawing.Size(87, 23);
+            this.lblAccountType.Size = new System.Drawing.Size(72, 17);
             this.lblAccountType.TabIndex = 4;
             this.lblAccountType.Text = "Loại TK:";
             // 
             // lblStaffID_Account
             // 
             this.lblStaffID_Account.AutoSize = true;
-            this.lblStaffID_Account.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStaffID_Account.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStaffID_Account.Location = new System.Drawing.Point(24, 85);
             this.lblStaffID_Account.Name = "lblStaffID_Account";
-            this.lblStaffID_Account.Size = new System.Drawing.Size(38, 23);
+            this.lblStaffID_Account.Size = new System.Drawing.Size(32, 17);
             this.lblStaffID_Account.TabIndex = 4;
             this.lblStaffID_Account.Text = "ID:";
             // 

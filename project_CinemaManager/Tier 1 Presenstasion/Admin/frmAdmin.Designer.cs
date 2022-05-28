@@ -31,7 +31,7 @@ namespace project_CinemaManager
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelX = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSupportCus = new System.Windows.Forms.Button();
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.lblAccountInfo = new System.Windows.Forms.Label();
             this.btnAdmin = new System.Windows.Forms.Button();
@@ -43,6 +43,7 @@ namespace project_CinemaManager
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.panel1.Controls.Add(this.labelX);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
@@ -52,7 +53,7 @@ namespace project_CinemaManager
             // labelX
             // 
             this.labelX.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelX.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX.Font = new System.Drawing.Font("Consolas", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX.Location = new System.Drawing.Point(0, 0);
             this.labelX.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelX.Name = "labelX";
@@ -61,22 +62,25 @@ namespace project_CinemaManager
             this.labelX.Text = "Cinema Manager";
             this.labelX.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // btnSupportCus
             // 
-            this.button1.Location = new System.Drawing.Point(63, 176);
-            this.button1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(217, 91);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Hỗ trợ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSupportCus.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSupportCus.Location = new System.Drawing.Point(63, 176);
+            this.btnSupportCus.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnSupportCus.Name = "btnSupportCus";
+            this.btnSupportCus.Size = new System.Drawing.Size(217, 91);
+            this.btnSupportCus.TabIndex = 10;
+            this.btnSupportCus.Text = "Hỗ trợ";
+            this.btnSupportCus.UseVisualStyleBackColor = true;
+            this.btnSupportCus.Click += new System.EventHandler(this.btnSupportCus_Click);
             // 
             // btnChangePassword
             // 
             this.btnChangePassword.AutoSize = true;
-            this.btnChangePassword.Location = new System.Drawing.Point(47, 486);
+            this.btnChangePassword.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePassword.Location = new System.Drawing.Point(63, 274);
             this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(229, 42);
+            this.btnChangePassword.Size = new System.Drawing.Size(217, 42);
             this.btnChangePassword.TabIndex = 9;
             this.btnChangePassword.Text = "Đặt lại mật khẩu";
             this.btnChangePassword.UseVisualStyleBackColor = true;
@@ -84,14 +88,16 @@ namespace project_CinemaManager
             // lblAccountInfo
             // 
             this.lblAccountInfo.AutoSize = true;
+            this.lblAccountInfo.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAccountInfo.Location = new System.Drawing.Point(8, -4);
             this.lblAccountInfo.Name = "lblAccountInfo";
-            this.lblAccountInfo.Size = new System.Drawing.Size(107, 17);
+            this.lblAccountInfo.Size = new System.Drawing.Size(136, 17);
             this.lblAccountInfo.TabIndex = 7;
             this.lblAccountInfo.Text = "Tên tài khoản : ";
             // 
             // btnAdmin
             // 
+            this.btnAdmin.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmin.Location = new System.Drawing.Point(63, 77);
             this.btnAdmin.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnAdmin.Name = "btnAdmin";
@@ -105,9 +111,9 @@ namespace project_CinemaManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 311);
+            this.ClientSize = new System.Drawing.Size(357, 333);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSupportCus);
             this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.lblAccountInfo);
             this.Controls.Add(this.btnAdmin);
@@ -124,7 +130,7 @@ namespace project_CinemaManager
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelX;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSupportCus;
         private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.Label lblAccountInfo;
         private System.Windows.Forms.Button btnAdmin;

@@ -66,107 +66,125 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_CinemaManager.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdmin_SupportCus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdmin_SupportCus.Designer.cs">
+      <DependentUpon>frmAdmin_SupportCus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdmin_GetCusNeedSupport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\Admin\frmAdmin_GetCusNeedSupport.Designer.cs">
+      <DependentUpon>frmAdmin_GetCusNeedSupport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_CinemaManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_CinemaManager.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_CinemaManager.Designer.cs">
       <DependentUpon>UI_CinemaManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_Manager.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_Manager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_Manager.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_Manager.Designer.cs">
       <DependentUpon>UI_Manager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI_ChonChoNgoi.cs">
+    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI03_ChonChoNgoi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI_ChonChoNgoi.Designer.cs">
-      <DependentUpon>UI_ChonChoNgoi.cs</DependentUpon>
+    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI03_ChonChoNgoi.Designer.cs">
+      <DependentUpon>UI03_ChonChoNgoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI_ChonGioChieu.cs">
+    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI02_ChonGioChieu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI_ChonGioChieu.Designer.cs">
-      <DependentUpon>UI_ChonGioChieu.cs</DependentUpon>
+    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI02_ChonGioChieu.Designer.cs">
+      <DependentUpon>UI02_ChonGioChieu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI_ChonPhim.cs">
+    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI01_ChonPhim.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI_ChonPhim.Designer.cs">
-      <DependentUpon>UI_ChonPhim.cs</DependentUpon>
+    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI01_ChonPhim.Designer.cs">
+      <DependentUpon>UI01_ChonPhim.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI_CustomerInfo.cs">
+    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI00_CustomerInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI_CustomerInfo.Designer.cs">
-      <DependentUpon>UI_CustomerInfo.cs</DependentUpon>
+    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI00_CustomerInfo.Designer.cs">
+      <DependentUpon>UI00_CustomerInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_AccountManager.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_AccountManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_AccountManager.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_AccountManager.Designer.cs">
       <DependentUpon>UI_AccountManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_CustomerManager.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_CustomerManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_CustomerManager.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_CustomerManager.Designer.cs">
       <DependentUpon>UI_CustomerManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_DataManager.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_DataManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_DataManager.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_DataManager.Designer.cs">
       <DependentUpon>UI_DataManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\Data_Filler\Fill_Data_Cinema.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\Data_Filler\Fill_Data_Cinema.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\Data_Filler\Fill_Data_Cinema.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\Data_Filler\Fill_Data_Cinema.Designer.cs">
       <DependentUpon>Fill_Data_Cinema.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\Data_Filler\Fill_Data_FormatMovie.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\Data_Filler\Fill_Data_FormatMovie.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\Data_Filler\Fill_Data_FormatMovie.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\Data_Filler\Fill_Data_FormatMovie.Designer.cs">
       <DependentUpon>Fill_Data_FormatMovie.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\Data_Filler\Fill_Data_Genre.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\Data_Filler\Fill_Data_Genre.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\Data_Filler\Fill_Data_Genre.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\Data_Filler\Fill_Data_Genre.Designer.cs">
       <DependentUpon>Fill_Data_Genre.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\Data_Filler\Fill_Data_Movie.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\Data_Filler\Fill_Data_Movie.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\Data_Filler\Fill_Data_Movie.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\Data_Filler\Fill_Data_Movie.Designer.cs">
       <DependentUpon>Fill_Data_Movie.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\Data_Filler\Fill_Data_ScreenType.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\Data_Filler\Fill_Data_ScreenType.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\Data_Filler\Fill_Data_ScreenType.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\Data_Filler\Fill_Data_ScreenType.Designer.cs">
       <DependentUpon>Fill_Data_ScreenType.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\Data_Filler\Fill_Data_ShowTimes.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\Data_Filler\Fill_Data_ShowTimes.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\Data_Filler\Fill_Data_ShowTimes.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\Data_Filler\Fill_Data_ShowTimes.Designer.cs">
       <DependentUpon>Fill_Data_ShowTimes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\Data_Filler\Fill_Data_Tickets.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\Data_Filler\Fill_Data_Tickets.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\Data_Filler\Fill_Data_Tickets.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\Data_Filler\Fill_Data_Tickets.Designer.cs">
       <DependentUpon>Fill_Data_Tickets.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_Revenue.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_Revenue.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_Revenue.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_Revenue.Designer.cs">
       <DependentUpon>UI_Revenue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI04_RequestSupport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI04_RequestSupport.Designer.cs">
+      <DependentUpon>UI04_RequestSupport.cs</DependentUpon>
     </Compile>
     <Compile Include="Tier 1 Presenstasion\frmLogin.cs">
       <SubType>Form</SubType>
@@ -205,6 +223,7 @@
     <Compile Include="Tier 2 Application\Customer.cs" />
     <Compile Include="Tier 2 Application\FormatMovie.cs" />
     <Compile Include="Tier 2 Application\Genre.cs" />
+    <Compile Include="Tier 2 Application\Messages.cs" />
     <Compile Include="Tier 2 Application\Movie.cs" />
     <Compile Include="Tier 2 Application\MovieByGenre.cs" />
     <Compile Include="Tier 2 Application\ScreenType.cs" />
@@ -216,6 +235,7 @@
     <Compile Include="Tier 3 DB\DataProvider.cs" />
     <Compile Include="Tier 3 DB\FormatMovieDB.cs" />
     <Compile Include="Tier 3 DB\GenreDB.cs" />
+    <Compile Include="Tier 3 DB\MessagesDB.cs" />
     <Compile Include="Tier 3 DB\MovieByGenreDB.cs" />
     <Compile Include="Tier 3 DB\MovieDB.cs" />
     <Compile Include="Tier 3 DB\RevenueDB.cs" />
@@ -225,56 +245,65 @@
     <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_CinemaManager.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmAdmin_SupportCus.resx">
+      <DependentUpon>frmAdmin_SupportCus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmAdmin_GetCusNeedSupport.resx">
+      <DependentUpon>frmAdmin_GetCusNeedSupport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_CinemaManager.resx">
       <DependentUpon>UI_CinemaManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_Manager.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_Manager.resx">
       <DependentUpon>UI_Manager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI_Customer\UI_ChonChoNgoi.resx">
-      <DependentUpon>UI_ChonChoNgoi.cs</DependentUpon>
+    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI_Customer\UI03_ChonChoNgoi.resx">
+      <DependentUpon>UI03_ChonChoNgoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI_Customer\UI_ChonGioChieu.resx">
-      <DependentUpon>UI_ChonGioChieu.cs</DependentUpon>
+    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI_Customer\UI02_ChonGioChieu.resx">
+      <DependentUpon>UI02_ChonGioChieu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI_Customer\UI_ChonPhim.resx">
-      <DependentUpon>UI_ChonPhim.cs</DependentUpon>
+    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI_Customer\UI01_ChonPhim.resx">
+      <DependentUpon>UI01_ChonPhim.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI_Customer\UI_CustomerInfo.resx">
-      <DependentUpon>UI_CustomerInfo.cs</DependentUpon>
+    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI_Customer\UI00_CustomerInfo.resx">
+      <DependentUpon>UI00_CustomerInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_AccountManager.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_AccountManager.resx">
       <DependentUpon>UI_AccountManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_CustomerManager.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_CustomerManager.resx">
       <DependentUpon>UI_CustomerManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_DataManager.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_DataManager.resx">
       <DependentUpon>UI_DataManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmManager\Data_Filler\Fill_Data_Cinema.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\Manager\Data_Filler\Fill_Data_Cinema.resx">
       <DependentUpon>Fill_Data_Cinema.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmManager\Data_Filler\Fill_Data_FormatMovie.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\Manager\Data_Filler\Fill_Data_FormatMovie.resx">
       <DependentUpon>Fill_Data_FormatMovie.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmManager\Data_Filler\Fill_Data_Genre.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\Manager\Data_Filler\Fill_Data_Genre.resx">
       <DependentUpon>Fill_Data_Genre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmManager\Data_Filler\Fill_Data_Movie.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\Manager\Data_Filler\Fill_Data_Movie.resx">
       <DependentUpon>Fill_Data_Movie.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmManager\Data_Filler\Fill_Data_ScreenType.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\Manager\Data_Filler\Fill_Data_ScreenType.resx">
       <DependentUpon>Fill_Data_ScreenType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmManager\Data_Filler\Fill_Data_ShowTimes.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\Manager\Data_Filler\Fill_Data_ShowTimes.resx">
       <DependentUpon>Fill_Data_ShowTimes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmManager\Data_Filler\Fill_Data_Tickets.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\Manager\Data_Filler\Fill_Data_Tickets.resx">
       <DependentUpon>Fill_Data_Tickets.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmManager\UI_Manager\UI_Revenue.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_Revenue.resx">
       <DependentUpon>UI_Revenue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI_Customer\UI04_RequestSupport.resx">
+      <DependentUpon>UI04_RequestSupport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tier 1 Presenstasion\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

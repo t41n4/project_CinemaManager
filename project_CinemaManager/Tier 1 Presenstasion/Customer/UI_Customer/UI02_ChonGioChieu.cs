@@ -16,6 +16,8 @@ namespace project_CinemaManager
             this.Movie = SelectedFilmFromUser;
         }
 
+
+
         public Movie Movie
         {
             get { return GetMovie; }

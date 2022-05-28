@@ -79,7 +79,7 @@ namespace project_CinemaManager
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(12, 44);
+            this.lblTime.Location = new System.Drawing.Point(51, 35);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(39, 17);
             this.lblTime.TabIndex = 2;
@@ -88,7 +88,7 @@ namespace project_CinemaManager
             // lblInformation
             // 
             this.lblInformation.AutoSize = true;
-            this.lblInformation.Location = new System.Drawing.Point(12, 15);
+            this.lblInformation.Location = new System.Drawing.Point(12, 9);
             this.lblInformation.Name = "lblInformation";
             this.lblInformation.Size = new System.Drawing.Size(78, 17);
             this.lblInformation.TabIndex = 1;

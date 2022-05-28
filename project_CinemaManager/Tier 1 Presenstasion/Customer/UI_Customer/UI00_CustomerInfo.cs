@@ -7,7 +7,7 @@ namespace project_CinemaManager
 {
     public partial class UICustomerInfo : Form
     {
-        private Account loginAccount;
+        public static Account loginAccount;
         private BindingSource customerList = new BindingSource();
 
         public UICustomerInfo(Account loginAccount)
@@ -113,6 +113,14 @@ namespace project_CinemaManager
                     txtCusPhone.BackColor = System.Drawing.Color.Gray;
                 }
             }
+        }
+
+        private void btnRqSupport_Click(object sender, EventArgs e)
+        {
+            UI04_RequestSupport requestSupport = new UI04_RequestSupport();
+            this.Hide();
+            requestSupport.ShowDialog();
+            this.Show();
         }
     }
 }

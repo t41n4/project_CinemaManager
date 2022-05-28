@@ -178,7 +178,7 @@ namespace project_CinemaManager
             this.dtgvMovie.RowHeadersWidth = 51;
             this.dtgvMovie.Size = new System.Drawing.Size(391, 398);
             this.dtgvMovie.TabIndex = 52;
-            this.dtgvMovie.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvMovie_CellContentClick);
+            this.dtgvMovie.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvMovie_CellClick);
             // 
             // t
             // 

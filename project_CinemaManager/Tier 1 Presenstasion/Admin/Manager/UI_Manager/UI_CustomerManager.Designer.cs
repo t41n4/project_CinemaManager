@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtSearchCus = new System.Windows.Forms.TextBox();
             this.btnDeleteCustomer = new System.Windows.Forms.Button();
             this.btnUpdateCustomer = new System.Windows.Forms.Button();
             this.btnAddCustomer = new System.Windows.Forms.Button();
@@ -47,21 +46,14 @@
             this.lblCusName = new System.Windows.Forms.Label();
             this.dtgvCustomer = new System.Windows.Forms.DataGridView();
             this.btnSearchCus = new System.Windows.Forms.Button();
+            this.txtSearchCus = new System.Windows.Forms.TextBox();
             this.grpCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCustomer)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtSearchCus
-            // 
-            this.txtSearchCus.Location = new System.Drawing.Point(1022, 140);
-            this.txtSearchCus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtSearchCus.Name = "txtSearchCus";
-            this.txtSearchCus.Size = new System.Drawing.Size(132, 22);
-            this.txtSearchCus.TabIndex = 20;
-            this.txtSearchCus.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchCus_KeyDown);
-            // 
             // btnDeleteCustomer
             // 
+            this.btnDeleteCustomer.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteCustomer.Location = new System.Drawing.Point(925, 135);
             this.btnDeleteCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDeleteCustomer.Name = "btnDeleteCustomer";
@@ -73,6 +65,7 @@
             // 
             // btnUpdateCustomer
             // 
+            this.btnUpdateCustomer.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateCustomer.Location = new System.Drawing.Point(925, 96);
             this.btnUpdateCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateCustomer.Name = "btnUpdateCustomer";
@@ -84,6 +77,7 @@
             // 
             // btnAddCustomer
             // 
+            this.btnAddCustomer.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCustomer.Location = new System.Drawing.Point(925, 60);
             this.btnAddCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddCustomer.Name = "btnAddCustomer";
@@ -108,7 +102,7 @@
             this.grpCustomer.Controls.Add(this.lblCusAddress);
             this.grpCustomer.Controls.Add(this.txtCusINumber);
             this.grpCustomer.Controls.Add(this.lblCusName);
-            this.grpCustomer.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpCustomer.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpCustomer.Location = new System.Drawing.Point(208, 30);
             this.grpCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpCustomer.Name = "grpCustomer";
@@ -121,114 +115,114 @@
             // lblCusID
             // 
             this.lblCusID.AutoSize = true;
-            this.lblCusID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCusID.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCusID.Location = new System.Drawing.Point(24, 39);
             this.lblCusID.Name = "lblCusID";
-            this.lblCusID.Size = new System.Drawing.Size(79, 23);
+            this.lblCusID.Size = new System.Drawing.Size(56, 17);
             this.lblCusID.TabIndex = 4;
             this.lblCusID.Text = "Mã KH:";
             // 
             // txtCusID
             // 
-            this.txtCusID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCusID.Font = new System.Drawing.Font("Consolas", 12F);
             this.txtCusID.Location = new System.Drawing.Point(133, 37);
             this.txtCusID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCusID.Name = "txtCusID";
-            this.txtCusID.Size = new System.Drawing.Size(191, 30);
+            this.txtCusID.Size = new System.Drawing.Size(191, 31);
             this.txtCusID.TabIndex = 2;
             // 
             // txtCusAddress
             // 
-            this.txtCusAddress.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCusAddress.Font = new System.Drawing.Font("Consolas", 12F);
             this.txtCusAddress.Location = new System.Drawing.Point(503, 36);
             this.txtCusAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCusAddress.Name = "txtCusAddress";
-            this.txtCusAddress.Size = new System.Drawing.Size(191, 30);
+            this.txtCusAddress.Size = new System.Drawing.Size(191, 31);
             this.txtCusAddress.TabIndex = 2;
             // 
             // lblCusINumber
             // 
             this.lblCusINumber.AutoSize = true;
-            this.lblCusINumber.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCusINumber.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCusINumber.Location = new System.Drawing.Point(409, 108);
             this.lblCusINumber.Name = "lblCusINumber";
-            this.lblCusINumber.Size = new System.Drawing.Size(77, 23);
+            this.lblCusINumber.Size = new System.Drawing.Size(48, 17);
             this.lblCusINumber.TabIndex = 4;
             this.lblCusINumber.Text = "CMND:";
             // 
             // txtCusName
             // 
-            this.txtCusName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCusName.Font = new System.Drawing.Font("Consolas", 12F);
             this.txtCusName.Location = new System.Drawing.Point(133, 71);
             this.txtCusName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCusName.Name = "txtCusName";
-            this.txtCusName.Size = new System.Drawing.Size(191, 30);
+            this.txtCusName.Size = new System.Drawing.Size(191, 31);
             this.txtCusName.TabIndex = 2;
             // 
             // lblCusBirth
             // 
             this.lblCusBirth.AutoSize = true;
-            this.lblCusBirth.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCusBirth.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCusBirth.Location = new System.Drawing.Point(24, 108);
             this.lblCusBirth.Name = "lblCusBirth";
-            this.lblCusBirth.Size = new System.Drawing.Size(99, 23);
+            this.lblCusBirth.Size = new System.Drawing.Size(88, 17);
             this.lblCusBirth.TabIndex = 4;
             this.lblCusBirth.Text = "Ngày sinh:";
             // 
             // txtCusPhone
             // 
-            this.txtCusPhone.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCusPhone.Font = new System.Drawing.Font("Consolas", 12F);
             this.txtCusPhone.Location = new System.Drawing.Point(503, 71);
             this.txtCusPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCusPhone.Name = "txtCusPhone";
-            this.txtCusPhone.Size = new System.Drawing.Size(191, 30);
+            this.txtCusPhone.Size = new System.Drawing.Size(191, 31);
             this.txtCusPhone.TabIndex = 2;
             // 
             // lblCusPhone
             // 
             this.lblCusPhone.AutoSize = true;
-            this.lblCusPhone.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCusPhone.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCusPhone.Location = new System.Drawing.Point(409, 75);
             this.lblCusPhone.Name = "lblCusPhone";
-            this.lblCusPhone.Size = new System.Drawing.Size(69, 23);
+            this.lblCusPhone.Size = new System.Drawing.Size(56, 17);
             this.lblCusPhone.TabIndex = 4;
             this.lblCusPhone.Text = "Số ĐT:";
             // 
             // txtCusBirth
             // 
-            this.txtCusBirth.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCusBirth.Font = new System.Drawing.Font("Consolas", 12F);
             this.txtCusBirth.Location = new System.Drawing.Point(133, 108);
             this.txtCusBirth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCusBirth.Name = "txtCusBirth";
-            this.txtCusBirth.Size = new System.Drawing.Size(191, 30);
+            this.txtCusBirth.Size = new System.Drawing.Size(191, 31);
             this.txtCusBirth.TabIndex = 2;
             // 
             // lblCusAddress
             // 
             this.lblCusAddress.AutoSize = true;
-            this.lblCusAddress.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCusAddress.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCusAddress.Location = new System.Drawing.Point(409, 39);
             this.lblCusAddress.Name = "lblCusAddress";
-            this.lblCusAddress.Size = new System.Drawing.Size(75, 23);
+            this.lblCusAddress.Size = new System.Drawing.Size(72, 17);
             this.lblCusAddress.TabIndex = 4;
             this.lblCusAddress.Text = "Địa chỉ:";
             // 
             // txtCusINumber
             // 
-            this.txtCusINumber.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCusINumber.Font = new System.Drawing.Font("Consolas", 12F);
             this.txtCusINumber.Location = new System.Drawing.Point(503, 108);
             this.txtCusINumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCusINumber.Name = "txtCusINumber";
-            this.txtCusINumber.Size = new System.Drawing.Size(191, 30);
+            this.txtCusINumber.Size = new System.Drawing.Size(191, 31);
             this.txtCusINumber.TabIndex = 2;
             // 
             // lblCusName
             // 
             this.lblCusName.AutoSize = true;
-            this.lblCusName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCusName.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCusName.Location = new System.Drawing.Point(24, 75);
             this.lblCusName.Name = "lblCusName";
-            this.lblCusName.Size = new System.Drawing.Size(73, 23);
+            this.lblCusName.Size = new System.Drawing.Size(64, 17);
             this.lblCusName.TabIndex = 4;
             this.lblCusName.Text = "Họ tên:";
             // 
@@ -237,6 +231,7 @@
             this.dtgvCustomer.AllowUserToAddRows = false;
             this.dtgvCustomer.AllowUserToDeleteRows = false;
             this.dtgvCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvCustomer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvCustomer.Location = new System.Drawing.Point(208, 179);
             this.dtgvCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -250,6 +245,7 @@
             // btnSearchCus
             // 
             this.btnSearchCus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearchCus.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchCus.Location = new System.Drawing.Point(1161, 136);
             this.btnSearchCus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearchCus.Name = "btnSearchCus";
@@ -257,6 +253,16 @@
             this.btnSearchCus.TabIndex = 21;
             this.btnSearchCus.UseVisualStyleBackColor = true;
             this.btnSearchCus.Click += new System.EventHandler(this.btnSearchCus_Click);
+            // 
+            // txtSearchCus
+            // 
+            this.txtSearchCus.Font = new System.Drawing.Font("Consolas", 12F);
+            this.txtSearchCus.Location = new System.Drawing.Point(1022, 140);
+            this.txtSearchCus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSearchCus.Name = "txtSearchCus";
+            this.txtSearchCus.Size = new System.Drawing.Size(132, 31);
+            this.txtSearchCus.TabIndex = 20;
+            this.txtSearchCus.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchCus_KeyDown);
             // 
             // CustomerUC
             // 
@@ -281,9 +287,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnSearchCus;
-        private System.Windows.Forms.TextBox txtSearchCus;
         private System.Windows.Forms.Button btnDeleteCustomer;
         private System.Windows.Forms.Button btnUpdateCustomer;
         private System.Windows.Forms.Button btnAddCustomer;
@@ -301,5 +304,7 @@
         private System.Windows.Forms.TextBox txtCusINumber;
         private System.Windows.Forms.Label lblCusName;
         private System.Windows.Forms.DataGridView dtgvCustomer;
+        private System.Windows.Forms.Button btnSearchCus;
+        private System.Windows.Forms.TextBox txtSearchCus;
     }
 }

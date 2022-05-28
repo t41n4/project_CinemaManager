@@ -11,7 +11,8 @@ namespace project_CinemaManager
 {
     public partial class UI_ChonChoNgoi : Form
     {
-        public UI_ChonChoNgoi(ShowTimes showTimes, Movie movie)
+        public Account loginAccout = UICustomerInfo.loginAccount;
+        public UI_ChonChoNgoi(ShowTimes showTimes, Movie movie )
         {
             InitializeComponent();
 
@@ -40,7 +41,7 @@ namespace project_CinemaManager
 
         private ShowTimes Times;
         private Movie Movie;
-
+        
         private void frmTheatre_Load()
         {
             ticketPrice = Times.TicketPrice;
@@ -145,6 +146,8 @@ namespace project_CinemaManager
             }
             LoadBill();
         }
+
+
 
         private bool CheckLeftRightOfRow(List<Button> listRowofSeat)
         {

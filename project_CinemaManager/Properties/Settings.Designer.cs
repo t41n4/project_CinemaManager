@@ -91,5 +91,16 @@ namespace project_CinemaManager.Properties {
                 this["pwd"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=35.220.208.39;Initial Catalog=QLRP;Persist Security Info=True;User ID" +
+            "=sqlserver;Password=Hien9029")]
+        public string QLRPConnectionString_GetMessage {
+            get {
+                return ((string)(this["QLRPConnectionString_GetMessage"]));
+            }
+        }
     }
 }

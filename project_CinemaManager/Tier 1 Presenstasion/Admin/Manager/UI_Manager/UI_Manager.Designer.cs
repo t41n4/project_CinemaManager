@@ -42,7 +42,7 @@ namespace project_CinemaManager
             // 
             // pnAdmin
             // 
-            this.pnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(243)))), ((int)(((byte)(210)))));
+            this.pnAdmin.BackColor = System.Drawing.SystemColors.Control;
             this.pnAdmin.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnAdmin.Location = new System.Drawing.Point(0, 105);

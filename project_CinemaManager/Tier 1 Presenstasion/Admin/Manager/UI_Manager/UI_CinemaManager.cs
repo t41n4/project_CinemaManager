@@ -117,5 +117,7 @@ namespace frmAdminUserControls
         {
             LoadCinemaList();
         }
+
+       
     }
 }

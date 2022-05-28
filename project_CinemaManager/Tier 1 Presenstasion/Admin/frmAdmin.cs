@@ -6,7 +6,7 @@ namespace project_CinemaManager
 {
     public partial class frmAdmin : Form
     {
-        private Account loginAccount;
+        static public Account loginAccount;
 
         public frmAdmin(Account loginAccount)
         {
@@ -37,6 +37,14 @@ namespace project_CinemaManager
  
         private void frmAdmin_Load(object sender, EventArgs e)
         {
+        }
+
+        private void btnSupportCus_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmAdmin_GetCusNeedSupport getSupport = new frmAdmin_GetCusNeedSupport();
+            getSupport.ShowDialog();
+            this.Show();
         }
     }
 }

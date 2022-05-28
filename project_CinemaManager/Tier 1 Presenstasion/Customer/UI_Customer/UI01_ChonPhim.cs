@@ -1,6 +1,7 @@
 ﻿using Application;
 using DB;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace project_CinemaManager
@@ -20,7 +21,9 @@ namespace project_CinemaManager
 
             // Ẩn các thuộc tính không cần thiết
             HideUneseccaryColumn();
-            AddMovieBinding();          
+            AddMovieBinding();
+            GetGenre();
+
         }
 
         private void HideUneseccaryColumn()
@@ -68,24 +71,39 @@ namespace project_CinemaManager
 
         private void AddMovieBinding()
         {
-            
-           // txt_TheLoai.DataBindings.Add("Text", )
+            // txt_TheLoai.DataBindings.Add("Text", )
             txtMovieName.DataBindings.Add("Text", dtgvMovie.DataSource, "Tên phim", true, DataSourceUpdateMode.Never);
             txtMovieLength.DataBindings.Add("Text", dtgvMovie.DataSource, "Thời lượng", true, DataSourceUpdateMode.Never);
             txtMovieProductor.DataBindings.Add("Text", dtgvMovie.DataSource, "Sản xuất", true, DataSourceUpdateMode.Never);
             txtMovieDirector.DataBindings.Add("Text", dtgvMovie.DataSource, "Đạo diễn", true, DataSourceUpdateMode.Never);
             txtMovieYear.DataBindings.Add("Text", dtgvMovie.DataSource, "Năm SX", true, DataSourceUpdateMode.Never);
             picFilm.DataBindings.Add("Image", dtgvMovie.DataSource, "Áp phích", true, DataSourceUpdateMode.Never);
-
-            string Idfilm;
-            int selectedrowindex = dtgvMovie.SelectedCells[0].RowIndex;
-            DataGridViewRow selectedRow = dtgvMovie.Rows[selectedrowindex];
-            Idfilm = Convert.ToString(selectedRow.Cells["Mã phim"].Value);
-            txt_TheLoai.Text = "";
-            foreach (var item in MovieByGenreDB.GetListGenreByMovieID(Idfilm))
+        }
+        List<string> GenresFilm = new List<string> { };
+        private List<string> GetGenre()
+        {
+            List<string> Idfilm = new List<string> { };
+            
+            for (int i = 0; i < dtgvMovie.RowCount ; i++)
             {
-                txt_TheLoai.Text += item.Name + ", ";
+                DataGridViewRow selectedRow = dtgvMovie.Rows[i];
+                Idfilm.Add(Convert.ToString(selectedRow.Cells["Mã phim"].Value));
             }
+            
+            for (int i = 0; i < Idfilm.Count; i++)
+            {
+                GenresFilm.Add(Idfilm[i] + " ");
+                foreach (var genre in MovieByGenreDB.GetListGenreByMovieID(Idfilm[i]))
+                {
+                    GenresFilm[i] += genre.Name + " ";
+                }
+            }
+            if (GenresFilm.Count != 0)
+            {
+                int startIndex = GenresFilm[0].LastIndexOf(Idfilm[0]) + Idfilm[0].Length;
+                txt_TheLoai.Text = GenresFilm[0].Substring(startIndex);
+            }
+            return GenresFilm;
         }
 
         private void UI_CustomerDatVe_Load(object sender, EventArgs e)
@@ -108,19 +126,21 @@ namespace project_CinemaManager
             this.Show();
         }
 
-        private void dtgvMovie_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dtgvMovie_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string Idfilm;
             int selectedrowindex = dtgvMovie.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = dtgvMovie.Rows[selectedrowindex];
             Idfilm = Convert.ToString(selectedRow.Cells["Mã phim"].Value);
-            txt_TheLoai.Text = "";
-            foreach (var item in MovieByGenreDB.GetListGenreByMovieID(Idfilm))
+
+            for (int i = 0; i < dtgvMovie.RowCount; i++)
             {
-                txt_TheLoai.Text += item.Name + ", ";
+                if (GenresFilm[i].Contains(Idfilm))
+                {
+                    int startIndex = GenresFilm[i].LastIndexOf(Idfilm)+Idfilm.Length;
+                    txt_TheLoai.Text = GenresFilm[i].Substring(startIndex);
+                }
             }
         }
-
-
     }
 }

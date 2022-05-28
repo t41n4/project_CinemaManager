@@ -29,6 +29,17 @@ CREATE TABLE PhongChieu
 )
 GO
 
+CREATE TABLE Messages
+(
+  id_msg INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  body nvarchar(4000) NOT NULL,
+  user_from nvarchar(255) NOT NULL,
+  user_to nvarchar(255) NOT NULL,
+  date_sent DATETIME NOT NULL
+) 
+GO
+
+
 CREATE TABLE Phim
 (
 	id varchar(50) PRIMARY KEY,
@@ -97,15 +108,14 @@ CREATE TABLE KhachHang
 	NgaySinh DATE NOT NULL,
 	DiaChi NVARCHAR(100),
 	SDT VARCHAR(100),
-	CMND INT NOT NULL Unique,
-	DiemTichLuy int
+	CMND INT NOT NULL Unique
 )
 GO
 
 
 CREATE TABLE TaiKhoan
 (
-	UserName NVARCHAR(100) NOT NULL,
+	UserName NVARCHAR(100) Unique NOT NULL,
 	Pass VARCHAR(1000) NOT NULL,
 	LoaiTK INT NOT NULL DEFAULT 2, -- 1:admin || 2:Customer
 	id VARCHAR(50) NOT NULL,
@@ -311,7 +321,7 @@ GO
 CREATE PROC USP_GetCustomer
 AS
 BEGIN
-	SELECT id AS [Mã khách hàng], HoTen AS [Họ tên], NgaySinh AS [Ngày sinh], DiaChi AS [Địa chỉ], SDT AS [SĐT], CMND AS [CMND], DiemTichLuy AS [Điểm tích lũy]
+	SELECT id AS [Mã khách hàng], HoTen AS [Họ tên], NgaySinh AS [Ngày sinh], DiaChi AS [Địa chỉ], SDT AS [SĐT], CMND AS [CMND]
 	FROM dbo.KhachHang
 END
 GO
@@ -320,8 +330,8 @@ CREATE PROC USP_InsertCustomer
 @idCus VARCHAR(50), @hoTen NVARCHAR(100), @ngaySinh date, @diaChi NVARCHAR(100), @sdt VARCHAR(100), @cmnd INT
 AS
 BEGIN
-	INSERT dbo.KhachHang (id, HoTen, NgaySinh, DiaChi, SDT, CMND, DiemTichLuy)
-	VALUES (@idCus, @hoTen, @ngaySinh, @diaChi, @sdt, @cmnd, 0)
+	INSERT dbo.KhachHang (id, HoTen, NgaySinh, DiaChi, SDT, CMND)
+	VALUES (@idCus, @hoTen, @ngaySinh, @diaChi, @sdt, @cmnd)
 END
 GO
 
@@ -329,7 +339,7 @@ CREATE PROC USP_SearchCustomer
 @ID NVARCHAR(100)
 AS
 BEGIN
-	SELECT id AS [Mã khách hàng], HoTen AS [Họ tên], NgaySinh AS [Ngày sinh], DiaChi AS [Địa chỉ], SDT AS [SĐT], CMND AS [CMND], DiemTichLuy AS [Điểm tích lũy]
+	SELECT id AS [Mã khách hàng], HoTen AS [Họ tên], NgaySinh AS [Ngày sinh], DiaChi AS [Địa chỉ], SDT AS [SĐT], CMND AS [CMND]
 	FROM dbo.KhachHang
 	WHERE @ID = id
 END
@@ -552,34 +562,6 @@ BEGIN
 END
 GO
 
---NHÂN VIÊN
-CREATE PROC USP_GetStaff
-AS
-BEGIN
-	SELECT id AS [Mã nhân viên], HoTen AS [Họ tên], NgaySinh AS [Ngày sinh], DiaChi AS [Địa chỉ], SDT AS [SĐT], CMND AS [CMND]
-	FROM dbo.NhanVien
-END
-GO
-
-CREATE PROC USP_InsertStaff
-@idStaff VARCHAR(50), @hoTen NVARCHAR(100), @ngaySinh date, @diaChi NVARCHAR(100), @sdt VARCHAR(100), @cmnd INT
-AS
-BEGIN
-	INSERT dbo.NhanVien (id, HoTen, NgaySinh, DiaChi, SDT, CMND)
-	VALUES (@idStaff, @hoTen, @ngaySinh, @diaChi, @sdt, @cmnd)
-END
-GO
-
-CREATE PROC USP_SearchStaff
-@hoTen NVARCHAR(100)
-AS
-BEGIN
-	SELECT id AS [Mã nhân viên], HoTen AS [Họ tên], NgaySinh AS [Ngày sinh], DiaChi AS [Địa chỉ], SDT AS [SĐT], CMND AS [CMND]
-	FROM dbo.NhanVien
-	WHERE dbo.fuConvertToUnsign1(HoTen) LIKE N'%' + dbo.fuConvertToUnsign1(@hoTen) + N'%'
-END
-GO
-
 
 --PHÒNG CHIẾU
 CREATE PROC USP_GetCinema
@@ -630,7 +612,66 @@ BEGIN
 END
 GO
 
+
+--Tin Nhan
+--Drop PROC USP_InsertMessage
+CREATE PROC USP_InsertMessage
+@body nvarchar(500), @user_from nvarchar(500), @user_to nvarchar(500), @date_sent datetime
+AS
+BEGIN
+	INSERT [dbo].Messages( body, user_from, user_to, date_sent)
+	VALUES (@body, @user_from, @user_to,@date_sent)
+END
+
+GO
+
+CREATE PROC USP_GetMessage
+@username nvarchar(50)
+AS
+BEGIN
+	SELECT user_from AS [Người gửi], user_to AS [Người nhận], date_sent AS [Thời gian gửi],body AS [Nội dung]
+	FROM [dbo].Messages
+	WHERE @username = user_to OR user_from = @username
+END
+GO
+
+CREATE PROC USP_GetCusNeedSupportForAdmin
+AS
+BEGIN 
+	 SELECT  user_from AS [Khách Hàng Cần Hỗ Trợ], date_sent AS [Thời gian gửi]
+		FROM    (SELECT id_msg, user_from,date_sent, ROW_NUMBER() OVER (PARTITION BY user_from ORDER BY id_msg) AS RowNumber
+                
+         FROM   [dbo].Messages
+         WHERE  user_to = 'admin') AS a
+		WHERE   a.RowNumber = 1
+END
+GO
+
+
+CREATE PROC USP_GetMessageForAdmin
+@username_from nvarchar(50)
+AS
+BEGIN
+	SELECT user_from AS [Người gửi], user_to AS [Người nhận], date_sent AS [Thời gian gửi],body AS [Nội dung]
+	FROM [dbo].Messages
+	WHERE user_to = N'admin' AND user_from = @username_from
+END
+GO
+
 --Insert Dữ Liệu
+SET IDENTITY_INSERT [dbo].[Messages] ON
+GO
+SET DATEFORMAT YMD
+INSERT INTO [Messages] ([id_msg], [body], [user_from], [user_to], [date_sent]) VALUES (1, N'Hello', N'Tai',   N'admin', '2022-05-26 08:50:00.000');
+INSERT INTO [Messages] ([id_msg], [body], [user_from], [user_to], [date_sent]) VALUES (2, N'Hello', N'Tai',   N'admin', '2022-05-26 08:50:00.000');
+INSERT INTO [Messages] ([id_msg], [body], [user_from], [user_to], [date_sent]) VALUES (3, N'Hello', N'admin', N'Tai',   '2022-05-26 08:50:00.000');
+INSERT INTO [Messages] ([id_msg], [body], [user_from], [user_to], [date_sent]) VALUES (4, N'Hello', N'admin', N'Tai',   '2022-05-26 08:50:00.000');
+INSERT INTO [Messages] ([id_msg], [body], [user_from], [user_to], [date_sent]) VALUES (5, N'Hello', N'admin', N'Bao',   '2022-05-26 08:50:00.000');
+INSERT INTO [Messages] ([id_msg], [body], [user_from], [user_to], [date_sent]) VALUES (6, N'Hello', N'admin', N'Bao',   '2022-05-26 08:50:00.000');
+SET IDENTITY_INSERT [dbo].[Messages] OFF
+GO
+
+
 INSERT INTO [TheLoai] ([id], [TenTheLoai], [MoTa]) VALUES ('TL01', N'Hành Động', NULL);  
 INSERT INTO [TheLoai] ([id], [TenTheLoai], [MoTa]) VALUES ('TL02', N'Hoạt Hình', NULL);  
 INSERT INTO [TheLoai] ([id], [TenTheLoai], [MoTa]) VALUES ('TL03', N'Hài', NULL);  
@@ -640,14 +681,22 @@ INSERT INTO [TheLoai] ([id], [TenTheLoai], [MoTa]) VALUES ('TL06', N'Gia đình'
 INSERT INTO [TheLoai] ([id], [TenTheLoai], [MoTa]) VALUES ('TL07', N'Tình Cảm', NULL);  
 INSERT INTO [TheLoai] ([id], [TenTheLoai], [MoTa]) VALUES ('TL08', N'Tâm Lý', NULL);  
 
-INSERT INTO [KhachHang] ([id], [HoTen], [NgaySinh], [DiaChi], [SDT], [CMND], [DiemTichLuy]) VALUES ('HAL4', N'Nguyen Anh Tai', '2002-04-11', N'DakSak', '091237123', 24512345, 0);  
-INSERT INTO [KhachHang] ([id], [HoTen], [NgaySinh], [DiaChi], [SDT], [CMND], [DiemTichLuy]) VALUES ('KH01', N'Nguyễn Văn A', '2001-05-03', N'Bla Bla', '0123456789', 218161554, 0);  
-INSERT INTO [KhachHang] ([id], [HoTen], [NgaySinh], [DiaChi], [SDT], [CMND], [DiemTichLuy]) VALUES ('KH02', N'Nguyễn Văn B', '2001-05-03', N'Bla Bla', '0123456789', 218161564, 0);  
-INSERT INTO [KhachHang] ([id], [HoTen], [NgaySinh], [DiaChi], [SDT], [CMND], [DiemTichLuy]) VALUES ('KH03', N'Nguyễn Văn B', '2001-05-03', N'Bla Bla', '0123456789', 218161654, 0);  
 
-INSERT INTO [TaiKhoan] ([UserName], [Pass], [LoaiTK], [id]) VALUES (N'Tai', '2115753541275705119798271895814423', 2, 'HAL4');  
-INSERT INTO [TaiKhoan] ([UserName], [Pass], [LoaiTK], [id]) VALUES (N'admin', '59113821474147731767615617822114745333', 1, 'KH01');  
-INSERT INTO [TaiKhoan] ([UserName], [Pass], [LoaiTK], [id]) VALUES (N'KH01', '5512317111114510840231031535810616566202691', 2, 'KH02');  
+INSERT INTO [KhachHang] ([id], [HoTen], [NgaySinh], [DiaChi], [SDT], [CMND]) VALUES ('ADMIN', N'admin', '2001-05-03', N'...', '0123456789', 100000000);  
+INSERT INTO [KhachHang] ([id], [HoTen], [NgaySinh], [DiaChi], [SDT], [CMND]) VALUES ('KH01', N'Nguyen Anh Tai', '2002-04-11', N'DakSak', '091237123', 24512345);  
+INSERT INTO [KhachHang] ([id], [HoTen], [NgaySinh], [DiaChi], [SDT], [CMND]) VALUES ('KH02', N'Nguyễn Văn Bao', '2001-02-03', N'Bla Bla', '0123456789', 218161565);  
+INSERT INTO [KhachHang] ([id], [HoTen], [NgaySinh], [DiaChi], [SDT], [CMND]) VALUES ('KH03', N'Nguyễn Văn DucAnh', '2000-05-03', N'Bla Bla', '0123456789', 218161564);  
+INSERT INTO [KhachHang] ([id], [HoTen], [NgaySinh], [DiaChi], [SDT], [CMND]) VALUES ('KH04', N'Nguyễn Văn MaiLy', '2001-05-06', N'Bla Bla', '0123456789', 218161657);  
+INSERT INTO [KhachHang] ([id], [HoTen], [NgaySinh], [DiaChi], [SDT], [CMND]) VALUES ('KH05', N'Nguyễn Văn Hoan', '2001-05-03', N'Bla Bla', '0123456789', 218161654);  
+
+
+INSERT INTO [TaiKhoan] ([UserName], [Pass], [LoaiTK], [id]) VALUES (N'admin', '59113821474147731767615617822114745333', 1, 'ADMIN');  
+INSERT INTO [TaiKhoan] ([UserName], [Pass], [LoaiTK], [id]) VALUES (N'Tai', '2115753541275705119798271895814423', 2, 'KH01');  
+INSERT INTO [TaiKhoan] ([UserName], [Pass], [LoaiTK], [id]) VALUES (N'Bao', '2115753541275705119798271895814423', 2, 'KH02'); 
+INSERT INTO [TaiKhoan] ([UserName], [Pass], [LoaiTK], [id]) VALUES (N'DucAnh', '2115753541275705119798271895814423', 2, 'KH03'); 
+INSERT INTO [TaiKhoan] ([UserName], [Pass], [LoaiTK], [id]) VALUES (N'MaiLy', '2115753541275705119798271895814423', 2, 'KH04');
+INSERT INTO [TaiKhoan] ([UserName], [Pass], [LoaiTK], [id]) VALUES (N'Hoan', '2115753541275705119798271895814423', 2, 'KH05');
+
 
 INSERT INTO [LoaiManHinh] ([id], [TenMH]) VALUES ('MH01', N'2D');  
 INSERT INTO [LoaiManHinh] ([id], [TenMH]) VALUES ('MH02', N'3D');  

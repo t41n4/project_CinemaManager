@@ -45,9 +45,5 @@ namespace Application
 
         public int Status { get; set; }
 
-        //public override string ToString()
-        //{
-        //    return MovieName + " " + CinemaName + " " + Time.ToString("HH:mm:ss dd/MM/yyyy");
-        //}
     }
 }

@@ -169,7 +169,7 @@
             this.Controls.Add(this.dtmToDate);
             this.Controls.Add(this.dtmFromDate);
             this.Name = "RevenueUC";
-            this.Size = new System.Drawing.Size(1400, 650);
+            this.Size = new System.Drawing.Size(1400, 598);
             this.Load += new System.EventHandler(this.RevenueUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvRevenue)).EndInit();
             this.ResumeLayout(false);

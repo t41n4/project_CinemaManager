@@ -226,6 +226,7 @@ namespace project_CinemaManager
             this.btnRqSupport.TabIndex = 25;
             this.btnRqSupport.Text = "Yêu Cầu Hỗ trợ";
             this.btnRqSupport.UseVisualStyleBackColor = true;
+            this.btnRqSupport.Click += new System.EventHandler(this.btnRqSupport_Click);
             // 
             // UICustomerInfo
             // 
