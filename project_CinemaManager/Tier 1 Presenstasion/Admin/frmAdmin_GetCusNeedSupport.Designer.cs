@@ -29,18 +29,21 @@ namespace project_CinemaManager
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnChooseToSupport = new System.Windows.Forms.Button();
             this.lbname = new System.Windows.Forms.Label();
             this.dtgvMessage = new System.Windows.Forms.DataGridView();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMessage)).BeginInit();
             this.SuspendLayout();
             // 
             // btnChooseToSupport
             // 
-            this.btnChooseToSupport.Location = new System.Drawing.Point(123, 284);
+            this.btnChooseToSupport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnChooseToSupport.Location = new System.Drawing.Point(12, 485);
             this.btnChooseToSupport.Name = "btnChooseToSupport";
-            this.btnChooseToSupport.Size = new System.Drawing.Size(513, 45);
+            this.btnChooseToSupport.Size = new System.Drawing.Size(225, 45);
             this.btnChooseToSupport.TabIndex = 7;
             this.btnChooseToSupport.Text = "Choose To Support";
             this.btnChooseToSupport.UseVisualStyleBackColor = true;
@@ -57,21 +60,24 @@ namespace project_CinemaManager
             // 
             // dtgvMessage
             // 
-            this.dtgvMessage.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtgvMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtgvMessage.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvMessage.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dtgvMessage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtgvMessage.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dtgvMessage.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dtgvMessage.ColumnHeadersHeight = 29;
             this.dtgvMessage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvMessage.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvMessage.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvMessage.Location = new System.Drawing.Point(12, 50);
             this.dtgvMessage.Name = "dtgvMessage";
             this.dtgvMessage.ReadOnly = true;
@@ -80,18 +86,30 @@ namespace project_CinemaManager
             this.dtgvMessage.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dtgvMessage.RowTemplate.Height = 24;
             this.dtgvMessage.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvMessage.Size = new System.Drawing.Size(754, 228);
+            this.dtgvMessage.Size = new System.Drawing.Size(487, 429);
             this.dtgvMessage.TabIndex = 4;
             // 
-            // frmAdmin_GetSupportCus
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Location = new System.Drawing.Point(243, 485);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(256, 45);
+            this.btnDelete.TabIndex = 7;
+            this.btnDelete.Text = "Remove";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // frmAdmin_GetCusNeedSupport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 349);
+            this.ClientSize = new System.Drawing.Size(516, 536);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnChooseToSupport);
             this.Controls.Add(this.lbname);
             this.Controls.Add(this.dtgvMessage);
-            this.Name = "frmAdmin_GetSupportCus";
+            this.Name = "frmAdmin_GetCusNeedSupport";
             this.Text = "frmAdmin_GetSupportCus";
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMessage)).EndInit();
             this.ResumeLayout(false);
@@ -104,5 +122,6 @@ namespace project_CinemaManager
         private System.Windows.Forms.Button btnChooseToSupport;
         private System.Windows.Forms.Label lbname;
         private System.Windows.Forms.DataGridView dtgvMessage;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

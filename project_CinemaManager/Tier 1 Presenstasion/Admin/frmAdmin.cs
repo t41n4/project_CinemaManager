@@ -1,6 +1,7 @@
 ﻿using Application;
 using System;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace project_CinemaManager
 {
@@ -39,9 +40,11 @@ namespace project_CinemaManager
         {
         }
 
+   
         private void btnSupportCus_Click(object sender, EventArgs e)
         {
-            this.Hide();
+           
+            this.Hide();         
             frmAdmin_GetCusNeedSupport getSupport = new frmAdmin_GetCusNeedSupport();
             getSupport.ShowDialog();
             this.Show();

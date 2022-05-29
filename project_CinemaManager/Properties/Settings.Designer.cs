@@ -102,5 +102,17 @@ namespace project_CinemaManager.Properties {
                 return ((string)(this["QLRPConnectionString_GetMessage"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1500")]
+        public int RefreshTimeOut {
+            get {
+                return ((int)(this["RefreshTimeOut"]));
+            }
+            set {
+                this["RefreshTimeOut"] = value;
+            }
+        }
     }
 }

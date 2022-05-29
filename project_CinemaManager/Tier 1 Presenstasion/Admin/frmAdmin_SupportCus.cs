@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Application;
@@ -16,6 +17,7 @@ namespace project_CinemaManager
     public partial class frmAdmin_SupportCus : Form
     {
         string customer;
+        Thread refresher;
         public frmAdmin_SupportCus(string cus)
         {
             this.customer = cus;
@@ -23,6 +25,41 @@ namespace project_CinemaManager
             LoadMessage();
             ConfigColumn();
             lbname.Text += account.UserName;
+            refresher = new Thread(ThreadRefreshData);
+            refresher.IsBackground = true;
+            refresher.Start();
+        }
+
+        private void ThreadRefreshData()
+        {
+            try
+            {
+                while (true)
+                {
+                    if (IsHandleCreated)
+                    {
+                        if (InvokeRequired)
+                            dtgvMessage.Invoke(new Action(() =>
+                            {
+                                LoadMessage();
+                            }));
+                        else
+                            LoadMessage();
+
+                    }
+                    else
+                    {
+                      
+                    }
+                    Thread.Sleep(Properties.Settings.Default.RefreshTimeOut);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         Account account = frmAdmin.loginAccount;
@@ -48,11 +85,8 @@ namespace project_CinemaManager
             dtgvMessage.DataSource = MessagesDB.GetMessagesTable(customer);
         }
 
-       
-
-        private void btnSendMessage_Click(object sender, EventArgs e)
+       private void SendMessage()
         {
-
             if (MessagesDB.InsertMessage(txtMessage.Text, account.UserName, customer, DateTime.Now))
             {
                 txtMessage.Text = "";
@@ -62,6 +96,25 @@ namespace project_CinemaManager
                 MessageBox.Show("Gửi Thất Bại!!");
             }
             LoadMessage();
+        }
+
+        private void btnSendMessage_Click(object sender, EventArgs e)
+        {
+
+            SendMessage();
+        }
+
+        private void frmAdmin_SupportCus_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmAdmin_SupportCus_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter )
+            {
+                SendMessage();
+            }    
         }
     }
 }

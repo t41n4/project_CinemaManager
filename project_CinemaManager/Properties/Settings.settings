@@ -29,5 +29,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=35.220.208.39;Initial Catalog=QLRP;Persist Security Info=True;User ID=sqlserver;Password=Hien9029</Value>
     </Setting>
+    <Setting Name="RefreshTimeOut" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1500</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

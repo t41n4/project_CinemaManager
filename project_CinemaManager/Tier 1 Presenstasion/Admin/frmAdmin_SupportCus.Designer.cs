@@ -29,7 +29,7 @@ namespace project_CinemaManager
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSendMessage = new System.Windows.Forms.Button();
             this.txtMessage = new System.Windows.Forms.TextBox();
             this.lbname = new System.Windows.Forms.Label();
@@ -39,9 +39,11 @@ namespace project_CinemaManager
             // 
             // btnSendMessage
             // 
-            this.btnSendMessage.Location = new System.Drawing.Point(641, 273);
+            this.btnSendMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSendMessage.Location = new System.Drawing.Point(640, 443);
             this.btnSendMessage.Name = "btnSendMessage";
-            this.btnSendMessage.Size = new System.Drawing.Size(125, 45);
+            this.btnSendMessage.Size = new System.Drawing.Size(124, 45);
             this.btnSendMessage.TabIndex = 7;
             this.btnSendMessage.Text = "Send";
             this.btnSendMessage.UseVisualStyleBackColor = true;
@@ -49,7 +51,8 @@ namespace project_CinemaManager
             // 
             // txtMessage
             // 
-            this.txtMessage.Location = new System.Drawing.Point(12, 284);
+            this.txtMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtMessage.Location = new System.Drawing.Point(12, 454);
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(623, 22);
             this.txtMessage.TabIndex = 6;
@@ -66,6 +69,9 @@ namespace project_CinemaManager
             // 
             // dtgvMessage
             // 
+            this.dtgvMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgvMessage.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dtgvMessage.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dtgvMessage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -73,14 +79,14 @@ namespace project_CinemaManager
             this.dtgvMessage.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dtgvMessage.ColumnHeadersHeight = 29;
             this.dtgvMessage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvMessage.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvMessage.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvMessage.Location = new System.Drawing.Point(12, 39);
             this.dtgvMessage.Name = "dtgvMessage";
             this.dtgvMessage.ReadOnly = true;
@@ -89,20 +95,22 @@ namespace project_CinemaManager
             this.dtgvMessage.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dtgvMessage.RowTemplate.Height = 24;
             this.dtgvMessage.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvMessage.Size = new System.Drawing.Size(754, 228);
+            this.dtgvMessage.Size = new System.Drawing.Size(752, 398);
             this.dtgvMessage.TabIndex = 4;
             // 
             // frmAdmin_SupportCus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 339);
+            this.ClientSize = new System.Drawing.Size(783, 512);
             this.Controls.Add(this.btnSendMessage);
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.lbname);
             this.Controls.Add(this.dtgvMessage);
             this.Name = "frmAdmin_SupportCus";
             this.Text = "frmAdmin_GetSupport";
+            this.Load += new System.EventHandler(this.frmAdmin_SupportCus_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmAdmin_SupportCus_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMessage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

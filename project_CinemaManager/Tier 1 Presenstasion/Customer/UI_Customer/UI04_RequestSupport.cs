@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Application;
@@ -14,6 +15,7 @@ namespace project_CinemaManager
 {
     public partial class UI04_RequestSupport : Form
     {
+        Thread refresher;
         Account account = UICustomerInfo.loginAccount;
         public UI04_RequestSupport()
         {
@@ -21,6 +23,40 @@ namespace project_CinemaManager
             LoadMessage();
             HideUneseccaryColumn();
             lbname.Text += account.UserName;
+            refresher = new Thread(ThreadRefreshData);
+            refresher.IsBackground = true;
+            refresher.Start();
+        }
+        private void ThreadRefreshData()
+        {
+            try
+            {
+                while (true)
+                {
+                    if (IsHandleCreated)
+                    {
+
+                        if (InvokeRequired)
+                            dtgvMessage.Invoke(new Action(() =>
+                            {
+                                LoadMessage();
+                            }));
+                        else
+                            LoadMessage();
+                    }
+                    else
+                    {
+                       
+                    }
+                    Thread.Sleep(Properties.Settings.Default.RefreshTimeOut);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
         }
         private void HideUneseccaryColumn()
         {

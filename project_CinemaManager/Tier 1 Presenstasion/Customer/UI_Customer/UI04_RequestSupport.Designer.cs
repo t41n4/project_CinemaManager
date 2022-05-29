@@ -39,6 +39,9 @@ namespace project_CinemaManager
             // 
             // dtgvMessage
             // 
+            this.dtgvMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgvMessage.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dtgvMessage.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dtgvMessage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -62,7 +65,7 @@ namespace project_CinemaManager
             this.dtgvMessage.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dtgvMessage.RowTemplate.Height = 24;
             this.dtgvMessage.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvMessage.Size = new System.Drawing.Size(754, 228);
+            this.dtgvMessage.Size = new System.Drawing.Size(728, 358);
             this.dtgvMessage.TabIndex = 0;
             // 
             // lbname
@@ -76,9 +79,11 @@ namespace project_CinemaManager
             // 
             // btnSendMessage
             // 
-            this.btnSendMessage.Location = new System.Drawing.Point(641, 273);
+            this.btnSendMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSendMessage.Location = new System.Drawing.Point(641, 413);
             this.btnSendMessage.Name = "btnSendMessage";
-            this.btnSendMessage.Size = new System.Drawing.Size(125, 45);
+            this.btnSendMessage.Size = new System.Drawing.Size(99, 45);
             this.btnSendMessage.TabIndex = 3;
             this.btnSendMessage.Text = "Send";
             this.btnSendMessage.UseVisualStyleBackColor = true;
@@ -86,7 +91,8 @@ namespace project_CinemaManager
             // 
             // txtMessage
             // 
-            this.txtMessage.Location = new System.Drawing.Point(12, 284);
+            this.txtMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtMessage.Location = new System.Drawing.Point(15, 424);
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(623, 22);
             this.txtMessage.TabIndex = 2;
@@ -96,7 +102,7 @@ namespace project_CinemaManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 340);
+            this.ClientSize = new System.Drawing.Size(766, 470);
             this.Controls.Add(this.btnSendMessage);
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.lbname);

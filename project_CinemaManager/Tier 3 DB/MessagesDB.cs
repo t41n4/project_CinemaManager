@@ -42,6 +42,11 @@ namespace DB
             return DataProvider.ExecuteQuery("EXEC USP_GetCusNeedSupportForAdmin");
         }
 
-
+        public static bool DeleteMessage(string username)
+        {
+            int result = DataProvider.ExecuteNonQuery
+               ("EXEC USP_DeleteMessage @username", new object[] { username });
+            return result > 0;
+        }
     }
 }

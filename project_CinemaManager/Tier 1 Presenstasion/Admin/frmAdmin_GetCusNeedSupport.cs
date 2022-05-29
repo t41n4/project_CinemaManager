@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Application;
@@ -15,16 +16,49 @@ namespace project_CinemaManager
 {
     public partial class frmAdmin_GetCusNeedSupport : Form
     {
+        Thread refresher;
         public frmAdmin_GetCusNeedSupport()
-        {
-            InitializeComponent();
+        {         
+            InitializeComponent();     
             LoadCusNeedSP();
             ConfiDataGV();
-            lbname.Text += account.UserName;      
+            lbname.Text += account.UserName;
+            refresher = new Thread(ThreadRefreshData);
+            refresher.IsBackground = true;
+            refresher.Start();
         }
 
+        private void ThreadRefreshData()
+        {
+            try
+            {
+                while (true)
+                {
+                    if (IsHandleCreated)
+                    {
+                        if (InvokeRequired)
+                            dtgvMessage.Invoke(new Action(() =>
+                            {
+                                LoadCusNeedSP();
+                            }));
+                        else
+                            LoadCusNeedSP();
+                    }
+                    else
+                    {
+                        
+                    }
+                    Thread.Sleep(Properties.Settings.Default.RefreshTimeOut);
+                }
+            }
+            catch (Exception ex)
+            {
 
-  
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
         Account account = frmAdmin.loginAccount;
 
         private void ConfiDataGV()
@@ -45,18 +79,40 @@ namespace project_CinemaManager
         }
         string selectedRow(string attr)
         {
-            string value;
-            int selectedrowindex = dtgvMessage.SelectedCells[0].RowIndex;
-            DataGridViewRow selectedRow = dtgvMessage.Rows[selectedrowindex];
-            value = Convert.ToString(selectedRow.Cells[attr].Value);
-            return value;
+            try
+            {
+                string value;
+                int selectedrowindex = dtgvMessage.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dtgvMessage.Rows[selectedrowindex];
+                value = Convert.ToString(selectedRow.Cells[attr].Value);
+                return value;
+            }
+            catch (Exception)
+            {
+                return "";
+            }
+           
         }
         private void btnChooseToSupport_Click(object sender, EventArgs e)
         {
-            frmAdmin_SupportCus supportCus = new frmAdmin_SupportCus(selectedRow("Khách Hàng Cần Hỗ Trợ"));
-            this.Hide();
-            supportCus.ShowDialog();
-            this.Show();
+            try
+            {
+                frmAdmin_SupportCus supportCus = new frmAdmin_SupportCus(selectedRow("Khách Hàng Cần Hỗ Trợ"));
+                this.Hide();
+                supportCus.ShowDialog();
+                this.Show();
+                LoadCusNeedSP();
+            }
+            catch (Exception)
+            {
+
+            }
+            
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            MessagesDB.DeleteMessage(selectedRow("Khách Hàng Cần Hỗ Trợ"));
             LoadCusNeedSP();
         }
     }
