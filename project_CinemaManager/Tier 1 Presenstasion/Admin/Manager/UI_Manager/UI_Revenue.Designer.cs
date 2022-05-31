@@ -1,4 +1,4 @@
-﻿namespace frmAdminUserControls
+﻿namespace project_CinemaManager
 {
     partial class RevenueUC
     {
@@ -71,7 +71,6 @@
             this.txtDoanhThu.Size = new System.Drawing.Size(235, 35);
             this.txtDoanhThu.TabIndex = 37;
             this.txtDoanhThu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtDoanhThu.TextChanged += new System.EventHandler(this.txtDoanhThu_TextChanged);
             // 
             // lblDenNgay
             // 
@@ -170,7 +169,6 @@
             this.Controls.Add(this.dtmFromDate);
             this.Name = "RevenueUC";
             this.Size = new System.Drawing.Size(1400, 598);
-            this.Load += new System.EventHandler(this.RevenueUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvRevenue)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

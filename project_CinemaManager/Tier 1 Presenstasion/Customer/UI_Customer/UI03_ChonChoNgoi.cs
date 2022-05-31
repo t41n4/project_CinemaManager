@@ -62,7 +62,7 @@ namespace project_CinemaManager
 
         private void LoadDataCinema(string cinemaName)
         {
-            Cinema cinema = CinemaDAO.GetCinemaByID(cinemaName);
+            Cinema cinema = CinemaDB.GetCinemaByID(cinemaName);
 
             Row = cinema.Row;
             Column = cinema.SeatInRow;

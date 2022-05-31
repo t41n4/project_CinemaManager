@@ -4,7 +4,7 @@ using System.Data;
 
 namespace DB
 {
-    public class ScreenTypeDAO
+    public class ScreenTypeDB
     {
         public static List<ScreenType> GetListScreenType()
         {

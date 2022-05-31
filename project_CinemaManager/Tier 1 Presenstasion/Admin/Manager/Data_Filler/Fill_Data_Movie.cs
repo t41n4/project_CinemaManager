@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace frmAdminUserControls.DataUserControl
+namespace project_CinemaManager
 {
     public partial class MovieUC : UserControl
     {
@@ -50,7 +50,7 @@ namespace frmAdminUserControls.DataUserControl
 
         private void LoadGenreIntoCheckedList(CheckedListBox checkedList)
         {
-            List<Genre> genreList = GenreDAO.GetListGenre();
+            List<Genre> genreList = GenreDB.GetListGenre();
             checkedList.DataSource = genreList;
             checkedList.DisplayMember = "Name";
         }

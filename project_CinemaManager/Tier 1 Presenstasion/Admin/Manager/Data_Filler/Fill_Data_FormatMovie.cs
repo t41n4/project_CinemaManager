@@ -3,7 +3,7 @@ using DB;
 using System;
 using System.Windows.Forms;
 
-namespace frmAdminUserControls.DataUserControl
+namespace project_CinemaManager
 {
     public partial class FormatMovieUC : UserControl
     {
@@ -40,7 +40,7 @@ namespace frmAdminUserControls.DataUserControl
 
         private void LoadScreenIDIntoCombobox(ComboBox comboBox)
         {
-            comboBox.DataSource = ScreenTypeDAO.GetListScreenType();
+            comboBox.DataSource = ScreenTypeDB.GetListScreenType();
             comboBox.DisplayMember = "ID";
             comboBox.ValueMember = "ID";
         }
@@ -86,7 +86,7 @@ namespace frmAdminUserControls.DataUserControl
             cboFormat_MovieID.SelectedIndex = indexMovie;
 
             string screenName = (string)dtgvFormat.SelectedCells[0].OwningRow.Cells["Tên MH"].Value;
-            ScreenType screenTypeSelecting = ScreenTypeDAO.GetScreenTypeByName(screenName);
+            ScreenType screenTypeSelecting = ScreenTypeDB.GetScreenTypeByName(screenName);
             //This is the ScreenType that we're currently selecting in dtgv
 
             if (screenTypeSelecting == null)

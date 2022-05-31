@@ -45,6 +45,7 @@ namespace project_CinemaManager
             this.btnDatVe = new System.Windows.Forms.Button();
             this.btnConfigInfo = new System.Windows.Forms.Button();
             this.btnRqSupport = new System.Windows.Forms.Button();
+            this.btnUpdatePassword = new System.Windows.Forms.Button();
             this.grpCustomer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -190,7 +191,7 @@ namespace project_CinemaManager
             this.grpCustomer.Controls.Add(this.txtCusINumber);
             this.grpCustomer.Controls.Add(this.lblCusName);
             this.grpCustomer.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpCustomer.Location = new System.Drawing.Point(57, 11);
+            this.grpCustomer.Location = new System.Drawing.Point(52, 11);
             this.grpCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpCustomer.Name = "grpCustomer";
             this.grpCustomer.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -200,9 +201,10 @@ namespace project_CinemaManager
             // 
             // btnDatVe
             // 
-            this.btnDatVe.Location = new System.Drawing.Point(57, 253);
+            this.btnDatVe.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDatVe.Location = new System.Drawing.Point(7, 253);
             this.btnDatVe.Name = "btnDatVe";
-            this.btnDatVe.Size = new System.Drawing.Size(142, 59);
+            this.btnDatVe.Size = new System.Drawing.Size(96, 45);
             this.btnDatVe.TabIndex = 25;
             this.btnDatVe.Text = "Đặt Vé";
             this.btnDatVe.UseVisualStyleBackColor = true;
@@ -210,9 +212,10 @@ namespace project_CinemaManager
             // 
             // btnConfigInfo
             // 
-            this.btnConfigInfo.Location = new System.Drawing.Point(211, 253);
+            this.btnConfigInfo.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfigInfo.Location = new System.Drawing.Point(109, 253);
             this.btnConfigInfo.Name = "btnConfigInfo";
-            this.btnConfigInfo.Size = new System.Drawing.Size(142, 59);
+            this.btnConfigInfo.Size = new System.Drawing.Size(142, 45);
             this.btnConfigInfo.TabIndex = 25;
             this.btnConfigInfo.Text = "Chỉnh Sửa Thông Tin";
             this.btnConfigInfo.UseVisualStyleBackColor = true;
@@ -220,20 +223,34 @@ namespace project_CinemaManager
             // 
             // btnRqSupport
             // 
-            this.btnRqSupport.Location = new System.Drawing.Point(359, 253);
+            this.btnRqSupport.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRqSupport.Location = new System.Drawing.Point(257, 253);
             this.btnRqSupport.Name = "btnRqSupport";
-            this.btnRqSupport.Size = new System.Drawing.Size(142, 59);
+            this.btnRqSupport.Size = new System.Drawing.Size(142, 45);
             this.btnRqSupport.TabIndex = 25;
             this.btnRqSupport.Text = "Yêu Cầu Hỗ trợ";
             this.btnRqSupport.UseVisualStyleBackColor = true;
             this.btnRqSupport.Click += new System.EventHandler(this.btnRqSupport_Click);
+            // 
+            // btnUpdatePassword
+            // 
+            this.btnUpdatePassword.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdatePassword.Location = new System.Drawing.Point(405, 252);
+            this.btnUpdatePassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpdatePassword.Name = "btnUpdatePassword";
+            this.btnUpdatePassword.Size = new System.Drawing.Size(135, 46);
+            this.btnUpdatePassword.TabIndex = 26;
+            this.btnUpdatePassword.Text = "Đổi Mật Khẩu";
+            this.btnUpdatePassword.UseVisualStyleBackColor = true;
+            this.btnUpdatePassword.Click += new System.EventHandler(this.btnUpdatePassword_Click);
             // 
             // UICustomerInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(234)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(562, 336);
+            this.ClientSize = new System.Drawing.Size(554, 304);
+            this.Controls.Add(this.btnUpdatePassword);
             this.Controls.Add(this.btnRqSupport);
             this.Controls.Add(this.btnConfigInfo);
             this.Controls.Add(this.btnDatVe);
@@ -264,5 +281,6 @@ namespace project_CinemaManager
         private System.Windows.Forms.Button btnDatVe;
         private System.Windows.Forms.Button btnConfigInfo;
         private System.Windows.Forms.Button btnRqSupport;
+        private System.Windows.Forms.Button btnUpdatePassword;
     }
 }

@@ -4,7 +4,7 @@ using System.Data;
 
 namespace DB
 {
-    public class GenreDAO
+    public class GenreDB
     {
         public static List<Genre> GetListGenre()
         {

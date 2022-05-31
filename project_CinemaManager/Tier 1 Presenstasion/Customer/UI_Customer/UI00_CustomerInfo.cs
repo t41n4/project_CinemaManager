@@ -122,5 +122,13 @@ namespace project_CinemaManager
             requestSupport.ShowDialog();
             this.Show();
         }
+
+        private void btnUpdatePassword_Click(object sender, EventArgs e)
+        {
+            UI05_ChangePassword updatePassWord = new UI05_ChangePassword();
+            this.Hide();
+            updatePassWord.ShowDialog();
+            this.Show();
+        }
     }
 }

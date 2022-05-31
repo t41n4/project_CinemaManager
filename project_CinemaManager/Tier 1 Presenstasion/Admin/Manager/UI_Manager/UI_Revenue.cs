@@ -3,7 +3,7 @@ using System;
 using System.Globalization;
 using System.Windows.Forms;
 
-namespace frmAdminUserControls
+namespace project_CinemaManager
 {
     public partial class RevenueUC : UserControl
     {
@@ -57,14 +57,8 @@ namespace frmAdminUserControls
 
         private void btnReportRevenue_Click(object sender, EventArgs e)
         {
-        }
-
-        private void txtDoanhThu_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void RevenueUC_Load(object sender, EventArgs e)
-        {
+            frmReport frm = new frmReport(cboSelectMovie.SelectedValue.ToString(), dtmFromDate.Value, dtmToDate.Value);
+            frm.ShowDialog();
         }
     }
 }

@@ -1,8 +1,8 @@
-﻿using frmAdminUserControls.DataUserControl;
+﻿
 using System;
 using System.Windows.Forms;
 
-namespace frmAdminUserControls
+namespace project_CinemaManager
 {
     public partial class DataUC : UserControl
     {

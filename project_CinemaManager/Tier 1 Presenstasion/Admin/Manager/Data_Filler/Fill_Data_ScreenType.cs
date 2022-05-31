@@ -2,7 +2,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace frmAdminUserControls.DataUserControl
+namespace project_CinemaManager
 {
     public partial class ScreenTypeUC : UserControl
     {
@@ -23,7 +23,7 @@ namespace frmAdminUserControls.DataUserControl
 
         private void LoadScreenTypeList()
         {
-            screenTypeList.DataSource = ScreenTypeDAO.GetScreenType();
+            screenTypeList.DataSource = ScreenTypeDB.GetScreenType();
         }
 
         private void AddScreenTypeBinding()
@@ -39,7 +39,7 @@ namespace frmAdminUserControls.DataUserControl
 
         private void InsertScreenType(string id, string name)
         {
-            if (ScreenTypeDAO.InsertScreenType(id, name))
+            if (ScreenTypeDB.InsertScreenType(id, name))
             {
                 MessageBox.Show("Thêm loại màn hình thành công");
             }
@@ -59,7 +59,7 @@ namespace frmAdminUserControls.DataUserControl
 
         private void UpdateScreenType(string id, string name)
         {
-            if (ScreenTypeDAO.UpdateScreenType(id, name))
+            if (ScreenTypeDB.UpdateScreenType(id, name))
             {
                 MessageBox.Show("Sửa loại màn hình thành công");
             }
@@ -79,7 +79,7 @@ namespace frmAdminUserControls.DataUserControl
 
         private void DeleteScreenType(string id)
         {
-            if (ScreenTypeDAO.DeleteScreenType(id))
+            if (ScreenTypeDB.DeleteScreenType(id))
             {
                 MessageBox.Show("Xóa loại màn hình thành công");
             }

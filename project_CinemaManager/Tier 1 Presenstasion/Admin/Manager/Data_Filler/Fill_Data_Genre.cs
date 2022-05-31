@@ -2,7 +2,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace frmAdminUserControls.DataUserControl
+namespace project_CinemaManager
 {
     public partial class GenreUC : UserControl
     {
@@ -23,7 +23,7 @@ namespace frmAdminUserControls.DataUserControl
 
         private void LoadGenreList()
         {
-            genreList.DataSource = GenreDAO.GetGenre();
+            genreList.DataSource = GenreDB.GetGenre();
         }
 
         private void AddGenreBinding()
@@ -40,7 +40,7 @@ namespace frmAdminUserControls.DataUserControl
 
         private void InsertGenre(string id, string name, string desc)
         {
-            if (GenreDAO.InsertGenre(id, name, desc))
+            if (GenreDB.InsertGenre(id, name, desc))
             {
                 MessageBox.Show("Thêm thể loại thành công");
             }
@@ -61,7 +61,7 @@ namespace frmAdminUserControls.DataUserControl
 
         private void UpdateGenre(string id, string name, string desc)
         {
-            if (GenreDAO.UpdateGenre(id, name, desc))
+            if (GenreDB.UpdateGenre(id, name, desc))
             {
                 MessageBox.Show("Sửa thể loại thành công");
             }
@@ -82,7 +82,7 @@ namespace frmAdminUserControls.DataUserControl
 
         private void DeleteGenre(string id)
         {
-            if (GenreDAO.DeleteGenre(id))
+            if (GenreDB.DeleteGenre(id))
             {
                 MessageBox.Show("Xóa thể loại thành công");
             }

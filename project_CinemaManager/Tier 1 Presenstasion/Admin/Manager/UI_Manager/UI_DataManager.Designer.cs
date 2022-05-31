@@ -1,4 +1,4 @@
-﻿namespace frmAdminUserControls
+﻿namespace project_CinemaManager
 {
     partial class DataUC
     {

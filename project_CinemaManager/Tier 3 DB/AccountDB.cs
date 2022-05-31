@@ -48,13 +48,11 @@ namespace DB
                 return 0;
         }
 
-        public static bool UpdatePasswordForAccount(string userName, string passWord, string newPassWord)
+        public static bool UpdatePasswordForAccount(string userName, string oldPassWord, string newPassWord)
         {
-            string oldPass = PasswordEncryption(passWord);
+            string oldPass = PasswordEncryption(oldPassWord);
             string newPass = PasswordEncryption(newPassWord);
-
             int result = DataProvider.ExecuteNonQuery("EXEC USP_UpdatePasswordForAccount @username , @pass , @newPass", new object[] { userName, oldPass, newPass });
-
             return result > 0;
         }
 

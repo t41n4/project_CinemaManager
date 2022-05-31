@@ -4,7 +4,7 @@ using System.Data;
 
 namespace DB
 {
-    public class CinemaDAO
+    public class CinemaDB
     {
         public static Cinema GetCinemaByName(string cinemaName)
         {

@@ -47,6 +47,7 @@
             this.lblStaffID_Account = new System.Windows.Forms.Label();
             this.dtgvAccount = new System.Windows.Forms.DataGridView();
             this.toolTipAccountType = new System.Windows.Forms.ToolTip(this.components);
+            this.btnUpdatePassword = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.grpAccount.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).BeginInit();
@@ -163,7 +164,7 @@
             this.lblUsername.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.Location = new System.Drawing.Point(24, 39);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(80, 17);
+            this.lblUsername.Size = new System.Drawing.Size(70, 15);
             this.lblUsername.TabIndex = 4;
             this.lblUsername.Text = "Username:";
             // 
@@ -213,7 +214,7 @@
             this.lblStaffName_Account.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStaffName_Account.Location = new System.Drawing.Point(321, 85);
             this.lblStaffName_Account.Name = "lblStaffName_Account";
-            this.lblStaffName_Account.Size = new System.Drawing.Size(56, 17);
+            this.lblStaffName_Account.Size = new System.Drawing.Size(49, 15);
             this.lblStaffName_Account.TabIndex = 4;
             this.lblStaffName_Account.Text = "Họ Tên";
             // 
@@ -223,7 +224,7 @@
             this.lblAccountType.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAccountType.Location = new System.Drawing.Point(321, 39);
             this.lblAccountType.Name = "lblAccountType";
-            this.lblAccountType.Size = new System.Drawing.Size(72, 17);
+            this.lblAccountType.Size = new System.Drawing.Size(63, 15);
             this.lblAccountType.TabIndex = 4;
             this.lblAccountType.Text = "Loại TK:";
             // 
@@ -233,7 +234,7 @@
             this.lblStaffID_Account.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStaffID_Account.Location = new System.Drawing.Point(24, 85);
             this.lblStaffID_Account.Name = "lblStaffID_Account";
-            this.lblStaffID_Account.Size = new System.Drawing.Size(32, 17);
+            this.lblStaffID_Account.Size = new System.Drawing.Size(28, 15);
             this.lblStaffID_Account.TabIndex = 4;
             this.lblStaffID_Account.Text = "ID:";
             // 
@@ -251,11 +252,24 @@
             this.dtgvAccount.Size = new System.Drawing.Size(967, 439);
             this.dtgvAccount.TabIndex = 21;
             // 
+            // btnUpdatePassword
+            // 
+            this.btnUpdatePassword.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdatePassword.Location = new System.Drawing.Point(1009, 33);
+            this.btnUpdatePassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpdatePassword.Name = "btnUpdatePassword";
+            this.btnUpdatePassword.Size = new System.Drawing.Size(135, 32);
+            this.btnUpdatePassword.TabIndex = 24;
+            this.btnUpdatePassword.Text = "Update Password";
+            this.btnUpdatePassword.UseVisualStyleBackColor = true;
+            this.btnUpdatePassword.Click += new System.EventHandler(this.btnResetPass_Click);
+            // 
             // AccountUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnUpdatePassword);
             this.Controls.Add(this.btnResetPass);
             this.Controls.Add(this.btnDeleteAccount);
             this.Controls.Add(this.btnUpdateAccount);
@@ -294,5 +308,6 @@
         private System.Windows.Forms.ToolTip toolTipAccountType;
         private System.Windows.Forms.TextBox txtID_Account;
         private System.Windows.Forms.TextBox txtType_Account;
+        private System.Windows.Forms.Button btnUpdatePassword;
     }
 }

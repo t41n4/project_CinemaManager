@@ -23,7 +23,7 @@ namespace frmAdminUserControls
 
         private void LoadCinemaList()
         {
-            cinemaList.DataSource = CinemaDAO.GetListCinema();
+            cinemaList.DataSource = CinemaDB.GetListCinema();
         }
 
         private void AddCinemaBinding()
@@ -39,14 +39,14 @@ namespace frmAdminUserControls
 
         private void LoadScreenTypeIntoComboBox(ComboBox cbo)
         {
-            cbo.DataSource = ScreenTypeDAO.GetListScreenType();
+            cbo.DataSource = ScreenTypeDB.GetListScreenType();
             cbo.DisplayMember = "Name";
             cbo.ValueMember = "ID";
         }
 
         private void InsertCinema(string id, string name, string idMH, int seats, int status, int numberOfRows, int seatsPerRow)
         {
-            if (CinemaDAO.InsertCinema(id, name, idMH, seats, status, numberOfRows, seatsPerRow))
+            if (CinemaDB.InsertCinema(id, name, idMH, seats, status, numberOfRows, seatsPerRow))
             {
                 MessageBox.Show("Thêm phòng chiếu thành công");
             }
@@ -58,7 +58,7 @@ namespace frmAdminUserControls
 
         private void UpdateCinema(string id, string name, string idMH, int seats, int status, int numberOfRows, int seatsPerRow)
         {
-            if (CinemaDAO.UpdateCinema(id, name, idMH, seats, status, numberOfRows, seatsPerRow))
+            if (CinemaDB.UpdateCinema(id, name, idMH, seats, status, numberOfRows, seatsPerRow))
             {
                 MessageBox.Show("Sửa phòng chiếu thành công");
             }
@@ -70,7 +70,7 @@ namespace frmAdminUserControls
 
         private void DeleteCinema(string id)
         {
-            if (CinemaDAO.DeleteCinema(id))
+            if (CinemaDB.DeleteCinema(id))
             {
                 MessageBox.Show("Xóa phòng chiếu thành công");
             }

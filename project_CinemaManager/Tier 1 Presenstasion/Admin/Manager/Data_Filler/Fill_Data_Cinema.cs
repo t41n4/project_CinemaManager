@@ -3,7 +3,7 @@ using DB;
 using System;
 using System.Windows.Forms;
 
-namespace frmAdminUserControls.DataUserControl
+namespace project_CinemaManager
 {
     public partial class CinemaUC : UserControl
     {
@@ -24,7 +24,7 @@ namespace frmAdminUserControls.DataUserControl
 
         private void LoadCinemaList()
         {
-            cinemaList.DataSource = CinemaDAO.GetListCinema();
+            cinemaList.DataSource = CinemaDB.GetListCinema();
         }
 
         private void AddCinemaBinding()
@@ -40,7 +40,7 @@ namespace frmAdminUserControls.DataUserControl
 
         private void LoadScreenTypeIntoComboBox(ComboBox cbo)
         {
-            cbo.DataSource = ScreenTypeDAO.GetListScreenType();
+            cbo.DataSource = ScreenTypeDB.GetListScreenType();
             cbo.DisplayMember = "Name";
             cbo.ValueMember = "ID";
         }
@@ -49,7 +49,7 @@ namespace frmAdminUserControls.DataUserControl
         //Use this to bind data between dtgv and cbo because cbo can't be applied DataBindings normally
         {
             string screenName = (string)dtgvCinema.SelectedCells[0].OwningRow.Cells["Tên màn hình"].Value;
-            Application.ScreenType screenType = ScreenTypeDAO.GetScreenTypeByName(screenName);
+            Application.ScreenType screenType = ScreenTypeDB.GetScreenTypeByName(screenName);
             //This is the ScreenType that we're currently selecting in dtgv
 
             cboCinemaScreenType.SelectedItem = screenType;
@@ -70,7 +70,7 @@ namespace frmAdminUserControls.DataUserControl
 
         private void InsertCinema(string id, string name, string idMH, int seats, int status, int numberOfRows, int seatsPerRow)
         {
-            if (CinemaDAO.InsertCinema(id, name, idMH, seats, status, numberOfRows, seatsPerRow))
+            if (CinemaDB.InsertCinema(id, name, idMH, seats, status, numberOfRows, seatsPerRow))
             {
                 MessageBox.Show("Thêm phòng chiếu thành công");
             }
@@ -95,7 +95,7 @@ namespace frmAdminUserControls.DataUserControl
 
         private void UpdateCinema(string id, string name, string idMH, int seats, int status, int numberOfRows, int seatsPerRow)
         {
-            if (CinemaDAO.UpdateCinema(id, name, idMH, seats, status, numberOfRows, seatsPerRow))
+            if (CinemaDB.UpdateCinema(id, name, idMH, seats, status, numberOfRows, seatsPerRow))
             {
                 MessageBox.Show("Sửa phòng chiếu thành công");
             }
@@ -120,7 +120,7 @@ namespace frmAdminUserControls.DataUserControl
 
         private void DeleteCinema(string id)
         {
-            if (CinemaDAO.DeleteCinema(id))
+            if (CinemaDB.DeleteCinema(id))
             {
                 MessageBox.Show("Xóa phòng chiếu thành công");
             }

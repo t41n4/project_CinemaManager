@@ -11,11 +11,9 @@ namespace DB
         private DataProvider()
         { }
 
-        //private static string connectionSTR = "Data Source=THAITHANG-PC;Initial Catalog=QLRP;Integrated Security=True";
-        //private static string connectionSTR = "Data Source=DESKTOP-G3TR9OQ;Initial Catalog=QLRP;Integrated Security=True";
+       
         private static string connectionSTR = project_CinemaManager.Properties.Settings.Default.connectionSTR;
-
-        //= "Data Source=THAITHANG-PC;Initial Catalog=QuanLyRapPhim;User ID=sa;pwd=thaithang1";
+      
 
         public static bool TestConnectionSQL(string conn)
         {

@@ -3,7 +3,7 @@ using DB;
 using System;
 using System.Windows.Forms;
 
-namespace frmAdminUserControls.DataUserControl
+namespace project_CinemaManager
 {
     public partial class ShowTimesUC : UserControl
     {
@@ -57,8 +57,8 @@ namespace frmAdminUserControls.DataUserControl
                 txtScreenTypeName_Showtime.Text = formatMovieSelecting.ScreenTypeName;
 
                 cboCinemaID_Showtime.DataSource = null;
-                ScreenType screenType = ScreenTypeDAO.GetScreenTypeByName(formatMovieSelecting.ScreenTypeName);
-                cboCinemaID_Showtime.DataSource = CinemaDAO.GetCinemaByScreenTypeID(screenType.ID);
+                ScreenType screenType = ScreenTypeDB.GetScreenTypeByName(formatMovieSelecting.ScreenTypeName);
+                cboCinemaID_Showtime.DataSource = CinemaDB.GetCinemaByScreenTypeID(screenType.ID);
                 cboCinemaID_Showtime.DisplayMember = "Name";
             }
         }
@@ -89,7 +89,7 @@ namespace frmAdminUserControls.DataUserControl
             #region Change selected index of ComboBox Cinema
 
             string cinemaID = (string)dtgvShowtime.SelectedCells[0].OwningRow.Cells["Mã phòng"].Value;
-            Cinema cinemaSelecting = CinemaDAO.GetCinemaByID(cinemaID);
+            Cinema cinemaSelecting = CinemaDB.GetCinemaByID(cinemaID);
             //This is the Cinema that we're currently selecting in dtgv
 
             if (cinemaSelecting == null)

@@ -1,4 +1,4 @@
-﻿namespace frmAdminUserControls.DataUserControl
+﻿namespace project_CinemaManager
 {
     partial class ShowTimesUC
     {

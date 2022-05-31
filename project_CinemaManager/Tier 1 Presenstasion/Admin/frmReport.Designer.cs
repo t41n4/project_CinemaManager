@@ -1,5 +1,5 @@
 ﻿
-namespace project_CinemaManager.Tier_1_Presenstasion
+namespace project_CinemaManager
 {
     partial class frmReport
     {
@@ -29,28 +29,23 @@ namespace project_CinemaManager.Tier_1_Presenstasion
         /// </summary>
         private void InitializeComponent()
         {
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.rpViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
             // rpViewer
             // 
             this.rpViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSetRevenue";
-            reportDataSource1.Value = null;
-            this.rpViewer.LocalReport.DataSources.Add(reportDataSource1);
-            this.rpViewer.LocalReport.ReportEmbeddedResource = "GUI.Report.rdlc";
             this.rpViewer.Location = new System.Drawing.Point(0, 0);
             this.rpViewer.Name = "rpViewer";
             this.rpViewer.ServerReport.BearerToken = null;
-            this.rpViewer.Size = new System.Drawing.Size(1046, 436);
-            this.rpViewer.TabIndex = 1;
+            this.rpViewer.Size = new System.Drawing.Size(930, 484);
+            this.rpViewer.TabIndex = 0;
             // 
             // frmReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1046, 436);
+            this.ClientSize = new System.Drawing.Size(930, 484);
             this.Controls.Add(this.rpViewer);
             this.Name = "frmReport";
             this.Text = "frmReport";

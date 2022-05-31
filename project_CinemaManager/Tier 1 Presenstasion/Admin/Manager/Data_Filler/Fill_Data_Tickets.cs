@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace frmAdminUserControls.DataUserControl
+namespace project_CinemaManager
 {
     public partial class TicketsUC : UserControl
     {
@@ -53,7 +53,7 @@ namespace frmAdminUserControls.DataUserControl
         private void AutoCreateTicketsByShowTimes(ShowTimes showTimes)
         {
             int result = 0;
-            Cinema cinema = CinemaDAO.GetCinemaByName(showTimes.CinemaName);
+            Cinema cinema = CinemaDB.GetCinemaByName(showTimes.CinemaName);
             int Row = cinema.Row;
             int Column = cinema.SeatInRow;
             for (int i = 0; i < Row; i++)
@@ -127,7 +127,7 @@ namespace frmAdminUserControls.DataUserControl
 
         private void DeleteTicketsByShowTimes(ShowTimes showTimes)
         {
-            Cinema cinema = CinemaDAO.GetCinemaByName(showTimes.CinemaName);
+            Cinema cinema = CinemaDB.GetCinemaByName(showTimes.CinemaName);
             int Row = cinema.Row;
             int Column = cinema.SeatInRow;
             int result = TicketDAO.DeleteTicketsByShowTimes(showTimes.ID);
