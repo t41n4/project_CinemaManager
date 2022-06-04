@@ -64,6 +64,7 @@
             // 
             // btnUpdateFormat
             // 
+            this.btnUpdateFormat.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateFormat.Location = new System.Drawing.Point(220, 4);
             this.btnUpdateFormat.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdateFormat.Name = "btnUpdateFormat";
@@ -75,6 +76,7 @@
             // 
             // btnDeleteFormat
             // 
+            this.btnDeleteFormat.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteFormat.Location = new System.Drawing.Point(112, 4);
             this.btnDeleteFormat.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteFormat.Name = "btnDeleteFormat";
@@ -86,6 +88,7 @@
             // 
             // btnInsertFormat
             // 
+            this.btnInsertFormat.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsertFormat.Location = new System.Drawing.Point(4, 4);
             this.btnInsertFormat.Margin = new System.Windows.Forms.Padding(4);
             this.btnInsertFormat.Name = "btnInsertFormat";
@@ -140,94 +143,99 @@
             // cboFormat_ScreenID
             // 
             this.cboFormat_ScreenID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFormat_ScreenID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFormat_ScreenID.FormattingEnabled = true;
-            this.cboFormat_ScreenID.Location = new System.Drawing.Point(170, 172);
+            this.cboFormat_ScreenID.Location = new System.Drawing.Point(187, 170);
             this.cboFormat_ScreenID.Name = "cboFormat_ScreenID";
-            this.cboFormat_ScreenID.Size = new System.Drawing.Size(249, 24);
+            this.cboFormat_ScreenID.Size = new System.Drawing.Size(249, 31);
             this.cboFormat_ScreenID.TabIndex = 20;
             this.cboFormat_ScreenID.SelectedIndexChanged += new System.EventHandler(this.cboFormat_ScreenID_SelectedValueChanged);
             // 
             // lblFormat_ScreenName
             // 
             this.lblFormat_ScreenName.AutoSize = true;
-            this.lblFormat_ScreenName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFormat_ScreenName.Location = new System.Drawing.Point(12, 206);
+            this.lblFormat_ScreenName.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFormat_ScreenName.Location = new System.Drawing.Point(12, 211);
             this.lblFormat_ScreenName.Name = "lblFormat_ScreenName";
-            this.lblFormat_ScreenName.Size = new System.Drawing.Size(130, 23);
+            this.lblFormat_ScreenName.Size = new System.Drawing.Size(153, 23);
             this.lblFormat_ScreenName.TabIndex = 15;
             this.lblFormat_ScreenName.Text = "Tên màn hình:";
             // 
             // cboFormat_MovieID
             // 
             this.cboFormat_MovieID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFormat_MovieID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFormat_MovieID.FormattingEnabled = true;
-            this.cboFormat_MovieID.Location = new System.Drawing.Point(170, 78);
+            this.cboFormat_MovieID.Location = new System.Drawing.Point(187, 76);
             this.cboFormat_MovieID.Name = "cboFormat_MovieID";
-            this.cboFormat_MovieID.Size = new System.Drawing.Size(249, 24);
+            this.cboFormat_MovieID.Size = new System.Drawing.Size(249, 31);
             this.cboFormat_MovieID.TabIndex = 21;
             this.cboFormat_MovieID.SelectedIndexChanged += new System.EventHandler(this.cboFormat_MovieID_SelectedValueChanged);
             // 
             // lblFormat_ScreenID
             // 
             this.lblFormat_ScreenID.AutoSize = true;
-            this.lblFormat_ScreenID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFormat_ScreenID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFormat_ScreenID.Location = new System.Drawing.Point(12, 173);
             this.lblFormat_ScreenID.Name = "lblFormat_ScreenID";
-            this.lblFormat_ScreenID.Size = new System.Drawing.Size(126, 23);
+            this.lblFormat_ScreenID.Size = new System.Drawing.Size(142, 23);
             this.lblFormat_ScreenID.TabIndex = 16;
             this.lblFormat_ScreenID.Text = "Mã màn hình:";
             // 
             // lblFormat_MovieName
             // 
             this.lblFormat_MovieName.AutoSize = true;
-            this.lblFormat_MovieName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFormat_MovieName.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFormat_MovieName.Location = new System.Drawing.Point(12, 112);
             this.lblFormat_MovieName.Name = "lblFormat_MovieName";
-            this.lblFormat_MovieName.Size = new System.Drawing.Size(94, 23);
+            this.lblFormat_MovieName.Size = new System.Drawing.Size(109, 23);
             this.lblFormat_MovieName.TabIndex = 17;
             this.lblFormat_MovieName.Text = "Tên phim:";
             // 
             // lblFormat_MovieID
             // 
             this.lblFormat_MovieID.AutoSize = true;
-            this.lblFormat_MovieID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFormat_MovieID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFormat_MovieID.Location = new System.Drawing.Point(12, 79);
             this.lblFormat_MovieID.Name = "lblFormat_MovieID";
-            this.lblFormat_MovieID.Size = new System.Drawing.Size(90, 23);
+            this.lblFormat_MovieID.Size = new System.Drawing.Size(98, 23);
             this.lblFormat_MovieID.TabIndex = 18;
             this.lblFormat_MovieID.Text = "Mã phim:";
             // 
             // txtFormat_ScreenName
             // 
-            this.txtFormat_ScreenName.Location = new System.Drawing.Point(170, 209);
+            this.txtFormat_ScreenName.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFormat_ScreenName.Location = new System.Drawing.Point(187, 203);
             this.txtFormat_ScreenName.Name = "txtFormat_ScreenName";
             this.txtFormat_ScreenName.ReadOnly = true;
-            this.txtFormat_ScreenName.Size = new System.Drawing.Size(249, 22);
+            this.txtFormat_ScreenName.Size = new System.Drawing.Size(249, 31);
             this.txtFormat_ScreenName.TabIndex = 12;
             // 
             // lblFormatID
             // 
             this.lblFormatID.AutoSize = true;
-            this.lblFormatID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFormatID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFormatID.Location = new System.Drawing.Point(12, 17);
             this.lblFormatID.Name = "lblFormatID";
-            this.lblFormatID.Size = new System.Drawing.Size(130, 23);
+            this.lblFormatID.Size = new System.Drawing.Size(153, 23);
             this.lblFormatID.TabIndex = 19;
             this.lblFormatID.Text = "Mã định dạng:";
             // 
             // txtFormat_MovieName
             // 
-            this.txtFormat_MovieName.Location = new System.Drawing.Point(170, 111);
+            this.txtFormat_MovieName.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFormat_MovieName.Location = new System.Drawing.Point(187, 109);
             this.txtFormat_MovieName.Name = "txtFormat_MovieName";
             this.txtFormat_MovieName.ReadOnly = true;
-            this.txtFormat_MovieName.Size = new System.Drawing.Size(249, 22);
+            this.txtFormat_MovieName.Size = new System.Drawing.Size(249, 31);
             this.txtFormat_MovieName.TabIndex = 13;
             // 
             // txtFormatID
             // 
-            this.txtFormatID.Location = new System.Drawing.Point(170, 16);
+            this.txtFormatID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFormatID.Location = new System.Drawing.Point(187, 17);
             this.txtFormatID.Name = "txtFormatID";
-            this.txtFormatID.Size = new System.Drawing.Size(249, 22);
+            this.txtFormatID.Size = new System.Drawing.Size(249, 31);
             this.txtFormatID.TabIndex = 14;
             this.txtFormatID.TextChanged += new System.EventHandler(this.txtFormatID_TextChanged);
             // 

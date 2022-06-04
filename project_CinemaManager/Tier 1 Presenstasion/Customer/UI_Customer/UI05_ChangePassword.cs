@@ -12,9 +12,18 @@ namespace project_CinemaManager
 {
     public partial class UI05_ChangePassword : Form
     {
+        string usn;
         public UI05_ChangePassword()
         {
             InitializeComponent();
+            usn = UICustomerInfo.loginAccount.UserName;
+           
+        }
+        public UI05_ChangePassword(string usernameFromadmin)
+        {
+             usn = usernameFromadmin;
+            InitializeComponent();
+     
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
@@ -22,16 +31,16 @@ namespace project_CinemaManager
             if(txtNewPass.Text != "" && txtOldPass.Text != "")
             {
                 try
-                {
-                    if (AccountDB.UpdatePasswordForAccount(UICustomerInfo.loginAccount.UserName, txtOldPass.Text, txtNewPass.Text))
-                    {
-                        MessageBox.Show("Đổi Mật Khẩu Thành Công!!");
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Đổi Mật Khẩu Thất Bại!!");
-                    }
+                {                
+                        if (AccountDB.UpdatePasswordForAccount(usn, txtOldPass.Text, txtNewPass.Text))
+                        {
+                            MessageBox.Show("Đổi Mật Khẩu Thành Công!!");
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Đổi Mật Khẩu Thất Bại!!");
+                        }
                 }
                 catch (Exception)
                 {

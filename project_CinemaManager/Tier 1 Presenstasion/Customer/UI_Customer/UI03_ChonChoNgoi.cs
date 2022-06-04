@@ -55,7 +55,7 @@ namespace project_CinemaManager
 
             LoadDataCinema(Times.CinemaName);
 
-            listSeatonDB = TicketDAO.GetListTicketsByShowTimes(Times.ID);
+            listSeatonDB = TicketDB.GetListTicketsByShowTimes(Times.ID);
 
             LoadSeats(listSeatonDB);
         }
@@ -72,21 +72,11 @@ namespace project_CinemaManager
             flpSeat.Size = new Size((SIZE + 20 + GAP) * Column, (SIZE + GAP) * Row);
         }
 
-        private void LoadBill()
+        private void ReLoadInfo()
         {
-            CultureInfo culture = new CultureInfo("vi-VN");
-            //Đổi culture vùng quốc gia để đổi đơn vị tiền tệ
-
-            //Thread.CurrentThread.CurrentCulture = culture;
-            //dùng thread để chuyển cả luồng đang chạy về vùng quốc gia đó
-
-            //lblTicketPrice.Text = displayPrice.ToString("c", culture);
+            CultureInfo culture = new CultureInfo("vi-VN");  
             lblTotal.Text = total.ToString("c", culture);
             lblPayment.Text = payment.ToString("c", culture);
-
-            //Đổi đơn vị tiền tệ
-            //gán culture chỗ này thì chỉ có chỗ này sd culture này còn
-            //lại sài mặc định
         }
 
         private void LoadSeats(List<Ticket> list)
@@ -144,7 +134,7 @@ namespace project_CinemaManager
             {
                 MessageBox.Show("Ghế số [" + btnSeat.Text + "] đã có người mua");
             }
-            LoadBill();
+            ReLoadInfo();
         }
 
 
@@ -236,7 +226,7 @@ namespace project_CinemaManager
             total = 0;
             displayPrice = 0;
             payment = 0;
-            LoadBill();
+            ReLoadInfo();
         }
 
         private void btnPayment_Click(object sender, EventArgs e)
@@ -264,12 +254,18 @@ namespace project_CinemaManager
             {
                 int ret = 0;
                 {
-                    foreach (Button btn in listSeatSelected)
-                    {
-                        Ticket ticket = btn.Tag as Ticket;
+                    List<string> listidVe = new List<string>();
 
-                        ret += TicketDAO.BuyTicket(ticket.ID, ticket.Type, ticket.Price);
+                    foreach (Button btn in listSeatSelected)
+                    {                      
+                        Ticket ticket = btn.Tag as Ticket;
+                        ret += TicketDB.BuyTicket(ticket.ID, ticket.Type, ticket.Price,loginAccout.ID);
+                        listidVe.Add(ticket.ID);
                     }
+                    UI06_TicketForCustomer Bill = new UI06_TicketForCustomer(listidVe.ToArray());
+                    this.Hide();
+                    Bill.ShowDialog();
+                    this.Show();
                 }
                 if (ret == listSeatSelected.Count)
                 {
@@ -278,7 +274,7 @@ namespace project_CinemaManager
             }
             RestoreDefault();
 
-            listSeatonDB = TicketDAO.GetListTicketsByShowTimes(Times.ID);
+            listSeatonDB = TicketDB.GetListTicketsByShowTimes(Times.ID);
             LoadSeats(listSeatonDB);
             this.OnLoad(new EventArgs());
         }

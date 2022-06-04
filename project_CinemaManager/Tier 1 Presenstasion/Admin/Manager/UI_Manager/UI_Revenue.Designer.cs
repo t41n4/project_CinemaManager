@@ -46,7 +46,7 @@
             // 
             this.lblSelectMovie.AutoSize = true;
             this.lblSelectMovie.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectMovie.Location = new System.Drawing.Point(200, 23);
+            this.lblSelectMovie.Location = new System.Drawing.Point(3, 0);
             this.lblSelectMovie.Name = "lblSelectMovie";
             this.lblSelectMovie.Size = new System.Drawing.Size(106, 23);
             this.lblSelectMovie.TabIndex = 39;
@@ -54,9 +54,10 @@
             // 
             // lblTongDoanhThu
             // 
+            this.lblTongDoanhThu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTongDoanhThu.AutoSize = true;
             this.lblTongDoanhThu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTongDoanhThu.Location = new System.Drawing.Point(845, 553);
+            this.lblTongDoanhThu.Location = new System.Drawing.Point(648, 530);
             this.lblTongDoanhThu.Name = "lblTongDoanhThu";
             this.lblTongDoanhThu.Size = new System.Drawing.Size(147, 23);
             this.lblTongDoanhThu.TabIndex = 38;
@@ -64,9 +65,10 @@
             // 
             // txtDoanhThu
             // 
+            this.txtDoanhThu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDoanhThu.Enabled = false;
             this.txtDoanhThu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDoanhThu.Location = new System.Drawing.Point(998, 547);
+            this.txtDoanhThu.Location = new System.Drawing.Point(801, 524);
             this.txtDoanhThu.Name = "txtDoanhThu";
             this.txtDoanhThu.Size = new System.Drawing.Size(235, 35);
             this.txtDoanhThu.TabIndex = 37;
@@ -75,18 +77,18 @@
             // lblDenNgay
             // 
             this.lblDenNgay.AutoSize = true;
-            this.lblDenNgay.Location = new System.Drawing.Point(450, 70);
+            this.lblDenNgay.Location = new System.Drawing.Point(253, 47);
             this.lblDenNgay.Name = "lblDenNgay";
-            this.lblDenNgay.Size = new System.Drawing.Size(73, 17);
+            this.lblDenNgay.Size = new System.Drawing.Size(67, 16);
             this.lblDenNgay.TabIndex = 36;
             this.lblDenNgay.Text = "Đến ngày:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(196, 70);
+            this.label1.Location = new System.Drawing.Point(-1, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 17);
+            this.label1.Size = new System.Drawing.Size(59, 16);
             this.label1.TabIndex = 35;
             this.label1.Text = "Từ ngày:";
             // 
@@ -94,9 +96,11 @@
             // 
             this.dtgvRevenue.AllowUserToAddRows = false;
             this.dtgvRevenue.AllowUserToDeleteRows = false;
+            this.dtgvRevenue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgvRevenue.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvRevenue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvRevenue.Location = new System.Drawing.Point(200, 122);
+            this.dtgvRevenue.Location = new System.Drawing.Point(7, 97);
             this.dtgvRevenue.Name = "dtgvRevenue";
             this.dtgvRevenue.ReadOnly = true;
             this.dtgvRevenue.RowHeadersWidth = 51;
@@ -106,7 +110,7 @@
             // btnReportRevenue
             // 
             this.btnReportRevenue.AutoSize = true;
-            this.btnReportRevenue.Location = new System.Drawing.Point(793, 65);
+            this.btnReportRevenue.Location = new System.Drawing.Point(596, 42);
             this.btnReportRevenue.Name = "btnReportRevenue";
             this.btnReportRevenue.Size = new System.Drawing.Size(92, 32);
             this.btnReportRevenue.TabIndex = 32;
@@ -117,7 +121,7 @@
             // btnShowRevenue
             // 
             this.btnShowRevenue.AutoSize = true;
-            this.btnShowRevenue.Location = new System.Drawing.Point(679, 65);
+            this.btnShowRevenue.Location = new System.Drawing.Point(482, 42);
             this.btnShowRevenue.Name = "btnShowRevenue";
             this.btnShowRevenue.Size = new System.Drawing.Size(97, 32);
             this.btnShowRevenue.TabIndex = 33;
@@ -129,7 +133,7 @@
             // 
             this.cboSelectMovie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSelectMovie.FormattingEnabled = true;
-            this.cboSelectMovie.Location = new System.Drawing.Point(326, 25);
+            this.cboSelectMovie.Location = new System.Drawing.Point(129, 2);
             this.cboSelectMovie.Name = "cboSelectMovie";
             this.cboSelectMovie.Size = new System.Drawing.Size(349, 24);
             this.cboSelectMovie.TabIndex = 31;
@@ -137,7 +141,7 @@
             // dtmToDate
             // 
             this.dtmToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtmToDate.Location = new System.Drawing.Point(529, 67);
+            this.dtmToDate.Location = new System.Drawing.Point(332, 44);
             this.dtmToDate.Name = "dtmToDate";
             this.dtmToDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtmToDate.Size = new System.Drawing.Size(134, 22);
@@ -146,7 +150,7 @@
             // dtmFromDate
             // 
             this.dtmFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtmFromDate.Location = new System.Drawing.Point(268, 67);
+            this.dtmFromDate.Location = new System.Drawing.Point(71, 44);
             this.dtmFromDate.Name = "dtmFromDate";
             this.dtmFromDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtmFromDate.Size = new System.Drawing.Size(134, 22);
@@ -168,7 +172,7 @@
             this.Controls.Add(this.dtmToDate);
             this.Controls.Add(this.dtmFromDate);
             this.Name = "RevenueUC";
-            this.Size = new System.Drawing.Size(1400, 598);
+            this.Size = new System.Drawing.Size(1051, 575);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvRevenue)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

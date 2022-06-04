@@ -54,7 +54,7 @@ namespace project_CinemaManager
             this.label7.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(59, 192);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 17);
+            this.label7.Size = new System.Drawing.Size(56, 15);
             this.label7.TabIndex = 22;
             this.label7.Text = "Giá vé:";
             // 
@@ -64,7 +64,7 @@ namespace project_CinemaManager
             this.label4.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(75, 122);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 17);
+            this.label4.Size = new System.Drawing.Size(42, 15);
             this.label4.TabIndex = 24;
             this.label4.Text = "Phim:";
             // 
@@ -156,7 +156,7 @@ namespace project_CinemaManager
             this.label2.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(19, 157);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 17);
+            this.label2.Size = new System.Drawing.Size(91, 15);
             this.label2.TabIndex = 21;
             this.label2.Text = "Phòng chiếu:";
             // 
@@ -194,6 +194,7 @@ namespace project_CinemaManager
             this.dtgvShowtime.Name = "dtgvShowtime";
             this.dtgvShowtime.ReadOnly = true;
             this.dtgvShowtime.RowHeadersWidth = 51;
+            this.dtgvShowtime.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvShowtime.Size = new System.Drawing.Size(551, 313);
             this.dtgvShowtime.TabIndex = 1;
             // 

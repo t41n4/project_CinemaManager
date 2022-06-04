@@ -38,6 +38,10 @@
             this.SidePanel = new System.Windows.Forms.Panel();
             this.btnScreenTypeUC = new System.Windows.Forms.Button();
             this.pnData = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,12 +49,16 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(243)))), ((int)(((byte)(210)))));
             this.panel1.Controls.Add(this.btnTicketsUC);
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.btnGenreUC);
             this.panel1.Controls.Add(this.btnShowTimesUC);
             this.panel1.Controls.Add(this.btnMovieUC);
+            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.btnFormatMovieUC);
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.btnCinemaUC);
             this.panel1.Controls.Add(this.SidePanel);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnScreenTypeUC);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -72,8 +80,7 @@
             this.btnTicketsUC.Name = "btnTicketsUC";
             this.btnTicketsUC.Size = new System.Drawing.Size(226, 66);
             this.btnTicketsUC.TabIndex = 6;
-            this.btnTicketsUC.Text = "       Vé";
-            this.btnTicketsUC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTicketsUC.Text = "Vé";
             this.btnTicketsUC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTicketsUC.UseVisualStyleBackColor = false;
             this.btnTicketsUC.Click += new System.EventHandler(this.btnTicketsUC_Click);
@@ -91,7 +98,7 @@
             this.btnGenreUC.Name = "btnGenreUC";
             this.btnGenreUC.Size = new System.Drawing.Size(226, 66);
             this.btnGenreUC.TabIndex = 10;
-            this.btnGenreUC.Text = "      Thể Loại";
+            this.btnGenreUC.Text = "Thể Loại";
             this.btnGenreUC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGenreUC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGenreUC.UseVisualStyleBackColor = false;
@@ -110,8 +117,7 @@
             this.btnShowTimesUC.Name = "btnShowTimesUC";
             this.btnShowTimesUC.Size = new System.Drawing.Size(226, 66);
             this.btnShowTimesUC.TabIndex = 7;
-            this.btnShowTimesUC.Text = "      Lịch Chiếu";
-            this.btnShowTimesUC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShowTimesUC.Text = "Lịch Chiếu";
             this.btnShowTimesUC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnShowTimesUC.UseVisualStyleBackColor = false;
             this.btnShowTimesUC.Click += new System.EventHandler(this.btnShowTimesUC_Click);
@@ -129,8 +135,7 @@
             this.btnMovieUC.Name = "btnMovieUC";
             this.btnMovieUC.Size = new System.Drawing.Size(226, 66);
             this.btnMovieUC.TabIndex = 9;
-            this.btnMovieUC.Text = "       Phim";
-            this.btnMovieUC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMovieUC.Text = "Phim";
             this.btnMovieUC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMovieUC.UseVisualStyleBackColor = false;
             this.btnMovieUC.Click += new System.EventHandler(this.btnMovieUC_Click);
@@ -148,7 +153,7 @@
             this.btnFormatMovieUC.Name = "btnFormatMovieUC";
             this.btnFormatMovieUC.Size = new System.Drawing.Size(226, 66);
             this.btnFormatMovieUC.TabIndex = 8;
-            this.btnFormatMovieUC.Text = "      Định Dạng";
+            this.btnFormatMovieUC.Text = "Định Dạng";
             this.btnFormatMovieUC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFormatMovieUC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFormatMovieUC.UseVisualStyleBackColor = false;
@@ -167,7 +172,7 @@
             this.btnCinemaUC.Name = "btnCinemaUC";
             this.btnCinemaUC.Size = new System.Drawing.Size(226, 66);
             this.btnCinemaUC.TabIndex = 11;
-            this.btnCinemaUC.Text = "       Phòng Chiếu";
+            this.btnCinemaUC.Text = "Phòng Chiếu";
             this.btnCinemaUC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCinemaUC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCinemaUC.UseVisualStyleBackColor = false;
@@ -195,7 +200,7 @@
             this.btnScreenTypeUC.Name = "btnScreenTypeUC";
             this.btnScreenTypeUC.Size = new System.Drawing.Size(226, 66);
             this.btnScreenTypeUC.TabIndex = 12;
-            this.btnScreenTypeUC.Text = "     Loại màn hình";
+            this.btnScreenTypeUC.Text = "Loại màn hình";
             this.btnScreenTypeUC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnScreenTypeUC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnScreenTypeUC.UseVisualStyleBackColor = false;
@@ -203,11 +208,84 @@
             // 
             // pnData
             // 
-            this.pnData.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnData.Location = new System.Drawing.Point(281, 18);
+            this.pnData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnData.Location = new System.Drawing.Point(281, 0);
             this.pnData.Name = "pnData";
-            this.pnData.Size = new System.Drawing.Size(1549, 640);
-            this.pnData.TabIndex = 1;
+            this.pnData.Size = new System.Drawing.Size(1549, 658);
+            this.pnData.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.AccessibleName = "";
+            this.button1.BackColor = System.Drawing.Color.SandyBrown;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(25, 18);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(226, 66);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Loại màn hình";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnScreenTypeUC_Click);
+            // 
+            // button2
+            // 
+            this.button2.AccessibleName = "";
+            this.button2.BackColor = System.Drawing.Color.SandyBrown;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(25, 92);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(226, 66);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Phòng Chiếu";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.btnCinemaUC_Click);
+            // 
+            // button3
+            // 
+            this.button3.AccessibleName = "";
+            this.button3.BackColor = System.Drawing.Color.SandyBrown;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(25, 314);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(226, 66);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Định Dạng";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.btnFormatMovieUC_Click);
+            // 
+            // button4
+            // 
+            this.button4.AccessibleName = "";
+            this.button4.BackColor = System.Drawing.Color.SandyBrown;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(25, 166);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(226, 66);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "Thể Loại";
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.btnGenreUC_Click);
             // 
             // DataUC
             // 
@@ -234,5 +312,9 @@
         private System.Windows.Forms.Button btnScreenTypeUC;
         private System.Windows.Forms.Panel pnData;
         private System.Windows.Forms.Panel SidePanel;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

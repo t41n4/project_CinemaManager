@@ -81,7 +81,7 @@ namespace DB
 
         public static bool DeleteShowtime(string id)
         {
-            TicketDAO.DeleteTicketsByShowTimes(id);
+            TicketDB.DeleteTicketsByShowTimes(id);
 
             int result = DataProvider.ExecuteNonQuery("DELETE dbo.LichChieu WHERE id = '" + id + "'");
             return result > 0;

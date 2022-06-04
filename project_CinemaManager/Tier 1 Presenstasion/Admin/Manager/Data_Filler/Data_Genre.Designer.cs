@@ -67,7 +67,8 @@
             // 
             // btnUpdateGenre
             // 
-            this.btnUpdateGenre.Location = new System.Drawing.Point(220, 4);
+            this.btnUpdateGenre.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateGenre.Location = new System.Drawing.Point(220, 3);
             this.btnUpdateGenre.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdateGenre.Name = "btnUpdateGenre";
             this.btnUpdateGenre.Size = new System.Drawing.Size(100, 57);
@@ -78,6 +79,7 @@
             // 
             // btnDeleteGenre
             // 
+            this.btnDeleteGenre.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteGenre.Location = new System.Drawing.Point(112, 4);
             this.btnDeleteGenre.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteGenre.Name = "btnDeleteGenre";
@@ -89,6 +91,7 @@
             // 
             // btnInsertGenre
             // 
+            this.btnInsertGenre.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsertGenre.Location = new System.Drawing.Point(4, 4);
             this.btnInsertGenre.Margin = new System.Windows.Forms.Padding(4);
             this.btnInsertGenre.Name = "btnInsertGenre";
@@ -146,21 +149,22 @@
             // 
             // txtGenreDesc
             // 
-            this.txtGenreDesc.Location = new System.Drawing.Point(88, 10);
+            this.txtGenreDesc.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGenreDesc.Location = new System.Drawing.Point(167, 11);
             this.txtGenreDesc.Margin = new System.Windows.Forms.Padding(4);
             this.txtGenreDesc.Multiline = true;
             this.txtGenreDesc.Name = "txtGenreDesc";
-            this.txtGenreDesc.Size = new System.Drawing.Size(408, 156);
+            this.txtGenreDesc.Size = new System.Drawing.Size(329, 156);
             this.txtGenreDesc.TabIndex = 1;
             // 
             // lblGenreDesc
             // 
             this.lblGenreDesc.AutoSize = true;
-            this.lblGenreDesc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblGenreDesc.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenreDesc.Location = new System.Drawing.Point(4, 11);
             this.lblGenreDesc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGenreDesc.Name = "lblGenreDesc";
-            this.lblGenreDesc.Size = new System.Drawing.Size(76, 24);
+            this.lblGenreDesc.Size = new System.Drawing.Size(72, 20);
             this.lblGenreDesc.TabIndex = 0;
             this.lblGenreDesc.Text = "Mô tả :";
             // 
@@ -176,20 +180,21 @@
             // 
             // txtGenreName
             // 
+            this.txtGenreName.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGenreName.Location = new System.Drawing.Point(167, 10);
             this.txtGenreName.Margin = new System.Windows.Forms.Padding(4);
             this.txtGenreName.Name = "txtGenreName";
-            this.txtGenreName.Size = new System.Drawing.Size(329, 22);
+            this.txtGenreName.Size = new System.Drawing.Size(329, 27);
             this.txtGenreName.TabIndex = 1;
             // 
             // lblGenreName
             // 
             this.lblGenreName.AutoSize = true;
-            this.lblGenreName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblGenreName.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenreName.Location = new System.Drawing.Point(4, 11);
             this.lblGenreName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGenreName.Name = "lblGenreName";
-            this.lblGenreName.Size = new System.Drawing.Size(134, 24);
+            this.lblGenreName.Size = new System.Drawing.Size(135, 20);
             this.lblGenreName.TabIndex = 0;
             this.lblGenreName.Text = "Tên thể loại :";
             // 
@@ -205,20 +210,21 @@
             // 
             // txtGenreID
             // 
+            this.txtGenreID.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGenreID.Location = new System.Drawing.Point(167, 10);
             this.txtGenreID.Margin = new System.Windows.Forms.Padding(4);
             this.txtGenreID.Name = "txtGenreID";
-            this.txtGenreID.Size = new System.Drawing.Size(329, 22);
+            this.txtGenreID.Size = new System.Drawing.Size(329, 27);
             this.txtGenreID.TabIndex = 1;
             // 
             // lblGenreID
             // 
             this.lblGenreID.AutoSize = true;
-            this.lblGenreID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblGenreID.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenreID.Location = new System.Drawing.Point(4, 11);
             this.lblGenreID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGenreID.Name = "lblGenreID";
-            this.lblGenreID.Size = new System.Drawing.Size(126, 24);
+            this.lblGenreID.Size = new System.Drawing.Size(126, 20);
             this.lblGenreID.TabIndex = 0;
             this.lblGenreID.Text = "Mã thể loại :";
             // 

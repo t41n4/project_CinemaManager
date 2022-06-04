@@ -49,5 +49,6 @@ namespace project_CinemaManager
             getSupport.ShowDialog();
             this.Show();
         }
+   
     }
 }

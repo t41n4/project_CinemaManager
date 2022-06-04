@@ -95,5 +95,6 @@ namespace project_CinemaManager
             DeleteScreenType(screenTypeID);
             LoadScreenTypeList();
         }
+
     }
 }

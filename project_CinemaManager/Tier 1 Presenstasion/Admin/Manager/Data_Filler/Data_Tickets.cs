@@ -40,13 +40,13 @@ namespace project_CinemaManager
 
         private void LoadTicketsByShowTimes(string showTimesID)
         {
-            List<Ticket> listTicket = TicketDAO.GetListTicketsByShowTimes(showTimesID);
+            List<Ticket> listTicket = TicketDB.GetListTicketsByShowTimes(showTimesID);
             dtgvTicket.DataSource = listTicket;
         }
 
         private void LoadTicketsBoughtByShowTimes(string showTimesID)
         {
-            List<Ticket> listTicket = TicketDAO.GetListTicketsBoughtByShowTimes(showTimesID);
+            List<Ticket> listTicket = TicketDB.GetListTicketsBoughtByShowTimes(showTimesID);
             dtgvTicket.DataSource = listTicket;
         }
 
@@ -63,7 +63,7 @@ namespace project_CinemaManager
                 for (int j = 1; j <= Column; j++)
                 {
                     string seatName = nameRow.ToString() + j;
-                    result += TicketDAO.InsertTicketByShowTimes(showTimes.ID, seatName);
+                    result += TicketDB.InsertTicketByShowTimes(showTimes.ID, seatName);
                 }
             }
             if (result == Row * Column)
@@ -130,7 +130,7 @@ namespace project_CinemaManager
             Cinema cinema = CinemaDB.GetCinemaByName(showTimes.CinemaName);
             int Row = cinema.Row;
             int Column = cinema.SeatInRow;
-            int result = TicketDAO.DeleteTicketsByShowTimes(showTimes.ID);
+            int result = TicketDB.DeleteTicketsByShowTimes(showTimes.ID);
             if (result == Row * Column)
             {
                 int ret = ShowTimeDB.UpdateStatusShowTimes(showTimes.ID, 0);

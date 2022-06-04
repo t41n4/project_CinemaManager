@@ -43,7 +43,7 @@ namespace project_CinemaManager
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgvMessage.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dtgvMessage.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dtgvMessage.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             this.dtgvMessage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtgvMessage.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dtgvMessage.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -73,7 +73,7 @@ namespace project_CinemaManager
             this.lbname.AutoSize = true;
             this.lbname.Location = new System.Drawing.Point(12, 9);
             this.lbname.Name = "lbname";
-            this.lbname.Size = new System.Drawing.Size(85, 17);
+            this.lbname.Size = new System.Drawing.Size(78, 16);
             this.lbname.TabIndex = 1;
             this.lbname.Text = "Your name: ";
             // 

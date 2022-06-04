@@ -32,7 +32,6 @@ namespace project_CinemaManager
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelX = new System.Windows.Forms.Label();
             this.btnSupportCus = new System.Windows.Forms.Button();
-            this.btnChangePassword = new System.Windows.Forms.Button();
             this.lblAccountInfo = new System.Windows.Forms.Label();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -47,7 +46,7 @@ namespace project_CinemaManager
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(357, 69);
+            this.panel1.Size = new System.Drawing.Size(351, 69);
             this.panel1.TabIndex = 5;
             // 
             // labelX
@@ -57,7 +56,7 @@ namespace project_CinemaManager
             this.labelX.Location = new System.Drawing.Point(0, 0);
             this.labelX.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelX.Name = "labelX";
-            this.labelX.Size = new System.Drawing.Size(357, 69);
+            this.labelX.Size = new System.Drawing.Size(351, 69);
             this.labelX.TabIndex = 0;
             this.labelX.Text = "Cinema Manager";
             this.labelX.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -74,24 +73,13 @@ namespace project_CinemaManager
             this.btnSupportCus.UseVisualStyleBackColor = true;
             this.btnSupportCus.Click += new System.EventHandler(this.btnSupportCus_Click);
             // 
-            // btnChangePassword
-            // 
-            this.btnChangePassword.AutoSize = true;
-            this.btnChangePassword.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangePassword.Location = new System.Drawing.Point(63, 274);
-            this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(217, 42);
-            this.btnChangePassword.TabIndex = 9;
-            this.btnChangePassword.Text = "Đặt lại mật khẩu";
-            this.btnChangePassword.UseVisualStyleBackColor = true;
-            // 
             // lblAccountInfo
             // 
             this.lblAccountInfo.AutoSize = true;
             this.lblAccountInfo.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAccountInfo.Location = new System.Drawing.Point(8, -4);
             this.lblAccountInfo.Name = "lblAccountInfo";
-            this.lblAccountInfo.Size = new System.Drawing.Size(136, 17);
+            this.lblAccountInfo.Size = new System.Drawing.Size(119, 15);
             this.lblAccountInfo.TabIndex = 7;
             this.lblAccountInfo.Text = "Tên tài khoản : ";
             // 
@@ -111,10 +99,9 @@ namespace project_CinemaManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 333);
+            this.ClientSize = new System.Drawing.Size(351, 304);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnSupportCus);
-            this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.lblAccountInfo);
             this.Controls.Add(this.btnAdmin);
             this.Name = "frmAdmin";
@@ -131,7 +118,6 @@ namespace project_CinemaManager
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelX;
         private System.Windows.Forms.Button btnSupportCus;
-        private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.Label lblAccountInfo;
         private System.Windows.Forms.Button btnAdmin;
     }

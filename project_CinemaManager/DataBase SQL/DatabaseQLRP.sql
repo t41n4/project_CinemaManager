@@ -1,4 +1,4 @@
-﻿CREATE DATABASE QLRP
+CREATE DATABASE QLRP
 GO
 
 USE QLRP
@@ -612,6 +612,18 @@ BEGIN
 END
 GO
 
+CREATE PROC USP_GetInfoForTicket
+@idVe nvarchar(50)
+AS
+BEGIN
+	SELECT ThoiGianChieu, TienBanVe, TenPhim, MaGheNgoi, Ve.id, Ve.idKhachHang,TenPhong
+	FROM [dbo].LichChieu,[dbo].Ve,[dbo].Phim,[dbo].DinhDangPhim,[dbo].PhongChieu
+	WHERE @idVe = Ve.id AND Ve.idLichChieu = LichChieu.id 
+											AND LichChieu.idDinhDang = DinhDangPhim.id 
+											AND DinhDangPhim.idPhim = Phim.id
+											AND LichChieu.idPhong = PhongChieu.id
+END
+GO 
 
 --Tin Nhan
 --Drop PROC USP_InsertMessage
@@ -631,6 +643,15 @@ AS
 BEGIN
 	SELECT user_from AS [Người gửi], user_to AS [Người nhận], date_sent AS [Thời gian gửi],body AS [Nội dung]
 	FROM [dbo].Messages
+	WHERE @username = user_to OR user_from = @username
+END
+GO
+
+CREATE PROC USP_DeleteMessage
+@username nvarchar(50)
+AS
+BEGIN
+	DELETE FROM Messages
 	WHERE @username = user_to OR user_from = @username
 END
 GO
@@ -657,6 +678,8 @@ BEGIN
 	WHERE user_to = N'admin' AND user_from = @username_from
 END
 GO
+
+
 
 --Insert Dữ Liệu
 SET IDENTITY_INSERT [dbo].[Messages] ON

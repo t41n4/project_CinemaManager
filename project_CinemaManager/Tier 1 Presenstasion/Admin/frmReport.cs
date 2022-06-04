@@ -1,4 +1,5 @@
-﻿using Microsoft.Reporting.WinForms;
+﻿using Microsoft.Reporting;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -34,10 +35,6 @@ namespace project_CinemaManager
         {
             LoadRevenue(movieID, FromDate, ToDate);
             this.rpViewer.RefreshReport();
-            this.rpViewer.RefreshReport();
-            this.rpViewer.RefreshReport();
-            this.rpViewer.RefreshReport();
-            this.rpViewer.RefreshReport();
         }
 
         private void LoadRevenue(string idMovie, DateTime fromDate, DateTime toDate)
@@ -55,7 +52,7 @@ namespace project_CinemaManager
             dataSet = new DataSet();
             adapter.Fill(dataSet, "DOANHTHU");
 
-            this.rpViewer.LocalReport.ReportEmbeddedResource = "project_CinemaManager.Report.rdlc";
+            this.rpViewer.LocalReport.ReportEmbeddedResource = "project_CinemaManager.ReportCinema.rdlc";
             this.rpViewer.RefreshReport();
 
             ReportDataSource rds = new ReportDataSource();
@@ -72,6 +69,11 @@ namespace project_CinemaManager
             reportParameter[1].Values.Add(ToDate.ToShortDateString());
 
             this.rpViewer.LocalReport.SetParameters(reportParameter);
+        }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Data;
 
 namespace DB
 {
-    public class TicketDAO
+    public class TicketDB
     {
         public static List<Ticket> GetListTicketsByShowTimes(string showTimesID)
         {
@@ -44,10 +44,10 @@ namespace DB
             return (int)DataProvider.ExecuteScalar(query);
         }
 
-        public static int BuyTicket(string ticketID, int type, float price)
+        public static int BuyTicket(string ticketID, int type, float price,string idKH)
         {
-            string query = "Update dbo.Ve set TrangThai = 1, LoaiVe = "
-                + type + ", TienBanVe =" + price + " where id = '" + ticketID + "'";
+            string query = "UPDATE dbo.Ve SET TrangThai = 1, LoaiVe = " + type + ", TienBanVe =" + price + ", idKhachHang = '" + idKH + "' WHERE id = '" + ticketID + "'";
+               
             return DataProvider.ExecuteNonQuery(query);
         }
 
@@ -57,7 +57,10 @@ namespace DB
                 + ", idKhachHang =N'" + customerID + "', TienBanVe =" + price + " where id = '" + ticketID + "'";
             return DataProvider.ExecuteNonQuery(query);
         }
-
+        public static DataTable GetInfoOfTicket(string id)
+        {
+            return DataProvider.ExecuteQuery("EXEC USP_GetInfoForTicket @idVe", new object[] { id });
+        }
         public static int InsertTicketByShowTimes(string showTimesID, string seatName)
         {
             string query = "USP_InsertTicketByShowTimes @idlichChieu , @maGheNgoi";
@@ -69,5 +72,6 @@ namespace DB
             string query = "USP_DeleteTicketsByShowTimes @idlichChieu";
             return DataProvider.ExecuteNonQuery(query, new object[] { showTimesID });
         }
+
     }
 }

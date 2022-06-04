@@ -45,10 +45,10 @@ namespace project_CinemaManager
             this.pnAdmin.BackColor = System.Drawing.SystemColors.Control;
             this.pnAdmin.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnAdmin.Location = new System.Drawing.Point(0, 105);
-            this.pnAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnAdmin.Location = new System.Drawing.Point(0, 86);
+            this.pnAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnAdmin.Name = "pnAdmin";
-            this.pnAdmin.Size = new System.Drawing.Size(1520, 680);
+            this.pnAdmin.Size = new System.Drawing.Size(1451, 526);
             this.pnAdmin.TabIndex = 2;
             // 
             // panel2
@@ -57,9 +57,9 @@ namespace project_CinemaManager
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1520, 785);
+            this.panel2.Size = new System.Drawing.Size(1451, 612);
             this.panel2.TabIndex = 3;
             // 
             // panel3
@@ -72,9 +72,9 @@ namespace project_CinemaManager
             this.panel3.Controls.Add(this.btnRevenueUC);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1520, 105);
+            this.panel3.Size = new System.Drawing.Size(1451, 86);
             this.panel3.TabIndex = 1;
             // 
             // btnAccountUC
@@ -87,10 +87,10 @@ namespace project_CinemaManager
             this.btnAccountUC.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccountUC.ForeColor = System.Drawing.SystemColors.Control;
             this.btnAccountUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnAccountUC.Location = new System.Drawing.Point(483, 11);
-            this.btnAccountUC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAccountUC.Location = new System.Drawing.Point(490, 9);
+            this.btnAccountUC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAccountUC.Name = "btnAccountUC";
-            this.btnAccountUC.Size = new System.Drawing.Size(155, 79);
+            this.btnAccountUC.Size = new System.Drawing.Size(211, 64);
             this.btnAccountUC.TabIndex = 0;
             this.btnAccountUC.Text = "Tài Khoản";
             this.btnAccountUC.UseVisualStyleBackColor = false;
@@ -106,10 +106,10 @@ namespace project_CinemaManager
             this.btnCustomerUC.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomerUC.ForeColor = System.Drawing.SystemColors.Control;
             this.btnCustomerUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnCustomerUC.Location = new System.Drawing.Point(805, 11);
-            this.btnCustomerUC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCustomerUC.Location = new System.Drawing.Point(1000, 9);
+            this.btnCustomerUC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCustomerUC.Name = "btnCustomerUC";
-            this.btnCustomerUC.Size = new System.Drawing.Size(155, 79);
+            this.btnCustomerUC.Size = new System.Drawing.Size(211, 64);
             this.btnCustomerUC.TabIndex = 0;
             this.btnCustomerUC.Text = "Khách Hàng";
             this.btnCustomerUC.UseVisualStyleBackColor = false;
@@ -125,10 +125,10 @@ namespace project_CinemaManager
             this.btnDataUC.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDataUC.ForeColor = System.Drawing.SystemColors.Control;
             this.btnDataUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnDataUC.Location = new System.Drawing.Point(644, 11);
-            this.btnDataUC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDataUC.Location = new System.Drawing.Point(745, 9);
+            this.btnDataUC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDataUC.Name = "btnDataUC";
-            this.btnDataUC.Size = new System.Drawing.Size(155, 79);
+            this.btnDataUC.Size = new System.Drawing.Size(211, 64);
             this.btnDataUC.TabIndex = 0;
             this.btnDataUC.Text = "Dữ Liệu";
             this.btnDataUC.UseVisualStyleBackColor = false;
@@ -144,10 +144,10 @@ namespace project_CinemaManager
             this.btnRevenueUC.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRevenueUC.ForeColor = System.Drawing.SystemColors.Control;
             this.btnRevenueUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnRevenueUC.Location = new System.Drawing.Point(322, 11);
-            this.btnRevenueUC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRevenueUC.Location = new System.Drawing.Point(236, 9);
+            this.btnRevenueUC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRevenueUC.Name = "btnRevenueUC";
-            this.btnRevenueUC.Size = new System.Drawing.Size(155, 79);
+            this.btnRevenueUC.Size = new System.Drawing.Size(211, 64);
             this.btnRevenueUC.TabIndex = 0;
             this.btnRevenueUC.Text = "Doanh Thu";
             this.btnRevenueUC.UseVisualStyleBackColor = false;
@@ -155,10 +155,14 @@ namespace project_CinemaManager
             // 
             // frmAdminNewDesign
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1520, 785);
+            this.AutoSize = true;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.ClientSize = new System.Drawing.Size(1451, 612);
             this.Controls.Add(this.panel2);
+            this.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmAdminNewDesign";
             this.Text = "frmAdminNewDesign";
             this.Load += new System.EventHandler(this.frmAdminNewDesign_Load);

@@ -1,4 +1,4 @@
-﻿namespace frmAdminUserControls
+﻿namespace project_CinemaManager
 {
     partial class AccountUC
     {
@@ -37,6 +37,7 @@
             this.btnUpdateAccount = new System.Windows.Forms.Button();
             this.btnInsertAccount = new System.Windows.Forms.Button();
             this.grpAccount = new System.Windows.Forms.GroupBox();
+            this.btnUpdatePassword = new System.Windows.Forms.Button();
             this.lblUsername = new System.Windows.Forms.Label();
             this.txtType_Account = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@
             this.lblStaffID_Account = new System.Windows.Forms.Label();
             this.dtgvAccount = new System.Windows.Forms.DataGridView();
             this.toolTipAccountType = new System.Windows.Forms.ToolTip(this.components);
-            this.btnUpdatePassword = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.grpAccount.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).BeginInit();
@@ -57,12 +57,12 @@
             // 
             this.groupBox1.Controls.Add(this.txtSearchAccount);
             this.groupBox1.Controls.Add(this.btnSearchAccount);
-            this.groupBox1.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(867, 69);
+            this.groupBox1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(823, 53);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(209, 68);
+            this.groupBox1.Size = new System.Drawing.Size(344, 68);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm theo tên";
@@ -91,20 +91,19 @@
             // 
             // btnResetPass
             // 
-            this.btnResetPass.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResetPass.Location = new System.Drawing.Point(867, 33);
+            this.btnResetPass.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetPass.Location = new System.Drawing.Point(823, 17);
             this.btnResetPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnResetPass.Name = "btnResetPass";
-            this.btnResetPass.Size = new System.Drawing.Size(135, 32);
+            this.btnResetPass.Size = new System.Drawing.Size(203, 32);
             this.btnResetPass.TabIndex = 24;
             this.btnResetPass.Text = "Reset mật khẩu";
             this.btnResetPass.UseVisualStyleBackColor = true;
-            this.btnResetPass.Click += new System.EventHandler(this.btnResetPass_Click);
             // 
             // btnDeleteAccount
             // 
-            this.btnDeleteAccount.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteAccount.Location = new System.Drawing.Point(770, 105);
+            this.btnDeleteAccount.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteAccount.Location = new System.Drawing.Point(726, 89);
             this.btnDeleteAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDeleteAccount.Name = "btnDeleteAccount";
             this.btnDeleteAccount.Size = new System.Drawing.Size(91, 32);
@@ -115,8 +114,8 @@
             // 
             // btnUpdateAccount
             // 
-            this.btnUpdateAccount.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateAccount.Location = new System.Drawing.Point(770, 69);
+            this.btnUpdateAccount.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateAccount.Location = new System.Drawing.Point(726, 53);
             this.btnUpdateAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateAccount.Name = "btnUpdateAccount";
             this.btnUpdateAccount.Size = new System.Drawing.Size(91, 32);
@@ -127,8 +126,8 @@
             // 
             // btnInsertAccount
             // 
-            this.btnInsertAccount.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsertAccount.Location = new System.Drawing.Point(770, 33);
+            this.btnInsertAccount.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsertAccount.Location = new System.Drawing.Point(726, 17);
             this.btnInsertAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnInsertAccount.Name = "btnInsertAccount";
             this.btnInsertAccount.Size = new System.Drawing.Size(91, 32);
@@ -140,6 +139,12 @@
             // grpAccount
             // 
             this.grpAccount.BackColor = System.Drawing.Color.Transparent;
+            this.grpAccount.Controls.Add(this.btnDeleteAccount);
+            this.grpAccount.Controls.Add(this.btnResetPass);
+            this.grpAccount.Controls.Add(this.btnUpdateAccount);
+            this.grpAccount.Controls.Add(this.btnUpdatePassword);
+            this.grpAccount.Controls.Add(this.btnInsertAccount);
+            this.grpAccount.Controls.Add(this.groupBox1);
             this.grpAccount.Controls.Add(this.lblUsername);
             this.grpAccount.Controls.Add(this.txtType_Account);
             this.grpAccount.Controls.Add(this.txtUsername);
@@ -148,40 +153,53 @@
             this.grpAccount.Controls.Add(this.lblStaffName_Account);
             this.grpAccount.Controls.Add(this.lblAccountType);
             this.grpAccount.Controls.Add(this.lblStaffID_Account);
+            this.grpAccount.Dock = System.Windows.Forms.DockStyle.Top;
             this.grpAccount.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpAccount.Location = new System.Drawing.Point(177, 18);
+            this.grpAccount.Location = new System.Drawing.Point(0, 0);
             this.grpAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpAccount.Name = "grpAccount";
             this.grpAccount.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpAccount.Size = new System.Drawing.Size(587, 133);
+            this.grpAccount.Size = new System.Drawing.Size(1275, 140);
             this.grpAccount.TabIndex = 22;
             this.grpAccount.TabStop = false;
             this.grpAccount.Text = "Thông tin tài khoản";
             // 
+            // btnUpdatePassword
+            // 
+            this.btnUpdatePassword.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdatePassword.Location = new System.Drawing.Point(1032, 17);
+            this.btnUpdatePassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpdatePassword.Name = "btnUpdatePassword";
+            this.btnUpdatePassword.Size = new System.Drawing.Size(135, 32);
+            this.btnUpdatePassword.TabIndex = 24;
+            this.btnUpdatePassword.Text = "Update Password";
+            this.btnUpdatePassword.UseVisualStyleBackColor = true;
+            this.btnUpdatePassword.Click += new System.EventHandler(this.btnUpdatePassword_Click);
+            // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.Location = new System.Drawing.Point(24, 39);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(70, 15);
+            this.lblUsername.Size = new System.Drawing.Size(109, 23);
             this.lblUsername.TabIndex = 4;
             this.lblUsername.Text = "Username:";
             // 
             // txtType_Account
             // 
             this.txtType_Account.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtType_Account.Location = new System.Drawing.Point(414, 36);
+            this.txtType_Account.Location = new System.Drawing.Point(465, 36);
             this.txtType_Account.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtType_Account.Name = "txtType_Account";
-            this.txtType_Account.Size = new System.Drawing.Size(147, 31);
+            this.txtType_Account.Size = new System.Drawing.Size(60, 31);
             this.txtType_Account.TabIndex = 2;
             this.txtType_Account.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(137, 36);
+            this.txtUsername.Location = new System.Drawing.Point(153, 36);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(147, 31);
@@ -191,7 +209,7 @@
             // txtID_Account
             // 
             this.txtID_Account.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID_Account.Location = new System.Drawing.Point(137, 83);
+            this.txtID_Account.Location = new System.Drawing.Point(153, 82);
             this.txtID_Account.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtID_Account.Name = "txtID_Account";
             this.txtID_Account.Size = new System.Drawing.Size(147, 31);
@@ -201,40 +219,40 @@
             // txtName_Customer
             // 
             this.txtName_Customer.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName_Customer.Location = new System.Drawing.Point(416, 82);
+            this.txtName_Customer.Location = new System.Drawing.Point(437, 82);
             this.txtName_Customer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtName_Customer.Name = "txtName_Customer";
             this.txtName_Customer.ReadOnly = true;
-            this.txtName_Customer.Size = new System.Drawing.Size(141, 31);
+            this.txtName_Customer.Size = new System.Drawing.Size(278, 31);
             this.txtName_Customer.TabIndex = 2;
             // 
             // lblStaffName_Account
             // 
             this.lblStaffName_Account.AutoSize = true;
-            this.lblStaffName_Account.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaffName_Account.Location = new System.Drawing.Point(321, 85);
+            this.lblStaffName_Account.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStaffName_Account.Location = new System.Drawing.Point(342, 85);
             this.lblStaffName_Account.Name = "lblStaffName_Account";
-            this.lblStaffName_Account.Size = new System.Drawing.Size(49, 15);
+            this.lblStaffName_Account.Size = new System.Drawing.Size(87, 23);
             this.lblStaffName_Account.TabIndex = 4;
-            this.lblStaffName_Account.Text = "Họ Tên";
+            this.lblStaffName_Account.Text = "Họ Tên:";
             // 
             // lblAccountType
             // 
             this.lblAccountType.AutoSize = true;
-            this.lblAccountType.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAccountType.Location = new System.Drawing.Point(321, 39);
+            this.lblAccountType.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAccountType.Location = new System.Drawing.Point(331, 39);
             this.lblAccountType.Name = "lblAccountType";
-            this.lblAccountType.Size = new System.Drawing.Size(63, 15);
+            this.lblAccountType.Size = new System.Drawing.Size(98, 23);
             this.lblAccountType.TabIndex = 4;
             this.lblAccountType.Text = "Loại TK:";
             // 
             // lblStaffID_Account
             // 
             this.lblStaffID_Account.AutoSize = true;
-            this.lblStaffID_Account.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaffID_Account.Location = new System.Drawing.Point(24, 85);
+            this.lblStaffID_Account.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStaffID_Account.Location = new System.Drawing.Point(90, 86);
             this.lblStaffID_Account.Name = "lblStaffID_Account";
-            this.lblStaffID_Account.Size = new System.Drawing.Size(28, 15);
+            this.lblStaffID_Account.Size = new System.Drawing.Size(43, 23);
             this.lblStaffID_Account.TabIndex = 4;
             this.lblStaffID_Account.Text = "ID:";
             // 
@@ -242,43 +260,29 @@
             // 
             this.dtgvAccount.AllowUserToAddRows = false;
             this.dtgvAccount.AllowUserToDeleteRows = false;
+            this.dtgvAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgvAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvAccount.Location = new System.Drawing.Point(177, 157);
+            this.dtgvAccount.Location = new System.Drawing.Point(0, 146);
             this.dtgvAccount.Margin = new System.Windows.Forms.Padding(4);
             this.dtgvAccount.Name = "dtgvAccount";
             this.dtgvAccount.ReadOnly = true;
             this.dtgvAccount.RowHeadersWidth = 51;
-            this.dtgvAccount.Size = new System.Drawing.Size(967, 439);
+            this.dtgvAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvAccount.Size = new System.Drawing.Size(1275, 501);
             this.dtgvAccount.TabIndex = 21;
-            // 
-            // btnUpdatePassword
-            // 
-            this.btnUpdatePassword.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdatePassword.Location = new System.Drawing.Point(1009, 33);
-            this.btnUpdatePassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnUpdatePassword.Name = "btnUpdatePassword";
-            this.btnUpdatePassword.Size = new System.Drawing.Size(135, 32);
-            this.btnUpdatePassword.TabIndex = 24;
-            this.btnUpdatePassword.Text = "Update Password";
-            this.btnUpdatePassword.UseVisualStyleBackColor = true;
-            this.btnUpdatePassword.Click += new System.EventHandler(this.btnResetPass_Click);
             // 
             // AccountUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnUpdatePassword);
-            this.Controls.Add(this.btnResetPass);
-            this.Controls.Add(this.btnDeleteAccount);
-            this.Controls.Add(this.btnUpdateAccount);
-            this.Controls.Add(this.btnInsertAccount);
             this.Controls.Add(this.grpAccount);
             this.Controls.Add(this.dtgvAccount);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AccountUC";
-            this.Size = new System.Drawing.Size(1346, 650);
+            this.Size = new System.Drawing.Size(1275, 647);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.grpAccount.ResumeLayout(false);

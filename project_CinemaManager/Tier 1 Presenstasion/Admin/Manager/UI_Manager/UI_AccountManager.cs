@@ -3,7 +3,7 @@ using DB;
 using System;
 using System.Windows.Forms;
 
-namespace frmAdminUserControls
+namespace project_CinemaManager
 {
     public partial class AccountUC : UserControl
     {
@@ -130,12 +130,7 @@ namespace frmAdminUserControls
             }
         }
 
-        private void btnResetPass_Click(object sender, EventArgs e)
-        {
-            string username = txtUsername.Text;
-            ResetPassword(username);
-            LoadAccountList();
-        }
+    
 
         private void btnSearchAccount_Click(object sender, EventArgs e)
         {
@@ -150,6 +145,12 @@ namespace frmAdminUserControls
                 btnSearchAccount.PerformClick();
                 e.SuppressKeyPress = true;//Tắt tiếng *ting của windows
             }
+        }
+
+        private void btnUpdatePassword_Click(object sender, EventArgs e)
+        {
+            UI05_ChangePassword updatePassWord = new UI05_ChangePassword(txtUsername.Text);
+            updatePassWord.ShowDialog();
         }
     }
 }

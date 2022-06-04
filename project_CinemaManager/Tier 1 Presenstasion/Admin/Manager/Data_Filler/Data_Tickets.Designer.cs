@@ -185,6 +185,7 @@
             this.dtgvTicket.Location = new System.Drawing.Point(0, 64);
             this.dtgvTicket.Margin = new System.Windows.Forms.Padding(4);
             this.dtgvTicket.Name = "dtgvTicket";
+            this.dtgvTicket.RowHeadersWidth = 51;
             this.dtgvTicket.Size = new System.Drawing.Size(859, 574);
             this.dtgvTicket.TabIndex = 12;
             // 
@@ -195,6 +196,7 @@
             this.Controls.Add(this.dtgvTicket);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel61);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Name = "TicketsUC";
             this.Size = new System.Drawing.Size(1548, 638);
             this.panel61.ResumeLayout(false);
