@@ -5,11 +5,11 @@ namespace Application
 {
     public class ShowTimes
     {
-        public ShowTimes(string iD, DateTime time, string cinemaName,
+        public ShowTimes(string iD, DateTime time, string cinemaID,
             string formatMovieID, string movieName, float ticketPrice, int status)
         {
             this.ID = iD;
-            this.CinemaName = cinemaName;
+            this.CinemaID = cinemaID;
             this.MovieName = movieName;
             this.Time = time;
             this.FormatMovieID = formatMovieID;
@@ -20,7 +20,7 @@ namespace Application
         public ShowTimes(DataRow row)
         {
             this.ID = row["id"].ToString();
-            this.CinemaName = row["TenPhong"].ToString();
+            this.CinemaID = row["TenPhong"].ToString();
             this.MovieName = row["TenPhim"].ToString();
             this.Time = (DateTime)row["ThoiGianChieu"];
             this.FormatMovieID = row["idDinhDang"].ToString();
@@ -35,7 +35,7 @@ namespace Application
 
         public DateTime Time { get; set; }
 
-        public string CinemaName { get; set; }
+        public string CinemaID { get; set; }
 
         public string FormatMovieID { get; set; }
 

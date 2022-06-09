@@ -12,11 +12,11 @@ namespace project_CinemaManager
     public partial class UI_ChonChoNgoi : Form
     {
         public Account loginAccout = UICustomerInfo.loginAccount;
-        public UI_ChonChoNgoi(ShowTimes showTimes, Movie movie )
+
+        public UI_ChonChoNgoi(ShowTimes showTimes, Movie movie)
         {
             InitializeComponent();
-
-            Times = showTimes;
+            ShowTimes = showTimes;
             Movie = movie;
             frmTheatre_Load();
         }
@@ -38,69 +38,76 @@ namespace project_CinemaManager
         private float ticketPrice = 0;//Lưu giá vé gốc
         private float total = 0;//Tổng giá tiền
         private float payment = 0;//Tiền phải trả
+        private int SeatBought = 0;
 
-        private ShowTimes Times;
+        private ShowTimes ShowTimes;
         private Movie Movie;
-        
+        private Cinema cinema;
         private void frmTheatre_Load()
         {
-            ticketPrice = Times.TicketPrice;
+            cinema = CinemaDB.GetCinemaByID(ShowTimes.CinemaID);
+            ticketPrice = ShowTimes.TicketPrice;
 
-            lblInformation.Text = "CGV ABC | " + Times.CinemaName + " | " + Times.MovieName;
-            lblTime.Text = Times.Time.ToShortDateString() + " | "
-                + Times.Time.ToShortTimeString() + " - "
-                + Times.Time.AddMinutes(Movie.Time).ToShortTimeString();
+            lblInformation.Text = "CGV ABC | " + cinema.Name + " | " + ShowTimes.MovieName;
+            lblTime.Text = ShowTimes.Time.ToShortDateString() + " | "
+                + ShowTimes.Time.ToShortTimeString() + " - "
+                + ShowTimes.Time.AddMinutes(Movie.Time).ToShortTimeString();
             if (Movie.Poster != null)
                 picFilm.Image = MovieDB.byteArrayToImage(Movie.Poster);
-
-            LoadDataCinema(Times.CinemaName);
-
-            listSeatonDB = TicketDB.GetListTicketsByShowTimes(Times.ID);
-
+            LoadDataCinema();
+            listSeatonDB = TicketDB.GetListTicketsByShowTimes(ShowTimes.ID);
             LoadSeats(listSeatonDB);
+            CinemaDB.UpdateCinema(cinema.ID, cinema.Name, cinema.ScreenTypeID, cinema.Seats, SeatBought, cinema.Row, cinema.SeatInRow);
         }
-
-        private void LoadDataCinema(string cinemaName)
+    
+        private void LoadDataCinema()
         {
-            Cinema cinema = CinemaDB.GetCinemaByID(cinemaName);
-
             Row = cinema.Row;
             Column = cinema.SeatInRow;
-
             this.Size = new Size(this.Size.Width + 100, this.Size.Height);
-
             flpSeat.Size = new Size((SIZE + 20 + GAP) * Column, (SIZE + GAP) * Row);
+
         }
 
         private void ReLoadInfo()
         {
-            CultureInfo culture = new CultureInfo("vi-VN");  
+            CultureInfo culture = new CultureInfo("vi-VN");
             lblTotal.Text = total.ToString("c", culture);
             lblPayment.Text = payment.ToString("c", culture);
         }
 
-        private void LoadSeats(List<Ticket> list)
+        private void LoadSeats(List<Ticket> listTicket)
         {
+            SeatBought = 0;
             flpSeat.Controls.Clear();
-            listSeatofCinema = new List<Button>();
-            for (int i = 0; i < list.Count; i++)
+            listSeatofCinema = new List<Button>();      
+            for (int i = 0; i < listTicket.Count; i++)
             {
                 Button btnSeat = new Button() { Width = SIZE + 20, Height = SIZE };
-                btnSeat.Text = list[i].SeatName;
-                if (list[i].Status == 1)
+                btnSeat.Text = listTicket[i].SeatName;
+                if (listTicket[i].Status == 1)
+                {
                     btnSeat.BackColor = Color.Red;
+                    SeatBought++;
+                }
                 else
                     btnSeat.BackColor = Color.White;
                 btnSeat.Click += BtnSeat_Click;
                 flpSeat.Controls.Add(btnSeat);
 
-                btnSeat.Tag = list[i];
+                btnSeat.Tag = listTicket[i];
                 listSeatofCinema.Add(btnSeat);
             }
+         
         }
 
         private void BtnSeat_Click(object sender, EventArgs e)
         {
+            if (listSeatSelected.Count >= 8)
+            {
+                MessageBox.Show("Bạn chỉ được mua tối đa 8 ghế!");
+                return;
+            }
             Button btnSeat = sender as Button;
             if (btnSeat.BackColor == Color.White)
             {
@@ -134,10 +141,9 @@ namespace project_CinemaManager
             {
                 MessageBox.Show("Ghế số [" + btnSeat.Text + "] đã có người mua");
             }
+
             ReLoadInfo();
         }
-
-
 
         private bool CheckLeftRightOfRow(List<Button> listRowofSeat)
         {
@@ -257,11 +263,12 @@ namespace project_CinemaManager
                     List<string> listidVe = new List<string>();
 
                     foreach (Button btn in listSeatSelected)
-                    {                      
+                    {
                         Ticket ticket = btn.Tag as Ticket;
-                        ret += TicketDB.BuyTicket(ticket.ID, ticket.Type, ticket.Price,loginAccout.ID);
+                        ret += TicketDB.BuyTicket(ticket.ID, ticket.Type, ticket.Price, loginAccout.ID);
                         listidVe.Add(ticket.ID);
                     }
+
                     UI06_TicketForCustomer Bill = new UI06_TicketForCustomer(listidVe.ToArray());
                     this.Hide();
                     Bill.ShowDialog();
@@ -274,8 +281,9 @@ namespace project_CinemaManager
             }
             RestoreDefault();
 
-            listSeatonDB = TicketDB.GetListTicketsByShowTimes(Times.ID);
+            listSeatonDB = TicketDB.GetListTicketsByShowTimes(ShowTimes.ID);
             LoadSeats(listSeatonDB);
+            CinemaDB.UpdateCinema(cinema.ID, cinema.Name, cinema.ScreenTypeID, cinema.Seats, SeatBought, cinema.Row, cinema.SeatInRow);
             this.OnLoad(new EventArgs());
         }
     }

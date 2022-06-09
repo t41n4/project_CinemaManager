@@ -21,7 +21,7 @@ namespace project_CinemaManager
             List<ShowTimes> allListShowTime = ShowTimeDB.GetAllListShowTimes();
             foreach (ShowTimes showTimes in allListShowTime)
             {
-                ListViewItem lvi = new ListViewItem(showTimes.CinemaName);
+                ListViewItem lvi = new ListViewItem(showTimes.CinemaID);
                 lvi.SubItems.Add(showTimes.MovieName);
                 lvi.SubItems.Add(showTimes.Time.ToString("HH:mm:ss dd/MM/yyyy"));
                 lvi.Tag = showTimes;
@@ -53,7 +53,7 @@ namespace project_CinemaManager
         private void AutoCreateTicketsByShowTimes(ShowTimes showTimes)
         {
             int result = 0;
-            Cinema cinema = CinemaDB.GetCinemaByName(showTimes.CinemaName);
+            Cinema cinema = CinemaDB.GetCinemaByName(showTimes.CinemaID);
             int Row = cinema.Row;
             int Column = cinema.SeatInRow;
             for (int i = 0; i < Row; i++)
@@ -127,7 +127,7 @@ namespace project_CinemaManager
 
         private void DeleteTicketsByShowTimes(ShowTimes showTimes)
         {
-            Cinema cinema = CinemaDB.GetCinemaByName(showTimes.CinemaName);
+            Cinema cinema = CinemaDB.GetCinemaByName(showTimes.CinemaID);
             int Row = cinema.Row;
             int Column = cinema.SeatInRow;
             int result = TicketDB.DeleteTicketsByShowTimes(showTimes.ID);
@@ -158,7 +158,7 @@ namespace project_CinemaManager
             List<ShowTimes> allListShowTime = ShowTimeDB.GetListShowTimesNotCreateTickets();
             foreach (ShowTimes showTimes in allListShowTime)
             {
-                ListViewItem lvi = new ListViewItem(showTimes.CinemaName);
+                ListViewItem lvi = new ListViewItem(showTimes.CinemaID);
                 lvi.SubItems.Add(showTimes.MovieName);
                 lvi.SubItems.Add(showTimes.Time.ToString("HH:mm:ss dd/MM/yyyy"));
                 lvi.Tag = showTimes;

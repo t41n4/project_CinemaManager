@@ -14,9 +14,42 @@ namespace project_CinemaManager
         {
             InitializeComponent();
             this.Movie = SelectedFilmFromUser;
+
+
+
         }
+        private void UpdateCapacity()
+        {
+            int selectedrowindex = dtgvShowtime.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dtgvShowtime.Rows[selectedrowindex];
+            string Capacity = Convert.ToString(selectedRow.Cells["Tình Trạng"].Value);
+            string cinemaid = Convert.ToString(selectedRow.Cells["ID Phòng chiếu"].Value);
+            Cinema cinema = CinemaDB.GetCinemaByID(cinemaid);
+            CapacityofCinema = cinema.Row * cinema.SeatInRow;
+            txStatus_ShowTimes.Text = Capacity + "/" + CapacityofCinema.ToString();
+        }
+        private void UI_ChonGioChieu_Load(object sender, EventArgs e)
+        {
+            LoadShowtime();
+            HideUneseccaryColumn();
+            UpdateCapacity();
 
 
+        }
+        private void HideUneseccaryColumn()
+        {
+            for (int i = 0; i < dtgvShowtime.Columns.Count; i++)
+            {
+                if (dtgvShowtime.Columns[i].HeaderText == "Mã lịch chiếu")
+                {
+                    dtgvShowtime.Columns[i].Visible = false;
+                }
+                else if (dtgvShowtime.Columns[i].HeaderText == "ID Phòng Chiếu")
+                {
+                    dtgvShowtime.Columns[i].Visible = false;
+                }            
+            }
+        }
 
         public Movie Movie
         {
@@ -44,17 +77,28 @@ namespace project_CinemaManager
             txtMovieName_Showtime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Tên phim", true, DataSourceUpdateMode.Never);
             txtShowtimeDateTime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Thời gian chiếu", true, DataSourceUpdateMode.Never);
             txtTicketPrice_Showtime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Giá vé", true, DataSourceUpdateMode.Never);
-            txtShowRoom_Showtime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Phòng chiếu", true, DataSourceUpdateMode.Never);
+            txtShowRoom_Showtime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Tên Phòng chiếu", true, DataSourceUpdateMode.Never);
         }
-
+        private int CapacityofCinema = 0;
         private void btnChonGioChieu_Click(object sender, EventArgs e)
         {
-            string IdShowTimes;
+
             int selectedrowindex = dtgvShowtime.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = dtgvShowtime.Rows[selectedrowindex];
-            IdShowTimes = Convert.ToString(selectedRow.Cells["Mã lịch chiếu"].Value);
-
+            
+            string IdShowTimes = Convert.ToString(selectedRow.Cells["Mã lịch chiếu"].Value);
             ShowTimes showTimes = ShowTimeDB.GetShowtimeByIDShowTimeAndIDMovie(IdShowTimes, GetMovie.ID);
+
+            string cinemaid = Convert.ToString(selectedRow.Cells["ID Phòng chiếu"].Value);
+            Cinema cinema = CinemaDB.GetCinemaByID(cinemaid);
+            
+            CapacityofCinema = cinema.Row * cinema.SeatInRow;
+            if (cinema.Status == CapacityofCinema)
+            {           
+                  MessageBox.Show("Phòng Chiếu này đã đầy");
+                return;
+            }
+
 
             UI_ChonChoNgoi uI_ChonChoNgoi = new UI_ChonChoNgoi(showTimes, GetMovie);
             this.Hide();
@@ -62,9 +106,9 @@ namespace project_CinemaManager
             this.Show();
         }
 
-        private void UI_ChonGioChieu_Load(object sender, EventArgs e)
+        private void dtgvShowtime_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            LoadShowtime();
+            UpdateCapacity();
         }
     }
 }

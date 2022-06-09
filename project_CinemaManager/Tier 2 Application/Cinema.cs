@@ -4,8 +4,8 @@ namespace Application
 {
     public class Cinema
     {
-        public Cinema(string iD, string name, string screenType, int seats,
-            string status, int row, int seatInRow)
+        public Cinema(string iD, string name, string screenType, int seats,int status, int row, int seatInRow)
+            
         {
             this.ID = iD;
             this.Name = name;
@@ -22,7 +22,7 @@ namespace Application
             this.Name = row["TenPhong"].ToString();
             this.ScreenTypeID = row["idManHinh"].ToString();
             this.Seats = (int)row["SoChoNgoi"];
-            this.Status = row["TinhTrang"].ToString();
+            this.Status = (int)row["TinhTrang"];
             this.Row = (int)row["SoHangGhe"];
             this.SeatInRow = (int)row["SoGheMotHang"];
         }
@@ -35,7 +35,7 @@ namespace Application
 
         public int Seats { get; set; }
 
-        public string Status { get; set; }
+        public int Status { get; set; }
 
         public int Row { get; set; }
 

@@ -457,14 +457,16 @@ GO
 CREATE PROC USP_GetShowtimeByIDMovie @ID varchar(50)
 AS
 BEGIN
-	SELECT TenPhim AS [Tên phim],LichChieu.id AS [Mã lịch chiếu], ThoiGianChieu AS [Thời gian chiếu], GiaVe AS [Giá vé], LichChieu.idPhong AS [Phòng Chiếu]
-	FROM Phim ,DinhDangPhim ,LichChieu
+	SELECT TenPhim AS [Tên phim],LichChieu.id AS [Mã lịch chiếu], ThoiGianChieu AS [Thời gian chiếu], GiaVe AS [Giá vé], LichChieu.idPhong AS [ID Phòng Chiếu],PhongChieu.TenPhong AS [Tên Phòng Chiếu]
+	FROM Phim ,DinhDangPhim ,LichChieu,PhongChieu
 	WHERE Phim.id = @ID AND 
 			DinhDangPhim.idPhim = @ID AND 
 			LichChieu.idDinhDang = DinhDangPhim.id AND
+			LichChieu.idPhong = PhongChieu.id AND
 			LichChieu.TrangThai = 1
 END
 GO
+
 
 --DROP PROC USP_GetShowtime
 CREATE PROC USP_GetShowtime
