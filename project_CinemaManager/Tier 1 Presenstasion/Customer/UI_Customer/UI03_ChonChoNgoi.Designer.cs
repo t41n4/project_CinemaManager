@@ -79,18 +79,20 @@ namespace project_CinemaManager
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(51, 35);
+            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Location = new System.Drawing.Point(591, 36);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(38, 16);
+            this.lblTime.Size = new System.Drawing.Size(46, 20);
             this.lblTime.TabIndex = 2;
             this.lblTime.Text = "Time";
             // 
             // lblInformation
             // 
             this.lblInformation.AutoSize = true;
-            this.lblInformation.Location = new System.Drawing.Point(12, 9);
+            this.lblInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInformation.Location = new System.Drawing.Point(591, 9);
             this.lblInformation.Name = "lblInformation";
-            this.lblInformation.Size = new System.Drawing.Size(72, 16);
+            this.lblInformation.Size = new System.Drawing.Size(92, 20);
             this.lblInformation.TabIndex = 1;
             this.lblInformation.Text = "Information";
             // 
