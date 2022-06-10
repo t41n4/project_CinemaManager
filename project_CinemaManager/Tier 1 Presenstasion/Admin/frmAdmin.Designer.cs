@@ -29,6 +29,7 @@ namespace project_CinemaManager
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelX = new System.Windows.Forms.Label();
             this.btnSupportCus = new System.Windows.Forms.Button();
@@ -79,7 +80,7 @@ namespace project_CinemaManager
             this.lblAccountInfo.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAccountInfo.Location = new System.Drawing.Point(8, -4);
             this.lblAccountInfo.Name = "lblAccountInfo";
-            this.lblAccountInfo.Size = new System.Drawing.Size(119, 15);
+            this.lblAccountInfo.Size = new System.Drawing.Size(136, 17);
             this.lblAccountInfo.TabIndex = 7;
             this.lblAccountInfo.Text = "Tên tài khoản : ";
             // 
@@ -104,7 +105,9 @@ namespace project_CinemaManager
             this.Controls.Add(this.btnSupportCus);
             this.Controls.Add(this.lblAccountInfo);
             this.Controls.Add(this.btnAdmin);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manager";
             this.Load += new System.EventHandler(this.frmAdmin_Load);
             this.panel1.ResumeLayout(false);

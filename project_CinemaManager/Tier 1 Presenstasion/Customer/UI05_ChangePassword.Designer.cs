@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UI05_ChangePassword));
             this.btnConfirm = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtOldPass = new System.Windows.Forms.TextBox();
@@ -95,7 +96,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnConfirm);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UI05_ChangePassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UI05_ChangePassword";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -154,7 +154,7 @@
             this.grpAccount.Controls.Add(this.lblAccountType);
             this.grpAccount.Controls.Add(this.lblStaffID_Account);
             this.grpAccount.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grpAccount.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpAccount.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpAccount.Location = new System.Drawing.Point(0, 0);
             this.grpAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpAccount.Name = "grpAccount";

@@ -29,6 +29,7 @@ namespace project_CinemaManager
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSignUp));
             this.pnThanhVien = new System.Windows.Forms.Panel();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
@@ -84,7 +85,6 @@ namespace project_CinemaManager
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(302, 39);
             this.txtPassword.TabIndex = 2;
-            this.txtPassword.Text = "123";
             // 
             // txtUserName
             // 
@@ -94,7 +94,6 @@ namespace project_CinemaManager
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(302, 39);
             this.txtUserName.TabIndex = 2;
-            this.txtUserName.Text = "Tai";
             // 
             // txtCMND
             // 
@@ -104,7 +103,6 @@ namespace project_CinemaManager
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(302, 39);
             this.txtCMND.TabIndex = 2;
-            this.txtCMND.Text = "24512345";
             // 
             // txtBirth
             // 
@@ -114,7 +112,6 @@ namespace project_CinemaManager
             this.txtBirth.Name = "txtBirth";
             this.txtBirth.Size = new System.Drawing.Size(302, 39);
             this.txtBirth.TabIndex = 2;
-            this.txtBirth.Text = "4/11/2002";
             // 
             // txtAddress
             // 
@@ -124,7 +121,6 @@ namespace project_CinemaManager
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(302, 39);
             this.txtAddress.TabIndex = 2;
-            this.txtAddress.Text = "DakSak";
             // 
             // label10
             // 
@@ -145,7 +141,6 @@ namespace project_CinemaManager
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(302, 39);
             this.txtSDT.TabIndex = 2;
-            this.txtSDT.Text = "091237123";
             // 
             // label8
             // 
@@ -188,7 +183,6 @@ namespace project_CinemaManager
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(302, 39);
             this.txtFullName.TabIndex = 1;
-            this.txtFullName.Text = "Nguyen Anh Tai";
             // 
             // label5
             // 
@@ -238,7 +232,7 @@ namespace project_CinemaManager
             this.btnCofirm.AutoSize = true;
             this.btnCofirm.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnCofirm.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCofirm.Location = new System.Drawing.Point(105, 400);
+            this.btnCofirm.Location = new System.Drawing.Point(150, 400);
             this.btnCofirm.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnCofirm.Name = "btnCofirm";
             this.btnCofirm.Size = new System.Drawing.Size(145, 43);
@@ -270,7 +264,7 @@ namespace project_CinemaManager
             this.button1.AutoSize = true;
             this.button1.BackColor = System.Drawing.Color.DodgerBlue;
             this.button1.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(260, 400);
+            this.button1.Location = new System.Drawing.Point(305, 400);
             this.button1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 43);
@@ -289,7 +283,9 @@ namespace project_CinemaManager
             this.Controls.Add(this.btnCofirm);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSignUp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sign Up";
             this.pnThanhVien.ResumeLayout(false);
             this.pnThanhVien.PerformLayout();

@@ -30,6 +30,7 @@ namespace project_CinemaManager
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmin_SupportCus));
             this.btnSendMessage = new System.Windows.Forms.Button();
             this.txtMessage = new System.Windows.Forms.TextBox();
             this.lbname = new System.Windows.Forms.Label();
@@ -63,7 +64,7 @@ namespace project_CinemaManager
             this.lbname.AutoSize = true;
             this.lbname.Location = new System.Drawing.Point(12, 9);
             this.lbname.Name = "lbname";
-            this.lbname.Size = new System.Drawing.Size(78, 16);
+            this.lbname.Size = new System.Drawing.Size(85, 17);
             this.lbname.TabIndex = 5;
             this.lbname.Text = "Your name: ";
             // 
@@ -107,7 +108,9 @@ namespace project_CinemaManager
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.lbname);
             this.Controls.Add(this.dtgvMessage);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAdmin_SupportCus";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAdmin_GetSupport";
             this.Load += new System.EventHandler(this.frmAdmin_SupportCus_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmAdmin_SupportCus_KeyDown);

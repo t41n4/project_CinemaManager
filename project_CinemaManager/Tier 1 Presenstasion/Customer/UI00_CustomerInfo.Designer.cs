@@ -29,6 +29,7 @@ namespace project_CinemaManager
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UICustomerInfo));
             this.lblCusID = new System.Windows.Forms.Label();
             this.txtCusID = new System.Windows.Forms.TextBox();
             this.txtCusAddress = new System.Windows.Forms.TextBox();
@@ -201,7 +202,7 @@ namespace project_CinemaManager
             // 
             // btnDatVe
             // 
-            this.btnDatVe.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDatVe.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDatVe.Location = new System.Drawing.Point(7, 253);
             this.btnDatVe.Name = "btnDatVe";
             this.btnDatVe.Size = new System.Drawing.Size(96, 45);
@@ -212,7 +213,7 @@ namespace project_CinemaManager
             // 
             // btnConfigInfo
             // 
-            this.btnConfigInfo.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfigInfo.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfigInfo.Location = new System.Drawing.Point(109, 253);
             this.btnConfigInfo.Name = "btnConfigInfo";
             this.btnConfigInfo.Size = new System.Drawing.Size(142, 45);
@@ -223,7 +224,7 @@ namespace project_CinemaManager
             // 
             // btnRqSupport
             // 
-            this.btnRqSupport.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRqSupport.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRqSupport.Location = new System.Drawing.Point(257, 253);
             this.btnRqSupport.Name = "btnRqSupport";
             this.btnRqSupport.Size = new System.Drawing.Size(142, 45);
@@ -234,7 +235,7 @@ namespace project_CinemaManager
             // 
             // btnUpdatePassword
             // 
-            this.btnUpdatePassword.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdatePassword.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdatePassword.Location = new System.Drawing.Point(405, 252);
             this.btnUpdatePassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdatePassword.Name = "btnUpdatePassword";
@@ -255,7 +256,9 @@ namespace project_CinemaManager
             this.Controls.Add(this.btnConfigInfo);
             this.Controls.Add(this.btnDatVe);
             this.Controls.Add(this.grpCustomer);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UICustomerInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCustomer1";
             this.Load += new System.EventHandler(this.UICustomerInfo_Load);
             this.grpCustomer.ResumeLayout(false);

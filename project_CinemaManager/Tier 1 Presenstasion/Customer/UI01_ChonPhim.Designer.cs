@@ -29,6 +29,7 @@ namespace project_CinemaManager
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UI_CustomerChonPhim));
             this.txtMovieName = new System.Windows.Forms.TextBox();
             this.txtMovieYear = new System.Windows.Forms.TextBox();
             this.txtMovieDirector = new System.Windows.Forms.TextBox();
@@ -171,7 +172,7 @@ namespace project_CinemaManager
             this.dtgvMovie.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvMovie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvMovie.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dtgvMovie.Location = new System.Drawing.Point(727, 0);
+            this.dtgvMovie.Location = new System.Drawing.Point(803, 0);
             this.dtgvMovie.Margin = new System.Windows.Forms.Padding(4);
             this.dtgvMovie.Name = "dtgvMovie";
             this.dtgvMovie.ReadOnly = true;
@@ -209,7 +210,7 @@ namespace project_CinemaManager
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(234)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(1118, 398);
+            this.ClientSize = new System.Drawing.Size(1194, 398);
             this.Controls.Add(this.btnChonPhim);
             this.Controls.Add(this.picFilm);
             this.Controls.Add(this.txtMovieProductor);
@@ -224,7 +225,9 @@ namespace project_CinemaManager
             this.Controls.Add(this.lblMovieDirector);
             this.Controls.Add(this.txtMovieName);
             this.Controls.Add(this.dtgvMovie);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UI_CustomerChonPhim";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chon Phim";
             this.Load += new System.EventHandler(this.UI_CustomerDatVe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picFilm)).EndInit();

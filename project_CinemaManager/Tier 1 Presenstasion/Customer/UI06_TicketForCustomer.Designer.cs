@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UI06_TicketForCustomer));
             this.USP_GetInfoForTicketBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLRPDataSet = new project_CinemaManager.QLRPDataSet();
             this.uSPGetInfoForTicketBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -79,7 +80,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1145, 412);
             this.Controls.Add(this.rpViewer);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UI06_TicketForCustomer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UI06_TicketForCustomer";
             this.Load += new System.EventHandler(this.UI06_TicketForCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.USP_GetInfoForTicketBindingSource)).EndInit();

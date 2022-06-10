@@ -30,6 +30,7 @@ namespace project_CinemaManager
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmin_GetCusNeedSupport));
             this.btnChooseToSupport = new System.Windows.Forms.Button();
             this.lbname = new System.Windows.Forms.Label();
             this.dtgvMessage = new System.Windows.Forms.DataGridView();
@@ -54,7 +55,7 @@ namespace project_CinemaManager
             this.lbname.AutoSize = true;
             this.lbname.Location = new System.Drawing.Point(12, 20);
             this.lbname.Name = "lbname";
-            this.lbname.Size = new System.Drawing.Size(78, 16);
+            this.lbname.Size = new System.Drawing.Size(85, 17);
             this.lbname.TabIndex = 5;
             this.lbname.Text = "Your name: ";
             // 
@@ -109,7 +110,9 @@ namespace project_CinemaManager
             this.Controls.Add(this.btnChooseToSupport);
             this.Controls.Add(this.lbname);
             this.Controls.Add(this.dtgvMessage);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAdmin_GetCusNeedSupport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAdmin_GetSupportCus";
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMessage)).EndInit();
             this.ResumeLayout(false);

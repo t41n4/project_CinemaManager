@@ -373,8 +373,18 @@
     <Content Include="DataBase SQL\DatabaseQLRP.sql">
       <SubType>Form</SubType>
     </Content>
+    <Content Include="Resource\Icon\account.ico" />
+    <Content Include="Resource\Icon\chat.ico" />
+    <Content Include="Resource\Icon\infor.ico" />
+    <Content Include="Resource\Icon\manager.ico" />
+    <Content Include="Resource\Icon\password.ico" />
+    <Content Include="Resource\Icon\register.ico" />
+    <Content Include="Resource\Icon\Select.ico" />
+    <Content Include="Resource\Icon\ticket.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resource\Image\" />
+  </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
