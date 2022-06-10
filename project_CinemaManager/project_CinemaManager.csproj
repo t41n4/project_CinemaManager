@@ -89,28 +89,28 @@
     <Compile Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_Manager.Designer.cs">
       <DependentUpon>UI_Manager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI03_ChonChoNgoi.cs">
+    <Compile Include="Tier 1 Presenstasion\Customer\UI03_ChonChoNgoi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI03_ChonChoNgoi.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Customer\UI03_ChonChoNgoi.Designer.cs">
       <DependentUpon>UI03_ChonChoNgoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI02_ChonGioChieu.cs">
+    <Compile Include="Tier 1 Presenstasion\Customer\UI02_ChonGioChieu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI02_ChonGioChieu.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Customer\UI02_ChonGioChieu.Designer.cs">
       <DependentUpon>UI02_ChonGioChieu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI01_ChonPhim.cs">
+    <Compile Include="Tier 1 Presenstasion\Customer\UI01_ChonPhim.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI01_ChonPhim.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Customer\UI01_ChonPhim.Designer.cs">
       <DependentUpon>UI01_ChonPhim.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI00_CustomerInfo.cs">
+    <Compile Include="Tier 1 Presenstasion\Customer\UI00_CustomerInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI00_CustomerInfo.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Customer\UI00_CustomerInfo.Designer.cs">
       <DependentUpon>UI00_CustomerInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_AccountManager.cs">
@@ -179,22 +179,22 @@
     <Compile Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_Revenue.Designer.cs">
       <DependentUpon>UI_Revenue.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI04_RequestSupport.cs">
+    <Compile Include="Tier 1 Presenstasion\Customer\UI04_RequestSupport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI04_RequestSupport.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Customer\UI04_RequestSupport.Designer.cs">
       <DependentUpon>UI04_RequestSupport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI05_ChangePassword.cs">
+    <Compile Include="Tier 1 Presenstasion\Customer\UI05_ChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI05_ChangePassword.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Customer\UI05_ChangePassword.Designer.cs">
       <DependentUpon>UI05_ChangePassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI06_TicketForCustomer.cs">
+    <Compile Include="Tier 1 Presenstasion\Customer\UI06_TicketForCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\UI_Customer\UI06_TicketForCustomer.Designer.cs">
+    <Compile Include="Tier 1 Presenstasion\Customer\UI06_TicketForCustomer.Designer.cs">
       <DependentUpon>UI06_TicketForCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Tier 1 Presenstasion\frmLogin.cs">
@@ -269,16 +269,16 @@
     <EmbeddedResource Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_Manager.resx">
       <DependentUpon>UI_Manager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI_Customer\UI03_ChonChoNgoi.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI03_ChonChoNgoi.resx">
       <DependentUpon>UI03_ChonChoNgoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI_Customer\UI02_ChonGioChieu.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI02_ChonGioChieu.resx">
       <DependentUpon>UI02_ChonGioChieu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI_Customer\UI01_ChonPhim.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI01_ChonPhim.resx">
       <DependentUpon>UI01_ChonPhim.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI_Customer\UI00_CustomerInfo.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI00_CustomerInfo.resx">
       <DependentUpon>UI00_CustomerInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_AccountManager.resx">
@@ -314,13 +314,13 @@
     <EmbeddedResource Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_Revenue.resx">
       <DependentUpon>UI_Revenue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI_Customer\UI04_RequestSupport.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI04_RequestSupport.resx">
       <DependentUpon>UI04_RequestSupport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI_Customer\UI05_ChangePassword.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI05_ChangePassword.resx">
       <DependentUpon>UI05_ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI_Customer\UI06_TicketForCustomer.resx">
+    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI06_TicketForCustomer.resx">
       <DependentUpon>UI06_TicketForCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tier 1 Presenstasion\frmLogin.resx">
@@ -374,9 +374,7 @@
       <SubType>Form</SubType>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tier 1 Presenstasion\Customer\Data_Filler\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>

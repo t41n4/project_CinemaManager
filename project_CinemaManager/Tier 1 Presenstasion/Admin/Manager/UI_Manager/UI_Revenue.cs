@@ -36,7 +36,7 @@ namespace project_CinemaManager
         private void LoadRevenue(string idMovie, DateTime fromDate, DateTime toDate)
         {
             CultureInfo culture = new CultureInfo("vi-VN");
-            dtgvRevenue.DataSource = RevenueDAO.GetRevenue(idMovie, fromDate, toDate);
+            dtgvRevenue.DataSource = RevenueDB.GetRevenue(idMovie, fromDate, toDate);
             txtDoanhThu.Text = GetSumRevenue().ToString("c", culture);
         }
 

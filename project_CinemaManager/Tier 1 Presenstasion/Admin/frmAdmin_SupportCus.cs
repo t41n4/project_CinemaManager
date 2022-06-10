@@ -82,12 +82,31 @@ namespace project_CinemaManager
         private void LoadMessage()
         {
 
-            dtgvMessage.DataSource = MessagesDB.GetMessagesTable(customer);
+            try
+            {
+                dtgvMessage.DataSource = MessagesDB.GetMessagesTable(customer);
+                int numberOfmess = dtgvMessage.Rows.Count;
+                if (numberOfmess > 1)
+                    for (int i = 0; i < numberOfmess - 1; i++)
+                    {
+                        string CryptBody = dtgvMessage.Rows[i].Cells["Nội dung"].Value.ToString();
+                        dtgvMessage.Rows[i].Cells["Nội dung"].Value = MessagesDB.Decrypt(CryptBody);
+                    }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+           
         }
 
        private void SendMessage()
         {
-            if (MessagesDB.InsertMessage(txtMessage.Text, account.UserName, customer, DateTime.Now))
+
+            string enCryptMessage = MessagesDB.Encrypt(txtMessage.Text);
+
+            if (MessagesDB.InsertMessage(enCryptMessage, account.UserName, customer, DateTime.Now))
             {
                 txtMessage.Text = "";
             }
