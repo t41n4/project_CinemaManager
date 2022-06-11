@@ -13,6 +13,7 @@ namespace project_CinemaManager
     {
         public Account loginAccout = UICustomerInfo.loginAccount;
 
+        public static int cost = 0;
         public UI_ChonChoNgoi(ShowTimes showTimes, Movie movie)
         {
             InitializeComponent();
@@ -194,7 +195,7 @@ namespace project_CinemaManager
                     }
                     else if (listRowofSeat[i].BackColor != Color.White)
                     {
-                        if (countSpace == 1 || countSpace == 2)
+                        if (countSpace == 1)
                         {
                             if (i == 2 || i == listRowofSeat.Count() - 3)
                             {
@@ -260,6 +261,9 @@ namespace project_CinemaManager
             {
                 int ret = 0;
                 {
+                    ///////////////// Đặt code Thanh Toán  ở đây, không sử dụng VNPAY nữa nhaa//////////////////////
+
+                    ////////////////////////////////////////////////////////////////////////////////////////////////
                     List<string> listidVe = new List<string>();
 
                     foreach (Button btn in listSeatSelected)

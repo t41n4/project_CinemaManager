@@ -55,14 +55,15 @@ namespace project_CinemaManager
             Properties.Settings.Default.Save();
 
             bool result = DataProvider.TestConnectionSQL(connectionSTR);
+            
             if (result)
-            {
                 MessageBox.Show("KẾT NỐI THÀNH CÔNG", "THÔNG BÁO");
-            }
             else
                 MessageBox.Show("KẾT NỐI THẤT BẠI", "THÔNG BÁO");
+
             btnConnect.Enabled = true;
             btnExit.Enabled = true;
         }
     }
+
 }
