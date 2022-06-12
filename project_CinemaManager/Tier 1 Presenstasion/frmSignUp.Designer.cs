@@ -49,7 +49,7 @@ namespace project_CinemaManager
             this.btnCofirm = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.pnThanhVien.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -259,18 +259,19 @@ namespace project_CinemaManager
             this.label1.Size = new System.Drawing.Size(80, 20);
             this.label1.TabIndex = 17;
             // 
-            // button1
+            // btnCancel
             // 
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(305, 400);
-            this.button1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 43);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnCancel.AutoSize = true;
+            this.btnCancel.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCancel.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(305, 400);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(120, 43);
+            this.btnCancel.TabIndex = 15;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // frmSignUp
             // 
@@ -279,7 +280,7 @@ namespace project_CinemaManager
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(234)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(561, 480);
             this.Controls.Add(this.pnThanhVien);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnCofirm);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -315,6 +316,6 @@ namespace project_CinemaManager
         public System.Windows.Forms.TextBox txtCMND;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
