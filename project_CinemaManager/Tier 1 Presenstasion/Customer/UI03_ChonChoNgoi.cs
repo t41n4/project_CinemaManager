@@ -4,7 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Text;
+using System.Web.Script.Serialization;
 using System.Windows.Forms;
 
 namespace project_CinemaManager
@@ -13,6 +17,7 @@ namespace project_CinemaManager
     {
         public Account loginAccout = UICustomerInfo.loginAccount;
 
+        public static int cost = 0;
         public UI_ChonChoNgoi(ShowTimes showTimes, Movie movie)
         {
             InitializeComponent();
@@ -20,6 +25,8 @@ namespace project_CinemaManager
             Movie = movie;
             frmTheatre_Load();
         }
+
+        private string apiUrl = "https://cinema-manager-nhom09.herokuapp.com/payment";
 
         private int SIZE = 30;//Size của ghế
         private int GAP = 7;//Khoảng cách giữa các ghế
@@ -194,7 +201,7 @@ namespace project_CinemaManager
                     }
                     else if (listRowofSeat[i].BackColor != Color.White)
                     {
-                        if (countSpace == 1 || countSpace == 2)
+                        if (countSpace == 1)
                         {
                             if (i == 2 || i == listRowofSeat.Count() - 3)
                             {
@@ -235,6 +242,52 @@ namespace project_CinemaManager
             ReLoadInfo();
         }
 
+
+        private string Post(string url)
+        {
+            try
+            {
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
+                httpWebRequest.ContentType = "application/json";
+                httpWebRequest.Method = "POST";
+
+                string idlist = ""; 
+                foreach (Button btn in listSeatSelected)
+                {
+                    Ticket ticket = btn.Tag as Ticket;
+                    idlist += "[" + ticket.ID + "]";
+                }
+
+
+                using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+                {
+                    string json = new JavaScriptSerializer().Serialize(new
+                    {
+                        id = "Ticket PayMent",
+                        payment = payment.ToString(),
+                        detail = Movie.Name + " - " + ShowTimes.Time.ToString() + " - " + cinema.Name + " - " + idlist
+                    }) ;
+
+                    streamWriter.Write(json);
+                }
+
+                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    return  streamReader.ReadToEnd();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                return "";
+            }
+
+        }
+
+
         private void btnPayment_Click(object sender, EventArgs e)
         {
             if (listSeatSelected.Count == 0)
@@ -260,23 +313,38 @@ namespace project_CinemaManager
             {
                 int ret = 0;
                 {
+                    ///////////////// Đặt code Thanh Toán  ở đây, không sử dụng VNPAY nữa nhaa//////////////////////
+                    string url = Post(apiUrl).Split('"')[1];
+                    UI07_Payment uI07_Payment = new UI07_Payment(url);
+                    this.Hide();
+                    uI07_Payment.ShowDialog();
+                    this.Show();
+                    ////////////////////////////////////////////////////////////////////////////////////////////////
                     List<string> listidVe = new List<string>();
 
-                    foreach (Button btn in listSeatSelected)
+                    if (uI07_Payment.status == "0")
                     {
-                        Ticket ticket = btn.Tag as Ticket;
-                        ret += TicketDB.BuyTicket(ticket.ID, ticket.Type, ticket.Price, loginAccout.ID);
-                        listidVe.Add(ticket.ID);
-                    }
+                        foreach (Button btn in listSeatSelected)
+                        {
+                            Ticket ticket = btn.Tag as Ticket;
+                            ret += TicketDB.BuyTicket(ticket.ID, ticket.Type, ticket.Price, loginAccout.ID);
+                            listidVe.Add(ticket.ID);
+                        }
 
-                    UI06_TicketForCustomer Bill = new UI06_TicketForCustomer(listidVe.ToArray());
-                    this.Hide();
-                    Bill.ShowDialog();
-                    this.Show();
+                        UI06_TicketForCustomer Bill = new UI06_TicketForCustomer(listidVe.ToArray());
+                        this.Hide();
+                        Bill.ShowDialog();
+                        this.Show();
+                    }
+                    
                 }
                 if (ret == listSeatSelected.Count)
                 {
                     MessageBox.Show("Bạn đã mua vé thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Mua vé Thất Bại!");
                 }
             }
             RestoreDefault();
