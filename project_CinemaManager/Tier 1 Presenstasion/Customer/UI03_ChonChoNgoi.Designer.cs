@@ -130,7 +130,7 @@ namespace project_CinemaManager
             this.label4.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(179, 64);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 15);
+            this.label4.Size = new System.Drawing.Size(56, 17);
             this.label4.TabIndex = 5;
             this.label4.Text = "Poster";
             // 
@@ -165,7 +165,7 @@ namespace project_CinemaManager
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 23);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Chưa chọn";
+            this.label3.Text = "Đang chọn";
             // 
             // flpSeat
             // 

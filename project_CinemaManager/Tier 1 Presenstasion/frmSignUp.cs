@@ -120,10 +120,5 @@ namespace project_CinemaManager
             DialogResult = DialogResult.Cancel;
             this.Close();
         }
-
-        private void btnCancel_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }
