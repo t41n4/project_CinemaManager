@@ -56,9 +56,8 @@ namespace project_CinemaManager
 
         private void mnuSetting_Click(object sender, EventArgs e)
         {
-            frm_Conectingdatabase frm_Conectingdatabase = new frm_Conectingdatabase();
-            frm_Conectingdatabase.ShowDialog();
-
+            frmTestConnection frmTestConnection = new frmTestConnection();
+            frmTestConnection.ShowDialog();
         }
 
         private void frmLogin_Load(object sender, EventArgs e)

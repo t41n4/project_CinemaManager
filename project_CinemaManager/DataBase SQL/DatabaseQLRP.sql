@@ -140,19 +140,19 @@ CREATE TABLE Ve
 )
 GO
 
---CREATE TABLE HoaDon
---(
---	id int identity(1,1) PRIMARY KEY,
+CREATE TABLE HoaDon
+(
+	id int identity(1,1) PRIMARY KEY,
  
---	idLichChieu VARCHAR(50),
---	MaGheNgoi VARCHAR(50),
---	idKhachHang VARCHAR(50),
---	TrangThai INT NOT NULL DEFAULT '0', --0: 'Chưa Thanh Toán' || 1: 'Đã Thanh Toán'
---	TongTien MONEY DEFAULT '0'
+	idLichChieu VARCHAR(50),
+	MaGheNgoi VARCHAR(50),
+	idKhachHang VARCHAR(50),
+	TrangThai INT NOT NULL DEFAULT '0', --0: 'Chưa Thanh Toán' || 1: 'Đã Thanh Toán'
+	TongTien MONEY DEFAULT '0'
 
---	FOREIGN KEY (id) REFERENCES dbo.Ve(id)
---)
---GO
+	FOREIGN KEY (id) REFERENCES dbo.Ve(id)
+)
+GO
 
 
 --Trigger

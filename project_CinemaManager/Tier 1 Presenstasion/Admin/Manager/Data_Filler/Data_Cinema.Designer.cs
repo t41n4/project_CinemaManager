@@ -132,12 +132,11 @@
             this.panel2.Controls.Add(this.panel32);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.panel2.Location = new System.Drawing.Point(979, 0);
+            this.panel2.Location = new System.Drawing.Point(1007, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(472, 574);
+            this.panel2.Size = new System.Drawing.Size(444, 574);
             this.panel2.TabIndex = 0;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel6
             // 
@@ -147,7 +146,7 @@
             this.panel6.Location = new System.Drawing.Point(17, 127);
             this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(451, 54);
+            this.panel6.Size = new System.Drawing.Size(412, 54);
             this.panel6.TabIndex = 4;
             // 
             // cboCinemaScreenType
@@ -155,12 +154,11 @@
             this.cboCinemaScreenType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCinemaScreenType.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cboCinemaScreenType.FormattingEnabled = true;
-            this.cboCinemaScreenType.Location = new System.Drawing.Point(213, 0);
+            this.cboCinemaScreenType.Location = new System.Drawing.Point(176, 2);
             this.cboCinemaScreenType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboCinemaScreenType.Name = "cboCinemaScreenType";
             this.cboCinemaScreenType.Size = new System.Drawing.Size(214, 40);
             this.cboCinemaScreenType.TabIndex = 1;
-            this.cboCinemaScreenType.SelectedIndexChanged += new System.EventHandler(this.cboCinemaScreenType_SelectedIndexChanged);
             // 
             // lblScreenType
             // 
@@ -181,18 +179,17 @@
             this.panel15.Location = new System.Drawing.Point(17, 375);
             this.panel15.Margin = new System.Windows.Forms.Padding(4);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(451, 54);
+            this.panel15.Size = new System.Drawing.Size(412, 54);
             this.panel15.TabIndex = 5;
             // 
             // txtSeatsPerRow
             // 
             this.txtSeatsPerRow.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtSeatsPerRow.Location = new System.Drawing.Point(213, 4);
+            this.txtSeatsPerRow.Location = new System.Drawing.Point(176, 4);
             this.txtSeatsPerRow.Margin = new System.Windows.Forms.Padding(4);
             this.txtSeatsPerRow.Name = "txtSeatsPerRow";
             this.txtSeatsPerRow.Size = new System.Drawing.Size(214, 39);
             this.txtSeatsPerRow.TabIndex = 1;
-            this.txtSeatsPerRow.TextChanged += new System.EventHandler(this.txtSeatsPerRow_TextChanged);
             // 
             // lblSeatsPerRow
             // 
@@ -213,18 +210,17 @@
             this.panel12.Location = new System.Drawing.Point(17, 313);
             this.panel12.Margin = new System.Windows.Forms.Padding(4);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(451, 54);
+            this.panel12.Size = new System.Drawing.Size(412, 54);
             this.panel12.TabIndex = 6;
             // 
             // txtNumberOfRows
             // 
             this.txtNumberOfRows.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtNumberOfRows.Location = new System.Drawing.Point(213, 4);
+            this.txtNumberOfRows.Location = new System.Drawing.Point(176, 4);
             this.txtNumberOfRows.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumberOfRows.Name = "txtNumberOfRows";
             this.txtNumberOfRows.Size = new System.Drawing.Size(214, 39);
             this.txtNumberOfRows.TabIndex = 1;
-            this.txtNumberOfRows.TextChanged += new System.EventHandler(this.txtNumberOfRows_TextChanged);
             // 
             // lblNumberOfRows
             // 
@@ -245,18 +241,17 @@
             this.panel9.Location = new System.Drawing.Point(17, 251);
             this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(451, 54);
+            this.panel9.Size = new System.Drawing.Size(412, 54);
             this.panel9.TabIndex = 7;
             // 
             // txtCinemaStatus
             // 
             this.txtCinemaStatus.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtCinemaStatus.Location = new System.Drawing.Point(213, 4);
+            this.txtCinemaStatus.Location = new System.Drawing.Point(178, 4);
             this.txtCinemaStatus.Margin = new System.Windows.Forms.Padding(4);
             this.txtCinemaStatus.Name = "txtCinemaStatus";
             this.txtCinemaStatus.Size = new System.Drawing.Size(214, 39);
             this.txtCinemaStatus.TabIndex = 1;
-            this.txtCinemaStatus.TextChanged += new System.EventHandler(this.txtCinemaStatus_TextChanged);
             // 
             // lblCinemaStatus
             // 
@@ -277,18 +272,17 @@
             this.panel8.Location = new System.Drawing.Point(17, 190);
             this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(451, 54);
+            this.panel8.Size = new System.Drawing.Size(412, 54);
             this.panel8.TabIndex = 8;
             // 
             // txtCinemaSeats
             // 
             this.txtCinemaSeats.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtCinemaSeats.Location = new System.Drawing.Point(213, 4);
+            this.txtCinemaSeats.Location = new System.Drawing.Point(176, 4);
             this.txtCinemaSeats.Margin = new System.Windows.Forms.Padding(4);
             this.txtCinemaSeats.Name = "txtCinemaSeats";
             this.txtCinemaSeats.Size = new System.Drawing.Size(214, 39);
             this.txtCinemaSeats.TabIndex = 1;
-            this.txtCinemaSeats.TextChanged += new System.EventHandler(this.txtCinemaSeats_TextChanged);
             // 
             // lblCinemaSeats
             // 
@@ -309,18 +303,17 @@
             this.panel31.Location = new System.Drawing.Point(17, 65);
             this.panel31.Margin = new System.Windows.Forms.Padding(4);
             this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(451, 54);
+            this.panel31.Size = new System.Drawing.Size(412, 54);
             this.panel31.TabIndex = 9;
             // 
             // txtCinemaName
             // 
             this.txtCinemaName.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtCinemaName.Location = new System.Drawing.Point(213, 4);
+            this.txtCinemaName.Location = new System.Drawing.Point(176, 4);
             this.txtCinemaName.Margin = new System.Windows.Forms.Padding(4);
             this.txtCinemaName.Name = "txtCinemaName";
             this.txtCinemaName.Size = new System.Drawing.Size(214, 39);
             this.txtCinemaName.TabIndex = 1;
-            this.txtCinemaName.TextChanged += new System.EventHandler(this.txtCinemaName_TextChanged);
             // 
             // lblCinemaName
             // 
@@ -341,13 +334,13 @@
             this.panel32.Location = new System.Drawing.Point(17, 4);
             this.panel32.Margin = new System.Windows.Forms.Padding(4);
             this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(451, 54);
+            this.panel32.Size = new System.Drawing.Size(412, 54);
             this.panel32.TabIndex = 3;
             // 
             // txtCinemaID
             // 
             this.txtCinemaID.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtCinemaID.Location = new System.Drawing.Point(211, 4);
+            this.txtCinemaID.Location = new System.Drawing.Point(178, 4);
             this.txtCinemaID.Margin = new System.Windows.Forms.Padding(4);
             this.txtCinemaID.Name = "txtCinemaID";
             this.txtCinemaID.Size = new System.Drawing.Size(216, 39);
@@ -381,34 +374,40 @@
             // 
             this.dtgvCinema.AllowUserToAddRows = false;
             this.dtgvCinema.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtgvCinema.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvCinema.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 10F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvCinema.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgvCinema.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvCinema.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dtgvCinema.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvCinema.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvCinema.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvCinema.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvCinema.Location = new System.Drawing.Point(0, 0);
             this.dtgvCinema.Margin = new System.Windows.Forms.Padding(4);
             this.dtgvCinema.Name = "dtgvCinema";
             this.dtgvCinema.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 10F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvCinema.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgvCinema.RowHeadersWidth = 51;
             this.dtgvCinema.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvCinema.Size = new System.Drawing.Size(979, 574);
+            this.dtgvCinema.Size = new System.Drawing.Size(1007, 574);
             this.dtgvCinema.TabIndex = 1;
             // 
             // CinemaUC

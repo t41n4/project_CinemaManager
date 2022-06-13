@@ -53,9 +53,9 @@ namespace project_CinemaManager
             this.panel1.Controls.Add(this.btnLogin);
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.txtUsername);
-            this.panel1.Location = new System.Drawing.Point(110, 72);
+            this.panel1.Location = new System.Drawing.Point(86, 67);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(390, 254);
+            this.panel1.Size = new System.Drawing.Size(306, 254);
             this.panel1.TabIndex = 4;
             // 
             // label3
@@ -79,7 +79,7 @@ namespace project_CinemaManager
             // btnSignUp
             // 
             this.btnSignUp.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnSignUp.Location = new System.Drawing.Point(51, 181);
+            this.btnSignUp.Location = new System.Drawing.Point(14, 192);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(270, 41);
             this.btnSignUp.TabIndex = 3;
@@ -90,7 +90,7 @@ namespace project_CinemaManager
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnLogin.Location = new System.Drawing.Point(51, 134);
+            this.btnLogin.Location = new System.Drawing.Point(14, 145);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(270, 41);
             this.btnLogin.TabIndex = 3;
@@ -103,7 +103,7 @@ namespace project_CinemaManager
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(14, 81);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(342, 38);
+            this.txtPassword.Size = new System.Drawing.Size(270, 38);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
@@ -113,7 +113,7 @@ namespace project_CinemaManager
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(14, 20);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(342, 38);
+            this.txtUsername.Size = new System.Drawing.Size(270, 38);
             this.txtUsername.TabIndex = 1;
             // 
             // menuStrip1
@@ -125,7 +125,7 @@ namespace project_CinemaManager
             this.mnuSetting});
             this.menuStrip1.Location = new System.Drawing.Point(0, 352);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(611, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(489, 36);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -140,7 +140,7 @@ namespace project_CinemaManager
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(132, 22);
+            this.label1.Location = new System.Drawing.Point(67, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(358, 51);
             this.label1.TabIndex = 7;
@@ -151,7 +151,7 @@ namespace project_CinemaManager
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(234)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(611, 388);
+            this.ClientSize = new System.Drawing.Size(489, 388);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);

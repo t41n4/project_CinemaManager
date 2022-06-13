@@ -54,7 +54,7 @@ namespace project_CinemaManager
             // 
             this.lblCusID.AutoSize = true;
             this.lblCusID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCusID.Location = new System.Drawing.Point(20, 25);
+            this.lblCusID.Location = new System.Drawing.Point(55, 25);
             this.lblCusID.Name = "lblCusID";
             this.lblCusID.Size = new System.Drawing.Size(76, 23);
             this.lblCusID.TabIndex = 4;
@@ -64,29 +64,29 @@ namespace project_CinemaManager
             // 
             this.txtCusID.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.txtCusID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusID.Location = new System.Drawing.Point(257, 23);
+            this.txtCusID.Location = new System.Drawing.Point(220, 18);
             this.txtCusID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCusID.Name = "txtCusID";
             this.txtCusID.ReadOnly = true;
-            this.txtCusID.Size = new System.Drawing.Size(397, 30);
+            this.txtCusID.Size = new System.Drawing.Size(191, 30);
             this.txtCusID.TabIndex = 2;
             // 
             // txtCusAddress
             // 
             this.txtCusAddress.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.txtCusAddress.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusAddress.Location = new System.Drawing.Point(257, 128);
+            this.txtCusAddress.Location = new System.Drawing.Point(220, 123);
             this.txtCusAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCusAddress.Name = "txtCusAddress";
             this.txtCusAddress.ReadOnly = true;
-            this.txtCusAddress.Size = new System.Drawing.Size(397, 30);
+            this.txtCusAddress.Size = new System.Drawing.Size(191, 30);
             this.txtCusAddress.TabIndex = 2;
             // 
             // lblCusINumber
             // 
             this.lblCusINumber.AutoSize = true;
             this.lblCusINumber.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCusINumber.Location = new System.Drawing.Point(24, 199);
+            this.lblCusINumber.Location = new System.Drawing.Point(59, 199);
             this.lblCusINumber.Name = "lblCusINumber";
             this.lblCusINumber.Size = new System.Drawing.Size(65, 23);
             this.lblCusINumber.TabIndex = 4;
@@ -96,18 +96,18 @@ namespace project_CinemaManager
             // 
             this.txtCusName.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.txtCusName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusName.Location = new System.Drawing.Point(257, 57);
+            this.txtCusName.Location = new System.Drawing.Point(220, 52);
             this.txtCusName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCusName.Name = "txtCusName";
             this.txtCusName.ReadOnly = true;
-            this.txtCusName.Size = new System.Drawing.Size(397, 30);
+            this.txtCusName.Size = new System.Drawing.Size(191, 30);
             this.txtCusName.TabIndex = 2;
             // 
             // lblCusBirth
             // 
             this.lblCusBirth.AutoSize = true;
             this.lblCusBirth.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCusBirth.Location = new System.Drawing.Point(20, 94);
+            this.lblCusBirth.Location = new System.Drawing.Point(55, 94);
             this.lblCusBirth.Name = "lblCusBirth";
             this.lblCusBirth.Size = new System.Drawing.Size(120, 23);
             this.lblCusBirth.TabIndex = 4;
@@ -117,18 +117,18 @@ namespace project_CinemaManager
             // 
             this.txtCusPhone.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.txtCusPhone.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusPhone.Location = new System.Drawing.Point(257, 163);
+            this.txtCusPhone.Location = new System.Drawing.Point(220, 158);
             this.txtCusPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCusPhone.Name = "txtCusPhone";
             this.txtCusPhone.ReadOnly = true;
-            this.txtCusPhone.Size = new System.Drawing.Size(397, 30);
+            this.txtCusPhone.Size = new System.Drawing.Size(191, 30);
             this.txtCusPhone.TabIndex = 2;
             // 
             // lblCusPhone
             // 
             this.lblCusPhone.AutoSize = true;
             this.lblCusPhone.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCusPhone.Location = new System.Drawing.Point(24, 166);
+            this.lblCusPhone.Location = new System.Drawing.Point(59, 166);
             this.lblCusPhone.Name = "lblCusPhone";
             this.lblCusPhone.Size = new System.Drawing.Size(76, 23);
             this.lblCusPhone.TabIndex = 4;
@@ -138,18 +138,18 @@ namespace project_CinemaManager
             // 
             this.txtCusBirth.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.txtCusBirth.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusBirth.Location = new System.Drawing.Point(257, 94);
+            this.txtCusBirth.Location = new System.Drawing.Point(220, 89);
             this.txtCusBirth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCusBirth.Name = "txtCusBirth";
             this.txtCusBirth.ReadOnly = true;
-            this.txtCusBirth.Size = new System.Drawing.Size(397, 30);
+            this.txtCusBirth.Size = new System.Drawing.Size(191, 30);
             this.txtCusBirth.TabIndex = 2;
             // 
             // lblCusAddress
             // 
             this.lblCusAddress.AutoSize = true;
             this.lblCusAddress.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCusAddress.Location = new System.Drawing.Point(24, 130);
+            this.lblCusAddress.Location = new System.Drawing.Point(59, 130);
             this.lblCusAddress.Name = "lblCusAddress";
             this.lblCusAddress.Size = new System.Drawing.Size(98, 23);
             this.lblCusAddress.TabIndex = 4;
@@ -159,18 +159,18 @@ namespace project_CinemaManager
             // 
             this.txtCusINumber.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.txtCusINumber.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusINumber.Location = new System.Drawing.Point(257, 200);
+            this.txtCusINumber.Location = new System.Drawing.Point(220, 195);
             this.txtCusINumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCusINumber.Name = "txtCusINumber";
             this.txtCusINumber.ReadOnly = true;
-            this.txtCusINumber.Size = new System.Drawing.Size(397, 30);
+            this.txtCusINumber.Size = new System.Drawing.Size(191, 30);
             this.txtCusINumber.TabIndex = 2;
             // 
             // lblCusName
             // 
             this.lblCusName.AutoSize = true;
             this.lblCusName.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCusName.Location = new System.Drawing.Point(20, 61);
+            this.lblCusName.Location = new System.Drawing.Point(55, 61);
             this.lblCusName.Name = "lblCusName";
             this.lblCusName.Size = new System.Drawing.Size(87, 23);
             this.lblCusName.TabIndex = 4;
@@ -192,20 +192,20 @@ namespace project_CinemaManager
             this.grpCustomer.Controls.Add(this.txtCusINumber);
             this.grpCustomer.Controls.Add(this.lblCusName);
             this.grpCustomer.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpCustomer.Location = new System.Drawing.Point(12, 11);
+            this.grpCustomer.Location = new System.Drawing.Point(52, 11);
             this.grpCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpCustomer.Name = "grpCustomer";
             this.grpCustomer.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpCustomer.Size = new System.Drawing.Size(654, 237);
+            this.grpCustomer.Size = new System.Drawing.Size(444, 237);
             this.grpCustomer.TabIndex = 24;
             this.grpCustomer.TabStop = false;
             // 
             // btnDatVe
             // 
-            this.btnDatVe.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDatVe.Location = new System.Drawing.Point(9, 253);
+            this.btnDatVe.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDatVe.Location = new System.Drawing.Point(7, 253);
             this.btnDatVe.Name = "btnDatVe";
-            this.btnDatVe.Size = new System.Drawing.Size(131, 45);
+            this.btnDatVe.Size = new System.Drawing.Size(96, 45);
             this.btnDatVe.TabIndex = 25;
             this.btnDatVe.Text = "Đặt Vé";
             this.btnDatVe.UseVisualStyleBackColor = true;
@@ -213,21 +213,21 @@ namespace project_CinemaManager
             // 
             // btnConfigInfo
             // 
-            this.btnConfigInfo.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfigInfo.Location = new System.Drawing.Point(146, 254);
+            this.btnConfigInfo.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfigInfo.Location = new System.Drawing.Point(109, 253);
             this.btnConfigInfo.Name = "btnConfigInfo";
-            this.btnConfigInfo.Size = new System.Drawing.Size(177, 45);
+            this.btnConfigInfo.Size = new System.Drawing.Size(142, 45);
             this.btnConfigInfo.TabIndex = 25;
-            this.btnConfigInfo.Text = "Chỉnh Sửa";
+            this.btnConfigInfo.Text = "Chỉnh Sửa Thông Tin";
             this.btnConfigInfo.UseVisualStyleBackColor = true;
             this.btnConfigInfo.Click += new System.EventHandler(this.btnConfigInfo_Click);
             // 
             // btnRqSupport
             // 
-            this.btnRqSupport.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRqSupport.Location = new System.Drawing.Point(329, 255);
+            this.btnRqSupport.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRqSupport.Location = new System.Drawing.Point(257, 253);
             this.btnRqSupport.Name = "btnRqSupport";
-            this.btnRqSupport.Size = new System.Drawing.Size(177, 45);
+            this.btnRqSupport.Size = new System.Drawing.Size(142, 45);
             this.btnRqSupport.TabIndex = 25;
             this.btnRqSupport.Text = "Yêu Cầu Hỗ trợ";
             this.btnRqSupport.UseVisualStyleBackColor = true;
@@ -235,11 +235,11 @@ namespace project_CinemaManager
             // 
             // btnUpdatePassword
             // 
-            this.btnUpdatePassword.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdatePassword.Location = new System.Drawing.Point(512, 255);
+            this.btnUpdatePassword.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdatePassword.Location = new System.Drawing.Point(405, 252);
             this.btnUpdatePassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdatePassword.Name = "btnUpdatePassword";
-            this.btnUpdatePassword.Size = new System.Drawing.Size(154, 46);
+            this.btnUpdatePassword.Size = new System.Drawing.Size(135, 46);
             this.btnUpdatePassword.TabIndex = 26;
             this.btnUpdatePassword.Text = "Đổi Mật Khẩu";
             this.btnUpdatePassword.UseVisualStyleBackColor = true;
@@ -250,7 +250,7 @@ namespace project_CinemaManager
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(234)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(675, 304);
+            this.ClientSize = new System.Drawing.Size(554, 304);
             this.Controls.Add(this.btnUpdatePassword);
             this.Controls.Add(this.btnRqSupport);
             this.Controls.Add(this.btnConfigInfo);

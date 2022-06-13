@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgvCinema = new System.Windows.Forms.DataGridView();
             this.txtCinemaID = new System.Windows.Forms.TextBox();
             this.lblCinemaID = new System.Windows.Forms.Label();
@@ -77,29 +74,11 @@
             // 
             this.dtgvCinema.AllowUserToAddRows = false;
             this.dtgvCinema.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtgvCinema.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvCinema.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgvCinema.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvCinema.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvCinema.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvCinema.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtgvCinema.Location = new System.Drawing.Point(0, 0);
             this.dtgvCinema.Margin = new System.Windows.Forms.Padding(4);
             this.dtgvCinema.Name = "dtgvCinema";
@@ -413,11 +392,11 @@
             this.btnShowCinema.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowCinema.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowCinema.Location = new System.Drawing.Point(457, 3);
+            this.btnShowCinema.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowCinema.Location = new System.Drawing.Point(328, 4);
             this.btnShowCinema.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowCinema.Name = "btnShowCinema";
-            this.btnShowCinema.Size = new System.Drawing.Size(140, 57);
+            this.btnShowCinema.Size = new System.Drawing.Size(100, 57);
             this.btnShowCinema.TabIndex = 3;
             this.btnShowCinema.Text = "Xem";
             this.btnShowCinema.UseVisualStyleBackColor = true;
@@ -428,11 +407,11 @@
             this.btnUpdateCinema.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdateCinema.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateCinema.Location = new System.Drawing.Point(309, 4);
+            this.btnUpdateCinema.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateCinema.Location = new System.Drawing.Point(220, 4);
             this.btnUpdateCinema.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdateCinema.Name = "btnUpdateCinema";
-            this.btnUpdateCinema.Size = new System.Drawing.Size(140, 57);
+            this.btnUpdateCinema.Size = new System.Drawing.Size(100, 57);
             this.btnUpdateCinema.TabIndex = 2;
             this.btnUpdateCinema.Text = "Sửa";
             this.btnUpdateCinema.UseVisualStyleBackColor = true;
@@ -443,11 +422,11 @@
             this.btnDeleteCinema.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeleteCinema.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteCinema.Location = new System.Drawing.Point(161, 3);
+            this.btnDeleteCinema.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteCinema.Location = new System.Drawing.Point(112, 4);
             this.btnDeleteCinema.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteCinema.Name = "btnDeleteCinema";
-            this.btnDeleteCinema.Size = new System.Drawing.Size(140, 57);
+            this.btnDeleteCinema.Size = new System.Drawing.Size(100, 57);
             this.btnDeleteCinema.TabIndex = 1;
             this.btnDeleteCinema.Text = "Xóa";
             this.btnDeleteCinema.UseVisualStyleBackColor = true;
@@ -458,11 +437,11 @@
             this.btnInsertCinema.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInsertCinema.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsertCinema.Location = new System.Drawing.Point(13, 4);
+            this.btnInsertCinema.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsertCinema.Location = new System.Drawing.Point(4, 4);
             this.btnInsertCinema.Margin = new System.Windows.Forms.Padding(4);
             this.btnInsertCinema.Name = "btnInsertCinema";
-            this.btnInsertCinema.Size = new System.Drawing.Size(140, 57);
+            this.btnInsertCinema.Size = new System.Drawing.Size(100, 57);
             this.btnInsertCinema.TabIndex = 0;
             this.btnInsertCinema.Text = "Thêm";
             this.btnInsertCinema.UseVisualStyleBackColor = true;

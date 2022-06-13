@@ -96,9 +96,5 @@ namespace project_CinemaManager
             LoadScreenTypeList();
         }
 
-        private void txtScreenTypeID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

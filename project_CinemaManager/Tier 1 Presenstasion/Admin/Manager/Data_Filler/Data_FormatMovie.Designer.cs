@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnUpdateFormat = new System.Windows.Forms.Button();
             this.btnDeleteFormat = new System.Windows.Forms.Button();
@@ -113,8 +112,6 @@
             // 
             this.dtgvFormat.AllowUserToAddRows = false;
             this.dtgvFormat.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtgvFormat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvFormat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvFormat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvFormat.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -122,7 +119,7 @@
             this.dtgvFormat.Name = "dtgvFormat";
             this.dtgvFormat.ReadOnly = true;
             this.dtgvFormat.RowHeadersWidth = 51;
-            this.dtgvFormat.Size = new System.Drawing.Size(1032, 574);
+            this.dtgvFormat.Size = new System.Drawing.Size(1098, 574);
             this.dtgvFormat.TabIndex = 9;
             // 
             // panel3
@@ -138,9 +135,9 @@
             this.panel3.Controls.Add(this.txtFormat_MovieName);
             this.panel3.Controls.Add(this.txtFormatID);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(1032, 0);
+            this.panel3.Location = new System.Drawing.Point(1098, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(516, 574);
+            this.panel3.Size = new System.Drawing.Size(450, 574);
             this.panel3.TabIndex = 0;
             // 
             // cboFormat_ScreenID
@@ -148,7 +145,7 @@
             this.cboFormat_ScreenID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboFormat_ScreenID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFormat_ScreenID.FormattingEnabled = true;
-            this.cboFormat_ScreenID.Location = new System.Drawing.Point(224, 184);
+            this.cboFormat_ScreenID.Location = new System.Drawing.Point(187, 170);
             this.cboFormat_ScreenID.Name = "cboFormat_ScreenID";
             this.cboFormat_ScreenID.Size = new System.Drawing.Size(249, 31);
             this.cboFormat_ScreenID.TabIndex = 20;
@@ -158,7 +155,7 @@
             // 
             this.lblFormat_ScreenName.AutoSize = true;
             this.lblFormat_ScreenName.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFormat_ScreenName.Location = new System.Drawing.Point(12, 248);
+            this.lblFormat_ScreenName.Location = new System.Drawing.Point(12, 211);
             this.lblFormat_ScreenName.Name = "lblFormat_ScreenName";
             this.lblFormat_ScreenName.Size = new System.Drawing.Size(153, 23);
             this.lblFormat_ScreenName.TabIndex = 15;
@@ -169,7 +166,7 @@
             this.cboFormat_MovieID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboFormat_MovieID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFormat_MovieID.FormattingEnabled = true;
-            this.cboFormat_MovieID.Location = new System.Drawing.Point(224, 76);
+            this.cboFormat_MovieID.Location = new System.Drawing.Point(187, 76);
             this.cboFormat_MovieID.Name = "cboFormat_MovieID";
             this.cboFormat_MovieID.Size = new System.Drawing.Size(249, 31);
             this.cboFormat_MovieID.TabIndex = 21;
@@ -179,7 +176,7 @@
             // 
             this.lblFormat_ScreenID.AutoSize = true;
             this.lblFormat_ScreenID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFormat_ScreenID.Location = new System.Drawing.Point(12, 187);
+            this.lblFormat_ScreenID.Location = new System.Drawing.Point(12, 173);
             this.lblFormat_ScreenID.Name = "lblFormat_ScreenID";
             this.lblFormat_ScreenID.Size = new System.Drawing.Size(142, 23);
             this.lblFormat_ScreenID.TabIndex = 16;
@@ -189,7 +186,7 @@
             // 
             this.lblFormat_MovieName.AutoSize = true;
             this.lblFormat_MovieName.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFormat_MovieName.Location = new System.Drawing.Point(12, 136);
+            this.lblFormat_MovieName.Location = new System.Drawing.Point(12, 112);
             this.lblFormat_MovieName.Name = "lblFormat_MovieName";
             this.lblFormat_MovieName.Size = new System.Drawing.Size(109, 23);
             this.lblFormat_MovieName.TabIndex = 17;
@@ -208,7 +205,7 @@
             // txtFormat_ScreenName
             // 
             this.txtFormat_ScreenName.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFormat_ScreenName.Location = new System.Drawing.Point(224, 240);
+            this.txtFormat_ScreenName.Location = new System.Drawing.Point(187, 203);
             this.txtFormat_ScreenName.Name = "txtFormat_ScreenName";
             this.txtFormat_ScreenName.ReadOnly = true;
             this.txtFormat_ScreenName.Size = new System.Drawing.Size(249, 31);
@@ -227,7 +224,7 @@
             // txtFormat_MovieName
             // 
             this.txtFormat_MovieName.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFormat_MovieName.Location = new System.Drawing.Point(224, 133);
+            this.txtFormat_MovieName.Location = new System.Drawing.Point(187, 109);
             this.txtFormat_MovieName.Name = "txtFormat_MovieName";
             this.txtFormat_MovieName.ReadOnly = true;
             this.txtFormat_MovieName.Size = new System.Drawing.Size(249, 31);
@@ -236,7 +233,7 @@
             // txtFormatID
             // 
             this.txtFormatID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFormatID.Location = new System.Drawing.Point(224, 17);
+            this.txtFormatID.Location = new System.Drawing.Point(187, 17);
             this.txtFormatID.Name = "txtFormatID";
             this.txtFormatID.Size = new System.Drawing.Size(249, 31);
             this.txtFormatID.TabIndex = 14;
