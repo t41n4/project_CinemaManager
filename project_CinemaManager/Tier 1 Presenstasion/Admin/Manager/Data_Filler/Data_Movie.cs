@@ -29,11 +29,6 @@ namespace project_CinemaManager
             movieList.DataSource = MovieDB.GetMovie();
         }
 
-        private void btnShowMovie_Click(object sender, EventArgs e)
-        {
-            LoadMovieList();
-        }
-
         private void AddMovieBinding()
         {
             txtMovieID.DataBindings.Add("Text", dtgvMovie.DataSource, "Mã phim", true, DataSourceUpdateMode.Never);
@@ -53,7 +48,10 @@ namespace project_CinemaManager
             try
             {
                 List<Genre> genreList = GenreDB.GetListGenre();
-                checkedList.DataSource = genreList;
+                foreach (var item in genreList)
+                {
+                    checkedList.Items.Add(item);
+                }          
                 checkedList.DisplayMember = "Name";
             }
             catch (Exception)

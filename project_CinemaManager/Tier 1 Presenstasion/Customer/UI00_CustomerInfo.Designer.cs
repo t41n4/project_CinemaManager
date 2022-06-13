@@ -62,7 +62,7 @@ namespace project_CinemaManager
             // 
             // txtCusID
             // 
-            this.txtCusID.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtCusID.BackColor = System.Drawing.Color.Gainsboro;
             this.txtCusID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCusID.Location = new System.Drawing.Point(220, 18);
             this.txtCusID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -73,7 +73,7 @@ namespace project_CinemaManager
             // 
             // txtCusAddress
             // 
-            this.txtCusAddress.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtCusAddress.BackColor = System.Drawing.Color.Gainsboro;
             this.txtCusAddress.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCusAddress.Location = new System.Drawing.Point(220, 123);
             this.txtCusAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -94,7 +94,7 @@ namespace project_CinemaManager
             // 
             // txtCusName
             // 
-            this.txtCusName.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtCusName.BackColor = System.Drawing.Color.Gainsboro;
             this.txtCusName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCusName.Location = new System.Drawing.Point(220, 52);
             this.txtCusName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -115,7 +115,7 @@ namespace project_CinemaManager
             // 
             // txtCusPhone
             // 
-            this.txtCusPhone.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtCusPhone.BackColor = System.Drawing.Color.Gainsboro;
             this.txtCusPhone.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCusPhone.Location = new System.Drawing.Point(220, 158);
             this.txtCusPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -136,7 +136,7 @@ namespace project_CinemaManager
             // 
             // txtCusBirth
             // 
-            this.txtCusBirth.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtCusBirth.BackColor = System.Drawing.Color.Gainsboro;
             this.txtCusBirth.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCusBirth.Location = new System.Drawing.Point(220, 89);
             this.txtCusBirth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -157,7 +157,7 @@ namespace project_CinemaManager
             // 
             // txtCusINumber
             // 
-            this.txtCusINumber.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtCusINumber.BackColor = System.Drawing.Color.Gainsboro;
             this.txtCusINumber.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCusINumber.Location = new System.Drawing.Point(220, 195);
             this.txtCusINumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -192,7 +192,7 @@ namespace project_CinemaManager
             this.grpCustomer.Controls.Add(this.txtCusINumber);
             this.grpCustomer.Controls.Add(this.lblCusName);
             this.grpCustomer.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpCustomer.Location = new System.Drawing.Point(52, 11);
+            this.grpCustomer.Location = new System.Drawing.Point(82, 11);
             this.grpCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpCustomer.Name = "grpCustomer";
             this.grpCustomer.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -203,9 +203,9 @@ namespace project_CinemaManager
             // btnDatVe
             // 
             this.btnDatVe.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDatVe.Location = new System.Drawing.Point(7, 253);
+            this.btnDatVe.Location = new System.Drawing.Point(37, 253);
             this.btnDatVe.Name = "btnDatVe";
-            this.btnDatVe.Size = new System.Drawing.Size(96, 45);
+            this.btnDatVe.Size = new System.Drawing.Size(96, 59);
             this.btnDatVe.TabIndex = 25;
             this.btnDatVe.Text = "Đặt Vé";
             this.btnDatVe.UseVisualStyleBackColor = true;
@@ -214,9 +214,9 @@ namespace project_CinemaManager
             // btnConfigInfo
             // 
             this.btnConfigInfo.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfigInfo.Location = new System.Drawing.Point(109, 253);
+            this.btnConfigInfo.Location = new System.Drawing.Point(139, 253);
             this.btnConfigInfo.Name = "btnConfigInfo";
-            this.btnConfigInfo.Size = new System.Drawing.Size(142, 45);
+            this.btnConfigInfo.Size = new System.Drawing.Size(142, 59);
             this.btnConfigInfo.TabIndex = 25;
             this.btnConfigInfo.Text = "Chỉnh Sửa Thông Tin";
             this.btnConfigInfo.UseVisualStyleBackColor = true;
@@ -225,9 +225,9 @@ namespace project_CinemaManager
             // btnRqSupport
             // 
             this.btnRqSupport.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRqSupport.Location = new System.Drawing.Point(257, 253);
+            this.btnRqSupport.Location = new System.Drawing.Point(287, 253);
             this.btnRqSupport.Name = "btnRqSupport";
-            this.btnRqSupport.Size = new System.Drawing.Size(142, 45);
+            this.btnRqSupport.Size = new System.Drawing.Size(142, 59);
             this.btnRqSupport.TabIndex = 25;
             this.btnRqSupport.Text = "Yêu Cầu Hỗ trợ";
             this.btnRqSupport.UseVisualStyleBackColor = true;
@@ -236,10 +236,10 @@ namespace project_CinemaManager
             // btnUpdatePassword
             // 
             this.btnUpdatePassword.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdatePassword.Location = new System.Drawing.Point(405, 252);
+            this.btnUpdatePassword.Location = new System.Drawing.Point(435, 252);
             this.btnUpdatePassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdatePassword.Name = "btnUpdatePassword";
-            this.btnUpdatePassword.Size = new System.Drawing.Size(135, 46);
+            this.btnUpdatePassword.Size = new System.Drawing.Size(135, 60);
             this.btnUpdatePassword.TabIndex = 26;
             this.btnUpdatePassword.Text = "Đổi Mật Khẩu";
             this.btnUpdatePassword.UseVisualStyleBackColor = true;
@@ -250,7 +250,7 @@ namespace project_CinemaManager
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(234)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(554, 304);
+            this.ClientSize = new System.Drawing.Size(594, 360);
             this.Controls.Add(this.btnUpdatePassword);
             this.Controls.Add(this.btnRqSupport);
             this.Controls.Add(this.btnConfigInfo);

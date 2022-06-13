@@ -106,11 +106,11 @@ namespace project_CinemaManager
                     txtCusName.ReadOnly = true;
                     txtCusPhone.ReadOnly = true;
 
-                    txtCusAddress.BackColor = System.Drawing.Color.Gray;
-                    txtCusBirth.BackColor = System.Drawing.Color.Gray;
-                    txtCusINumber.BackColor = System.Drawing.Color.Gray;
-                    txtCusName.BackColor = System.Drawing.Color.Gray;
-                    txtCusPhone.BackColor = System.Drawing.Color.Gray;
+                    txtCusAddress.BackColor = System.Drawing.Color.Gainsboro;
+                    txtCusBirth.BackColor = System.Drawing.Color.Gainsboro;
+                    txtCusINumber.BackColor = System.Drawing.Color.Gainsboro;
+                    txtCusName.BackColor = System.Drawing.Color.Gainsboro;
+                    txtCusPhone.BackColor = System.Drawing.Color.Gainsboro;
                 }
             }
         }
