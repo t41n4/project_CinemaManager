@@ -428,15 +428,6 @@
     <PackageReference Include="EO.WebBrowser">
       <Version>22.1.42</Version>
     </PackageReference>
-    <PackageReference Include="Font.Awesome">
-      <Version>5.15.4</Version>
-    </PackageReference>
-    <PackageReference Include="FontAwesome.Sharp">
-      <Version>5.15.4</Version>
-    </PackageReference>
-    <PackageReference Include="FontAwesome.Sharp.Pro">
-      <Version>5.15.4</Version>
-    </PackageReference>
     <PackageReference Include="HtmlAgilityPack">
       <Version>1.11.43</Version>
     </PackageReference>

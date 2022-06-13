@@ -51,9 +51,17 @@ namespace project_CinemaManager
 
         private void LoadGenreIntoCheckedList(CheckedListBox checkedList)
         {
-            List<Genre> genreList = GenreDB.GetListGenre();
-            checkedList.DataSource = genreList;
-            checkedList.DisplayMember = "Name";
+            try
+            {
+                List<Genre> genreList = GenreDB.GetListGenre();
+                checkedList.DataSource = genreList;
+                checkedList.DisplayMember = "Name";
+            }
+            catch (Exception)
+            {
+
+            }
+            
         }
 
         private void txtMovieID_TextChanged(object sender, EventArgs e)
