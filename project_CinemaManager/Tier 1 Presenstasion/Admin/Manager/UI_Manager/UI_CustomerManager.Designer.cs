@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnDeleteCustomer = new System.Windows.Forms.Button();
             this.btnUpdateCustomer = new System.Windows.Forms.Button();
             this.btnAddCustomer = new System.Windows.Forms.Button();
@@ -135,7 +136,7 @@
             // txtCusAddress
             // 
             this.txtCusAddress.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusAddress.Location = new System.Drawing.Point(503, 36);
+            this.txtCusAddress.Location = new System.Drawing.Point(528, 36);
             this.txtCusAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCusAddress.Name = "txtCusAddress";
             this.txtCusAddress.Size = new System.Drawing.Size(191, 30);
@@ -173,7 +174,7 @@
             // txtCusPhone
             // 
             this.txtCusPhone.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusPhone.Location = new System.Drawing.Point(503, 71);
+            this.txtCusPhone.Location = new System.Drawing.Point(528, 71);
             this.txtCusPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCusPhone.Name = "txtCusPhone";
             this.txtCusPhone.Size = new System.Drawing.Size(191, 30);
@@ -211,7 +212,7 @@
             // txtCusINumber
             // 
             this.txtCusINumber.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusINumber.Location = new System.Drawing.Point(503, 108);
+            this.txtCusINumber.Location = new System.Drawing.Point(528, 108);
             this.txtCusINumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCusINumber.Name = "txtCusINumber";
             this.txtCusINumber.Size = new System.Drawing.Size(191, 30);
@@ -238,6 +239,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgvCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvCustomer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvCustomer.Location = new System.Drawing.Point(3, 222);
             this.dtgvCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
