@@ -91,6 +91,12 @@
     <Compile Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_Manager.Designer.cs">
       <DependentUpon>UI_Manager.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tier 1 Presenstasion\frm_Conectingdatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frm_Conectingdatabase.Designer.cs">
+      <DependentUpon>frm_Conectingdatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tier 1 Presenstasion\Customer\UI03_ChonChoNgoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_Manager.resx">
       <DependentUpon>UI_Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tier 1 Presenstasion\frm_Conectingdatabase.resx">
+      <DependentUpon>frm_Conectingdatabase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI03_ChonChoNgoi.resx">
       <DependentUpon>UI03_ChonChoNgoi.cs</DependentUpon>

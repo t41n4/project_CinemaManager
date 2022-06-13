@@ -49,7 +49,7 @@ namespace project_CinemaManager
             this.pnAdmin.Location = new System.Drawing.Point(0, 105);
             this.pnAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnAdmin.Name = "pnAdmin";
-            this.pnAdmin.Size = new System.Drawing.Size(1563, 648);
+            this.pnAdmin.Size = new System.Drawing.Size(1803, 648);
             this.pnAdmin.TabIndex = 2;
             // 
             // panel2
@@ -60,7 +60,7 @@ namespace project_CinemaManager
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1563, 753);
+            this.panel2.Size = new System.Drawing.Size(1803, 753);
             this.panel2.TabIndex = 3;
             // 
             // panel3
@@ -75,7 +75,7 @@ namespace project_CinemaManager
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1563, 105);
+            this.panel3.Size = new System.Drawing.Size(1803, 105);
             this.panel3.TabIndex = 1;
             // 
             // btnAccountUC
@@ -160,7 +160,7 @@ namespace project_CinemaManager
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(1563, 753);
+            this.ClientSize = new System.Drawing.Size(1803, 753);
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.On;

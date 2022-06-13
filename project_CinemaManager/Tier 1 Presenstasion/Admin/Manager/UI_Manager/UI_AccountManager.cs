@@ -152,5 +152,10 @@ namespace project_CinemaManager
             UI05_ChangePassword updatePassWord = new UI05_ChangePassword(txtUsername.Text);
             updatePassWord.ShowDialog();
         }
+
+        private void grpAccount_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

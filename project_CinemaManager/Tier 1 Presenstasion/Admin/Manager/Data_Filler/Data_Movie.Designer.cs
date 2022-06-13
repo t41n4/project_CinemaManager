@@ -35,9 +35,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtgvMovie = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnUpLoadPictureFilm = new System.Windows.Forms.Button();
-            this.picFilm = new System.Windows.Forms.PictureBox();
-            this.clbMovieGenre = new System.Windows.Forms.CheckedListBox();
             this.dtmMovieEnd = new System.Windows.Forms.DateTimePicker();
             this.dtmMovieStart = new System.Windows.Forms.DateTimePicker();
             this.txtMovieYear = new System.Windows.Forms.TextBox();
@@ -47,11 +44,14 @@
             this.lblMovieEndDate = new System.Windows.Forms.Label();
             this.lblMovieStartDate = new System.Windows.Forms.Label();
             this.lblMovieLength = new System.Windows.Forms.Label();
-            this.txtMovieDesc = new System.Windows.Forms.TextBox();
             this.lblMovieYear = new System.Windows.Forms.Label();
-            this.lblMovieGenre = new System.Windows.Forms.Label();
             this.lblMovieDirector = new System.Windows.Forms.Label();
             this.lblMovieProductor = new System.Windows.Forms.Label();
+            this.btnUpLoadPictureFilm = new System.Windows.Forms.Button();
+            this.picFilm = new System.Windows.Forms.PictureBox();
+            this.clbMovieGenre = new System.Windows.Forms.CheckedListBox();
+            this.txtMovieDesc = new System.Windows.Forms.TextBox();
+            this.lblMovieGenre = new System.Windows.Forms.Label();
             this.lblMovieDesc = new System.Windows.Forms.Label();
             this.txtMovieName = new System.Windows.Forms.TextBox();
             this.lblMovieName = new System.Windows.Forms.Label();
@@ -168,40 +168,6 @@
             this.panel2.Size = new System.Drawing.Size(1548, 278);
             this.panel2.TabIndex = 0;
             // 
-            // btnUpLoadPictureFilm
-            // 
-            this.btnUpLoadPictureFilm.Location = new System.Drawing.Point(966, 247);
-            this.btnUpLoadPictureFilm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnUpLoadPictureFilm.Name = "btnUpLoadPictureFilm";
-            this.btnUpLoadPictureFilm.Size = new System.Drawing.Size(127, 31);
-            this.btnUpLoadPictureFilm.TabIndex = 56;
-            this.btnUpLoadPictureFilm.Text = "Chọn hình ảnh";
-            this.btnUpLoadPictureFilm.UseVisualStyleBackColor = true;
-            this.btnUpLoadPictureFilm.Click += new System.EventHandler(this.btnUpLoadPictureFilm_Click);
-            // 
-            // picFilm
-            // 
-            this.picFilm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picFilm.Location = new System.Drawing.Point(932, 15);
-            this.picFilm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.picFilm.Name = "picFilm";
-            this.picFilm.Size = new System.Drawing.Size(226, 228);
-            this.picFilm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picFilm.TabIndex = 55;
-            this.picFilm.TabStop = false;
-            // 
-            // clbMovieGenre
-            // 
-            this.clbMovieGenre.CheckOnClick = true;
-            this.clbMovieGenre.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clbMovieGenre.FormattingEnabled = true;
-            this.clbMovieGenre.Location = new System.Drawing.Point(4, 161);
-            this.clbMovieGenre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.clbMovieGenre.MultiColumn = true;
-            this.clbMovieGenre.Name = "clbMovieGenre";
-            this.clbMovieGenre.Size = new System.Drawing.Size(544, 91);
-            this.clbMovieGenre.TabIndex = 54;
-            // 
             // dtmMovieEnd
             // 
             this.dtmMovieEnd.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -264,7 +230,7 @@
             this.lblMovieEndDate.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMovieEndDate.Location = new System.Drawing.Point(603, 135);
             this.lblMovieEndDate.Name = "lblMovieEndDate";
-            this.lblMovieEndDate.Size = new System.Drawing.Size(116, 27);
+            this.lblMovieEndDate.Size = new System.Drawing.Size(116, 28);
             this.lblMovieEndDate.TabIndex = 44;
             this.lblMovieEndDate.Text = "Ngày KT:";
             // 
@@ -274,7 +240,7 @@
             this.lblMovieStartDate.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMovieStartDate.Location = new System.Drawing.Point(603, 175);
             this.lblMovieStartDate.Name = "lblMovieStartDate";
-            this.lblMovieStartDate.Size = new System.Drawing.Size(116, 27);
+            this.lblMovieStartDate.Size = new System.Drawing.Size(116, 28);
             this.lblMovieStartDate.TabIndex = 42;
             this.lblMovieStartDate.Text = "Ngày KC:";
             // 
@@ -284,19 +250,9 @@
             this.lblMovieLength.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMovieLength.Location = new System.Drawing.Point(564, 15);
             this.lblMovieLength.Name = "lblMovieLength";
-            this.lblMovieLength.Size = new System.Drawing.Size(155, 27);
+            this.lblMovieLength.Size = new System.Drawing.Size(155, 28);
             this.lblMovieLength.TabIndex = 35;
             this.lblMovieLength.Text = "Thời lượng:";
-            // 
-            // txtMovieDesc
-            // 
-            this.txtMovieDesc.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMovieDesc.Location = new System.Drawing.Point(357, 81);
-            this.txtMovieDesc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtMovieDesc.Multiline = true;
-            this.txtMovieDesc.Name = "txtMovieDesc";
-            this.txtMovieDesc.Size = new System.Drawing.Size(201, 31);
-            this.txtMovieDesc.TabIndex = 46;
             // 
             // lblMovieYear
             // 
@@ -304,19 +260,9 @@
             this.lblMovieYear.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMovieYear.Location = new System.Drawing.Point(616, 215);
             this.lblMovieYear.Name = "lblMovieYear";
-            this.lblMovieYear.Size = new System.Drawing.Size(103, 27);
+            this.lblMovieYear.Size = new System.Drawing.Size(103, 28);
             this.lblMovieYear.TabIndex = 41;
             this.lblMovieYear.Text = "Năm SX:";
-            // 
-            // lblMovieGenre
-            // 
-            this.lblMovieGenre.AutoSize = true;
-            this.lblMovieGenre.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMovieGenre.Location = new System.Drawing.Point(210, 119);
-            this.lblMovieGenre.Name = "lblMovieGenre";
-            this.lblMovieGenre.Size = new System.Drawing.Size(129, 27);
-            this.lblMovieGenre.TabIndex = 40;
-            this.lblMovieGenre.Text = "Thể loại:";
             // 
             // lblMovieDirector
             // 
@@ -324,7 +270,7 @@
             this.lblMovieDirector.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMovieDirector.Location = new System.Drawing.Point(590, 55);
             this.lblMovieDirector.Name = "lblMovieDirector";
-            this.lblMovieDirector.Size = new System.Drawing.Size(129, 27);
+            this.lblMovieDirector.Size = new System.Drawing.Size(129, 28);
             this.lblMovieDirector.TabIndex = 39;
             this.lblMovieDirector.Text = "Đạo diễn:";
             // 
@@ -334,46 +280,100 @@
             this.lblMovieProductor.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMovieProductor.Location = new System.Drawing.Point(590, 95);
             this.lblMovieProductor.Name = "lblMovieProductor";
-            this.lblMovieProductor.Size = new System.Drawing.Size(129, 27);
+            this.lblMovieProductor.Size = new System.Drawing.Size(129, 28);
             this.lblMovieProductor.TabIndex = 38;
             this.lblMovieProductor.Text = "Sản xuất:";
+            // 
+            // btnUpLoadPictureFilm
+            // 
+            this.btnUpLoadPictureFilm.Location = new System.Drawing.Point(1050, 247);
+            this.btnUpLoadPictureFilm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpLoadPictureFilm.Name = "btnUpLoadPictureFilm";
+            this.btnUpLoadPictureFilm.Size = new System.Drawing.Size(127, 31);
+            this.btnUpLoadPictureFilm.TabIndex = 56;
+            this.btnUpLoadPictureFilm.Text = "Chọn hình ảnh";
+            this.btnUpLoadPictureFilm.UseVisualStyleBackColor = true;
+            this.btnUpLoadPictureFilm.Click += new System.EventHandler(this.btnUpLoadPictureFilm_Click);
+            // 
+            // picFilm
+            // 
+            this.picFilm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picFilm.Location = new System.Drawing.Point(932, 15);
+            this.picFilm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picFilm.Name = "picFilm";
+            this.picFilm.Size = new System.Drawing.Size(348, 228);
+            this.picFilm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFilm.TabIndex = 55;
+            this.picFilm.TabStop = false;
+            // 
+            // clbMovieGenre
+            // 
+            this.clbMovieGenre.CheckOnClick = true;
+            this.clbMovieGenre.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clbMovieGenre.FormattingEnabled = true;
+            this.clbMovieGenre.Location = new System.Drawing.Point(4, 161);
+            this.clbMovieGenre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.clbMovieGenre.MultiColumn = true;
+            this.clbMovieGenre.Name = "clbMovieGenre";
+            this.clbMovieGenre.Size = new System.Drawing.Size(544, 70);
+            this.clbMovieGenre.TabIndex = 54;
+            // 
+            // txtMovieDesc
+            // 
+            this.txtMovieDesc.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMovieDesc.Location = new System.Drawing.Point(220, 77);
+            this.txtMovieDesc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMovieDesc.Multiline = true;
+            this.txtMovieDesc.Name = "txtMovieDesc";
+            this.txtMovieDesc.Size = new System.Drawing.Size(328, 31);
+            this.txtMovieDesc.TabIndex = 46;
+            // 
+            // lblMovieGenre
+            // 
+            this.lblMovieGenre.AutoSize = true;
+            this.lblMovieGenre.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMovieGenre.Location = new System.Drawing.Point(73, 115);
+            this.lblMovieGenre.Name = "lblMovieGenre";
+            this.lblMovieGenre.Size = new System.Drawing.Size(129, 28);
+            this.lblMovieGenre.TabIndex = 40;
+            this.lblMovieGenre.Text = "Thể loại:";
             // 
             // lblMovieDesc
             // 
             this.lblMovieDesc.AutoSize = true;
             this.lblMovieDesc.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMovieDesc.Location = new System.Drawing.Point(249, 81);
+            this.lblMovieDesc.Location = new System.Drawing.Point(112, 77);
             this.lblMovieDesc.Name = "lblMovieDesc";
-            this.lblMovieDesc.Size = new System.Drawing.Size(90, 27);
+            this.lblMovieDesc.Size = new System.Drawing.Size(90, 28);
             this.lblMovieDesc.TabIndex = 37;
             this.lblMovieDesc.Text = "Mô tả:";
             // 
             // txtMovieName
             // 
             this.txtMovieName.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMovieName.Location = new System.Drawing.Point(357, 46);
+            this.txtMovieName.Location = new System.Drawing.Point(220, 42);
             this.txtMovieName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMovieName.Name = "txtMovieName";
-            this.txtMovieName.Size = new System.Drawing.Size(201, 31);
+            this.txtMovieName.Size = new System.Drawing.Size(328, 31);
             this.txtMovieName.TabIndex = 51;
             // 
             // lblMovieName
             // 
             this.lblMovieName.AutoSize = true;
             this.lblMovieName.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMovieName.Location = new System.Drawing.Point(213, 46);
+            this.lblMovieName.Location = new System.Drawing.Point(76, 42);
             this.lblMovieName.Name = "lblMovieName";
-            this.lblMovieName.Size = new System.Drawing.Size(129, 27);
+            this.lblMovieName.Size = new System.Drawing.Size(129, 28);
             this.lblMovieName.TabIndex = 36;
             this.lblMovieName.Text = "Tên phim:";
             // 
             // txtMovieID
             // 
             this.txtMovieID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMovieID.Location = new System.Drawing.Point(357, 11);
+            this.txtMovieID.Location = new System.Drawing.Point(220, 7);
             this.txtMovieID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMovieID.Name = "txtMovieID";
-            this.txtMovieID.Size = new System.Drawing.Size(201, 31);
+            this.txtMovieID.Size = new System.Drawing.Size(328, 31);
             this.txtMovieID.TabIndex = 45;
             this.txtMovieID.TextChanged += new System.EventHandler(this.txtMovieID_TextChanged);
             // 
@@ -381,9 +381,9 @@
             // 
             this.lblMovieID.AutoSize = true;
             this.lblMovieID.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMovieID.Location = new System.Drawing.Point(223, 14);
+            this.lblMovieID.Location = new System.Drawing.Point(86, 10);
             this.lblMovieID.Name = "lblMovieID";
-            this.lblMovieID.Size = new System.Drawing.Size(116, 27);
+            this.lblMovieID.Size = new System.Drawing.Size(116, 28);
             this.lblMovieID.TabIndex = 43;
             this.lblMovieID.Text = "Mã phim:";
             // 

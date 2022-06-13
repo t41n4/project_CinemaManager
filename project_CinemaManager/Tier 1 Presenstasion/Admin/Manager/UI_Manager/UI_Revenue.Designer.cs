@@ -113,7 +113,7 @@
             // 
             this.btnReportRevenue.AutoSize = true;
             this.btnReportRevenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportRevenue.Location = new System.Drawing.Point(801, 47);
+            this.btnReportRevenue.Location = new System.Drawing.Point(844, 47);
             this.btnReportRevenue.Name = "btnReportRevenue";
             this.btnReportRevenue.Size = new System.Drawing.Size(99, 34);
             this.btnReportRevenue.TabIndex = 32;
@@ -125,7 +125,7 @@
             // 
             this.btnShowRevenue.AutoSize = true;
             this.btnShowRevenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowRevenue.Location = new System.Drawing.Point(614, 47);
+            this.btnShowRevenue.Location = new System.Drawing.Point(652, 47);
             this.btnShowRevenue.Name = "btnShowRevenue";
             this.btnShowRevenue.Size = new System.Drawing.Size(109, 34);
             this.btnShowRevenue.TabIndex = 33;
@@ -152,6 +152,7 @@
             this.dtmToDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtmToDate.Size = new System.Drawing.Size(134, 28);
             this.dtmToDate.TabIndex = 29;
+            this.dtmToDate.Value = new System.DateTime(2022, 12, 31, 0, 0, 0, 0);
             // 
             // dtmFromDate
             // 
@@ -162,6 +163,7 @@
             this.dtmFromDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtmFromDate.Size = new System.Drawing.Size(134, 28);
             this.dtmFromDate.TabIndex = 30;
+            this.dtmFromDate.Value = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
             // 
             // RevenueUC
             // 

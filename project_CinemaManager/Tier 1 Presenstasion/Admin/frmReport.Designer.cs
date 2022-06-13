@@ -50,7 +50,9 @@ namespace project_CinemaManager
             this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(930, 484);
             this.Controls.Add(this.rpViewer);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmReport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmReport";
             this.Load += new System.EventHandler(this.frmReport_Load);
             this.ResumeLayout(false);
