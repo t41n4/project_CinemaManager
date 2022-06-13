@@ -125,5 +125,29 @@ namespace project_CinemaManager.Properties {
                 return ((string)(this["QLRPConnectionString_GetTicket"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("admin")]
+        public string appAccount {
+            get {
+                return ((string)(this["appAccount"]));
+            }
+            set {
+                this["appAccount"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("admin")]
+        public string appPassword {
+            get {
+                return ((string)(this["appPassword"]));
+            }
+            set {
+                this["appPassword"] = value;
+            }
+        }
     }
 }
