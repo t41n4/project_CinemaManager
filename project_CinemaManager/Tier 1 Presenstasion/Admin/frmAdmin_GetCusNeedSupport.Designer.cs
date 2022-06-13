@@ -42,13 +42,14 @@ namespace project_CinemaManager
             // 
             this.btnChooseToSupport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnChooseToSupport.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnChooseToSupport.Location = new System.Drawing.Point(9, 394);
             this.btnChooseToSupport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnChooseToSupport.Name = "btnChooseToSupport";
             this.btnChooseToSupport.Size = new System.Drawing.Size(169, 37);
             this.btnChooseToSupport.TabIndex = 7;
             this.btnChooseToSupport.Text = "Chọn hỗ trợ";
-            this.btnChooseToSupport.UseVisualStyleBackColor = true;
+            this.btnChooseToSupport.UseVisualStyleBackColor = false;
             this.btnChooseToSupport.Click += new System.EventHandler(this.btnChooseToSupport_Click);
             // 
             // lbname
@@ -96,13 +97,14 @@ namespace project_CinemaManager
             // btnDelete
             // 
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.BackColor = System.Drawing.Color.RosyBrown;
             this.btnDelete.Location = new System.Drawing.Point(182, 394);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(192, 37);
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "Xóa yêu cầu";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // frmAdmin_GetCusNeedSupport
