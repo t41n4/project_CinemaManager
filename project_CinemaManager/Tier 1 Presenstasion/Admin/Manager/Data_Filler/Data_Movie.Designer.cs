@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel47 = new System.Windows.Forms.Panel();
             this.btnUpdateMovie = new System.Windows.Forms.Button();
             this.btnDeleteMovie = new System.Windows.Forms.Button();
@@ -70,7 +71,7 @@
             this.panel47.Controls.Add(this.btnDeleteMovie);
             this.panel47.Controls.Add(this.btnAddMovie);
             this.panel47.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel47.Location = new System.Drawing.Point(0, 278);
+            this.panel47.Location = new System.Drawing.Point(0, 340);
             this.panel47.Margin = new System.Windows.Forms.Padding(4);
             this.panel47.Name = "panel47";
             this.panel47.Size = new System.Drawing.Size(1548, 64);
@@ -125,15 +126,17 @@
             // 
             this.dtgvMovie.AllowUserToAddRows = false;
             this.dtgvMovie.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtgvMovie.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvMovie.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvMovie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvMovie.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvMovie.Location = new System.Drawing.Point(0, 342);
+            this.dtgvMovie.Location = new System.Drawing.Point(0, 404);
             this.dtgvMovie.Margin = new System.Windows.Forms.Padding(4);
             this.dtgvMovie.Name = "dtgvMovie";
             this.dtgvMovie.ReadOnly = true;
             this.dtgvMovie.RowHeadersWidth = 51;
-            this.dtgvMovie.Size = new System.Drawing.Size(1548, 296);
+            this.dtgvMovie.Size = new System.Drawing.Size(1548, 234);
             this.dtgvMovie.TabIndex = 1;
             // 
             // panel2
@@ -165,63 +168,63 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1548, 278);
+            this.panel2.Size = new System.Drawing.Size(1548, 340);
             this.panel2.TabIndex = 0;
             // 
             // dtmMovieEnd
             // 
             this.dtmMovieEnd.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtmMovieEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtmMovieEnd.Location = new System.Drawing.Point(725, 15);
+            this.dtmMovieEnd.Location = new System.Drawing.Point(773, 15);
             this.dtmMovieEnd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtmMovieEnd.Name = "dtmMovieEnd";
-            this.dtmMovieEnd.Size = new System.Drawing.Size(201, 31);
+            this.dtmMovieEnd.Size = new System.Drawing.Size(244, 31);
             this.dtmMovieEnd.TabIndex = 53;
             // 
             // dtmMovieStart
             // 
             this.dtmMovieStart.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtmMovieStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtmMovieStart.Location = new System.Drawing.Point(725, 55);
+            this.dtmMovieStart.Location = new System.Drawing.Point(773, 55);
             this.dtmMovieStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtmMovieStart.Name = "dtmMovieStart";
-            this.dtmMovieStart.Size = new System.Drawing.Size(201, 31);
+            this.dtmMovieStart.Size = new System.Drawing.Size(244, 31);
             this.dtmMovieStart.TabIndex = 52;
             // 
             // txtMovieYear
             // 
             this.txtMovieYear.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMovieYear.Location = new System.Drawing.Point(725, 95);
+            this.txtMovieYear.Location = new System.Drawing.Point(773, 95);
             this.txtMovieYear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMovieYear.Name = "txtMovieYear";
-            this.txtMovieYear.Size = new System.Drawing.Size(201, 31);
+            this.txtMovieYear.Size = new System.Drawing.Size(244, 31);
             this.txtMovieYear.TabIndex = 50;
             // 
             // txtMovieDirector
             // 
             this.txtMovieDirector.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMovieDirector.Location = new System.Drawing.Point(725, 135);
+            this.txtMovieDirector.Location = new System.Drawing.Point(773, 135);
             this.txtMovieDirector.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMovieDirector.Name = "txtMovieDirector";
-            this.txtMovieDirector.Size = new System.Drawing.Size(201, 31);
+            this.txtMovieDirector.Size = new System.Drawing.Size(244, 31);
             this.txtMovieDirector.TabIndex = 49;
             // 
             // txtMovieProductor
             // 
             this.txtMovieProductor.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMovieProductor.Location = new System.Drawing.Point(725, 175);
+            this.txtMovieProductor.Location = new System.Drawing.Point(773, 175);
             this.txtMovieProductor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMovieProductor.Name = "txtMovieProductor";
-            this.txtMovieProductor.Size = new System.Drawing.Size(201, 31);
+            this.txtMovieProductor.Size = new System.Drawing.Size(244, 31);
             this.txtMovieProductor.TabIndex = 48;
             // 
             // txtMovieLength
             // 
             this.txtMovieLength.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMovieLength.Location = new System.Drawing.Point(725, 215);
+            this.txtMovieLength.Location = new System.Drawing.Point(773, 215);
             this.txtMovieLength.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMovieLength.Name = "txtMovieLength";
-            this.txtMovieLength.Size = new System.Drawing.Size(201, 31);
+            this.txtMovieLength.Size = new System.Drawing.Size(244, 31);
             this.txtMovieLength.TabIndex = 47;
             // 
             // lblMovieEndDate
@@ -286,10 +289,10 @@
             // 
             // btnUpLoadPictureFilm
             // 
-            this.btnUpLoadPictureFilm.Location = new System.Drawing.Point(1050, 247);
+            this.btnUpLoadPictureFilm.Location = new System.Drawing.Point(1220, 259);
             this.btnUpLoadPictureFilm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpLoadPictureFilm.Name = "btnUpLoadPictureFilm";
-            this.btnUpLoadPictureFilm.Size = new System.Drawing.Size(127, 31);
+            this.btnUpLoadPictureFilm.Size = new System.Drawing.Size(127, 45);
             this.btnUpLoadPictureFilm.TabIndex = 56;
             this.btnUpLoadPictureFilm.Text = "Chọn hình ảnh";
             this.btnUpLoadPictureFilm.UseVisualStyleBackColor = true;
@@ -298,7 +301,7 @@
             // picFilm
             // 
             this.picFilm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picFilm.Location = new System.Drawing.Point(932, 15);
+            this.picFilm.Location = new System.Drawing.Point(1102, 20);
             this.picFilm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picFilm.Name = "picFilm";
             this.picFilm.Size = new System.Drawing.Size(348, 228);
@@ -311,7 +314,7 @@
             this.clbMovieGenre.CheckOnClick = true;
             this.clbMovieGenre.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clbMovieGenre.FormattingEnabled = true;
-            this.clbMovieGenre.Location = new System.Drawing.Point(4, 161);
+            this.clbMovieGenre.Location = new System.Drawing.Point(4, 222);
             this.clbMovieGenre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.clbMovieGenre.MultiColumn = true;
             this.clbMovieGenre.Name = "clbMovieGenre";
@@ -321,7 +324,7 @@
             // txtMovieDesc
             // 
             this.txtMovieDesc.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMovieDesc.Location = new System.Drawing.Point(220, 77);
+            this.txtMovieDesc.Location = new System.Drawing.Point(220, 98);
             this.txtMovieDesc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMovieDesc.Multiline = true;
             this.txtMovieDesc.Name = "txtMovieDesc";
@@ -332,7 +335,7 @@
             // 
             this.lblMovieGenre.AutoSize = true;
             this.lblMovieGenre.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMovieGenre.Location = new System.Drawing.Point(73, 115);
+            this.lblMovieGenre.Location = new System.Drawing.Point(33, 142);
             this.lblMovieGenre.Name = "lblMovieGenre";
             this.lblMovieGenre.Size = new System.Drawing.Size(129, 28);
             this.lblMovieGenre.TabIndex = 40;
@@ -342,7 +345,7 @@
             // 
             this.lblMovieDesc.AutoSize = true;
             this.lblMovieDesc.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMovieDesc.Location = new System.Drawing.Point(112, 77);
+            this.lblMovieDesc.Location = new System.Drawing.Point(72, 95);
             this.lblMovieDesc.Name = "lblMovieDesc";
             this.lblMovieDesc.Size = new System.Drawing.Size(90, 28);
             this.lblMovieDesc.TabIndex = 37;
@@ -351,7 +354,7 @@
             // txtMovieName
             // 
             this.txtMovieName.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMovieName.Location = new System.Drawing.Point(220, 42);
+            this.txtMovieName.Location = new System.Drawing.Point(220, 54);
             this.txtMovieName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMovieName.Name = "txtMovieName";
             this.txtMovieName.Size = new System.Drawing.Size(328, 31);
@@ -361,7 +364,7 @@
             // 
             this.lblMovieName.AutoSize = true;
             this.lblMovieName.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMovieName.Location = new System.Drawing.Point(76, 42);
+            this.lblMovieName.Location = new System.Drawing.Point(36, 51);
             this.lblMovieName.Name = "lblMovieName";
             this.lblMovieName.Size = new System.Drawing.Size(129, 28);
             this.lblMovieName.TabIndex = 36;
@@ -381,7 +384,7 @@
             // 
             this.lblMovieID.AutoSize = true;
             this.lblMovieID.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMovieID.Location = new System.Drawing.Point(86, 10);
+            this.lblMovieID.Location = new System.Drawing.Point(46, 7);
             this.lblMovieID.Name = "lblMovieID";
             this.lblMovieID.Size = new System.Drawing.Size(116, 28);
             this.lblMovieID.TabIndex = 43;

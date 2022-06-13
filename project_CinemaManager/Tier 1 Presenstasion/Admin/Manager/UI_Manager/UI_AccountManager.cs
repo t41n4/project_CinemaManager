@@ -3,6 +3,7 @@ using DB;
 using System;
 using System.Windows.Forms;
 
+
 namespace project_CinemaManager
 {
     public partial class AccountUC : UserControl

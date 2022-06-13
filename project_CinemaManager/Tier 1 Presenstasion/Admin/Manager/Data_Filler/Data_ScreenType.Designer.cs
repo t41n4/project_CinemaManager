@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnUpdateScreenType = new System.Windows.Forms.Button();
             this.btnDeleteScreenType = new System.Windows.Forms.Button();
@@ -124,16 +125,16 @@
             this.panel21.Controls.Add(this.txtScreenTypeID);
             this.panel21.Controls.Add(this.lblScreenTypeID);
             this.panel21.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel21.Location = new System.Drawing.Point(24, 4);
+            this.panel21.Location = new System.Drawing.Point(4, 4);
             this.panel21.Margin = new System.Windows.Forms.Padding(4);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(426, 93);
+            this.panel21.Size = new System.Drawing.Size(446, 93);
             this.panel21.TabIndex = 3;
             // 
             // txtScreenTypeName
             // 
             this.txtScreenTypeName.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtScreenTypeName.Location = new System.Drawing.Point(230, 42);
+            this.txtScreenTypeName.Location = new System.Drawing.Point(247, 47);
             this.txtScreenTypeName.Margin = new System.Windows.Forms.Padding(4);
             this.txtScreenTypeName.Name = "txtScreenTypeName";
             this.txtScreenTypeName.Size = new System.Drawing.Size(192, 31);
@@ -153,11 +154,12 @@
             // txtScreenTypeID
             // 
             this.txtScreenTypeID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtScreenTypeID.Location = new System.Drawing.Point(230, 3);
+            this.txtScreenTypeID.Location = new System.Drawing.Point(249, 5);
             this.txtScreenTypeID.Margin = new System.Windows.Forms.Padding(4);
             this.txtScreenTypeID.Name = "txtScreenTypeID";
             this.txtScreenTypeID.Size = new System.Drawing.Size(192, 31);
             this.txtScreenTypeID.TabIndex = 1;
+            this.txtScreenTypeID.TextChanged += new System.EventHandler(this.txtScreenTypeID_TextChanged);
             // 
             // lblScreenTypeID
             // 
@@ -166,9 +168,9 @@
             this.lblScreenTypeID.Location = new System.Drawing.Point(4, 11);
             this.lblScreenTypeID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblScreenTypeID.Name = "lblScreenTypeID";
-            this.lblScreenTypeID.Size = new System.Drawing.Size(197, 23);
+            this.lblScreenTypeID.Size = new System.Drawing.Size(142, 23);
             this.lblScreenTypeID.TabIndex = 0;
-            this.lblScreenTypeID.Text = "Mã loại màn hình:";
+            this.lblScreenTypeID.Text = "Mã màn hình:";
             // 
             // panel3
             // 
@@ -183,6 +185,8 @@
             // 
             this.dtgvScreenType.AllowUserToAddRows = false;
             this.dtgvScreenType.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtgvScreenType.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvScreenType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvScreenType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvScreenType.Dock = System.Windows.Forms.DockStyle.Fill;

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
+
 namespace project_CinemaManager
 {
     public partial class MovieUC : UserControl
