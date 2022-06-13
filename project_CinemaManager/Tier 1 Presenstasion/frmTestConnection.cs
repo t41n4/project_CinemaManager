@@ -64,6 +64,14 @@ namespace project_CinemaManager
             btnConnect.Enabled = true;
             btnExit.Enabled = true;
         }
+
+        private void btnChangePasswordOfApp_Click(object sender, EventArgs e)
+        {
+            frm_ChangePassword frm_ChangePassword = new frm_ChangePassword();
+            this.Hide();
+            frm_ChangePassword.ShowDialog();
+            this.Show();
+        }
     }
 
 }

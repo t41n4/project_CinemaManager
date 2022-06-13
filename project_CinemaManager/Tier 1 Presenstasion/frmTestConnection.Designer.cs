@@ -42,6 +42,7 @@ namespace project_CinemaManager
             this.label5 = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.btnChangePasswordOfApp = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,7 +82,7 @@ namespace project_CinemaManager
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(484, 265);
+            this.btnExit.Location = new System.Drawing.Point(505, 266);
             this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(114, 45);
@@ -96,7 +97,7 @@ namespace project_CinemaManager
             this.btnConnect.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnect.ForeColor = System.Drawing.SystemColors.Control;
             this.btnConnect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConnect.Location = new System.Drawing.Point(235, 265);
+            this.btnConnect.Location = new System.Drawing.Point(259, 266);
             this.btnConnect.Margin = new System.Windows.Forms.Padding(2);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(230, 45);
@@ -108,7 +109,7 @@ namespace project_CinemaManager
             // txtDatabaseName
             // 
             this.txtDatabaseName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDatabaseName.Location = new System.Drawing.Point(236, 132);
+            this.txtDatabaseName.Location = new System.Drawing.Point(236, 128);
             this.txtDatabaseName.Margin = new System.Windows.Forms.Padding(2);
             this.txtDatabaseName.Name = "txtDatabaseName";
             this.txtDatabaseName.Size = new System.Drawing.Size(384, 34);
@@ -118,10 +119,10 @@ namespace project_CinemaManager
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(11, 135);
+            this.label3.Location = new System.Drawing.Point(20, 133);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(194, 28);
+            this.label3.Size = new System.Drawing.Size(194, 27);
             this.label3.TabIndex = 13;
             this.label3.Text = "Database Name:";
             // 
@@ -129,10 +130,10 @@ namespace project_CinemaManager
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 86);
+            this.label2.Location = new System.Drawing.Point(20, 90);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 28);
+            this.label2.Size = new System.Drawing.Size(168, 27);
             this.label2.TabIndex = 11;
             this.label2.Text = "Server Name:";
             // 
@@ -140,10 +141,10 @@ namespace project_CinemaManager
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(11, 176);
+            this.label4.Location = new System.Drawing.Point(20, 176);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 28);
+            this.label4.Size = new System.Drawing.Size(116, 27);
             this.label4.TabIndex = 13;
             this.label4.Text = "Username";
             // 
@@ -151,17 +152,17 @@ namespace project_CinemaManager
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(11, 218);
+            this.label5.Location = new System.Drawing.Point(20, 219);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 28);
+            this.label5.Size = new System.Drawing.Size(129, 27);
             this.label5.TabIndex = 13;
             this.label5.Text = "Password:";
             // 
             // txtUserName
             // 
             this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.Location = new System.Drawing.Point(236, 171);
+            this.txtUserName.Location = new System.Drawing.Point(236, 170);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(2);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(384, 34);
@@ -170,12 +171,24 @@ namespace project_CinemaManager
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(236, 216);
+            this.txtPassword.Location = new System.Drawing.Point(236, 212);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(384, 34);
             this.txtPassword.TabIndex = 22;
             this.txtPassword.UseSystemPasswordChar = true;
+            // 
+            // btnChangePasswordOfApp
+            // 
+            this.btnChangePasswordOfApp.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePasswordOfApp.Location = new System.Drawing.Point(25, 266);
+            this.btnChangePasswordOfApp.Margin = new System.Windows.Forms.Padding(2);
+            this.btnChangePasswordOfApp.Name = "btnChangePasswordOfApp";
+            this.btnChangePasswordOfApp.Size = new System.Drawing.Size(218, 45);
+            this.btnChangePasswordOfApp.TabIndex = 20;
+            this.btnChangePasswordOfApp.Text = "Change Password";
+            this.btnChangePasswordOfApp.UseVisualStyleBackColor = true;
+            this.btnChangePasswordOfApp.Click += new System.EventHandler(this.btnChangePasswordOfApp_Click);
             // 
             // frmTestConnection
             // 
@@ -187,6 +200,7 @@ namespace project_CinemaManager
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtServerName);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnChangePasswordOfApp);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.txtDatabaseName);
@@ -218,5 +232,6 @@ namespace project_CinemaManager
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Button btnChangePasswordOfApp;
     }
 }
