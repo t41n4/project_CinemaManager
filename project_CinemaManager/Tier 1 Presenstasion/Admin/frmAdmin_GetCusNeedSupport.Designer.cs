@@ -101,7 +101,7 @@ namespace project_CinemaManager
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(192, 37);
             this.btnDelete.TabIndex = 7;
-            this.btnDelete.Text = "Xóa";
+            this.btnDelete.Text = "Xóa yêu cầu";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
