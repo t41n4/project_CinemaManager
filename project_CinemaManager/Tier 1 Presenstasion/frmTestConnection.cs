@@ -55,7 +55,7 @@ namespace project_CinemaManager
             Properties.Settings.Default.Save();
 
             bool result = DataProvider.TestConnectionSQL(connectionSTR);
-            
+
             if (result)
                 MessageBox.Show("KẾT NỐI THÀNH CÔNG", "THÔNG BÁO");
             else
@@ -64,6 +64,7 @@ namespace project_CinemaManager
             btnConnect.Enabled = true;
             btnExit.Enabled = true;
         }
+
         private void btnChangePasswordOfApp_Click(object sender, EventArgs e)
         {
             frm_ChangePassword frm_ChangePassword = new frm_ChangePassword();
@@ -72,5 +73,4 @@ namespace project_CinemaManager
             this.Show();
         }
     }
-
 }

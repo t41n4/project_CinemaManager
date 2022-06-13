@@ -1,9 +1,5 @@
-﻿using Application;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Data;
-using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
@@ -29,7 +25,7 @@ namespace DB
                         cs.Write(clearBytes, 0, clearBytes.Length);
                         cs.Close();
                     }
-                   cypherText = Convert.ToBase64String(ms.ToArray());
+                    cypherText = Convert.ToBase64String(ms.ToArray());
                 }
             }
             return cypherText;
@@ -60,16 +56,17 @@ namespace DB
 
         public static DataTable GetMessagesTable(string username)
         {
-            return DataProvider.ExecuteQuery("EXEC USP_GetMessage @username", new object[] { username });           
+            return DataProvider.ExecuteQuery("EXEC USP_GetMessage @username", new object[] { username });
         }
 
         public static bool InsertMessage(string body, string user_from, string user_to, DateTime date_sent)
         {
             int result = DataProvider.ExecuteNonQuery
-                ("EXEC USP_InsertMessage @body  , @user_from , @user_to , @date_sent", new object[]  { body,  user_from,  user_to,  date_sent });
-          
+                ("EXEC USP_InsertMessage @body  , @user_from , @user_to , @date_sent", new object[] { body, user_from, user_to, date_sent });
+
             return result > 0;
-        }     
+        }
+
         public static DataTable GetCustomNeedSupport()
         {
             return DataProvider.ExecuteQuery("EXEC USP_GetCusNeedSupportForAdmin");

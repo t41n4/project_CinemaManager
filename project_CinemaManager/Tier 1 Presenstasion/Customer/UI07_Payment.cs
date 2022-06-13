@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using QRCoder;
 using System.Drawing.Imaging;
 using System.IO;
-using project_CinemaManager.Controllers;
 using System.Net;
 using HtmlAgilityPack;
 

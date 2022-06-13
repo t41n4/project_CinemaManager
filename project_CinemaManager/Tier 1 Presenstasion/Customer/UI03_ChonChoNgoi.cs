@@ -72,7 +72,7 @@ namespace project_CinemaManager
             Row = cinema.Row;
             Column = cinema.SeatInRow;
             this.Size = new Size(this.Size.Width + 100, this.Size.Height);
-            flpSeat.Size = new Size((SIZE + 20 + GAP) * Column, (SIZE + GAP) * Row);
+            flpSeat.Size = new Size((SIZE + 20 + GAP) * Column, (SIZE + GAP+5) * Row);
 
         }
 

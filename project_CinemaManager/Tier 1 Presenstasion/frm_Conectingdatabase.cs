@@ -1,25 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DB;
-using Application;
 
 namespace project_CinemaManager
 {
-
     public partial class frm_Conectingdatabase : Form
     {
         public frm_Conectingdatabase()
         {
             InitializeComponent();
         }
-
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -48,7 +37,7 @@ namespace project_CinemaManager
             //        frmTestConnection.ShowDialog();
             //        this.Close();
             //    }
-            //    else 
+            //    else
             //    {
             //        MessageBox.Show("Bạn Không thể truy cập bằng loại tài khoản này!!!!", "THÔNG BÁO");
             //    }
@@ -62,7 +51,6 @@ namespace project_CinemaManager
             //    MessageBox.Show("KẾT NỐI THẤT BẠI", "THÔNG BÁO");
             //}
             //btnLogin.Enabled = true;
-
         }
 
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)

@@ -44,6 +44,5 @@ namespace Application
         public float TicketPrice { get; set; }
 
         public int Status { get; set; }
-
     }
 }

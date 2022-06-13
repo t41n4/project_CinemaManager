@@ -51,14 +51,12 @@ namespace project_CinemaManager
                 foreach (var item in genreList)
                 {
                     checkedList.Items.Add(item);
-                }          
+                }
                 checkedList.DisplayMember = "Name";
             }
             catch (Exception)
             {
-
             }
-            
         }
 
         private void txtMovieID_TextChanged(object sender, EventArgs e)

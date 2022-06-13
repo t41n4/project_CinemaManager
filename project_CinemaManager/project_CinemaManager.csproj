@@ -273,10 +273,6 @@
     <Compile Include="Tier 3 DB\ScreenTypeDB.cs" />
     <Compile Include="Tier 3 DB\ShowTimesDB.cs" />
     <Compile Include="Tier 3 DB\TicketDB.cs" />
-    <Compile Include="VNPAY\PayCompare.cs" />
-    <Compile Include="VNPAY\PayLib.cs" />
-    <Compile Include="VNPAY\PaymentAction.cs" />
-    <Compile Include="VNPAY\Ultil.cs" />
     <EmbeddedResource Include="ReportTicket.rdlc" />
     <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>

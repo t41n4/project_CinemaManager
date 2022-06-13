@@ -18,6 +18,7 @@ namespace DB
             }
             return listTicket;
         }
+
         public static List<Ticket> GetListTicketsBoughtByShowTimes(string showTimesID)
         {
             List<Ticket> listTicket = new List<Ticket>();
@@ -30,42 +31,48 @@ namespace DB
             }
             return listTicket;
         }
+
         public static int CountToltalTicketByShowTime(string showTimesID)
         {
             string query = "Select count (id) from Ve where idLichChieu ='" + showTimesID + "'";
             return (int)DataProvider.ExecuteScalar(query);
         }
+
         public static int CountTheNumberOfTicketsSoldByShowTime(string showTimesID)
         {
             string query = "Select count (id) from Ve where idLichChieu ='" + showTimesID + "' and TrangThai = 1 ";
             return (int)DataProvider.ExecuteScalar(query);
         }
-        public static int BuyTicket(string ticketID, int type, float price,string idKH)
+
+        public static int BuyTicket(string ticketID, int type, float price, string idKH)
         {
             string query = "UPDATE dbo.Ve SET TrangThai = 1, LoaiVe = " + type + ", TienBanVe =" + price + ", idKhachHang = '" + idKH + "' WHERE id = '" + ticketID + "'";
-               
+
             return DataProvider.ExecuteNonQuery(query);
         }
+
         public static int BuyTicket(string ticketID, int type, string customerID, float price)
         {
             string query = "Update dbo.Ve set TrangThai = 1, LoaiVe = " + type
                 + ", idKhachHang =N'" + customerID + "', TienBanVe =" + price + " where id = '" + ticketID + "'";
             return DataProvider.ExecuteNonQuery(query);
         }
+
         public static DataTable GetInfoOfTicket(string id)
         {
             return DataProvider.ExecuteQuery("EXEC USP_GetInfoForTicket @idVe", new object[] { id });
         }
+
         public static int InsertTicketByShowTimes(string showTimesID, string seatName)
         {
             string query = "USP_InsertTicketByShowTimes @idlichChieu , @maGheNgoi";
             return DataProvider.ExecuteNonQuery(query, new object[] { showTimesID, seatName });
         }
+
         public static int DeleteTicketsByShowTimes(string showTimesID)
         {
             string query = "USP_DeleteTicketsByShowTimes @idlichChieu";
             return DataProvider.ExecuteNonQuery(query, new object[] { showTimesID });
         }
-
     }
 }

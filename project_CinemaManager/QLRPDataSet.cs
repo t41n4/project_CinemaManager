@@ -1,8 +1,6 @@
 ﻿namespace project_CinemaManager
 {
-
-
-    partial class QLRPDataSet
+    internal partial class QLRPDataSet
     {
     }
 }

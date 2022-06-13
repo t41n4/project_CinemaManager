@@ -130,8 +130,6 @@ namespace project_CinemaManager
             }
         }
 
-    
-
         private void btnSearchAccount_Click(object sender, EventArgs e)
         {
             string AccountName = txtSearchAccount.Text;
