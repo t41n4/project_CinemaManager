@@ -136,5 +136,40 @@ namespace project_CinemaManager
             DeleteCinema(cinemaID);
             LoadCinemaList();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtSeatsPerRow_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNumberOfRows_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCinemaStatus_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCinemaSeats_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboCinemaScreenType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCinemaName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
