@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UI07_Payment));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureQR = new System.Windows.Forms.PictureBox();
             this.btnConfirm = new System.Windows.Forms.Button();
@@ -110,7 +111,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(961, 815);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UI07_Payment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UI07_Payment";
             this.Load += new System.EventHandler(this.UI07_Payment_Load);
             this.panel1.ResumeLayout(false);
