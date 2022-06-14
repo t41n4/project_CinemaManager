@@ -109,14 +109,15 @@ namespace project_CinemaManager
 
         private void BtnSeat_Click(object sender, EventArgs e)
         {
-            if (listSeatSelected.Count >= 8)
-            {
-                MessageBox.Show("Bạn chỉ được mua tối đa 8 ghế!");
-                return;
-            }
+            
             Button btnSeat = sender as Button;
             if (btnSeat.BackColor == Color.White)
             {
+                if (listSeatSelected.Count >= 8)
+                {
+                    MessageBox.Show("Bạn chỉ được mua tối đa 8 ghế!");
+                    return;
+                }
                 btnSeat.BackColor = Color.Yellow;
                 Ticket ticket = btnSeat.Tag as Ticket;
                 listSeatofCinema.Find(x => x.Text == btnSeat.Text).BackColor = Color.Yellow;
