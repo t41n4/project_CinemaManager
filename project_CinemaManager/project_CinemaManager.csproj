@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>manager.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -59,6 +62,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Custom\RJToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Custom\RJToggleButton.Designer.cs">
+      <DependentUpon>RJToggleButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="QLRPDataSet.cs">
       <DependentUpon>QLRPDataSet.xsd</DependentUpon>
     </Compile>
@@ -249,6 +258,12 @@
     <Compile Include="Tier 1 Presenstasion\frm_Conectingdatabase.Designer.cs">
       <DependentUpon>frm_Conectingdatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tier 1 Presenstasion\frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tier 2 Application\Account.cs" />
     <Compile Include="Tier 2 Application\Cinema.cs" />
     <Compile Include="Tier 2 Application\Customer.cs" />
@@ -273,6 +288,9 @@
     <Compile Include="Tier 3 DB\ScreenTypeDB.cs" />
     <Compile Include="Tier 3 DB\ShowTimesDB.cs" />
     <Compile Include="Tier 3 DB\TicketDB.cs" />
+    <EmbeddedResource Include="Custom\RJToggleButton.resx">
+      <DependentUpon>RJToggleButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportTicket.rdlc" />
     <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
@@ -352,6 +370,9 @@
     <EmbeddedResource Include="Tier 1 Presenstasion\Admin\frmReport.resx">
       <DependentUpon>frmReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tier 1 Presenstasion\frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tier 1 Presenstasion\frmSignUp.resx">
       <DependentUpon>frmSignUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -404,6 +425,8 @@
       <SubType>Form</SubType>
     </Content>
     <None Include="Resource\CGV.png" />
+    <Content Include="manager.ico" />
+    <Content Include="Resource\352095_settings_icon.png" />
     <Content Include="Resource\Icon\account.ico" />
     <Content Include="Resource\Icon\chat.ico" />
     <Content Include="Resource\Icon\infor.ico" />
