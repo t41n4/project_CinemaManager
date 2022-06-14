@@ -60,5 +60,10 @@ namespace project_CinemaManager
                 btnLogin.PerformClick();
             }
         }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -13,6 +13,7 @@ namespace project_CinemaManager
 
         private void frmAdminNewDesign_Load(object sender, EventArgs e)
         {
+            btnRevenueUC.PerformClick();
         }
 
         private void btnRevenueUC_Click(object sender, EventArgs e)

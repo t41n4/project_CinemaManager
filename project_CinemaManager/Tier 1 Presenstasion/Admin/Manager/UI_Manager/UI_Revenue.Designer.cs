@@ -152,6 +152,7 @@
             this.dtmToDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtmToDate.Size = new System.Drawing.Size(134, 28);
             this.dtmToDate.TabIndex = 29;
+            this.dtmToDate.Value = new System.DateTime(2022, 12, 14, 12, 47, 0, 0);
             // 
             // dtmFromDate
             // 
@@ -162,6 +163,7 @@
             this.dtmFromDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtmFromDate.Size = new System.Drawing.Size(134, 28);
             this.dtmFromDate.TabIndex = 30;
+            this.dtmFromDate.Value = new System.DateTime(2020, 6, 14, 12, 47, 0, 0);
             // 
             // RevenueUC
             // 

@@ -45,6 +45,7 @@
             this.txtNewPass.Size = new System.Drawing.Size(368, 39);
             this.txtNewPass.TabIndex = 6;
             this.txtNewPass.UseSystemPasswordChar = true;
+            this.txtNewPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // txtOldPass
             // 
