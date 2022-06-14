@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-
 namespace project_CinemaManager
 {
     public partial class MovieUC : UserControl
@@ -30,11 +29,6 @@ namespace project_CinemaManager
             movieList.DataSource = MovieDB.GetMovie();
         }
 
-        private void btnShowMovie_Click(object sender, EventArgs e)
-        {
-            LoadMovieList();
-        }
-
         private void AddMovieBinding()
         {
             txtMovieID.DataBindings.Add("Text", dtgvMovie.DataSource, "Mã phim", true, DataSourceUpdateMode.Never);
@@ -51,9 +45,18 @@ namespace project_CinemaManager
 
         private void LoadGenreIntoCheckedList(CheckedListBox checkedList)
         {
-            List<Genre> genreList = GenreDB.GetListGenre();
-            checkedList.DataSource = genreList;
-            checkedList.DisplayMember = "Name";
+            try
+            {
+                List<Genre> genreList = GenreDB.GetListGenre();
+                foreach (var item in genreList)
+                {
+                    checkedList.Items.Add(item);
+                }
+                checkedList.DisplayMember = "Name";
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void txtMovieID_TextChanged(object sender, EventArgs e)

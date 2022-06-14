@@ -7,7 +7,6 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Text;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
 
@@ -18,6 +17,7 @@ namespace project_CinemaManager
         public Account loginAccout = UICustomerInfo.loginAccount;
 
         public static int cost = 0;
+
         public UI_ChonChoNgoi(ShowTimes showTimes, Movie movie)
         {
             InitializeComponent();
@@ -50,6 +50,7 @@ namespace project_CinemaManager
         private ShowTimes ShowTimes;
         private Movie Movie;
         private Cinema cinema;
+
         private void frmTheatre_Load()
         {
             cinema = CinemaDB.GetCinemaByID(ShowTimes.CinemaID);
@@ -66,14 +67,13 @@ namespace project_CinemaManager
             LoadSeats(listSeatonDB);
             CinemaDB.UpdateCinema(cinema.ID, cinema.Name, cinema.ScreenTypeID, cinema.Seats, SeatBought, cinema.Row, cinema.SeatInRow);
         }
-    
+
         private void LoadDataCinema()
         {
             Row = cinema.Row;
             Column = cinema.SeatInRow;
             this.Size = new Size(this.Size.Width + 100, this.Size.Height);
-            flpSeat.Size = new Size((SIZE + 20 + GAP) * Column, (SIZE + GAP) * Row);
-
+            flpSeat.Size = new Size((SIZE + 20 + GAP) * Column, (SIZE + GAP + 5) * Row);
         }
 
         private void ReLoadInfo()
@@ -87,7 +87,7 @@ namespace project_CinemaManager
         {
             SeatBought = 0;
             flpSeat.Controls.Clear();
-            listSeatofCinema = new List<Button>();      
+            listSeatofCinema = new List<Button>();
             for (int i = 0; i < listTicket.Count; i++)
             {
                 Button btnSeat = new Button() { Width = SIZE + 20, Height = SIZE };
@@ -105,7 +105,6 @@ namespace project_CinemaManager
                 btnSeat.Tag = listTicket[i];
                 listSeatofCinema.Add(btnSeat);
             }
-         
         }
 
         private void BtnSeat_Click(object sender, EventArgs e)
@@ -242,7 +241,6 @@ namespace project_CinemaManager
             ReLoadInfo();
         }
 
-
         private string Post(string url)
         {
             try
@@ -251,13 +249,12 @@ namespace project_CinemaManager
                 httpWebRequest.ContentType = "application/json";
                 httpWebRequest.Method = "POST";
 
-                string idlist = ""; 
+                string idlist = "";
                 foreach (Button btn in listSeatSelected)
                 {
                     Ticket ticket = btn.Tag as Ticket;
                     idlist += "[" + ticket.ID + "]";
                 }
-
 
                 using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
                 {
@@ -266,7 +263,7 @@ namespace project_CinemaManager
                         id = "Ticket PayMent",
                         payment = payment.ToString(),
                         detail = Movie.Name + " - " + ShowTimes.Time.ToString() + " - " + cinema.Name + " - " + idlist
-                    }) ;
+                    });
 
                     streamWriter.Write(json);
                 }
@@ -274,19 +271,15 @@ namespace project_CinemaManager
                 var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
                 using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                 {
-                    return  streamReader.ReadToEnd();
+                    return streamReader.ReadToEnd();
                 }
-
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
                 return "";
             }
-
         }
-
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
@@ -336,7 +329,6 @@ namespace project_CinemaManager
                         Bill.ShowDialog();
                         this.Show();
                     }
-                    
                 }
                 if (ret == listSeatSelected.Count)
                 {

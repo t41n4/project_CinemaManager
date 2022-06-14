@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace project_CinemaManager
@@ -36,13 +29,20 @@ namespace project_CinemaManager
                 }
                 catch (Exception)
                 {
-
                     MessageBox.Show("Đổi Mật Khẩu Thất Bại!!");
                 }
             }
             else
             {
                 MessageBox.Show("Xin Hãy Nhập Mật Khẩu!!");
+            }
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnConfirm.PerformClick();
             }
         }
     }

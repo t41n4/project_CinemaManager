@@ -3,7 +3,6 @@ using DB;
 using System;
 using System.Windows.Forms;
 
-
 namespace project_CinemaManager
 {
     public partial class AccountUC : UserControl
@@ -131,8 +130,6 @@ namespace project_CinemaManager
             }
         }
 
-    
-
         private void btnSearchAccount_Click(object sender, EventArgs e)
         {
             string AccountName = txtSearchAccount.Text;
@@ -152,11 +149,6 @@ namespace project_CinemaManager
         {
             UI05_ChangePassword updatePassWord = new UI05_ChangePassword(txtUsername.Text);
             updatePassWord.ShowDialog();
-        }
-
-        private void grpAccount_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

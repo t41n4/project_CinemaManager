@@ -43,15 +43,13 @@ namespace project_CinemaManager
             // 
             // pnAdmin
             // 
-            this.pnAdmin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnAdmin.BackColor = System.Drawing.SystemColors.Control;
-            this.pnAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnAdmin.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnAdmin.Location = new System.Drawing.Point(0, 105);
             this.pnAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnAdmin.Name = "pnAdmin";
-            this.pnAdmin.Size = new System.Drawing.Size(1924, 734);
+            this.pnAdmin.Size = new System.Drawing.Size(1563, 648);
             this.pnAdmin.TabIndex = 2;
             // 
             // panel2
@@ -62,12 +60,11 @@ namespace project_CinemaManager
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1924, 839);
+            this.panel2.Size = new System.Drawing.Size(1563, 753);
             this.panel2.TabIndex = 3;
             // 
             // panel3
             // 
-            this.panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(243)))), ((int)(((byte)(210)))));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.btnAccountUC);
@@ -78,7 +75,7 @@ namespace project_CinemaManager
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1924, 105);
+            this.panel3.Size = new System.Drawing.Size(1563, 105);
             this.panel3.TabIndex = 1;
             // 
             // btnAccountUC
@@ -91,7 +88,7 @@ namespace project_CinemaManager
             this.btnAccountUC.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccountUC.ForeColor = System.Drawing.SystemColors.Control;
             this.btnAccountUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnAccountUC.Location = new System.Drawing.Point(584, 9);
+            this.btnAccountUC.Location = new System.Drawing.Point(435, 9);
             this.btnAccountUC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAccountUC.Name = "btnAccountUC";
             this.btnAccountUC.Size = new System.Drawing.Size(281, 79);
@@ -110,7 +107,7 @@ namespace project_CinemaManager
             this.btnCustomerUC.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomerUC.ForeColor = System.Drawing.SystemColors.Control;
             this.btnCustomerUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnCustomerUC.Location = new System.Drawing.Point(1264, 9);
+            this.btnCustomerUC.Location = new System.Drawing.Point(1115, 9);
             this.btnCustomerUC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCustomerUC.Name = "btnCustomerUC";
             this.btnCustomerUC.Size = new System.Drawing.Size(281, 79);
@@ -129,7 +126,7 @@ namespace project_CinemaManager
             this.btnDataUC.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDataUC.ForeColor = System.Drawing.SystemColors.Control;
             this.btnDataUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnDataUC.Location = new System.Drawing.Point(924, 9);
+            this.btnDataUC.Location = new System.Drawing.Point(775, 9);
             this.btnDataUC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDataUC.Name = "btnDataUC";
             this.btnDataUC.Size = new System.Drawing.Size(281, 79);
@@ -148,7 +145,7 @@ namespace project_CinemaManager
             this.btnRevenueUC.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRevenueUC.ForeColor = System.Drawing.SystemColors.Control;
             this.btnRevenueUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnRevenueUC.Location = new System.Drawing.Point(246, 9);
+            this.btnRevenueUC.Location = new System.Drawing.Point(97, 9);
             this.btnRevenueUC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRevenueUC.Name = "btnRevenueUC";
             this.btnRevenueUC.Size = new System.Drawing.Size(281, 79);
@@ -162,8 +159,8 @@ namespace project_CinemaManager
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.ClientSize = new System.Drawing.Size(1924, 839);
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.ClientSize = new System.Drawing.Size(1563, 753);
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.On;
@@ -171,7 +168,6 @@ namespace project_CinemaManager
             this.Name = "frmAdminNewDesign";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAdminNewDesign";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.frmAdminNewDesign_Load);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

@@ -1,18 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using QRCoder;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using QRCoder;
-using System.Drawing.Imaging;
-using System.IO;
-using project_CinemaManager.Controllers;
-using System.Net;
-using HtmlAgilityPack;
 
 namespace project_CinemaManager
 {
@@ -25,11 +14,12 @@ namespace project_CinemaManager
         {
             InitializeComponent();
         }
+
         public UI07_Payment(string payUrl)
         {
             InitializeComponent();
             this.PayUrl = payUrl;
-        }   
+        }
 
         private Bitmap CreateQR(string content)
         {
@@ -38,14 +28,10 @@ namespace project_CinemaManager
             QRCode qRCode = new QRCode(qRCodeData);
             return qRCode.GetGraphic(5);
         }
-        
+
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-     
         }
-
-
-
 
         private void UI07_Payment_Load(object sender, EventArgs e)
         {
@@ -53,20 +39,15 @@ namespace project_CinemaManager
             {
                 webView1.Url = PayUrl;
                 webView1.Create(pictureQR.Handle);
-           
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
-            
-
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void webView1_UrlChanged(object sender, EventArgs e)
@@ -75,11 +56,10 @@ namespace project_CinemaManager
             {
                 if (webView1.Url.Contains("Successful"))
                 {
-                    
                     status = "0";
                     webView1.Close(true);
                     MessageBox.Show("Bạn Đã Thanh Toán Thành Công!!");
-                    
+
                     this.Close();
                 }
                 else if (webView1.Url.Contains("pay?"))
@@ -94,8 +74,6 @@ namespace project_CinemaManager
                     this.Close();
                 }
             }
-            
-            
         }
     }
 }

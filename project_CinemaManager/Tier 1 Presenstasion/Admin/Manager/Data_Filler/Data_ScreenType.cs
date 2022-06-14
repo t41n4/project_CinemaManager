@@ -95,10 +95,5 @@ namespace project_CinemaManager
             DeleteScreenType(screenTypeID);
             LoadScreenTypeList();
         }
-
-        private void txtScreenTypeID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

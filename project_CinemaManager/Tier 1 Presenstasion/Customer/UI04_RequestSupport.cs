@@ -68,7 +68,7 @@ namespace project_CinemaManager
                 dtgvMessage.DataSource = MessagesDB.GetMessagesTable(account.UserName);
                 int numberOfmess = dtgvMessage.Rows.Count;
                 if (numberOfmess > 1)
-                    for (int i = 0; i < numberOfmess-1; i++)
+                    for (int i = 0; i < numberOfmess - 1; i++)
                     {
                         string CryptBody = dtgvMessage.Rows[i].Cells["Nội dung"].Value.ToString();
                         dtgvMessage.Rows[i].Cells["Nội dung"].Value = MessagesDB.Decrypt(CryptBody);

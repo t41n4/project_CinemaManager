@@ -1,8 +1,6 @@
 ﻿using frmAdminUserControls;
 using System;
 using System.Windows.Forms;
-using FontAwesome.Sharp;
-
 
 namespace project_CinemaManager
 {
@@ -31,12 +29,9 @@ namespace project_CinemaManager
         {
             this.Text = "Dữ Liệu";
             pnAdmin.Controls.Clear();
-            UI_DataManagernew dataUc = new UI_DataManagernew();
+            DataUC dataUc = new DataUC();
             dataUc.Dock = DockStyle.Fill;
             pnAdmin.Controls.Add(dataUc);
-
-
-
         }
 
         private void btnCustomerUC_Click(object sender, EventArgs e)

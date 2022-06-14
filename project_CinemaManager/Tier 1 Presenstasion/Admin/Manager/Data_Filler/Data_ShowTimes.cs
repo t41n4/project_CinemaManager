@@ -2,8 +2,6 @@
 using DB;
 using System;
 using System.Windows.Forms;
-using FontAwesome.Sharp;
-
 
 namespace project_CinemaManager
 {

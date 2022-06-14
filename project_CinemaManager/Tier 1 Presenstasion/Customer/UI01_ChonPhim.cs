@@ -23,7 +23,6 @@ namespace project_CinemaManager
             HideUneseccaryColumn();
             AddMovieBinding();
             GetGenre();
-
         }
 
         private void HideUneseccaryColumn()
@@ -79,17 +78,19 @@ namespace project_CinemaManager
             txtMovieYear.DataBindings.Add("Text", dtgvMovie.DataSource, "Năm SX", true, DataSourceUpdateMode.Never);
             picFilm.DataBindings.Add("Image", dtgvMovie.DataSource, "Áp phích", true, DataSourceUpdateMode.Never);
         }
-        List<string> GenresFilm = new List<string> { };
+
+        private List<string> GenresFilm = new List<string> { };
+
         private List<string> GetGenre()
         {
             List<string> Idfilm = new List<string> { };
-            
-            for (int i = 0; i < dtgvMovie.RowCount ; i++)
+
+            for (int i = 0; i < dtgvMovie.RowCount; i++)
             {
                 DataGridViewRow selectedRow = dtgvMovie.Rows[i];
                 Idfilm.Add(Convert.ToString(selectedRow.Cells["Mã phim"].Value));
             }
-            
+
             for (int i = 0; i < Idfilm.Count; i++)
             {
                 GenresFilm.Add(Idfilm[i] + " ");
@@ -137,7 +138,7 @@ namespace project_CinemaManager
             {
                 if (GenresFilm[i].Contains(Idfilm))
                 {
-                    int startIndex = GenresFilm[i].LastIndexOf(Idfilm)+Idfilm.Length;
+                    int startIndex = GenresFilm[i].LastIndexOf(Idfilm) + Idfilm.Length;
                     txt_TheLoai.Text = GenresFilm[i].Substring(startIndex);
                 }
             }

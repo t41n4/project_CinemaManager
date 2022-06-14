@@ -54,12 +54,7 @@ namespace project_CinemaManager
             return AccountDB.Login(userName, passWord);
         }
 
-        private void mnuSetting_Click(object sender, EventArgs e)
-        {
-            frm_Conectingdatabase frm_Conectingdatabase = new frm_Conectingdatabase();
-            frm_Conectingdatabase.ShowDialog();
 
-        }
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
@@ -79,6 +74,12 @@ namespace project_CinemaManager
             this.Hide();
             frmSignUp.ShowDialog();
             this.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            frmSettings frmSettings = new frmSettings();
+            frmSettings.ShowDialog();
         }
     }
 }

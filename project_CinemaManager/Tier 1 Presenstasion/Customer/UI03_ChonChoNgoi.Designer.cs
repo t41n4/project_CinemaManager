@@ -49,19 +49,21 @@ namespace project_CinemaManager
             this.btnPayment = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.picFilm)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // picFilm
             // 
             this.picFilm.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picFilm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picFilm.Location = new System.Drawing.Point(14, 22);
+            this.picFilm.Location = new System.Drawing.Point(121, 49);
             this.picFilm.Name = "picFilm";
-            this.picFilm.Size = new System.Drawing.Size(527, 509);
+            this.picFilm.Size = new System.Drawing.Size(329, 409);
             this.picFilm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFilm.TabIndex = 13;
             this.picFilm.TabStop = false;
@@ -74,7 +76,7 @@ namespace project_CinemaManager
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(992, 64);
+            this.panel4.Size = new System.Drawing.Size(1613, 64);
             this.panel4.TabIndex = 11;
             // 
             // lblTime
@@ -99,16 +101,17 @@ namespace project_CinemaManager
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.picFilm);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(992, 0);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(582, 892);
+            this.panel2.Size = new System.Drawing.Size(508, 588);
             this.panel2.TabIndex = 10;
             // 
             // button1
@@ -116,7 +119,7 @@ namespace project_CinemaManager
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button1.BackColor = System.Drawing.Color.DarkRed;
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(297, 557);
+            this.button1.Location = new System.Drawing.Point(315, 515);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(30, 30);
             this.button1.TabIndex = 8;
@@ -128,7 +131,7 @@ namespace project_CinemaManager
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(471, 2);
+            this.label4.Location = new System.Drawing.Point(405, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 17);
             this.label4.TabIndex = 5;
@@ -139,7 +142,7 @@ namespace project_CinemaManager
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button4.BackColor = System.Drawing.Color.Linen;
             this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(130, 557);
+            this.button4.Location = new System.Drawing.Point(148, 515);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(30, 30);
             this.button4.TabIndex = 7;
@@ -150,7 +153,7 @@ namespace project_CinemaManager
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(333, 559);
+            this.label2.Location = new System.Drawing.Point(351, 517);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 23);
             this.label2.TabIndex = 6;
@@ -161,7 +164,7 @@ namespace project_CinemaManager
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(176, 559);
+            this.label3.Location = new System.Drawing.Point(194, 517);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 23);
             this.label3.TabIndex = 5;
@@ -169,17 +172,19 @@ namespace project_CinemaManager
             // 
             // flpSeat
             // 
-            this.flpSeat.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.flpSeat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flpSeat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flpSeat.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flpSeat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flpSeat.Location = new System.Drawing.Point(12, 188);
+            this.flpSeat.Location = new System.Drawing.Point(12, 133);
             this.flpSeat.Name = "flpSeat";
-            this.flpSeat.Size = new System.Drawing.Size(962, 683);
+            this.flpSeat.Size = new System.Drawing.Size(1075, 826);
             this.flpSeat.TabIndex = 8;
             // 
             // panel6
             // 
-            this.panel6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.btnCancel);
             this.panel6.Controls.Add(this.lblPayment);
@@ -187,9 +192,10 @@ namespace project_CinemaManager
             this.panel6.Controls.Add(this.lblTotal);
             this.panel6.Controls.Add(this.btnPayment);
             this.panel6.Controls.Add(this.label8);
-            this.panel6.Location = new System.Drawing.Point(1006, 629);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(0, 646);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(496, 242);
+            this.panel6.Size = new System.Drawing.Size(508, 249);
             this.panel6.TabIndex = 14;
             // 
             // btnCancel
@@ -197,10 +203,10 @@ namespace project_CinemaManager
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCancel.AutoSize = true;
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(113)))), ((int)(((byte)(97)))));
-            this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(306, 174);
+            this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(333, 176);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(146, 44);
+            this.btnCancel.Size = new System.Drawing.Size(114, 44);
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -211,9 +217,9 @@ namespace project_CinemaManager
             this.lblPayment.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPayment.BackColor = System.Drawing.Color.White;
             this.lblPayment.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblPayment.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPayment.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPayment.ForeColor = System.Drawing.Color.Red;
-            this.lblPayment.Location = new System.Drawing.Point(222, 55);
+            this.lblPayment.Location = new System.Drawing.Point(228, 58);
             this.lblPayment.Name = "lblPayment";
             this.lblPayment.Size = new System.Drawing.Size(218, 30);
             this.lblPayment.TabIndex = 10;
@@ -224,7 +230,7 @@ namespace project_CinemaManager
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(53, 105);
+            this.label9.Location = new System.Drawing.Point(59, 108);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(139, 23);
             this.label9.TabIndex = 8;
@@ -236,9 +242,9 @@ namespace project_CinemaManager
             this.lblTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTotal.BackColor = System.Drawing.Color.White;
             this.lblTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblTotal.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.Red;
-            this.lblTotal.Location = new System.Drawing.Point(222, 97);
+            this.lblTotal.Location = new System.Drawing.Point(228, 100);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(219, 32);
             this.lblTotal.TabIndex = 9;
@@ -248,10 +254,10 @@ namespace project_CinemaManager
             // 
             this.btnPayment.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(113)))), ((int)(((byte)(97)))));
-            this.btnPayment.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPayment.Location = new System.Drawing.Point(127, 174);
+            this.btnPayment.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayment.Location = new System.Drawing.Point(197, 176);
             this.btnPayment.Name = "btnPayment";
-            this.btnPayment.Size = new System.Drawing.Size(162, 44);
+            this.btnPayment.Size = new System.Drawing.Size(130, 44);
             this.btnPayment.TabIndex = 10;
             this.btnPayment.Text = "Thanh Toán";
             this.btnPayment.UseVisualStyleBackColor = false;
@@ -262,7 +268,7 @@ namespace project_CinemaManager
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(53, 62);
+            this.label8.Location = new System.Drawing.Point(59, 65);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(103, 23);
             this.label8.TabIndex = 9;
@@ -271,28 +277,36 @@ namespace project_CinemaManager
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(193)))));
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label5.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(123, 126);
+            this.label5.Location = new System.Drawing.Point(12, 67);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(725, 48);
+            this.label5.Size = new System.Drawing.Size(1075, 48);
             this.label5.TabIndex = 15;
             this.label5.Text = "Màn Chiếu";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.panel6);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(1105, 64);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(508, 895);
+            this.panel1.TabIndex = 16;
             // 
             // UI_ChonChoNgoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(234)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(1574, 892);
-            this.Controls.Add(this.flpSeat);
-            this.Controls.Add(this.panel6);
+            this.ClientSize = new System.Drawing.Size(1613, 959);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.flpSeat);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UI_ChonChoNgoi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -304,6 +318,7 @@ namespace project_CinemaManager
             this.panel2.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -328,5 +343,6 @@ namespace project_CinemaManager
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel1;
     }
 }

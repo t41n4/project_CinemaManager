@@ -16,8 +16,8 @@ namespace project_CinemaManager
         private void LoadRevenue()
         {
             LoadMovieIntoCombobox(cboSelectMovie);
-            LoadDateTimePickerRevenue();//Set "Từ ngày" & "Đến ngày ngày" về đầu tháng & cuối tháng
-            LoadRevenue(cboSelectMovie.SelectedValue.ToString(), dtmFromDate.Value, dtmToDate.Value);
+           // LoadDateTimePickerRevenue();//Set "Từ ngày" & "Đến ngày ngày" về đầu tháng & cuối tháng
+            //LoadRevenue(cboSelectMovie.SelectedValue.ToString(), dtmFromDate.Value, dtmToDate.Value);
         }
 
         private void LoadMovieIntoCombobox(ComboBox comboBox)

@@ -1,13 +1,12 @@
 ﻿using Application;
 using System;
 using System.Windows.Forms;
-using System.Threading;
 
 namespace project_CinemaManager
 {
     public partial class frmAdmin : Form
     {
-        static public Account loginAccount;
+        public static Account loginAccount;
 
         public frmAdmin(Account loginAccount)
         {
@@ -35,20 +34,16 @@ namespace project_CinemaManager
             this.Show();
         }
 
- 
         private void frmAdmin_Load(object sender, EventArgs e)
         {
         }
 
-   
         private void btnSupportCus_Click(object sender, EventArgs e)
         {
-           
-            this.Hide();         
+            this.Hide();
             frmAdmin_GetCusNeedSupport getSupport = new frmAdmin_GetCusNeedSupport();
             getSupport.ShowDialog();
             this.Show();
         }
-   
     }
 }

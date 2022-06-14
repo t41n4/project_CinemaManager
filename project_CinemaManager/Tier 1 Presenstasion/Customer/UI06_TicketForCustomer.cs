@@ -31,7 +31,6 @@ namespace project_CinemaManager
             QRCodeData qRCodeData = qRCodeGenerator.CreateQrCode(content, QRCodeGenerator.ECCLevel.Q);
             QRCode qRCode = new QRCode(qRCodeData);
             return qRCode.GetGraphic(5);
-
         }
 
         private string GetContent(DataRow row)

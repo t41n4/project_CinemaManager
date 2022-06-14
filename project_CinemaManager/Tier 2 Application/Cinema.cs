@@ -4,8 +4,8 @@ namespace Application
 {
     public class Cinema
     {
-        public Cinema(string iD, string name, string screenType, int seats,int status, int row, int seatInRow)
-            
+        public Cinema(string iD, string name, string screenType, int seats, int status, int row, int seatInRow)
+
         {
             this.ID = iD;
             this.Name = name;

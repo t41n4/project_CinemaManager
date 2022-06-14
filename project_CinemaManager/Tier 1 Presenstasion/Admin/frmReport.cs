@@ -1,5 +1,4 @@
-﻿using Microsoft.Reporting;
-using Microsoft.Reporting.WinForms;
+﻿using Microsoft.Reporting.WinForms;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -73,7 +72,6 @@ namespace project_CinemaManager
 
         private void reportViewer1_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

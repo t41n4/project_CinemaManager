@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnUpdateScreenType = new System.Windows.Forms.Button();
             this.btnDeleteScreenType = new System.Windows.Forms.Button();
@@ -36,12 +35,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
-            this.txtScreenTypeName = new System.Windows.Forms.TextBox();
-            this.lblScreenTypeName = new System.Windows.Forms.Label();
             this.txtScreenTypeID = new System.Windows.Forms.TextBox();
             this.lblScreenTypeID = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dtgvScreenType = new System.Windows.Forms.DataGridView();
+            this.txtScreenTypeName = new System.Windows.Forms.TextBox();
+            this.lblScreenTypeName = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -125,16 +124,60 @@
             this.panel21.Controls.Add(this.txtScreenTypeID);
             this.panel21.Controls.Add(this.lblScreenTypeID);
             this.panel21.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel21.Location = new System.Drawing.Point(4, 4);
+            this.panel21.Location = new System.Drawing.Point(24, 4);
             this.panel21.Margin = new System.Windows.Forms.Padding(4);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(446, 93);
+            this.panel21.Size = new System.Drawing.Size(426, 93);
             this.panel21.TabIndex = 3;
+            // 
+            // txtScreenTypeID
+            // 
+            this.txtScreenTypeID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtScreenTypeID.Location = new System.Drawing.Point(209, 6);
+            this.txtScreenTypeID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtScreenTypeID.Name = "txtScreenTypeID";
+            this.txtScreenTypeID.Size = new System.Drawing.Size(192, 31);
+            this.txtScreenTypeID.TabIndex = 1;
+            // 
+            // lblScreenTypeID
+            // 
+            this.lblScreenTypeID.AutoSize = true;
+            this.lblScreenTypeID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblScreenTypeID.Location = new System.Drawing.Point(4, 11);
+            this.lblScreenTypeID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblScreenTypeID.Name = "lblScreenTypeID";
+            this.lblScreenTypeID.Size = new System.Drawing.Size(197, 23);
+            this.lblScreenTypeID.TabIndex = 0;
+            this.lblScreenTypeID.Text = "Mã loại màn hình:";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dtgvScreenType);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(779, 565);
+            this.panel3.TabIndex = 0;
+            // 
+            // dtgvScreenType
+            // 
+            this.dtgvScreenType.AllowUserToAddRows = false;
+            this.dtgvScreenType.AllowUserToDeleteRows = false;
+            this.dtgvScreenType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvScreenType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvScreenType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvScreenType.Location = new System.Drawing.Point(0, 0);
+            this.dtgvScreenType.Margin = new System.Windows.Forms.Padding(4);
+            this.dtgvScreenType.Name = "dtgvScreenType";
+            this.dtgvScreenType.ReadOnly = true;
+            this.dtgvScreenType.RowHeadersWidth = 51;
+            this.dtgvScreenType.Size = new System.Drawing.Size(779, 565);
+            this.dtgvScreenType.TabIndex = 1;
             // 
             // txtScreenTypeName
             // 
             this.txtScreenTypeName.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtScreenTypeName.Location = new System.Drawing.Point(247, 47);
+            this.txtScreenTypeName.Location = new System.Drawing.Point(209, 45);
             this.txtScreenTypeName.Margin = new System.Windows.Forms.Padding(4);
             this.txtScreenTypeName.Name = "txtScreenTypeName";
             this.txtScreenTypeName.Size = new System.Drawing.Size(192, 31);
@@ -150,53 +193,6 @@
             this.lblScreenTypeName.Size = new System.Drawing.Size(153, 23);
             this.lblScreenTypeName.TabIndex = 2;
             this.lblScreenTypeName.Text = "Tên màn hình:";
-            // 
-            // txtScreenTypeID
-            // 
-            this.txtScreenTypeID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtScreenTypeID.Location = new System.Drawing.Point(249, 5);
-            this.txtScreenTypeID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtScreenTypeID.Name = "txtScreenTypeID";
-            this.txtScreenTypeID.Size = new System.Drawing.Size(192, 31);
-            this.txtScreenTypeID.TabIndex = 1;
-            this.txtScreenTypeID.TextChanged += new System.EventHandler(this.txtScreenTypeID_TextChanged);
-            // 
-            // lblScreenTypeID
-            // 
-            this.lblScreenTypeID.AutoSize = true;
-            this.lblScreenTypeID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblScreenTypeID.Location = new System.Drawing.Point(4, 11);
-            this.lblScreenTypeID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblScreenTypeID.Name = "lblScreenTypeID";
-            this.lblScreenTypeID.Size = new System.Drawing.Size(142, 23);
-            this.lblScreenTypeID.TabIndex = 0;
-            this.lblScreenTypeID.Text = "Mã màn hình:";
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.dtgvScreenType);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(779, 565);
-            this.panel3.TabIndex = 0;
-            // 
-            // dtgvScreenType
-            // 
-            this.dtgvScreenType.AllowUserToAddRows = false;
-            this.dtgvScreenType.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtgvScreenType.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dtgvScreenType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvScreenType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvScreenType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvScreenType.Location = new System.Drawing.Point(0, 0);
-            this.dtgvScreenType.Margin = new System.Windows.Forms.Padding(4);
-            this.dtgvScreenType.Name = "dtgvScreenType";
-            this.dtgvScreenType.ReadOnly = true;
-            this.dtgvScreenType.RowHeadersWidth = 51;
-            this.dtgvScreenType.Size = new System.Drawing.Size(779, 565);
-            this.dtgvScreenType.TabIndex = 1;
             // 
             // ScreenTypeUC
             // 

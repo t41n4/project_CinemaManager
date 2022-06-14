@@ -1,23 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Application;
+﻿using Application;
 using DB;
+using System;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace project_CinemaManager
 {
     public partial class frmAdmin_SupportCus : Form
     {
-        string customer;
-        Thread refresher;
+        private string customer;
+        private Thread refresher;
+
         public frmAdmin_SupportCus(string cus)
         {
             this.customer = cus;
@@ -45,30 +38,25 @@ namespace project_CinemaManager
                             }));
                         else
                             LoadMessage();
-
                     }
                     else
                     {
-                      
                     }
                     Thread.Sleep(Properties.Settings.Default.RefreshTimeOut);
                 }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
-
         }
 
-        Account account = frmAdmin.loginAccount;
+        private Account account = frmAdmin.loginAccount;
 
         private void ConfigColumn()
         {
             for (int i = 0; i < dtgvMessage.Columns.Count; i++)
             {
-
                 if (dtgvMessage.Columns[i].HeaderText == "Người nhận")
                 {
                     dtgvMessage.Columns[i].Visible = false;
@@ -79,9 +67,9 @@ namespace project_CinemaManager
                 }
             }
         }
+
         private void LoadMessage()
         {
-
             try
             {
                 dtgvMessage.DataSource = MessagesDB.GetMessagesTable(customer);
@@ -97,13 +85,10 @@ namespace project_CinemaManager
             {
                 MessageBox.Show(ex.Message);
             }
-
-           
         }
 
-       private void SendMessage()
+        private void SendMessage()
         {
-
             string enCryptMessage = MessagesDB.Encrypt(txtMessage.Text);
 
             if (MessagesDB.InsertMessage(enCryptMessage, account.UserName, customer, DateTime.Now))
@@ -119,21 +104,19 @@ namespace project_CinemaManager
 
         private void btnSendMessage_Click(object sender, EventArgs e)
         {
-
             SendMessage();
         }
 
         private void frmAdmin_SupportCus_Load(object sender, EventArgs e)
         {
-
         }
 
         private void frmAdmin_SupportCus_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter )
+            if (e.KeyCode == Keys.Enter)
             {
                 SendMessage();
-            }    
+            }
         }
     }
 }

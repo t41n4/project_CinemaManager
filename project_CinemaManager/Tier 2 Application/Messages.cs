@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application
 {
-    class Messages
+    internal class Messages
     {
         public int Id_msg { get; set; }
 
@@ -19,7 +15,7 @@ namespace Application
 
         public DateTime Date_sent { get; set; }
 
-        public Messages(int id_msg, string body, string user_from, string user_to,DateTime date_sent)
+        public Messages(int id_msg, string body, string user_from, string user_to, DateTime date_sent)
         {
             this.Id_msg = id_msg;
             this.Body = body;
@@ -36,7 +32,5 @@ namespace Application
             this.User_to = row["user_to"].ToString();
             this.Date_sent = (DateTime)row["date_sent"];
         }
-
-       
     }
 }

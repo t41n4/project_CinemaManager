@@ -11,9 +11,7 @@ namespace DB
         private DataProvider()
         { }
 
-       
         private static string connectionSTR = project_CinemaManager.Properties.Settings.Default.connectionSTR;
-      
 
         public static bool TestConnectionSQL(string conn)
         {

@@ -127,11 +127,11 @@ namespace project_CinemaManager
 
         private void DeleteTicketsByShowTimes(ShowTimes showTimes)
         {
-            Cinema cinema = CinemaDB.GetCinemaByName(showTimes.CinemaID);
-            int Row = cinema.Row;
-            int Column = cinema.SeatInRow;
+            //Cinema cinema = CinemaDB.GetCinemaByName(showTimes.CinemaID);
+            //int Row = cinema.Row;
+            //int Column = cinema.SeatInRow;
             int result = TicketDB.DeleteTicketsByShowTimes(showTimes.ID);
-            if (result == Row * Column)
+            if (result >= 0)
             {
                 int ret = ShowTimeDB.UpdateStatusShowTimes(showTimes.ID, 0);
                 if (ret > 0)
