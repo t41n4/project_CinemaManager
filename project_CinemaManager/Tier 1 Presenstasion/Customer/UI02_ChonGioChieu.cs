@@ -14,9 +14,6 @@ namespace project_CinemaManager
         {
             InitializeComponent();
             this.Movie = SelectedFilmFromUser;
-
-
-
         }
         private void UpdateCapacity()
         {
@@ -33,8 +30,6 @@ namespace project_CinemaManager
             LoadShowtime();
             HideUneseccaryColumn();
             UpdateCapacity();
-
-
         }
         private void HideUneseccaryColumn()
         {
