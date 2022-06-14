@@ -118,11 +118,11 @@
     <Compile Include="Tier 1 Presenstasion\Customer\UI01_ChonPhim.Designer.cs">
       <DependentUpon>UI01_ChonPhim.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\UI00_CustomerInfo.cs">
+    <Compile Include="Tier 1 Presenstasion\Customer\UI00_ThongTinKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\Customer\UI00_CustomerInfo.Designer.cs">
-      <DependentUpon>UI00_CustomerInfo.cs</DependentUpon>
+    <Compile Include="Tier 1 Presenstasion\Customer\UI00_ThongTinKhachHang.Designer.cs">
+      <DependentUpon>UI00_ThongTinKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_AccountManager.cs">
       <SubType>UserControl</SubType>
@@ -316,8 +316,8 @@
     <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI01_ChonPhim.resx">
       <DependentUpon>UI01_ChonPhim.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI00_CustomerInfo.resx">
-      <DependentUpon>UI00_CustomerInfo.cs</DependentUpon>
+    <EmbeddedResource Include="Tier 1 Presenstasion\Customer\UI00_ThongTinKhachHang.resx">
+      <DependentUpon>UI00_ThongTinKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tier 1 Presenstasion\Admin\Manager\UI_Manager\UI_AccountManager.resx">
       <DependentUpon>UI_AccountManager.cs</DependentUpon>

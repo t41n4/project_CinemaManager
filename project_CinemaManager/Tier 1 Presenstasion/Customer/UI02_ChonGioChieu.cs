@@ -57,6 +57,7 @@ namespace project_CinemaManager
 
         public void LoadShowtime()
         {
+
             dtgvShowtime.DataSource = showtimeList;
             showtimeList.DataSource = ShowTimeDB.GetShowtimeByIDMovie(GetMovie.ID);
             if (showtimeList.Count > 0)
@@ -72,10 +73,10 @@ namespace project_CinemaManager
 
         private void AddShowtimeBinding()
         {
-            txtMovieName_Showtime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Tên phim", true, DataSourceUpdateMode.Never);
-            txtShowtimeDateTime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Thời gian chiếu", true, DataSourceUpdateMode.Never);
-            txtTicketPrice_Showtime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Giá vé", true, DataSourceUpdateMode.Never);
-            txtShowRoom_Showtime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Tên Phòng chiếu", true, DataSourceUpdateMode.Never);
+            txtMovieName_Showtime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Tên phim", true, DataSourceUpdateMode.OnPropertyChanged);
+            txtShowtimeDateTime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Thời gian chiếu", true, DataSourceUpdateMode.OnPropertyChanged);
+            txtTicketPrice_Showtime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Giá vé", true, DataSourceUpdateMode.OnPropertyChanged);
+            txtShowRoom_Showtime.DataBindings.Add("Text", dtgvShowtime.DataSource, "Tên Phòng chiếu", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private int CapacityofCinema = 0;
@@ -102,11 +103,16 @@ namespace project_CinemaManager
             this.Hide();
             uI_ChonChoNgoi.ShowDialog();
             this.Show();
+            showtimeList.DataSource = ShowTimeDB.GetShowtimeByIDMovie(GetMovie.ID);
+            UpdateCapacity();
+
+
         }
 
         private void dtgvShowtime_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             UpdateCapacity();
+
         }
     }
 }
