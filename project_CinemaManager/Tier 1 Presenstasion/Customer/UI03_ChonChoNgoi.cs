@@ -347,5 +347,10 @@ namespace project_CinemaManager
             CinemaDB.UpdateCinema(cinema.ID, cinema.Name, cinema.ScreenTypeID, cinema.Seats, SeatBought, cinema.Row, cinema.SeatInRow);
             this.OnLoad(new EventArgs());
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

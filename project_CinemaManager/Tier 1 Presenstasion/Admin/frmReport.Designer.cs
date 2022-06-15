@@ -40,7 +40,7 @@ namespace project_CinemaManager
             this.rpViewer.Location = new System.Drawing.Point(0, 0);
             this.rpViewer.Name = "rpViewer";
             this.rpViewer.ServerReport.BearerToken = null;
-            this.rpViewer.Size = new System.Drawing.Size(930, 484);
+            this.rpViewer.Size = new System.Drawing.Size(1083, 701);
             this.rpViewer.TabIndex = 0;
             this.rpViewer.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
@@ -49,7 +49,7 @@ namespace project_CinemaManager
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.ClientSize = new System.Drawing.Size(930, 484);
+            this.ClientSize = new System.Drawing.Size(1083, 701);
             this.Controls.Add(this.rpViewer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmReport";

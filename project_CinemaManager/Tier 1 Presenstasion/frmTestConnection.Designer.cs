@@ -81,8 +81,9 @@ namespace project_CinemaManager
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnExit.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(493, 265);
+            this.btnExit.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnExit.Location = new System.Drawing.Point(494, 265);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(115, 46);
@@ -94,10 +95,10 @@ namespace project_CinemaManager
             // btnConnect
             // 
             this.btnConnect.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnConnect.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConnect.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnConnect.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConnect.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnConnect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConnect.Location = new System.Drawing.Point(260, 265);
+            this.btnConnect.Location = new System.Drawing.Point(256, 265);
             this.btnConnect.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(229, 46);
@@ -177,8 +178,9 @@ namespace project_CinemaManager
             // 
             // btnChangePasswordOfApp
             // 
-            this.btnChangePasswordOfApp.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangePasswordOfApp.Location = new System.Drawing.Point(37, 265);
+            this.btnChangePasswordOfApp.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePasswordOfApp.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnChangePasswordOfApp.Location = new System.Drawing.Point(33, 265);
             this.btnChangePasswordOfApp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnChangePasswordOfApp.Name = "btnChangePasswordOfApp";
             this.btnChangePasswordOfApp.Size = new System.Drawing.Size(219, 46);

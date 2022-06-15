@@ -118,5 +118,18 @@ namespace project_CinemaManager
                 SendMessage();
             }
         }
+
+        private void txtMessage_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Enter)
+            {
+                btnSendMessage.PerformClick();
+            }
+        }
+
+        private void txtMessage_MouseClick(object sender, MouseEventArgs e)
+        {
+            btnSendMessage.Text = "";
+        }
     }
 }

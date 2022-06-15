@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnUpdateFormat = new System.Windows.Forms.Button();
             this.btnDeleteFormat = new System.Windows.Forms.Button();
@@ -64,11 +66,11 @@
             // 
             // btnUpdateFormat
             // 
-            this.btnUpdateFormat.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateFormat.Location = new System.Drawing.Point(220, 4);
+            this.btnUpdateFormat.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateFormat.Location = new System.Drawing.Point(395, 4);
             this.btnUpdateFormat.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdateFormat.Name = "btnUpdateFormat";
-            this.btnUpdateFormat.Size = new System.Drawing.Size(100, 57);
+            this.btnUpdateFormat.Size = new System.Drawing.Size(150, 57);
             this.btnUpdateFormat.TabIndex = 10;
             this.btnUpdateFormat.Text = "Sửa";
             this.btnUpdateFormat.UseVisualStyleBackColor = true;
@@ -76,11 +78,11 @@
             // 
             // btnDeleteFormat
             // 
-            this.btnDeleteFormat.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteFormat.Location = new System.Drawing.Point(112, 4);
+            this.btnDeleteFormat.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteFormat.Location = new System.Drawing.Point(218, 4);
             this.btnDeleteFormat.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteFormat.Name = "btnDeleteFormat";
-            this.btnDeleteFormat.Size = new System.Drawing.Size(100, 57);
+            this.btnDeleteFormat.Size = new System.Drawing.Size(150, 57);
             this.btnDeleteFormat.TabIndex = 9;
             this.btnDeleteFormat.Text = "Xóa";
             this.btnDeleteFormat.UseVisualStyleBackColor = true;
@@ -88,11 +90,11 @@
             // 
             // btnInsertFormat
             // 
-            this.btnInsertFormat.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsertFormat.Location = new System.Drawing.Point(4, 4);
+            this.btnInsertFormat.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsertFormat.Location = new System.Drawing.Point(41, 4);
             this.btnInsertFormat.Margin = new System.Windows.Forms.Padding(4);
             this.btnInsertFormat.Name = "btnInsertFormat";
-            this.btnInsertFormat.Size = new System.Drawing.Size(100, 57);
+            this.btnInsertFormat.Size = new System.Drawing.Size(150, 57);
             this.btnInsertFormat.TabIndex = 8;
             this.btnInsertFormat.Text = "Thêm";
             this.btnInsertFormat.UseVisualStyleBackColor = true;
@@ -113,13 +115,29 @@
             this.dtgvFormat.AllowUserToAddRows = false;
             this.dtgvFormat.AllowUserToDeleteRows = false;
             this.dtgvFormat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvFormat.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvFormat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvFormat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvFormat.Location = new System.Drawing.Point(0, 0);
             this.dtgvFormat.Name = "dtgvFormat";
             this.dtgvFormat.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvFormat.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvFormat.RowHeadersWidth = 51;
-            this.dtgvFormat.Size = new System.Drawing.Size(1098, 574);
+            this.dtgvFormat.Size = new System.Drawing.Size(1028, 574);
             this.dtgvFormat.TabIndex = 9;
             // 
             // panel3
@@ -135,107 +153,108 @@
             this.panel3.Controls.Add(this.txtFormat_MovieName);
             this.panel3.Controls.Add(this.txtFormatID);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(1098, 0);
+            this.panel3.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel3.Location = new System.Drawing.Point(1028, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(450, 574);
+            this.panel3.Size = new System.Drawing.Size(520, 574);
             this.panel3.TabIndex = 0;
             // 
             // cboFormat_ScreenID
             // 
             this.cboFormat_ScreenID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboFormat_ScreenID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboFormat_ScreenID.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
             this.cboFormat_ScreenID.FormattingEnabled = true;
-            this.cboFormat_ScreenID.Location = new System.Drawing.Point(187, 170);
+            this.cboFormat_ScreenID.Location = new System.Drawing.Point(218, 218);
             this.cboFormat_ScreenID.Name = "cboFormat_ScreenID";
-            this.cboFormat_ScreenID.Size = new System.Drawing.Size(249, 31);
+            this.cboFormat_ScreenID.Size = new System.Drawing.Size(249, 35);
             this.cboFormat_ScreenID.TabIndex = 20;
             this.cboFormat_ScreenID.SelectedIndexChanged += new System.EventHandler(this.cboFormat_ScreenID_SelectedValueChanged);
             // 
             // lblFormat_ScreenName
             // 
             this.lblFormat_ScreenName.AutoSize = true;
-            this.lblFormat_ScreenName.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFormat_ScreenName.Location = new System.Drawing.Point(12, 211);
+            this.lblFormat_ScreenName.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFormat_ScreenName.Location = new System.Drawing.Point(12, 286);
             this.lblFormat_ScreenName.Name = "lblFormat_ScreenName";
-            this.lblFormat_ScreenName.Size = new System.Drawing.Size(153, 23);
+            this.lblFormat_ScreenName.Size = new System.Drawing.Size(181, 28);
             this.lblFormat_ScreenName.TabIndex = 15;
             this.lblFormat_ScreenName.Text = "Tên màn hình:";
             // 
             // cboFormat_MovieID
             // 
             this.cboFormat_MovieID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboFormat_MovieID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboFormat_MovieID.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
             this.cboFormat_MovieID.FormattingEnabled = true;
-            this.cboFormat_MovieID.Location = new System.Drawing.Point(187, 76);
+            this.cboFormat_MovieID.Location = new System.Drawing.Point(218, 89);
             this.cboFormat_MovieID.Name = "cboFormat_MovieID";
-            this.cboFormat_MovieID.Size = new System.Drawing.Size(249, 31);
+            this.cboFormat_MovieID.Size = new System.Drawing.Size(249, 35);
             this.cboFormat_MovieID.TabIndex = 21;
             this.cboFormat_MovieID.SelectedIndexChanged += new System.EventHandler(this.cboFormat_MovieID_SelectedValueChanged);
             // 
             // lblFormat_ScreenID
             // 
             this.lblFormat_ScreenID.AutoSize = true;
-            this.lblFormat_ScreenID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFormat_ScreenID.Location = new System.Drawing.Point(12, 173);
+            this.lblFormat_ScreenID.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFormat_ScreenID.Location = new System.Drawing.Point(12, 219);
             this.lblFormat_ScreenID.Name = "lblFormat_ScreenID";
-            this.lblFormat_ScreenID.Size = new System.Drawing.Size(142, 23);
+            this.lblFormat_ScreenID.Size = new System.Drawing.Size(168, 28);
             this.lblFormat_ScreenID.TabIndex = 16;
             this.lblFormat_ScreenID.Text = "Mã màn hình:";
             // 
             // lblFormat_MovieName
             // 
             this.lblFormat_MovieName.AutoSize = true;
-            this.lblFormat_MovieName.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFormat_MovieName.Location = new System.Drawing.Point(12, 112);
+            this.lblFormat_MovieName.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFormat_MovieName.Location = new System.Drawing.Point(12, 155);
             this.lblFormat_MovieName.Name = "lblFormat_MovieName";
-            this.lblFormat_MovieName.Size = new System.Drawing.Size(109, 23);
+            this.lblFormat_MovieName.Size = new System.Drawing.Size(129, 28);
             this.lblFormat_MovieName.TabIndex = 17;
             this.lblFormat_MovieName.Text = "Tên phim:";
             // 
             // lblFormat_MovieID
             // 
             this.lblFormat_MovieID.AutoSize = true;
-            this.lblFormat_MovieID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFormat_MovieID.Location = new System.Drawing.Point(12, 79);
+            this.lblFormat_MovieID.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFormat_MovieID.Location = new System.Drawing.Point(14, 89);
             this.lblFormat_MovieID.Name = "lblFormat_MovieID";
-            this.lblFormat_MovieID.Size = new System.Drawing.Size(98, 23);
+            this.lblFormat_MovieID.Size = new System.Drawing.Size(116, 28);
             this.lblFormat_MovieID.TabIndex = 18;
             this.lblFormat_MovieID.Text = "Mã phim:";
             // 
             // txtFormat_ScreenName
             // 
-            this.txtFormat_ScreenName.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFormat_ScreenName.Location = new System.Drawing.Point(187, 203);
+            this.txtFormat_ScreenName.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
+            this.txtFormat_ScreenName.Location = new System.Drawing.Point(218, 283);
             this.txtFormat_ScreenName.Name = "txtFormat_ScreenName";
             this.txtFormat_ScreenName.ReadOnly = true;
-            this.txtFormat_ScreenName.Size = new System.Drawing.Size(249, 31);
+            this.txtFormat_ScreenName.Size = new System.Drawing.Size(249, 34);
             this.txtFormat_ScreenName.TabIndex = 12;
             // 
             // lblFormatID
             // 
             this.lblFormatID.AutoSize = true;
-            this.lblFormatID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFormatID.Location = new System.Drawing.Point(12, 17);
+            this.lblFormatID.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFormatID.Location = new System.Drawing.Point(12, 20);
             this.lblFormatID.Name = "lblFormatID";
-            this.lblFormatID.Size = new System.Drawing.Size(153, 23);
+            this.lblFormatID.Size = new System.Drawing.Size(181, 28);
             this.lblFormatID.TabIndex = 19;
             this.lblFormatID.Text = "Mã định dạng:";
             // 
             // txtFormat_MovieName
             // 
-            this.txtFormat_MovieName.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFormat_MovieName.Location = new System.Drawing.Point(187, 109);
+            this.txtFormat_MovieName.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
+            this.txtFormat_MovieName.Location = new System.Drawing.Point(218, 152);
             this.txtFormat_MovieName.Name = "txtFormat_MovieName";
             this.txtFormat_MovieName.ReadOnly = true;
-            this.txtFormat_MovieName.Size = new System.Drawing.Size(249, 31);
+            this.txtFormat_MovieName.Size = new System.Drawing.Size(249, 34);
             this.txtFormat_MovieName.TabIndex = 13;
             // 
             // txtFormatID
             // 
-            this.txtFormatID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFormatID.Location = new System.Drawing.Point(187, 17);
+            this.txtFormatID.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
+            this.txtFormatID.Location = new System.Drawing.Point(218, 17);
             this.txtFormatID.Name = "txtFormatID";
-            this.txtFormatID.Size = new System.Drawing.Size(249, 31);
+            this.txtFormatID.Size = new System.Drawing.Size(249, 34);
             this.txtFormatID.TabIndex = 14;
             this.txtFormatID.TextChanged += new System.EventHandler(this.txtFormatID_TextChanged);
             // 

@@ -141,7 +141,7 @@ namespace project_CinemaManager
             if (e.KeyCode == Keys.Enter)
             {
                 btnSearchAccount.PerformClick();
-                e.SuppressKeyPress = true;//Tắt tiếng *ting của windows
+                e.SuppressKeyPress = true;
             }
         }
 

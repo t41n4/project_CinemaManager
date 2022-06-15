@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel33 = new System.Windows.Forms.Panel();
             this.btnUpdateCinema = new System.Windows.Forms.Button();
             this.btnDeleteCinema = new System.Windows.Forms.Button();
@@ -87,11 +84,11 @@
             // 
             // btnUpdateCinema
             // 
-            this.btnUpdateCinema.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnUpdateCinema.Location = new System.Drawing.Point(220, 4);
+            this.btnUpdateCinema.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnUpdateCinema.Location = new System.Drawing.Point(344, 4);
             this.btnUpdateCinema.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdateCinema.Name = "btnUpdateCinema";
-            this.btnUpdateCinema.Size = new System.Drawing.Size(100, 57);
+            this.btnUpdateCinema.Size = new System.Drawing.Size(145, 57);
             this.btnUpdateCinema.TabIndex = 2;
             this.btnUpdateCinema.Text = "Sửa";
             this.btnUpdateCinema.UseVisualStyleBackColor = true;
@@ -99,11 +96,11 @@
             // 
             // btnDeleteCinema
             // 
-            this.btnDeleteCinema.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDeleteCinema.Location = new System.Drawing.Point(112, 4);
+            this.btnDeleteCinema.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnDeleteCinema.Location = new System.Drawing.Point(173, 4);
             this.btnDeleteCinema.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteCinema.Name = "btnDeleteCinema";
-            this.btnDeleteCinema.Size = new System.Drawing.Size(100, 57);
+            this.btnDeleteCinema.Size = new System.Drawing.Size(145, 57);
             this.btnDeleteCinema.TabIndex = 1;
             this.btnDeleteCinema.Text = "Xóa";
             this.btnDeleteCinema.UseVisualStyleBackColor = true;
@@ -111,11 +108,11 @@
             // 
             // btnInsertCinema
             // 
-            this.btnInsertCinema.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnInsertCinema.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnInsertCinema.Location = new System.Drawing.Point(4, 4);
             this.btnInsertCinema.Margin = new System.Windows.Forms.Padding(4);
             this.btnInsertCinema.Name = "btnInsertCinema";
-            this.btnInsertCinema.Size = new System.Drawing.Size(100, 57);
+            this.btnInsertCinema.Size = new System.Drawing.Size(145, 57);
             this.btnInsertCinema.TabIndex = 0;
             this.btnInsertCinema.Text = "Thêm";
             this.btnInsertCinema.UseVisualStyleBackColor = true;
@@ -131,11 +128,11 @@
             this.panel2.Controls.Add(this.panel31);
             this.panel2.Controls.Add(this.panel32);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.panel2.Location = new System.Drawing.Point(1007, 0);
+            this.panel2.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.panel2.Location = new System.Drawing.Point(975, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(444, 574);
+            this.panel2.Size = new System.Drawing.Size(476, 574);
             this.panel2.TabIndex = 0;
             // 
             // panel6
@@ -143,31 +140,31 @@
             this.panel6.Controls.Add(this.cboCinemaScreenType);
             this.panel6.Controls.Add(this.lblScreenType);
             this.panel6.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.panel6.Location = new System.Drawing.Point(17, 127);
+            this.panel6.Location = new System.Drawing.Point(17, 160);
             this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(412, 54);
+            this.panel6.Size = new System.Drawing.Size(455, 54);
             this.panel6.TabIndex = 4;
             // 
             // cboCinemaScreenType
             // 
             this.cboCinemaScreenType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboCinemaScreenType.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cboCinemaScreenType.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
             this.cboCinemaScreenType.FormattingEnabled = true;
-            this.cboCinemaScreenType.Location = new System.Drawing.Point(176, 2);
+            this.cboCinemaScreenType.Location = new System.Drawing.Point(216, 4);
             this.cboCinemaScreenType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboCinemaScreenType.Name = "cboCinemaScreenType";
-            this.cboCinemaScreenType.Size = new System.Drawing.Size(214, 40);
+            this.cboCinemaScreenType.Size = new System.Drawing.Size(214, 35);
             this.cboCinemaScreenType.TabIndex = 1;
             // 
             // lblScreenType
             // 
             this.lblScreenType.AutoSize = true;
-            this.lblScreenType.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblScreenType.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblScreenType.Location = new System.Drawing.Point(4, 11);
             this.lblScreenType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblScreenType.Name = "lblScreenType";
-            this.lblScreenType.Size = new System.Drawing.Size(109, 23);
+            this.lblScreenType.Size = new System.Drawing.Size(129, 28);
             this.lblScreenType.TabIndex = 0;
             this.lblScreenType.Text = "Màn hình:";
             // 
@@ -176,29 +173,29 @@
             this.panel15.Controls.Add(this.txtSeatsPerRow);
             this.panel15.Controls.Add(this.lblSeatsPerRow);
             this.panel15.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.panel15.Location = new System.Drawing.Point(17, 375);
+            this.panel15.Location = new System.Drawing.Point(17, 481);
             this.panel15.Margin = new System.Windows.Forms.Padding(4);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(412, 54);
+            this.panel15.Size = new System.Drawing.Size(455, 54);
             this.panel15.TabIndex = 5;
             // 
             // txtSeatsPerRow
             // 
-            this.txtSeatsPerRow.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtSeatsPerRow.Location = new System.Drawing.Point(176, 4);
+            this.txtSeatsPerRow.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
+            this.txtSeatsPerRow.Location = new System.Drawing.Point(216, 11);
             this.txtSeatsPerRow.Margin = new System.Windows.Forms.Padding(4);
             this.txtSeatsPerRow.Name = "txtSeatsPerRow";
-            this.txtSeatsPerRow.Size = new System.Drawing.Size(214, 39);
+            this.txtSeatsPerRow.Size = new System.Drawing.Size(214, 34);
             this.txtSeatsPerRow.TabIndex = 1;
             // 
             // lblSeatsPerRow
             // 
             this.lblSeatsPerRow.AutoSize = true;
-            this.lblSeatsPerRow.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblSeatsPerRow.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblSeatsPerRow.Location = new System.Drawing.Point(4, 11);
             this.lblSeatsPerRow.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSeatsPerRow.Name = "lblSeatsPerRow";
-            this.lblSeatsPerRow.Size = new System.Drawing.Size(153, 23);
+            this.lblSeatsPerRow.Size = new System.Drawing.Size(181, 28);
             this.lblSeatsPerRow.TabIndex = 0;
             this.lblSeatsPerRow.Text = "Ghế mỗi hàng:";
             // 
@@ -207,29 +204,29 @@
             this.panel12.Controls.Add(this.txtNumberOfRows);
             this.panel12.Controls.Add(this.lblNumberOfRows);
             this.panel12.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.panel12.Location = new System.Drawing.Point(17, 313);
+            this.panel12.Location = new System.Drawing.Point(17, 401);
             this.panel12.Margin = new System.Windows.Forms.Padding(4);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(412, 54);
+            this.panel12.Size = new System.Drawing.Size(455, 54);
             this.panel12.TabIndex = 6;
             // 
             // txtNumberOfRows
             // 
-            this.txtNumberOfRows.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtNumberOfRows.Location = new System.Drawing.Point(176, 4);
+            this.txtNumberOfRows.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
+            this.txtNumberOfRows.Location = new System.Drawing.Point(216, 4);
             this.txtNumberOfRows.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumberOfRows.Name = "txtNumberOfRows";
-            this.txtNumberOfRows.Size = new System.Drawing.Size(214, 39);
+            this.txtNumberOfRows.Size = new System.Drawing.Size(214, 34);
             this.txtNumberOfRows.TabIndex = 1;
             // 
             // lblNumberOfRows
             // 
             this.lblNumberOfRows.AutoSize = true;
-            this.lblNumberOfRows.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblNumberOfRows.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblNumberOfRows.Location = new System.Drawing.Point(4, 11);
             this.lblNumberOfRows.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumberOfRows.Name = "lblNumberOfRows";
-            this.lblNumberOfRows.Size = new System.Drawing.Size(142, 23);
+            this.lblNumberOfRows.Size = new System.Drawing.Size(168, 28);
             this.lblNumberOfRows.TabIndex = 0;
             this.lblNumberOfRows.Text = "Số hàng ghế:";
             // 
@@ -238,29 +235,29 @@
             this.panel9.Controls.Add(this.txtCinemaStatus);
             this.panel9.Controls.Add(this.lblCinemaStatus);
             this.panel9.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.panel9.Location = new System.Drawing.Point(17, 251);
+            this.panel9.Location = new System.Drawing.Point(17, 318);
             this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(412, 54);
+            this.panel9.Size = new System.Drawing.Size(455, 54);
             this.panel9.TabIndex = 7;
             // 
             // txtCinemaStatus
             // 
-            this.txtCinemaStatus.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtCinemaStatus.Location = new System.Drawing.Point(178, 4);
+            this.txtCinemaStatus.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
+            this.txtCinemaStatus.Location = new System.Drawing.Point(216, 4);
             this.txtCinemaStatus.Margin = new System.Windows.Forms.Padding(4);
             this.txtCinemaStatus.Name = "txtCinemaStatus";
-            this.txtCinemaStatus.Size = new System.Drawing.Size(214, 39);
+            this.txtCinemaStatus.Size = new System.Drawing.Size(214, 34);
             this.txtCinemaStatus.TabIndex = 1;
             // 
             // lblCinemaStatus
             // 
             this.lblCinemaStatus.AutoSize = true;
-            this.lblCinemaStatus.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblCinemaStatus.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblCinemaStatus.Location = new System.Drawing.Point(4, 11);
             this.lblCinemaStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCinemaStatus.Name = "lblCinemaStatus";
-            this.lblCinemaStatus.Size = new System.Drawing.Size(131, 23);
+            this.lblCinemaStatus.Size = new System.Drawing.Size(155, 28);
             this.lblCinemaStatus.TabIndex = 0;
             this.lblCinemaStatus.Text = "Tình trạng:";
             // 
@@ -269,29 +266,29 @@
             this.panel8.Controls.Add(this.txtCinemaSeats);
             this.panel8.Controls.Add(this.lblCinemaSeats);
             this.panel8.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.panel8.Location = new System.Drawing.Point(17, 190);
+            this.panel8.Location = new System.Drawing.Point(17, 233);
             this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(412, 54);
+            this.panel8.Size = new System.Drawing.Size(455, 54);
             this.panel8.TabIndex = 8;
             // 
             // txtCinemaSeats
             // 
-            this.txtCinemaSeats.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtCinemaSeats.Location = new System.Drawing.Point(176, 4);
+            this.txtCinemaSeats.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
+            this.txtCinemaSeats.Location = new System.Drawing.Point(216, 4);
             this.txtCinemaSeats.Margin = new System.Windows.Forms.Padding(4);
             this.txtCinemaSeats.Name = "txtCinemaSeats";
-            this.txtCinemaSeats.Size = new System.Drawing.Size(214, 39);
+            this.txtCinemaSeats.Size = new System.Drawing.Size(214, 34);
             this.txtCinemaSeats.TabIndex = 1;
             // 
             // lblCinemaSeats
             // 
             this.lblCinemaSeats.AutoSize = true;
-            this.lblCinemaSeats.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblCinemaSeats.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblCinemaSeats.Location = new System.Drawing.Point(4, 11);
             this.lblCinemaSeats.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCinemaSeats.Name = "lblCinemaSeats";
-            this.lblCinemaSeats.Size = new System.Drawing.Size(142, 23);
+            this.lblCinemaSeats.Size = new System.Drawing.Size(168, 28);
             this.lblCinemaSeats.TabIndex = 0;
             this.lblCinemaSeats.Text = "Số chỗ ngồi:";
             // 
@@ -300,29 +297,29 @@
             this.panel31.Controls.Add(this.txtCinemaName);
             this.panel31.Controls.Add(this.lblCinemaName);
             this.panel31.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.panel31.Location = new System.Drawing.Point(17, 65);
+            this.panel31.Location = new System.Drawing.Point(17, 81);
             this.panel31.Margin = new System.Windows.Forms.Padding(4);
             this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(412, 54);
+            this.panel31.Size = new System.Drawing.Size(455, 54);
             this.panel31.TabIndex = 9;
             // 
             // txtCinemaName
             // 
-            this.txtCinemaName.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtCinemaName.Location = new System.Drawing.Point(176, 4);
+            this.txtCinemaName.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
+            this.txtCinemaName.Location = new System.Drawing.Point(216, 4);
             this.txtCinemaName.Margin = new System.Windows.Forms.Padding(4);
             this.txtCinemaName.Name = "txtCinemaName";
-            this.txtCinemaName.Size = new System.Drawing.Size(214, 39);
+            this.txtCinemaName.Size = new System.Drawing.Size(214, 34);
             this.txtCinemaName.TabIndex = 1;
             // 
             // lblCinemaName
             // 
             this.lblCinemaName.AutoSize = true;
-            this.lblCinemaName.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblCinemaName.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblCinemaName.Location = new System.Drawing.Point(4, 11);
             this.lblCinemaName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCinemaName.Name = "lblCinemaName";
-            this.lblCinemaName.Size = new System.Drawing.Size(120, 23);
+            this.lblCinemaName.Size = new System.Drawing.Size(142, 28);
             this.lblCinemaName.TabIndex = 0;
             this.lblCinemaName.Text = "Tên phòng:";
             // 
@@ -334,27 +331,27 @@
             this.panel32.Location = new System.Drawing.Point(17, 4);
             this.panel32.Margin = new System.Windows.Forms.Padding(4);
             this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(412, 54);
+            this.panel32.Size = new System.Drawing.Size(455, 54);
             this.panel32.TabIndex = 3;
             // 
             // txtCinemaID
             // 
-            this.txtCinemaID.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtCinemaID.Location = new System.Drawing.Point(178, 4);
+            this.txtCinemaID.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
+            this.txtCinemaID.Location = new System.Drawing.Point(216, 4);
             this.txtCinemaID.Margin = new System.Windows.Forms.Padding(4);
             this.txtCinemaID.Name = "txtCinemaID";
-            this.txtCinemaID.Size = new System.Drawing.Size(216, 39);
+            this.txtCinemaID.Size = new System.Drawing.Size(216, 34);
             this.txtCinemaID.TabIndex = 1;
             this.txtCinemaID.TextChanged += new System.EventHandler(this.txtCinemaID_TextChanged);
             // 
             // lblCinemaID
             // 
             this.lblCinemaID.AutoSize = true;
-            this.lblCinemaID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblCinemaID.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblCinemaID.Location = new System.Drawing.Point(4, 14);
             this.lblCinemaID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCinemaID.Name = "lblCinemaID";
-            this.lblCinemaID.Size = new System.Drawing.Size(109, 23);
+            this.lblCinemaID.Size = new System.Drawing.Size(129, 28);
             this.lblCinemaID.TabIndex = 0;
             this.lblCinemaID.Text = "Mã phòng:";
             // 
@@ -375,39 +372,15 @@
             this.dtgvCinema.AllowUserToAddRows = false;
             this.dtgvCinema.AllowUserToDeleteRows = false;
             this.dtgvCinema.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 10F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvCinema.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvCinema.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 10F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvCinema.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvCinema.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvCinema.Location = new System.Drawing.Point(0, 0);
             this.dtgvCinema.Margin = new System.Windows.Forms.Padding(4);
             this.dtgvCinema.Name = "dtgvCinema";
             this.dtgvCinema.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 10F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvCinema.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgvCinema.RowHeadersWidth = 51;
             this.dtgvCinema.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvCinema.Size = new System.Drawing.Size(1007, 574);
+            this.dtgvCinema.Size = new System.Drawing.Size(975, 574);
             this.dtgvCinema.TabIndex = 1;
             // 
             // CinemaUC

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel40 = new System.Windows.Forms.Panel();
             this.btnUpdateGenre = new System.Windows.Forms.Button();
             this.btnDeleteGenre = new System.Windows.Forms.Button();
@@ -67,11 +69,11 @@
             // 
             // btnUpdateGenre
             // 
-            this.btnUpdateGenre.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateGenre.Location = new System.Drawing.Point(220, 3);
+            this.btnUpdateGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateGenre.Location = new System.Drawing.Point(289, 4);
             this.btnUpdateGenre.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdateGenre.Name = "btnUpdateGenre";
-            this.btnUpdateGenre.Size = new System.Drawing.Size(100, 57);
+            this.btnUpdateGenre.Size = new System.Drawing.Size(132, 57);
             this.btnUpdateGenre.TabIndex = 2;
             this.btnUpdateGenre.Text = "Sửa";
             this.btnUpdateGenre.UseVisualStyleBackColor = true;
@@ -79,11 +81,11 @@
             // 
             // btnDeleteGenre
             // 
-            this.btnDeleteGenre.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteGenre.Location = new System.Drawing.Point(112, 4);
+            this.btnDeleteGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteGenre.Location = new System.Drawing.Point(149, 4);
             this.btnDeleteGenre.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteGenre.Name = "btnDeleteGenre";
-            this.btnDeleteGenre.Size = new System.Drawing.Size(100, 57);
+            this.btnDeleteGenre.Size = new System.Drawing.Size(132, 57);
             this.btnDeleteGenre.TabIndex = 1;
             this.btnDeleteGenre.Text = "Xóa";
             this.btnDeleteGenre.UseVisualStyleBackColor = true;
@@ -91,11 +93,11 @@
             // 
             // btnInsertGenre
             // 
-            this.btnInsertGenre.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsertGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsertGenre.Location = new System.Drawing.Point(4, 4);
             this.btnInsertGenre.Margin = new System.Windows.Forms.Padding(4);
             this.btnInsertGenre.Name = "btnInsertGenre";
-            this.btnInsertGenre.Size = new System.Drawing.Size(100, 57);
+            this.btnInsertGenre.Size = new System.Drawing.Size(132, 57);
             this.btnInsertGenre.TabIndex = 0;
             this.btnInsertGenre.Text = "Thêm";
             this.btnInsertGenre.UseVisualStyleBackColor = true;
@@ -116,14 +118,30 @@
             this.dtgvGenre.AllowUserToAddRows = false;
             this.dtgvGenre.AllowUserToDeleteRows = false;
             this.dtgvGenre.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvGenre.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvGenre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvGenre.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvGenre.Location = new System.Drawing.Point(0, 0);
             this.dtgvGenre.Margin = new System.Windows.Forms.Padding(4);
             this.dtgvGenre.Name = "dtgvGenre";
             this.dtgvGenre.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvGenre.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvGenre.RowHeadersWidth = 51;
-            this.dtgvGenre.Size = new System.Drawing.Size(1014, 574);
+            this.dtgvGenre.Size = new System.Drawing.Size(995, 574);
             this.dtgvGenre.TabIndex = 1;
             // 
             // panel2
@@ -132,9 +150,9 @@
             this.panel2.Controls.Add(this.panel38);
             this.panel2.Controls.Add(this.panel39);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1014, 0);
+            this.panel2.Location = new System.Drawing.Point(995, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(534, 574);
+            this.panel2.Size = new System.Drawing.Size(553, 574);
             this.panel2.TabIndex = 0;
             // 
             // panel5
@@ -144,13 +162,13 @@
             this.panel5.Location = new System.Drawing.Point(4, 131);
             this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(526, 182);
+            this.panel5.Size = new System.Drawing.Size(545, 182);
             this.panel5.TabIndex = 5;
             // 
             // txtGenreDesc
             // 
-            this.txtGenreDesc.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGenreDesc.Location = new System.Drawing.Point(167, 11);
+            this.txtGenreDesc.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
+            this.txtGenreDesc.Location = new System.Drawing.Point(216, 4);
             this.txtGenreDesc.Margin = new System.Windows.Forms.Padding(4);
             this.txtGenreDesc.Multiline = true;
             this.txtGenreDesc.Name = "txtGenreDesc";
@@ -160,11 +178,11 @@
             // lblGenreDesc
             // 
             this.lblGenreDesc.AutoSize = true;
-            this.lblGenreDesc.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenreDesc.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
             this.lblGenreDesc.Location = new System.Drawing.Point(4, 11);
             this.lblGenreDesc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGenreDesc.Name = "lblGenreDesc";
-            this.lblGenreDesc.Size = new System.Drawing.Size(72, 20);
+            this.lblGenreDesc.Size = new System.Drawing.Size(103, 28);
             this.lblGenreDesc.TabIndex = 0;
             this.lblGenreDesc.Text = "Mô tả :";
             // 
@@ -175,26 +193,26 @@
             this.panel38.Location = new System.Drawing.Point(4, 69);
             this.panel38.Margin = new System.Windows.Forms.Padding(4);
             this.panel38.Name = "panel38";
-            this.panel38.Size = new System.Drawing.Size(526, 54);
+            this.panel38.Size = new System.Drawing.Size(549, 54);
             this.panel38.TabIndex = 4;
             // 
             // txtGenreName
             // 
-            this.txtGenreName.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGenreName.Location = new System.Drawing.Point(167, 10);
+            this.txtGenreName.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
+            this.txtGenreName.Location = new System.Drawing.Point(216, 16);
             this.txtGenreName.Margin = new System.Windows.Forms.Padding(4);
             this.txtGenreName.Name = "txtGenreName";
-            this.txtGenreName.Size = new System.Drawing.Size(329, 27);
+            this.txtGenreName.Size = new System.Drawing.Size(329, 34);
             this.txtGenreName.TabIndex = 1;
             // 
             // lblGenreName
             // 
             this.lblGenreName.AutoSize = true;
-            this.lblGenreName.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenreName.Location = new System.Drawing.Point(4, 11);
+            this.lblGenreName.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
+            this.lblGenreName.Location = new System.Drawing.Point(6, 14);
             this.lblGenreName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGenreName.Name = "lblGenreName";
-            this.lblGenreName.Size = new System.Drawing.Size(135, 20);
+            this.lblGenreName.Size = new System.Drawing.Size(194, 28);
             this.lblGenreName.TabIndex = 0;
             this.lblGenreName.Text = "Tên thể loại :";
             // 
@@ -205,26 +223,26 @@
             this.panel39.Location = new System.Drawing.Point(4, 8);
             this.panel39.Margin = new System.Windows.Forms.Padding(4);
             this.panel39.Name = "panel39";
-            this.panel39.Size = new System.Drawing.Size(526, 54);
+            this.panel39.Size = new System.Drawing.Size(545, 54);
             this.panel39.TabIndex = 3;
             // 
             // txtGenreID
             // 
-            this.txtGenreID.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGenreID.Location = new System.Drawing.Point(167, 10);
+            this.txtGenreID.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
+            this.txtGenreID.Location = new System.Drawing.Point(216, 11);
             this.txtGenreID.Margin = new System.Windows.Forms.Padding(4);
             this.txtGenreID.Name = "txtGenreID";
-            this.txtGenreID.Size = new System.Drawing.Size(329, 27);
+            this.txtGenreID.Size = new System.Drawing.Size(329, 34);
             this.txtGenreID.TabIndex = 1;
             // 
             // lblGenreID
             // 
             this.lblGenreID.AutoSize = true;
-            this.lblGenreID.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenreID.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
             this.lblGenreID.Location = new System.Drawing.Point(4, 11);
             this.lblGenreID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGenreID.Name = "lblGenreID";
-            this.lblGenreID.Size = new System.Drawing.Size(126, 20);
+            this.lblGenreID.Size = new System.Drawing.Size(181, 28);
             this.lblGenreID.TabIndex = 0;
             this.lblGenreID.Text = "Mã thể loại :";
             // 

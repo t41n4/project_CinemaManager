@@ -45,20 +45,19 @@ namespace project_CinemaManager
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(270, 56);
+            this.panel1.Size = new System.Drawing.Size(636, 69);
             this.panel1.TabIndex = 5;
             // 
             // labelX
             // 
             this.labelX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.labelX.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelX.Font = new System.Drawing.Font("Consolas", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX.Location = new System.Drawing.Point(0, 0);
-            this.labelX.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelX.Name = "labelX";
-            this.labelX.Size = new System.Drawing.Size(270, 56);
+            this.labelX.Size = new System.Drawing.Size(636, 69);
             this.labelX.TabIndex = 0;
             this.labelX.Text = "Cinema Manager";
             this.labelX.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -66,11 +65,11 @@ namespace project_CinemaManager
             // btnSupportCus
             // 
             this.btnSupportCus.BackColor = System.Drawing.Color.Bisque;
-            this.btnSupportCus.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupportCus.Location = new System.Drawing.Point(47, 143);
-            this.btnSupportCus.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnSupportCus.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSupportCus.Location = new System.Drawing.Point(63, 258);
+            this.btnSupportCus.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnSupportCus.Name = "btnSupportCus";
-            this.btnSupportCus.Size = new System.Drawing.Size(163, 74);
+            this.btnSupportCus.Size = new System.Drawing.Size(524, 125);
             this.btnSupportCus.TabIndex = 10;
             this.btnSupportCus.Text = "Hỗ trợ";
             this.btnSupportCus.UseVisualStyleBackColor = false;
@@ -80,21 +79,20 @@ namespace project_CinemaManager
             // 
             this.lblAccountInfo.AutoSize = true;
             this.lblAccountInfo.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAccountInfo.Location = new System.Drawing.Point(6, -3);
-            this.lblAccountInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAccountInfo.Location = new System.Drawing.Point(8, -4);
             this.lblAccountInfo.Name = "lblAccountInfo";
-            this.lblAccountInfo.Size = new System.Drawing.Size(103, 13);
+            this.lblAccountInfo.Size = new System.Drawing.Size(136, 17);
             this.lblAccountInfo.TabIndex = 7;
             this.lblAccountInfo.Text = "Tên tài khoản : ";
             // 
             // btnAdmin
             // 
             this.btnAdmin.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnAdmin.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdmin.Location = new System.Drawing.Point(47, 63);
-            this.btnAdmin.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnAdmin.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmin.Location = new System.Drawing.Point(63, 91);
+            this.btnAdmin.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(163, 74);
+            this.btnAdmin.Size = new System.Drawing.Size(524, 125);
             this.btnAdmin.TabIndex = 6;
             this.btnAdmin.Text = "Quản Lý";
             this.btnAdmin.UseVisualStyleBackColor = false;
@@ -102,16 +100,16 @@ namespace project_CinemaManager
             // 
             // frmAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(270, 271);
+            this.ClientSize = new System.Drawing.Size(636, 446);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnSupportCus);
             this.Controls.Add(this.lblAccountInfo);
             this.Controls.Add(this.btnAdmin);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manager";

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel61 = new System.Windows.Forms.Panel();
             this.btnShowAllTicketsByShowTime = new System.Windows.Forms.Button();
             this.btnShowAllTicketsBoughtByShowTime = new System.Windows.Forms.Button();
@@ -57,17 +59,18 @@
             this.panel61.Controls.Add(this.btnDeleteTicketsByShowTime);
             this.panel61.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel61.Location = new System.Drawing.Point(0, 0);
-            this.panel61.Margin = new System.Windows.Forms.Padding(4);
+            this.panel61.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel61.Name = "panel61";
-            this.panel61.Size = new System.Drawing.Size(1548, 64);
+            this.panel61.Size = new System.Drawing.Size(1246, 139);
             this.panel61.TabIndex = 10;
             // 
             // btnShowAllTicketsByShowTime
             // 
-            this.btnShowAllTicketsByShowTime.Location = new System.Drawing.Point(490, 4);
-            this.btnShowAllTicketsByShowTime.Margin = new System.Windows.Forms.Padding(4);
+            this.btnShowAllTicketsByShowTime.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowAllTicketsByShowTime.Location = new System.Drawing.Point(613, 4);
+            this.btnShowAllTicketsByShowTime.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnShowAllTicketsByShowTime.Name = "btnShowAllTicketsByShowTime";
-            this.btnShowAllTicketsByShowTime.Size = new System.Drawing.Size(154, 57);
+            this.btnShowAllTicketsByShowTime.Size = new System.Drawing.Size(173, 98);
             this.btnShowAllTicketsByShowTime.TabIndex = 5;
             this.btnShowAllTicketsByShowTime.Text = "Xem Tất Cả Các Vé Theo Lịch Chiếu";
             this.btnShowAllTicketsByShowTime.UseVisualStyleBackColor = true;
@@ -75,10 +78,11 @@
             // 
             // btnShowAllTicketsBoughtByShowTime
             // 
-            this.btnShowAllTicketsBoughtByShowTime.Location = new System.Drawing.Point(328, 4);
-            this.btnShowAllTicketsBoughtByShowTime.Margin = new System.Windows.Forms.Padding(4);
+            this.btnShowAllTicketsBoughtByShowTime.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowAllTicketsBoughtByShowTime.Location = new System.Drawing.Point(420, 4);
+            this.btnShowAllTicketsBoughtByShowTime.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnShowAllTicketsBoughtByShowTime.Name = "btnShowAllTicketsBoughtByShowTime";
-            this.btnShowAllTicketsBoughtByShowTime.Size = new System.Drawing.Size(154, 57);
+            this.btnShowAllTicketsBoughtByShowTime.Size = new System.Drawing.Size(173, 99);
             this.btnShowAllTicketsBoughtByShowTime.TabIndex = 4;
             this.btnShowAllTicketsBoughtByShowTime.Text = "Xem Các Vé Được Bán Theo Lịch Chiếu";
             this.btnShowAllTicketsBoughtByShowTime.UseVisualStyleBackColor = true;
@@ -86,10 +90,11 @@
             // 
             // btnAddTicketsByShowTime
             // 
-            this.btnAddTicketsByShowTime.Location = new System.Drawing.Point(4, 4);
-            this.btnAddTicketsByShowTime.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddTicketsByShowTime.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddTicketsByShowTime.Location = new System.Drawing.Point(4, 5);
+            this.btnAddTicketsByShowTime.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAddTicketsByShowTime.Name = "btnAddTicketsByShowTime";
-            this.btnAddTicketsByShowTime.Size = new System.Drawing.Size(154, 57);
+            this.btnAddTicketsByShowTime.Size = new System.Drawing.Size(194, 98);
             this.btnAddTicketsByShowTime.TabIndex = 0;
             this.btnAddTicketsByShowTime.Text = "Tự Động Thêm Vé Theo Lịch Chiếu\r\n";
             this.btnAddTicketsByShowTime.UseVisualStyleBackColor = true;
@@ -97,10 +102,11 @@
             // 
             // btnAllListShowTimes
             // 
-            this.btnAllListShowTimes.Location = new System.Drawing.Point(814, 4);
-            this.btnAllListShowTimes.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAllListShowTimes.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAllListShowTimes.Location = new System.Drawing.Point(1007, 3);
+            this.btnAllListShowTimes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAllListShowTimes.Name = "btnAllListShowTimes";
-            this.btnAllListShowTimes.Size = new System.Drawing.Size(154, 57);
+            this.btnAllListShowTimes.Size = new System.Drawing.Size(177, 99);
             this.btnAllListShowTimes.TabIndex = 3;
             this.btnAllListShowTimes.Text = "Xem Tất Cả Lịch Chiếu\r\n";
             this.btnAllListShowTimes.UseVisualStyleBackColor = true;
@@ -108,10 +114,11 @@
             // 
             // btnShowShowTimeNotCreateTickets
             // 
-            this.btnShowShowTimeNotCreateTickets.Location = new System.Drawing.Point(652, 4);
-            this.btnShowShowTimeNotCreateTickets.Margin = new System.Windows.Forms.Padding(4);
+            this.btnShowShowTimeNotCreateTickets.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowShowTimeNotCreateTickets.Location = new System.Drawing.Point(812, 5);
+            this.btnShowShowTimeNotCreateTickets.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnShowShowTimeNotCreateTickets.Name = "btnShowShowTimeNotCreateTickets";
-            this.btnShowShowTimeNotCreateTickets.Size = new System.Drawing.Size(154, 57);
+            this.btnShowShowTimeNotCreateTickets.Size = new System.Drawing.Size(173, 99);
             this.btnShowShowTimeNotCreateTickets.TabIndex = 3;
             this.btnShowShowTimeNotCreateTickets.Text = "Xem Lịch Chiếu Chưa Được Tạo Vé";
             this.btnShowShowTimeNotCreateTickets.UseVisualStyleBackColor = true;
@@ -119,10 +126,11 @@
             // 
             // btnDeleteTicketsByShowTime
             // 
-            this.btnDeleteTicketsByShowTime.Location = new System.Drawing.Point(166, 4);
-            this.btnDeleteTicketsByShowTime.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeleteTicketsByShowTime.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteTicketsByShowTime.Location = new System.Drawing.Point(226, 5);
+            this.btnDeleteTicketsByShowTime.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDeleteTicketsByShowTime.Name = "btnDeleteTicketsByShowTime";
-            this.btnDeleteTicketsByShowTime.Size = new System.Drawing.Size(154, 57);
+            this.btnDeleteTicketsByShowTime.Size = new System.Drawing.Size(173, 98);
             this.btnDeleteTicketsByShowTime.TabIndex = 1;
             this.btnDeleteTicketsByShowTime.Text = "Xóa Vé Theo Lịch Chiếu";
             this.btnDeleteTicketsByShowTime.UseVisualStyleBackColor = true;
@@ -132,9 +140,10 @@
             // 
             this.panel1.Controls.Add(this.lsvAllListShowTimes);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(859, 64);
+            this.panel1.Location = new System.Drawing.Point(521, 139);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(689, 574);
+            this.panel1.Size = new System.Drawing.Size(725, 659);
             this.panel1.TabIndex = 11;
             // 
             // lsvAllListShowTimes
@@ -144,12 +153,15 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
+            this.lsvAllListShowTimes.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lsvAllListShowTimes.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lsvAllListShowTimes.FullRowSelect = true;
             this.lsvAllListShowTimes.GridLines = true;
             this.lsvAllListShowTimes.HideSelection = false;
-            this.lsvAllListShowTimes.Location = new System.Drawing.Point(7, 7);
+            this.lsvAllListShowTimes.Location = new System.Drawing.Point(3, 0);
+            this.lsvAllListShowTimes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lsvAllListShowTimes.Name = "lsvAllListShowTimes";
-            this.lsvAllListShowTimes.Size = new System.Drawing.Size(663, 564);
+            this.lsvAllListShowTimes.Size = new System.Drawing.Size(722, 659);
             this.lsvAllListShowTimes.TabIndex = 9;
             this.lsvAllListShowTimes.UseCompatibleStateImageBehavior = false;
             this.lsvAllListShowTimes.View = System.Windows.Forms.View.Details;
@@ -158,47 +170,65 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Tên Phòng Chiếu";
-            this.columnHeader1.Width = 120;
+            this.columnHeader1.Width = 219;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Tên Phim";
-            this.columnHeader2.Width = 150;
+            this.columnHeader2.Width = 173;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Thời Gian";
-            this.columnHeader3.Width = 150;
+            this.columnHeader3.Width = 172;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Trạng Thái";
-            this.columnHeader4.Width = 100;
+            this.columnHeader4.Width = 170;
             // 
             // dtgvTicket
             // 
             this.dtgvTicket.AllowUserToAddRows = false;
             this.dtgvTicket.AllowUserToDeleteRows = false;
             this.dtgvTicket.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvTicket.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvTicket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvTicket.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvTicket.Location = new System.Drawing.Point(0, 64);
-            this.dtgvTicket.Margin = new System.Windows.Forms.Padding(4);
+            this.dtgvTicket.Location = new System.Drawing.Point(0, 139);
+            this.dtgvTicket.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtgvTicket.Name = "dtgvTicket";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvTicket.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvTicket.RowHeadersWidth = 51;
-            this.dtgvTicket.Size = new System.Drawing.Size(859, 574);
+            this.dtgvTicket.Size = new System.Drawing.Size(521, 659);
             this.dtgvTicket.TabIndex = 12;
             // 
             // TicketsUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dtgvTicket);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel61);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "TicketsUC";
-            this.Size = new System.Drawing.Size(1548, 638);
+            this.Size = new System.Drawing.Size(1246, 798);
             this.panel61.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTicket)).EndInit();

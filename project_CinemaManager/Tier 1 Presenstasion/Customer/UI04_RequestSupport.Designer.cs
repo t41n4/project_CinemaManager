@@ -98,6 +98,8 @@ namespace project_CinemaManager
             this.txtMessage.Size = new System.Drawing.Size(623, 22);
             this.txtMessage.TabIndex = 2;
             this.txtMessage.Text = "your message";
+            this.txtMessage.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMessage_KeyDown);
+            this.txtMessage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtMessage_MouseDown);
             // 
             // UI04_RequestSupport
             // 

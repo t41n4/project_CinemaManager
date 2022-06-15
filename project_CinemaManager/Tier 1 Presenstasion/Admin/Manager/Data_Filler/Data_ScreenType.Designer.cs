@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnUpdateScreenType = new System.Windows.Forms.Button();
             this.btnDeleteScreenType = new System.Windows.Forms.Button();
@@ -35,12 +37,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
+            this.txtScreenTypeName = new System.Windows.Forms.TextBox();
+            this.lblScreenTypeName = new System.Windows.Forms.Label();
             this.txtScreenTypeID = new System.Windows.Forms.TextBox();
             this.lblScreenTypeID = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dtgvScreenType = new System.Windows.Forms.DataGridView();
-            this.txtScreenTypeName = new System.Windows.Forms.TextBox();
-            this.lblScreenTypeName = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -56,18 +58,19 @@
             this.panel1.Controls.Add(this.btnDeleteScreenType);
             this.panel1.Controls.Add(this.btnInsertScreenType);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1233, 73);
+            this.panel1.Size = new System.Drawing.Size(1288, 73);
             this.panel1.TabIndex = 2;
             // 
             // btnUpdateScreenType
             // 
-            this.btnUpdateScreenType.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateScreenType.Location = new System.Drawing.Point(224, 4);
+            this.btnUpdateScreenType.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateScreenType.Location = new System.Drawing.Point(352, 4);
             this.btnUpdateScreenType.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdateScreenType.Name = "btnUpdateScreenType";
-            this.btnUpdateScreenType.Size = new System.Drawing.Size(100, 57);
+            this.btnUpdateScreenType.Size = new System.Drawing.Size(155, 57);
             this.btnUpdateScreenType.TabIndex = 6;
             this.btnUpdateScreenType.Text = "Sửa";
             this.btnUpdateScreenType.UseVisualStyleBackColor = true;
@@ -75,11 +78,11 @@
             // 
             // btnDeleteScreenType
             // 
-            this.btnDeleteScreenType.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteScreenType.Location = new System.Drawing.Point(116, 4);
+            this.btnDeleteScreenType.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteScreenType.Location = new System.Drawing.Point(178, 4);
             this.btnDeleteScreenType.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteScreenType.Name = "btnDeleteScreenType";
-            this.btnDeleteScreenType.Size = new System.Drawing.Size(100, 57);
+            this.btnDeleteScreenType.Size = new System.Drawing.Size(155, 57);
             this.btnDeleteScreenType.TabIndex = 5;
             this.btnDeleteScreenType.Text = "Xóa";
             this.btnDeleteScreenType.UseVisualStyleBackColor = true;
@@ -87,11 +90,11 @@
             // 
             // btnInsertScreenType
             // 
-            this.btnInsertScreenType.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsertScreenType.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsertScreenType.Location = new System.Drawing.Point(8, 4);
             this.btnInsertScreenType.Margin = new System.Windows.Forms.Padding(4);
             this.btnInsertScreenType.Name = "btnInsertScreenType";
-            this.btnInsertScreenType.Size = new System.Drawing.Size(100, 57);
+            this.btnInsertScreenType.Size = new System.Drawing.Size(155, 57);
             this.btnInsertScreenType.TabIndex = 4;
             this.btnInsertScreenType.Text = "Thêm";
             this.btnInsertScreenType.UseVisualStyleBackColor = true;
@@ -104,7 +107,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 73);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1233, 565);
+            this.panel2.Size = new System.Drawing.Size(1288, 565);
             this.panel2.TabIndex = 3;
             // 
             // panel4
@@ -114,7 +117,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(779, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(454, 565);
+            this.panel4.Size = new System.Drawing.Size(509, 565);
             this.panel4.TabIndex = 1;
             // 
             // panel21
@@ -127,26 +130,46 @@
             this.panel21.Location = new System.Drawing.Point(24, 4);
             this.panel21.Margin = new System.Windows.Forms.Padding(4);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(426, 93);
+            this.panel21.Size = new System.Drawing.Size(481, 118);
             this.panel21.TabIndex = 3;
+            // 
+            // txtScreenTypeName
+            // 
+            this.txtScreenTypeName.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
+            this.txtScreenTypeName.Location = new System.Drawing.Point(267, 51);
+            this.txtScreenTypeName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtScreenTypeName.Name = "txtScreenTypeName";
+            this.txtScreenTypeName.Size = new System.Drawing.Size(192, 34);
+            this.txtScreenTypeName.TabIndex = 3;
+            // 
+            // lblScreenTypeName
+            // 
+            this.lblScreenTypeName.AutoSize = true;
+            this.lblScreenTypeName.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScreenTypeName.Location = new System.Drawing.Point(4, 48);
+            this.lblScreenTypeName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblScreenTypeName.Name = "lblScreenTypeName";
+            this.lblScreenTypeName.Size = new System.Drawing.Size(181, 28);
+            this.lblScreenTypeName.TabIndex = 2;
+            this.lblScreenTypeName.Text = "Tên màn hình:";
             // 
             // txtScreenTypeID
             // 
-            this.txtScreenTypeID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtScreenTypeID.Location = new System.Drawing.Point(209, 6);
+            this.txtScreenTypeID.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
+            this.txtScreenTypeID.Location = new System.Drawing.Point(267, 9);
             this.txtScreenTypeID.Margin = new System.Windows.Forms.Padding(4);
             this.txtScreenTypeID.Name = "txtScreenTypeID";
-            this.txtScreenTypeID.Size = new System.Drawing.Size(192, 31);
+            this.txtScreenTypeID.Size = new System.Drawing.Size(192, 34);
             this.txtScreenTypeID.TabIndex = 1;
             // 
             // lblScreenTypeID
             // 
             this.lblScreenTypeID.AutoSize = true;
-            this.lblScreenTypeID.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblScreenTypeID.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScreenTypeID.Location = new System.Drawing.Point(4, 11);
             this.lblScreenTypeID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblScreenTypeID.Name = "lblScreenTypeID";
-            this.lblScreenTypeID.Size = new System.Drawing.Size(197, 23);
+            this.lblScreenTypeID.Size = new System.Drawing.Size(233, 28);
             this.lblScreenTypeID.TabIndex = 0;
             this.lblScreenTypeID.Text = "Mã loại màn hình:";
             // 
@@ -164,35 +187,31 @@
             this.dtgvScreenType.AllowUserToAddRows = false;
             this.dtgvScreenType.AllowUserToDeleteRows = false;
             this.dtgvScreenType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvScreenType.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvScreenType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvScreenType.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvScreenType.Location = new System.Drawing.Point(0, 0);
             this.dtgvScreenType.Margin = new System.Windows.Forms.Padding(4);
             this.dtgvScreenType.Name = "dtgvScreenType";
             this.dtgvScreenType.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvScreenType.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvScreenType.RowHeadersWidth = 51;
             this.dtgvScreenType.Size = new System.Drawing.Size(779, 565);
             this.dtgvScreenType.TabIndex = 1;
-            // 
-            // txtScreenTypeName
-            // 
-            this.txtScreenTypeName.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtScreenTypeName.Location = new System.Drawing.Point(209, 45);
-            this.txtScreenTypeName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtScreenTypeName.Name = "txtScreenTypeName";
-            this.txtScreenTypeName.Size = new System.Drawing.Size(192, 31);
-            this.txtScreenTypeName.TabIndex = 3;
-            // 
-            // lblScreenTypeName
-            // 
-            this.lblScreenTypeName.AutoSize = true;
-            this.lblScreenTypeName.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblScreenTypeName.Location = new System.Drawing.Point(4, 48);
-            this.lblScreenTypeName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblScreenTypeName.Name = "lblScreenTypeName";
-            this.lblScreenTypeName.Size = new System.Drawing.Size(153, 23);
-            this.lblScreenTypeName.TabIndex = 2;
-            this.lblScreenTypeName.Text = "Tên màn hình:";
             // 
             // ScreenTypeUC
             // 
@@ -201,7 +220,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "ScreenTypeUC";
-            this.Size = new System.Drawing.Size(1233, 638);
+            this.Size = new System.Drawing.Size(1288, 638);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

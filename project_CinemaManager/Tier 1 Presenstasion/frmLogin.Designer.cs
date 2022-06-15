@@ -54,46 +54,47 @@ namespace project_CinemaManager
             this.panel1.Controls.Add(this.btnLogin);
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.txtUsername);
-            this.panel1.Location = new System.Drawing.Point(89, 62);
+            this.panel1.Location = new System.Drawing.Point(73, 62);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(338, 283);
+            this.panel1.Size = new System.Drawing.Size(359, 283);
             this.panel1.TabIndex = 4;
             // 
             // Label
             // 
             this.Label.AutoSize = true;
-            this.Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label.Location = new System.Drawing.Point(24, 207);
             this.Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label.Name = "Label";
-            this.Label.Size = new System.Drawing.Size(184, 20);
+            this.Label.Size = new System.Drawing.Size(206, 24);
             this.Label.TabIndex = 7;
             this.Label.Text = "Bạn chưa có tài khoản?";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(11, 62);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(11, 72);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 20);
+            this.label3.Size = new System.Drawing.Size(99, 25);
             this.label3.TabIndex = 6;
             this.label3.Text = "Mật khẩu:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(11, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 20);
+            this.label2.Size = new System.Drawing.Size(105, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "Tài khoản:";
             // 
             // btnSignUp
             // 
             this.btnSignUp.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignUp.Location = new System.Drawing.Point(13, 238);
             this.btnSignUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSignUp.Name = "btnSignUp";
@@ -106,7 +107,8 @@ namespace project_CinemaManager
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnLogin.Location = new System.Drawing.Point(13, 145);
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Location = new System.Drawing.Point(13, 151);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(314, 41);
@@ -118,7 +120,7 @@ namespace project_CinemaManager
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(13, 81);
+            this.txtPassword.Location = new System.Drawing.Point(13, 103);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(314, 38);
@@ -129,7 +131,7 @@ namespace project_CinemaManager
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(13, 20);
+            this.txtUsername.Location = new System.Drawing.Point(13, 30);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(314, 38);

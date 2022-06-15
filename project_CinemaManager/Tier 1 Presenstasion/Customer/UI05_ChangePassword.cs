@@ -54,5 +54,13 @@ namespace project_CinemaManager
                 this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             }
         }
+
+        private void txtNewPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Enter)
+            {
+                btnConfirm.PerformClick();
+            }
+        }
     }
 }

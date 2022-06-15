@@ -61,9 +61,9 @@ namespace project_CinemaManager
             // 
             this.picFilm.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picFilm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picFilm.Location = new System.Drawing.Point(121, 49);
+            this.picFilm.Location = new System.Drawing.Point(55, 49);
             this.picFilm.Name = "picFilm";
-            this.picFilm.Size = new System.Drawing.Size(329, 409);
+            this.picFilm.Size = new System.Drawing.Size(395, 409);
             this.picFilm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFilm.TabIndex = 13;
             this.picFilm.TabStop = false;
@@ -113,13 +113,14 @@ namespace project_CinemaManager
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(508, 588);
             this.panel2.TabIndex = 10;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button1.BackColor = System.Drawing.Color.DarkRed;
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(315, 515);
+            this.button1.Location = new System.Drawing.Point(272, 508);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(30, 30);
             this.button1.TabIndex = 8;
@@ -142,7 +143,7 @@ namespace project_CinemaManager
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button4.BackColor = System.Drawing.Color.Linen;
             this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(148, 515);
+            this.button4.Location = new System.Drawing.Point(91, 508);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(30, 30);
             this.button4.TabIndex = 7;
@@ -152,10 +153,10 @@ namespace project_CinemaManager
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(351, 517);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(308, 510);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 23);
+            this.label2.Size = new System.Drawing.Size(81, 24);
             this.label2.TabIndex = 6;
             this.label2.Text = "Đã Mua";
             // 
@@ -163,10 +164,10 @@ namespace project_CinemaManager
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(194, 517);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(137, 510);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 23);
+            this.label3.Size = new System.Drawing.Size(112, 24);
             this.label3.TabIndex = 5;
             this.label3.Text = "Đang chọn";
             // 
@@ -203,10 +204,10 @@ namespace project_CinemaManager
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCancel.AutoSize = true;
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(113)))), ((int)(((byte)(97)))));
-            this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(333, 176);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(114, 44);
+            this.btnCancel.Size = new System.Drawing.Size(128, 44);
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -229,10 +230,10 @@ namespace project_CinemaManager
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(59, 108);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(139, 23);
+            this.label9.Size = new System.Drawing.Size(150, 24);
             this.label9.TabIndex = 8;
             this.label9.Text = "Số tiền cần trả:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -254,10 +255,10 @@ namespace project_CinemaManager
             // 
             this.btnPayment.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(113)))), ((int)(((byte)(97)))));
-            this.btnPayment.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPayment.Location = new System.Drawing.Point(197, 176);
+            this.btnPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayment.Location = new System.Drawing.Point(144, 176);
             this.btnPayment.Name = "btnPayment";
-            this.btnPayment.Size = new System.Drawing.Size(130, 44);
+            this.btnPayment.Size = new System.Drawing.Size(183, 44);
             this.btnPayment.TabIndex = 10;
             this.btnPayment.Text = "Thanh Toán";
             this.btnPayment.UseVisualStyleBackColor = false;
@@ -267,16 +268,17 @@ namespace project_CinemaManager
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(59, 65);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(59, 61);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(103, 23);
+            this.label8.Size = new System.Drawing.Size(113, 24);
             this.label8.TabIndex = 9;
             this.label8.Text = "Tổng Tiền:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(193)))));
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label5.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -70,7 +70,7 @@
             this.rpViewer.Location = new System.Drawing.Point(0, 0);
             this.rpViewer.Name = "rpViewer";
             this.rpViewer.ServerReport.BearerToken = null;
-            this.rpViewer.Size = new System.Drawing.Size(1145, 412);
+            this.rpViewer.Size = new System.Drawing.Size(1145, 637);
             this.rpViewer.TabIndex = 0;
             this.rpViewer.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
@@ -78,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1145, 412);
+            this.ClientSize = new System.Drawing.Size(1145, 637);
             this.Controls.Add(this.rpViewer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UI06_TicketForCustomer";

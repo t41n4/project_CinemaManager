@@ -58,6 +58,8 @@ namespace project_CinemaManager
             this.txtMessage.Size = new System.Drawing.Size(623, 22);
             this.txtMessage.TabIndex = 6;
             this.txtMessage.Text = "your message";
+            this.txtMessage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtMessage_MouseClick);
+            this.txtMessage.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMessage_KeyDown);
             // 
             // lbname
             // 

@@ -54,25 +54,28 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 75);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(11, 91);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 17);
+            this.label3.Size = new System.Drawing.Size(113, 25);
             this.label3.TabIndex = 6;
             this.label3.Text = "Password:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(11, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 17);
+            this.label2.Size = new System.Drawing.Size(117, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "Username:";
             // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnLogin.Location = new System.Drawing.Point(14, 177);
+            this.btnLogin.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Location = new System.Drawing.Point(14, 185);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(360, 41);
             this.btnLogin.TabIndex = 3;
@@ -84,7 +87,7 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(14, 94);
+            this.txtPassword.Location = new System.Drawing.Point(14, 125);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(360, 38);
             this.txtPassword.TabIndex = 2;
@@ -95,19 +98,19 @@
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(14, 20);
+            this.txtUsername.Location = new System.Drawing.Point(14, 35);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(360, 38);
             this.txtUsername.TabIndex = 1;
             // 
-            // frm_Conectingdatabase
+            // frm_ProtectConectingdatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(426, 283);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frm_Conectingdatabase";
+            this.Name = "frm_ProtectConectingdatabase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_Conectingdatabase";
             this.panel1.ResumeLayout(false);
