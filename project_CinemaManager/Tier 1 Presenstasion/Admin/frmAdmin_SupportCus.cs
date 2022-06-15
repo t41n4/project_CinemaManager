@@ -13,6 +13,7 @@ namespace project_CinemaManager
 
         public frmAdmin_SupportCus(string cus)
         {
+
             InitializeComponent();
             this.customer = cus;
             LoadMessage();
@@ -33,17 +34,13 @@ namespace project_CinemaManager
                     if (IsHandleCreated)
                     {
                         if (InvokeRequired)
-                            dtgvMessage.Invoke(new Action(() =>
-                            {
-                                LoadMessage();
-                            }));
+                            dtgvMessage.Invoke(new Action(() => {LoadMessage();}));
                         else
                             LoadMessage();
                     }
                     else
                     { }
-                        Thread.Sleep(Properties.Settings.Default.RefreshTimeOut);
-                    
+                    Thread.Sleep(Properties.Settings.Default.RefreshTimeOut);                    
                 }
             }
             catch (Exception ex)
@@ -110,7 +107,6 @@ namespace project_CinemaManager
 
         private void frmAdmin_SupportCus_Load(object sender, EventArgs e)
         {
-
         }
 
         private void frmAdmin_SupportCus_KeyDown(object sender, KeyEventArgs e)
@@ -119,6 +115,7 @@ namespace project_CinemaManager
             {
                 SendMessage();
             }
+
         }
 
         private void txtMessage_KeyDown(object sender, KeyEventArgs e)
