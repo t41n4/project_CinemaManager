@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace project_CinemaManager
 {
-    public partial class frm_Conectingdatabase : Form
+    public partial class frm_ProtectConectingdatabase : Form
     {
-        public frm_Conectingdatabase()
+        public frm_ProtectConectingdatabase()
         {
             InitializeComponent();
         }

@@ -10,9 +10,9 @@ namespace project_CinemaManager
         {
             InitializeComponent();
 
-            if (Properties.Settings.Default.DataSource != string.Empty && Properties.Settings.Default.InitialCatalog != string.Empty)
+            if (Properties.Settings.Default.ServerName != string.Empty && Properties.Settings.Default.InitialCatalog != string.Empty)
             {
-                txtServerName.Text = Properties.Settings.Default.DataSource;
+                txtServerName.Text = Properties.Settings.Default.ServerName;
                 txtDatabaseName.Text = Properties.Settings.Default.InitialCatalog;
             }
         }
@@ -47,7 +47,7 @@ namespace project_CinemaManager
                     + ";Integrated Security=True";
             }
 
-            Properties.Settings.Default.DataSource = txtServerName.Text;
+            Properties.Settings.Default.ServerName = txtServerName.Text;
             Properties.Settings.Default.InitialCatalog = txtDatabaseName.Text;
             Properties.Settings.Default.UserID = txtUserName.Text;
             Properties.Settings.Default.pwd = txtPassword.Text;
@@ -67,7 +67,7 @@ namespace project_CinemaManager
 
         private void btnChangePasswordOfApp_Click(object sender, EventArgs e)
         {
-            frm_ChangePassword frm_ChangePassword = new frm_ChangePassword();
+            frm_ChangePasswordForProtector frm_ChangePassword = new frm_ChangePasswordForProtector();
             this.Hide();
             frm_ChangePassword.ShowDialog();
             this.Show();

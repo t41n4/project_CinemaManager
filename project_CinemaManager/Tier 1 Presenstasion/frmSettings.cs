@@ -21,7 +21,7 @@ namespace project_CinemaManager
 
         private void btn_checkconected_CheckedChanged(object sender, EventArgs e)
         {
-            frm_Conectingdatabase frm_Conectingdatabase = new frm_Conectingdatabase();
+            frm_ProtectConectingdatabase frm_Conectingdatabase = new frm_ProtectConectingdatabase();
             frm_Conectingdatabase.ShowDialog();
         }
 

@@ -1,6 +1,6 @@
 ﻿namespace project_CinemaManager
 {
-    partial class frm_ChangePassword
+    partial class frm_ChangePasswordForProtector
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ChangePassword));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ChangePasswordForProtector));
             this.txtNewPass = new System.Windows.Forms.TextBox();
             this.txtOldPass = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();

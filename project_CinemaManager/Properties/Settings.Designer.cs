@@ -25,13 +25,13 @@ namespace project_CinemaManager.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string DataSource {
+        [global::System.Configuration.DefaultSettingValueAttribute("35.220.208.39")]
+        public string ServerName {
             get {
-                return ((string)(this["DataSource"]));
+                return ((string)(this["ServerName"]));
             }
             set {
-                this["DataSource"] = value;
+                this["ServerName"] = value;
             }
         }
         
@@ -70,7 +70,7 @@ namespace project_CinemaManager.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("sqlserver")]
         public string UserID {
             get {
                 return ((string)(this["UserID"]));
@@ -82,7 +82,7 @@ namespace project_CinemaManager.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Hien9029")]
         public string pwd {
             get {
                 return ((string)(this["pwd"]));

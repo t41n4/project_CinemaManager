@@ -246,17 +246,17 @@
     <Compile Include="Tier 1 Presenstasion\frmTestConnection.Designer.cs">
       <DependentUpon>frmTestConnection.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frm_ChangePassword.cs">
+    <Compile Include="Tier 1 Presenstasion\frm_ChangePasswordForProtector.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frm_ChangePassword.Designer.cs">
-      <DependentUpon>frm_ChangePassword.cs</DependentUpon>
+    <Compile Include="Tier 1 Presenstasion\frm_ChangePasswordForProtector.Designer.cs">
+      <DependentUpon>frm_ChangePasswordForProtector.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frm_Conectingdatabase.cs">
+    <Compile Include="Tier 1 Presenstasion\frm_ProtectConectingdatabase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tier 1 Presenstasion\frm_Conectingdatabase.Designer.cs">
-      <DependentUpon>frm_Conectingdatabase.cs</DependentUpon>
+    <Compile Include="Tier 1 Presenstasion\frm_ProtectConectingdatabase.Designer.cs">
+      <DependentUpon>frm_ProtectConectingdatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Tier 1 Presenstasion\frmSettings.cs">
       <SubType>Form</SubType>
@@ -389,11 +389,11 @@
     <EmbeddedResource Include="Tier 1 Presenstasion\frmTestConnection.resx">
       <DependentUpon>frmTestConnection.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\frm_ChangePassword.resx">
-      <DependentUpon>frm_ChangePassword.cs</DependentUpon>
+    <EmbeddedResource Include="Tier 1 Presenstasion\frm_ChangePasswordForProtector.resx">
+      <DependentUpon>frm_ChangePasswordForProtector.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tier 1 Presenstasion\frm_Conectingdatabase.resx">
-      <DependentUpon>frm_Conectingdatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Tier 1 Presenstasion\frm_ProtectConectingdatabase.resx">
+      <DependentUpon>frm_ProtectConectingdatabase.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

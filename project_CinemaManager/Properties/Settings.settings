@@ -2,8 +2,8 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="project_CinemaManager.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="DataSource" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="ServerName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">35.220.208.39</Value>
     </Setting>
     <Setting Name="InitialCatalog" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -16,10 +16,10 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="UserID" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">sqlserver</Value>
     </Setting>
     <Setting Name="pwd" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Hien9029</Value>
     </Setting>
     <Setting Name="RefreshTimeOut" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1500</Value>

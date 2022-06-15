@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace project_CinemaManager
 {
-    public partial class frm_ChangePassword : Form
+    public partial class frm_ChangePasswordForProtector : Form
     {
-        public frm_ChangePassword()
+        public frm_ChangePasswordForProtector()
         {
             InitializeComponent();
         }
