@@ -16,9 +16,10 @@ namespace frmAdminUserControls
 
         private void LoadCustomer()
         {
-            dtgvCustomer.DataSource = customerList;
             LoadCustomerList();
+            dtgvCustomer.DataSource = customerList;
             AddCustomerBinding();
+            HideUnessecsary();
         }
 
         private void LoadCustomerList()
@@ -30,15 +31,32 @@ namespace frmAdminUserControls
         {
             LoadCustomerList();
         }
+        private void HideUnessecsary()
+        {
+            dtgvCustomer.DataSource = customerList.DataSource;
+            foreach (DataGridViewRow row in dtgvCustomer.Rows)
+            {
+                if (row.Cells["Mã khách hàng"].Value.ToString() == "ADMIN")
+                {
+                    CurrencyManager currencyManager1 = (CurrencyManager)dtgvCustomer.BindingContext[dtgvCustomer.DataSource];
+                    currencyManager1.SuspendBinding();
+                    row.Visible = false;
+                    currencyManager1.ResumeBinding();
+                    customerList.DataSource = dtgvCustomer.DataSource;
+                    return;
+                }
+            }
+            
+        }
 
         private void AddCustomerBinding()
         {
-            txtCusID.DataBindings.Add("Text", dtgvCustomer.DataSource, "Mã khách hàng", true, DataSourceUpdateMode.Never);
-            txtCusName.DataBindings.Add("Text", dtgvCustomer.DataSource, "Họ tên", true, DataSourceUpdateMode.Never);
-            txtCusBirth.DataBindings.Add("Text", dtgvCustomer.DataSource, "Ngày sinh", true, DataSourceUpdateMode.Never);
-            txtCusAddress.DataBindings.Add("Text", dtgvCustomer.DataSource, "Địa chỉ", true, DataSourceUpdateMode.Never);
-            txtCusPhone.DataBindings.Add("Text", dtgvCustomer.DataSource, "SĐT", true, DataSourceUpdateMode.Never);
-            txtCusINumber.DataBindings.Add("Text", dtgvCustomer.DataSource, "CMND", true, DataSourceUpdateMode.Never);
+            txtCusID.DataBindings.Add("Text", dtgvCustomer.DataSource, "Mã khách hàng", true, DataSourceUpdateMode.OnPropertyChanged);
+            txtCusName.DataBindings.Add("Text", dtgvCustomer.DataSource, "Họ tên", true, DataSourceUpdateMode.OnPropertyChanged);
+            txtCusBirth.DataBindings.Add("Text", dtgvCustomer.DataSource, "Ngày sinh", true, DataSourceUpdateMode.OnPropertyChanged);
+            txtCusAddress.DataBindings.Add("Text", dtgvCustomer.DataSource, "Địa chỉ", true, DataSourceUpdateMode.OnPropertyChanged);
+            txtCusPhone.DataBindings.Add("Text", dtgvCustomer.DataSource, "SĐT", true, DataSourceUpdateMode.OnPropertyChanged);
+            txtCusINumber.DataBindings.Add("Text", dtgvCustomer.DataSource, "CMND", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void InsertCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd)

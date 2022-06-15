@@ -13,14 +13,16 @@ namespace project_CinemaManager
 
         public frmAdmin_SupportCus(string cus)
         {
-            this.customer = cus;
+
             InitializeComponent();
+            this.customer = cus;
             LoadMessage();
             ConfigColumn();
             lbname.Text += account.UserName;
             refresher = new Thread(ThreadRefreshData);
             refresher.IsBackground = true;
             refresher.Start();
+
         }
 
         private void ThreadRefreshData()
@@ -32,17 +34,13 @@ namespace project_CinemaManager
                     if (IsHandleCreated)
                     {
                         if (InvokeRequired)
-                            dtgvMessage.Invoke(new Action(() =>
-                            {
-                                LoadMessage();
-                            }));
+                            dtgvMessage.Invoke(new Action(() => {LoadMessage();}));
                         else
                             LoadMessage();
                     }
                     else
-                    {
-                    }
-                    Thread.Sleep(Properties.Settings.Default.RefreshTimeOut);
+                    { }
+                    Thread.Sleep(Properties.Settings.Default.RefreshTimeOut);                    
                 }
             }
             catch (Exception ex)
@@ -89,6 +87,11 @@ namespace project_CinemaManager
 
         private void SendMessage()
         {
+            if (txtMessage.Text == "" || txtMessage.Text == "your message")
+            {
+                MessageBox.Show("Xin Hãy Nhập Nội Dung");
+                return;
+            }
             string enCryptMessage = MessagesDB.Encrypt(txtMessage.Text);
 
             if (MessagesDB.InsertMessage(enCryptMessage, account.UserName, customer, DateTime.Now))
@@ -117,6 +120,7 @@ namespace project_CinemaManager
             {
                 SendMessage();
             }
+
         }
 
         private void txtMessage_KeyDown(object sender, KeyEventArgs e)
