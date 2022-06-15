@@ -13,14 +13,15 @@ namespace project_CinemaManager
 
         public frmAdmin_SupportCus(string cus)
         {
-            this.customer = cus;
             InitializeComponent();
+            this.customer = cus;
             LoadMessage();
             ConfigColumn();
             lbname.Text += account.UserName;
             refresher = new Thread(ThreadRefreshData);
             refresher.IsBackground = true;
             refresher.Start();
+
         }
 
         private void ThreadRefreshData()
@@ -41,8 +42,8 @@ namespace project_CinemaManager
                     }
                     else
                     {
+                        Thread.Sleep(Properties.Settings.Default.RefreshTimeOut);
                     }
-                    Thread.Sleep(Properties.Settings.Default.RefreshTimeOut);
                 }
             }
             catch (Exception ex)
@@ -109,6 +110,7 @@ namespace project_CinemaManager
 
         private void frmAdmin_SupportCus_Load(object sender, EventArgs e)
         {
+
         }
 
         private void frmAdmin_SupportCus_KeyDown(object sender, KeyEventArgs e)
