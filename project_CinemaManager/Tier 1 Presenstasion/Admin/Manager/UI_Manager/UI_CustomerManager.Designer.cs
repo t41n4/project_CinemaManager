@@ -120,7 +120,7 @@
             this.lblCusID.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCusID.Location = new System.Drawing.Point(24, 39);
             this.lblCusID.Name = "lblCusID";
-            this.lblCusID.Size = new System.Drawing.Size(90, 28);
+            this.lblCusID.Size = new System.Drawing.Size(90, 27);
             this.lblCusID.TabIndex = 4;
             this.lblCusID.Text = "Mã KH:";
             // 
@@ -148,7 +148,7 @@
             this.lblCusINumber.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCusINumber.Location = new System.Drawing.Point(432, 108);
             this.lblCusINumber.Name = "lblCusINumber";
-            this.lblCusINumber.Size = new System.Drawing.Size(77, 28);
+            this.lblCusINumber.Size = new System.Drawing.Size(77, 27);
             this.lblCusINumber.TabIndex = 4;
             this.lblCusINumber.Text = "CMND:";
             // 
@@ -167,7 +167,7 @@
             this.lblCusBirth.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCusBirth.Location = new System.Drawing.Point(24, 108);
             this.lblCusBirth.Name = "lblCusBirth";
-            this.lblCusBirth.Size = new System.Drawing.Size(142, 28);
+            this.lblCusBirth.Size = new System.Drawing.Size(142, 27);
             this.lblCusBirth.TabIndex = 4;
             this.lblCusBirth.Text = "Ngày sinh:";
             // 
@@ -186,7 +186,7 @@
             this.lblCusPhone.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCusPhone.Location = new System.Drawing.Point(432, 75);
             this.lblCusPhone.Name = "lblCusPhone";
-            this.lblCusPhone.Size = new System.Drawing.Size(90, 28);
+            this.lblCusPhone.Size = new System.Drawing.Size(90, 27);
             this.lblCusPhone.TabIndex = 4;
             this.lblCusPhone.Text = "Số ĐT:";
             // 
@@ -205,7 +205,7 @@
             this.lblCusAddress.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCusAddress.Location = new System.Drawing.Point(432, 39);
             this.lblCusAddress.Name = "lblCusAddress";
-            this.lblCusAddress.Size = new System.Drawing.Size(116, 28);
+            this.lblCusAddress.Size = new System.Drawing.Size(116, 27);
             this.lblCusAddress.TabIndex = 4;
             this.lblCusAddress.Text = "Địa chỉ:";
             // 
@@ -224,14 +224,12 @@
             this.lblCusName.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCusName.Location = new System.Drawing.Point(24, 75);
             this.lblCusName.Name = "lblCusName";
-            this.lblCusName.Size = new System.Drawing.Size(103, 28);
+            this.lblCusName.Size = new System.Drawing.Size(103, 27);
             this.lblCusName.TabIndex = 4;
             this.lblCusName.Text = "Họ tên:";
             // 
             // dtgvCustomer
             // 
-            this.dtgvCustomer.AllowUserToAddRows = false;
-            this.dtgvCustomer.AllowUserToDeleteRows = false;
             this.dtgvCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));

@@ -19,8 +19,8 @@ namespace project_CinemaManager
         {
             dtgvAccount.DataSource = accountList;
             LoadAccountList();
-            AddAccountBinding();
             HideUnessecsary();
+            AddAccountBinding();
         }
 
         private void HideUnessecsary()

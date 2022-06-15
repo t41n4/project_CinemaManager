@@ -87,6 +87,11 @@ namespace project_CinemaManager
 
         private void SendMessage()
         {
+            if (txtMessage.Text == "" || txtMessage.Text == "your message")
+            {
+                MessageBox.Show("Xin Hãy Nhập Nội Dung");
+                return;
+            }
             string enCryptMessage = MessagesDB.Encrypt(txtMessage.Text);
 
             if (MessagesDB.InsertMessage(enCryptMessage, account.UserName, customer, DateTime.Now))
