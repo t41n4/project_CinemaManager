@@ -41,9 +41,9 @@ namespace project_CinemaManager
                             LoadMessage();
                     }
                     else
-                    {
+                    { }
                         Thread.Sleep(Properties.Settings.Default.RefreshTimeOut);
-                    }
+                    
                 }
             }
             catch (Exception ex)
