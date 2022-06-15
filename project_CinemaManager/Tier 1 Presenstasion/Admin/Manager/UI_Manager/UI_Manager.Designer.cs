@@ -80,6 +80,7 @@ namespace project_CinemaManager
             // 
             // btnAccountUC
             // 
+            this.btnAccountUC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAccountUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(103)))), ((int)(((byte)(206)))));
             this.btnAccountUC.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
             this.btnAccountUC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
@@ -88,7 +89,7 @@ namespace project_CinemaManager
             this.btnAccountUC.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccountUC.ForeColor = System.Drawing.SystemColors.Control;
             this.btnAccountUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnAccountUC.Location = new System.Drawing.Point(435, 9);
+            this.btnAccountUC.Location = new System.Drawing.Point(604, 9);
             this.btnAccountUC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAccountUC.Name = "btnAccountUC";
             this.btnAccountUC.Size = new System.Drawing.Size(281, 79);
@@ -99,6 +100,7 @@ namespace project_CinemaManager
             // 
             // btnCustomerUC
             // 
+            this.btnCustomerUC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCustomerUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(103)))), ((int)(((byte)(206)))));
             this.btnCustomerUC.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
             this.btnCustomerUC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
@@ -107,7 +109,7 @@ namespace project_CinemaManager
             this.btnCustomerUC.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomerUC.ForeColor = System.Drawing.SystemColors.Control;
             this.btnCustomerUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnCustomerUC.Location = new System.Drawing.Point(1115, 9);
+            this.btnCustomerUC.Location = new System.Drawing.Point(1284, 9);
             this.btnCustomerUC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCustomerUC.Name = "btnCustomerUC";
             this.btnCustomerUC.Size = new System.Drawing.Size(281, 79);
@@ -118,6 +120,7 @@ namespace project_CinemaManager
             // 
             // btnDataUC
             // 
+            this.btnDataUC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDataUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(103)))), ((int)(((byte)(206)))));
             this.btnDataUC.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
             this.btnDataUC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
@@ -126,7 +129,7 @@ namespace project_CinemaManager
             this.btnDataUC.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDataUC.ForeColor = System.Drawing.SystemColors.Control;
             this.btnDataUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnDataUC.Location = new System.Drawing.Point(775, 9);
+            this.btnDataUC.Location = new System.Drawing.Point(944, 9);
             this.btnDataUC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDataUC.Name = "btnDataUC";
             this.btnDataUC.Size = new System.Drawing.Size(281, 79);
@@ -137,6 +140,7 @@ namespace project_CinemaManager
             // 
             // btnRevenueUC
             // 
+            this.btnRevenueUC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnRevenueUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(103)))), ((int)(((byte)(206)))));
             this.btnRevenueUC.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
             this.btnRevenueUC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
@@ -145,7 +149,7 @@ namespace project_CinemaManager
             this.btnRevenueUC.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRevenueUC.ForeColor = System.Drawing.SystemColors.Control;
             this.btnRevenueUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnRevenueUC.Location = new System.Drawing.Point(97, 9);
+            this.btnRevenueUC.Location = new System.Drawing.Point(266, 9);
             this.btnRevenueUC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRevenueUC.Name = "btnRevenueUC";
             this.btnRevenueUC.Size = new System.Drawing.Size(281, 79);

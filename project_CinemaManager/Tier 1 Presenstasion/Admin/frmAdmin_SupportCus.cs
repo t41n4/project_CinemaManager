@@ -129,7 +129,7 @@ namespace project_CinemaManager
 
         private void txtMessage_MouseClick(object sender, MouseEventArgs e)
         {
-            btnSendMessage.Text = "";
+            txtMessage.Text = "";
         }
     }
 }
