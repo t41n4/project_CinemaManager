@@ -18,7 +18,11 @@ namespace project_CinemaManager
         private void LoadMovie()
         {
             dtgvMovie.DataSource = MovieDB.GetMovieHaveShowTimes();
-
+            if (dtgvMovie.RowCount == 0)
+            {
+                MessageBox.Show("Admin hôm nay bị lười khum up phim cho các bạn xem được, quay lại sauu nha :3");
+                this.Close();
+            }
             // Ẩn các thuộc tính không cần thiết
             HideUneseccaryColumn();
             AddMovieBinding();
