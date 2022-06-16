@@ -6,7 +6,7 @@ namespace frmAdminUserControls
 {
     public partial class CustomerUC : UserControl
     {
-        private BindingSource customerList = new BindingSource();
+        
 
         public CustomerUC()
         {
@@ -17,14 +17,16 @@ namespace frmAdminUserControls
         private void LoadCustomer()
         {
             LoadCustomerList();
-            dtgvCustomer.DataSource = customerList;
+
+           
             AddCustomerBinding();
-            HideUnessecsary();
+
         }
 
         private void LoadCustomerList()
         {
-            customerList.DataSource = CustomerDB.GetListCustomer();
+            dtgvCustomer.DataSource = CustomerDB.GetListCustomer();
+            HideUnessecsary();
         }
 
         private void btnShowCustomer_Click(object sender, EventArgs e)
@@ -33,30 +35,28 @@ namespace frmAdminUserControls
         }
         private void HideUnessecsary()
         {
-            dtgvCustomer.DataSource = customerList.DataSource;
-            foreach (DataGridViewRow row in dtgvCustomer.Rows)
-            {
-                if (row.Cells["Mã khách hàng"].Value.ToString() == "ADMIN")
-                {
-                    CurrencyManager currencyManager1 = (CurrencyManager)dtgvCustomer.BindingContext[dtgvCustomer.DataSource];
-                    currencyManager1.SuspendBinding();
-                    row.Visible = false;
-                    currencyManager1.ResumeBinding();
-                    customerList.DataSource = dtgvCustomer.DataSource;
-                    return;
-                }
-            }
-            
+            //if (dtgvCustomer.Is)
+            //{
+
+            //}
+            //foreach (DataGridViewRow item in dtgvCustomer.Rows)
+            //{
+            //    if (item.Cells[0].Value.ToString() == "ADMIN")
+            //    {
+            //        item.Visible = false;
+            //    }
+            //}
+              
         }
 
         private void AddCustomerBinding()
         {
-            txtCusID.DataBindings.Add("Text", dtgvCustomer.DataSource, "Mã khách hàng", true, DataSourceUpdateMode.OnPropertyChanged);
-            txtCusName.DataBindings.Add("Text", dtgvCustomer.DataSource, "Họ tên", true, DataSourceUpdateMode.OnPropertyChanged);
-            txtCusBirth.DataBindings.Add("Text", dtgvCustomer.DataSource, "Ngày sinh", true, DataSourceUpdateMode.OnPropertyChanged);
-            txtCusAddress.DataBindings.Add("Text", dtgvCustomer.DataSource, "Địa chỉ", true, DataSourceUpdateMode.OnPropertyChanged);
-            txtCusPhone.DataBindings.Add("Text", dtgvCustomer.DataSource, "SĐT", true, DataSourceUpdateMode.OnPropertyChanged);
-            txtCusINumber.DataBindings.Add("Text", dtgvCustomer.DataSource, "CMND", true, DataSourceUpdateMode.OnPropertyChanged);
+            txtCusID.DataBindings.Add("Text", dtgvCustomer.DataSource, "Mã khách hàng", true, DataSourceUpdateMode.Never);
+            txtCusName.DataBindings.Add("Text", dtgvCustomer.DataSource, "Họ tên", true, DataSourceUpdateMode.Never);
+            txtCusBirth.DataBindings.Add("Text", dtgvCustomer.DataSource, "Ngày sinh", true, DataSourceUpdateMode.Never);
+            txtCusAddress.DataBindings.Add("Text", dtgvCustomer.DataSource, "Địa chỉ", true, DataSourceUpdateMode.Never);
+            txtCusPhone.DataBindings.Add("Text", dtgvCustomer.DataSource, "SĐT", true, DataSourceUpdateMode.Never);
+            txtCusINumber.DataBindings.Add("Text", dtgvCustomer.DataSource, "CMND", true, DataSourceUpdateMode.Never);
         }
 
         private void InsertCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
@@ -129,7 +129,7 @@ namespace frmAdminUserControls
         private void btnSearchCus_Click(object sender, EventArgs e)
         {
             string cusName = txtSearchCus.Text;
-            customerList.DataSource = CustomerDB.SearchCustomerByID(cusName);
+            dtgvCustomer.DataSource = CustomerDB.SearchCustomerByID(cusName);
         }
 
         private void txtSearchCus_KeyDown(object sender, KeyEventArgs e)
